@@ -15,3 +15,8 @@ reports/current/development_*.csv
 reports/*.diff
 *.log
 .claude/
+# Internal coursework documents (team names/roll numbers, viva notes) stay local, out of the public repo
+PRICE-TRUTH-MASTER-CONTEXT.md
+PRICE-TRUTH-BUILD-HANDOFF.md
+PRICE-TRUTH-CODE-REVIEW-SPEC.md
+submission/
