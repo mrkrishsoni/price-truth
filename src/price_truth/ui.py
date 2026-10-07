@@ -58,7 +58,7 @@ def product_page(data: pd.DataFrame, model_loader, discount_loader=None) -> None
         return
     theme.product_card(row["name"], [("Platform", row["platform"].title()), ("Category", row["category_group"]),
                                      ("Variant", row.get("variant") or ""), ("ID", row["product_id"]),
-                                     ("Currency", "INR"), ("Observed", row.get("observed_at") or "date unknown")],
+                                     ("Currency", "INR"), ("Observed", str(row.get("observed_at") or "")[:10] or "date unknown")],
                        "historical", "not a live offer")
     weak = present.category_quality(REPORTS / "current/model_audit.json", row["platform"], row["category_group"])
     if weak:

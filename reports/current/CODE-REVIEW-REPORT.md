@@ -1,6 +1,6 @@
 # Price Truth — current engineering review
 
-Generated: 2026-10-07T08:33:08.561744+00:00
+Generated: 2026-10-07T09:16:22.395048+00:00
 
 Historical submission reports are preserved separately; these results apply to this source manifest.
 
@@ -17,15 +17,15 @@ Historical submission reports are preserved separately; these results apply to t
 | failures | 0 |
 | skipped | 0 |
 | tests | 405 |
-| time | 19.639 |
-| timestamp | 2026-10-07T14:02:19.944812+05:30 |
+| time | 19.745 |
+| timestamp | 2026-10-07T14:45:35.784283+05:30 |
 | hostname | Mac.lan |
 
 ## Coverage
 
 | Measure | Count | Percentage |
 | --- | --- | --- |
-| Statements | 1720/1820 | 94.51% |
+| Statements | 1721/1821 | 94.51% |
 | Branches | 351/408 | 86.03% |
 
 Coverage scope: price_truth package; scripts and app.py are outside this denominator.
@@ -100,9 +100,9 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/authenticity.py | load | 1 | A |
 | src/price_truth/ui.py | unit_page | 9 | B |
 | src/price_truth/ui.py | listing_picker | 8 | B |
+| src/price_truth/ui.py | product_page | 7 | B |
 | src/price_truth/ui.py | shrink_page | 7 | B |
 | src/price_truth/ui.py | methods_page | 7 | B |
-| src/price_truth/ui.py | product_page | 6 | B |
 | src/price_truth/ui.py | show_unit_result | 6 | B |
 | src/price_truth/ui.py | assessment_panel | 5 | A |
 | src/price_truth/ui.py | dataset_tab | 5 | A |
@@ -149,9 +149,9 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/model.py | load_model | 1 | A |
 | src/price_truth/market_ui.py | offers_tab | 8 | B |
 | src/price_truth/market_ui.py | authenticity_tab | 5 | A |
+| src/price_truth/market_ui.py | history_chart | 3 | A |
 | src/price_truth/market_ui.py | timing_tab | 3 | A |
 | src/price_truth/market_ui.py | slim | 2 | A |
-| src/price_truth/market_ui.py | history_chart | 2 | A |
 | src/price_truth/market_ui.py | listing_history | 1 | A |
 | src/price_truth/market_ui.py | current_price | 1 | A |
 | src/price_truth/market_ui.py | quote_history | 1 | A |
@@ -513,7 +513,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/theme.py | 47.21 | A |
 | src/price_truth/paths.py | 67.73 | A |
 | src/price_truth/authenticity.py | 49.74 | A |
-| src/price_truth/ui.py | 22.45 | A |
+| src/price_truth/ui.py | 22.2 | A |
 | src/price_truth/observations.py | 33.08 | A |
 | src/price_truth/present.py | 51.89 | A |
 | src/price_truth/cache.py | 55.71 | A |
@@ -521,10 +521,10 @@ MI is an index, not percent maintainability.
 | src/price_truth/offers.py | 59.56 | A |
 | src/price_truth/calculations.py | 42.83 | A |
 | src/price_truth/model.py | 42.86 | A |
-| src/price_truth/market_ui.py | 35.48 | A |
+| src/price_truth/market_ui.py | 40.23 | A |
 | src/price_truth/price_api.py | 42.47 | A |
 | src/price_truth/resources.py | 72.07 | A |
-| src/price_truth/workspace.py | 17.09 | B |
+| src/price_truth/workspace.py | 17.03 | B |
 | src/price_truth/external.py | 40.06 | A |
 | src/price_truth/data.py | 38.17 | A |
 | src/price_truth/catalogue.py | 51.84 | A |
@@ -578,10 +578,10 @@ MI is an index, not percent maintainability.
 | src/price_truth/offers.py | 43 | 34 | 1 |
 | src/price_truth/calculations.py | 59 | 41 | 0 |
 | src/price_truth/model.py | 195 | 154 | 0 |
-| src/price_truth/market_ui.py | 154 | 123 | 0 |
+| src/price_truth/market_ui.py | 156 | 124 | 1 |
 | src/price_truth/price_api.py | 106 | 81 | 1 |
 | src/price_truth/resources.py | 64 | 37 | 2 |
-| src/price_truth/workspace.py | 458 | 393 | 3 |
+| src/price_truth/workspace.py | 464 | 399 | 3 |
 | src/price_truth/external.py | 125 | 94 | 1 |
 | src/price_truth/data.py | 252 | 199 | 6 |
 | src/price_truth/catalogue.py | 38 | 27 | 0 |
@@ -627,7 +627,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/theme.py | 256.46 | 1057.91 |
 | src/price_truth/paths.py | 59.79 | 39.86 |
 | src/price_truth/authenticity.py | 289.35 | 1302.07 |
-| src/price_truth/ui.py | 822.42 | 5838.09 |
+| src/price_truth/ui.py | 843.94 | 6055.55 |
 | src/price_truth/observations.py | 410.43 | 1258.06 |
 | src/price_truth/present.py | 387.63 | 2076.59 |
 | src/price_truth/cache.py | 33.22 | 66.44 |
@@ -635,7 +635,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/offers.py | 147.4 | 620.64 |
 | src/price_truth/calculations.py | 510.04 | 3559.89 |
 | src/price_truth/model.py | 493.63 | 3004.67 |
-| src/price_truth/market_ui.py | 262.4 | 1452.55 |
+| src/price_truth/market_ui.py | 303.87 | 1827.97 |
 | src/price_truth/price_api.py | 402.84 | 1812.79 |
 | src/price_truth/resources.py | 4.75 | 2.38 |
 | src/price_truth/workspace.py | 1426.7 | 11489.65 |
@@ -677,9 +677,9 @@ MI is an index, not percent maintainability.
 
 | Measure | Value |
 | --- | --- |
-| first_assessment_seconds | 0.9402221249765716 |
+| first_assessment_seconds | 0.7486485409899615 |
 | warm_calls | 29 |
-| warm_p95_seconds | 0.019289291999302804 |
+| warm_p95_seconds | 0.019921849796082823 |
 | scope | Sequential local assessment including SHAP; not 100-user load or browser latency |
 
 ## Requirements still requiring external evidence

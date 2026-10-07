@@ -395,7 +395,13 @@ def pack_change_panel(selected: pd.DataFrame) -> None:
     if changes.empty:
         theme.empty_state("No change to analyse", "At least two distinct observation dates are needed.")
         return
-    st.dataframe(changes, hide_index=True)
+    st.dataframe(changes, hide_index=True, column_config={
+        "from_date": "From", "to_date": "To",
+        "quantity_reduction_pct": st.column_config.NumberColumn("Pack smaller by", format="%.1f%%"),
+        "unit_price_increase_pct": st.column_config.NumberColumn("Unit price up by", format="%.1f%%"),
+        "new_unit_price": st.column_config.NumberColumn("New price per unit", format="%.2f"),
+        "before_source": st.column_config.LinkColumn("Before (source)"),
+        "after_source": st.column_config.LinkColumn("After (source)")})
     figure = go.Figure([go.Bar(name="Quantity reduction", x=changes.to_date, y=changes.quantity_reduction_pct,
                                marker_color=theme.PURPLE),
                         go.Bar(name="Unit-price increase", x=changes.to_date, y=changes.unit_price_increase_pct,

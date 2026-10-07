@@ -40,8 +40,10 @@ def history_chart(history: pd.DataFrame, quote: float) -> go.Figure:
         figure.add_vrect(x0=block.date.min(), x1=block.date.max(), fillcolor=theme.MINT, opacity=.12, line_width=0,
                          annotation_text=block.event.iloc[0], annotation_position="top left",
                          annotation_font_size=11)
+    # A far-above MRP line would flatten the price line; start it hidden (one click on the legend shows it).
+    mrp_visible = True if recent.mrp.median() <= 2 * recent.price.median() else "legendonly"
     figure.add_trace(go.Scatter(x=recent.date, y=recent.mrp, name="Listed (MRP)", mode="lines",
-                                line=dict(color="#B9B3CC", dash="dot")))
+                                line=dict(color="#B9B3CC", dash="dot"), visible=mrp_visible))
     figure.add_trace(go.Scatter(x=recent.date, y=recent.price, name="Selling price", mode="lines",
                                 line=dict(color=theme.PURPLE, width=2.5)))
     figure.add_hline(y=quote, line_color=theme.CORAL, line_dash="dash", annotation_text="Your price",

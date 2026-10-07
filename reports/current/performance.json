@@ -1,6 +1,6 @@
 {
-  "first_assessment_seconds": 0.9402221249765716,
+  "first_assessment_seconds": 0.7486485409899615,
   "warm_calls": 29,
-  "warm_p95_seconds": 0.019289291999302804,
+  "warm_p95_seconds": 0.019921849796082823,
   "scope": "Sequential local assessment including SHAP; not 100-user load or browser latency"
 }
