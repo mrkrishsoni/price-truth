@@ -77,7 +77,7 @@ The interface is intentionally simple. Restyle `app.py`, `ui.py`, and `.streamli
 .venv/bin/python scripts/review.py
 ```
 
-The runner writes Ruff, PyTest/coverage, Radon CC/MI/raw/Halstead, scoped Mutmut, timings and a source-hash manifest to `reports/current/`. Read the [current review](reports/current/CODE-REVIEW-REPORT.md). Mutation scope is calculations, catalogue and history; it is not a whole-application mutation score. The original [submission report](reports/CODE-REVIEW-REPORT.md) and `submission/BASELINE-2026-09-19-SOURCE-EVIDENCE.zip` preserve the earlier version.
+The runner writes Ruff, PyTest/coverage, Radon CC/MI/raw/Halstead, scoped Mutmut, timings and a source-hash manifest to `reports/current/`. Read the [current review](reports/current/CODE-REVIEW-REPORT.md). Mutation scope is the domain modules listed under `[tool.mutmut]` in `pyproject.toml` (calculations, catalogue, history, observations, forecast, offers, evidence_store and price_api); it is not a whole-application mutation score. Remaining survivors are justified in [docs/MUTATION-SURVIVORS.md](docs/MUTATION-SURVIVORS.md). The original [submission report](reports/CODE-REVIEW-REPORT.md) and `submission/BASELINE-2026-09-19-SOURCE-EVIDENCE.zip` preserve the earlier version.
 
 Additional checks:
 
