@@ -209,24 +209,29 @@ def food_page() -> None:
         pack_details(code, offline)
         st.caption("Food barcodes are never matched automatically to Amazon or Flipkart listings.")
     with tabs[1]:
-        frame, note = price_collection()
-        columns = st.columns([3, 1], vertical_alignment="center")
-        columns[0].caption(f"Open Prices (ODbL) · {note}")
-        if columns[1].button("Refresh prices", disabled=offline, width="stretch"):
-            try:
-                st.session_state["workspace_price_result"] = {"code": code, "result": fetch_observations(code)}
-            except ValueError as exc:
-                st.error(str(exc))
-        saved = st.session_state.get("workspace_price_result", {})
-        if saved.get("code") == code:
-            result = saved["result"]
-            frame = pd.DataFrame(result["observations"])
-            st.caption(f"{result['notice']} Fetched {result['fetched_at'][:16]}.")
-            if not result["complete_query"]:
-                st.warning("Showing at most 100 observations; this history is partial.")
-        history_panel(frame, code)
+        price_history_tab(code, offline)
     with tabs[2]:
         history_example()
+
+
+def price_history_tab(code: str, offline: bool) -> None:
+    """Saved or refreshed Open Prices observations for one barcode."""
+    frame, note = price_collection()
+    columns = st.columns([3, 1], vertical_alignment="center")
+    columns[0].caption(f"Open Prices (ODbL) · {note}")
+    if columns[1].button("Refresh prices", disabled=offline, width="stretch"):
+        try:
+            st.session_state["workspace_price_result"] = {"code": code, "result": fetch_observations(code)}
+        except ValueError as exc:
+            st.error(str(exc))
+    saved = st.session_state.get("workspace_price_result", {})
+    if saved.get("code") == code:
+        result = saved["result"]
+        frame = pd.DataFrame(result["observations"])
+        st.caption(f"{result['notice']} Fetched {result['fetched_at'][:16]}.")
+        if not result["complete_query"]:
+            st.warning("Showing at most 100 observations; this history is partial.")
+    history_panel(frame, code)
 
 
 def history_example() -> None:

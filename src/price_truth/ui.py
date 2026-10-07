@@ -155,6 +155,11 @@ def unit_page() -> None:
     except ValueError as exc:
         st.error(str(exc))
         return
+    show_unit_result(result, currency)
+
+
+def show_unit_result(result: list[dict], currency: str) -> None:
+    """Best-value verdict, unit-price chart and ranked table for compared packs."""
     best, worst = result[0], result[-1]
     if abs(best["value"] - worst["value"]) < 1e-9:
         theme.verdict("Same value", "Every option costs the same per unit.", "neutral")

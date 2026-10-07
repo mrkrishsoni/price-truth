@@ -6,10 +6,13 @@ COPY pyproject.toml requirements.txt ./
 COPY src ./src
 RUN pip install --no-cache-dir -r requirements.txt && useradd --create-home --uid 10001 appuser
 COPY --chown=appuser:appuser app.py ./
+COPY --chown=appuser:appuser views ./views
+COPY --chown=appuser:appuser assets ./assets
 COPY --chown=appuser:appuser .streamlit ./.streamlit
 COPY --chown=appuser:appuser datasets ./datasets
 COPY --chown=appuser:appuser artifacts ./artifacts
 COPY --chown=appuser:appuser reports/data_audit.json reports/model_evaluation.json ./reports/
+COPY --chown=appuser:appuser reports/current/model_audit.json reports/current/collection_status.json ./reports/current/
 RUN mkdir -p /app/reports && chown -R appuser:appuser /app
 USER appuser
 EXPOSE 8501
