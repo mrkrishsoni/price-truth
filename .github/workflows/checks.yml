@@ -36,7 +36,7 @@ jobs:
       - name: Start and verify health
         run: |
           docker run -d --name price-truth-check -p 8501:8501 price-truth-check
-          curl --fail --retry 20 --retry-connrefused --retry-delay 3 http://127.0.0.1:8501/_stcore/health
+          curl --fail --retry 30 --retry-all-errors --retry-delay 3 http://127.0.0.1:8501/_stcore/health
       - name: Retain container diagnostics
         if: always()
         run: docker logs price-truth-check

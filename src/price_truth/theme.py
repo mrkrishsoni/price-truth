@@ -46,6 +46,7 @@ h1 { letter-spacing: -0.02em; }
 .pt-stat-label { color:var(--pt-muted); font-size:.85rem; }
 [data-testid="stNumberInputStepUp"], [data-testid="stNumberInputStepDown"] { display:none; }
 [data-testid="stMetricValue"] { font-weight:700; }
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color: #5F5B71 !important; opacity: 1 !important; }
 a:focus-visible, button:focus-visible, [role="tab"]:focus-visible { outline: 3px solid #8E6CF2 !important;
   outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
