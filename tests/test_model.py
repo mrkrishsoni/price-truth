@@ -43,6 +43,7 @@ def test_invalid_quote_and_sparse_category(bundle):
     assert assess(bundle, row, 100, 200)["status"] == "limited_support"
 
 
+@pytest.mark.filterwarnings("error::UserWarning")
 def test_training_pipeline_on_real_data(monkeypatch, tmp_path):
     """Exercise fitting, calibration, and artifact output in an isolated directory."""
     from price_truth import model

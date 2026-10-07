@@ -23,6 +23,18 @@ def get_json(url: str, params: dict | None = None) -> dict:
     return payload
 
 
+def _cached_result(cached: dict | None, offline: bool, missing: str,
+                   fresh_notice: dict, offline_notice: dict) -> dict | None:
+    """Serve a fresh (online) or any saved (offline) response; None means fetch live."""
+    if fresh(cached) and not offline:
+        return {**cached, "mode": "cached", **fresh_notice}
+    if not offline:
+        return None
+    if not cached:
+        raise ValueError(missing)
+    return {**cached, "mode": "cached", **offline_notice}
+
+
 def lookup_product(code: str, offline: bool = False, cache_dir: Path | None = None) -> dict:
     """Fetch a numeric barcode, falling back only to a previously saved real response."""
     code = code.strip()
@@ -31,12 +43,12 @@ def lookup_product(code: str, offline: bool = False, cache_dir: Path | None = No
     cache_dir = cache_dir or EXTERNAL / "off"
     path = cache_dir / f"{code}.json"
     cached = read_json(path)
-    if fresh(cached) and not offline:
-        return {**cached, "mode": "cached", "notice": "Recently retrieved response (one-hour cache)."}
-    if offline:
-        if not cached:
-            raise ValueError("This barcode is not in the offline cache. Try a live lookup.")
-        return {**cached, "mode": "cached", "notice": "Offline saved response"}
+    saved = _cached_result(cached, offline,
+                           "This barcode is not in the offline cache. Try a live lookup.",
+                           {"notice": "Recently retrieved response (one-hour cache)."},
+                           {"notice": "Offline saved response"})
+    if saved:
+        return saved
     url = f"https://world.openfoodfacts.org/api/v2/product/{code}.json"
     try:
         result = get_json(url, {"fields": "code,product_name,brands,quantity,product_quantity,"
@@ -60,6 +72,23 @@ def cached_products() -> list[dict]:
     return [json.loads(path.read_text())["product"] for path in sorted(directory.glob("*.json"))]
 
 
+SEARCH_URL = "https://search.openfoodfacts.org/search"
+
+
+def _search_hits(query: str) -> list[dict]:
+    """Request one page of full-text hits and reject a malformed hits field."""
+    hits = get_json(SEARCH_URL, {"q": query, "page_size": 10})["hits"]
+    if not isinstance(hits, list):
+        raise ValueError("Unexpected search response.")
+    return hits
+
+
+def _search_summary(hit: dict) -> dict:
+    """Keep only the display fields of a search hit."""
+    return {"code": hit.get("code"), "product_name": hit.get("product_name_en") or hit.get("product_name"),
+            "brands": hit.get("brands"), "quantity": hit.get("quantity")}
+
+
 def search_products(query: str, offline: bool = False) -> dict:
     """Search the official full-text API, retaining a dated real-response fallback."""
     query = query.strip()
@@ -67,26 +96,18 @@ def search_products(query: str, offline: bool = False) -> dict:
         raise ValueError("Use between 2 and 100 characters for a product search.")
     cache = EXTERNAL / "search" / (hashlib.sha256(query.lower().encode()).hexdigest() + ".json")
     cached = read_json(cache)
-    if fresh(cached) and not offline:
-        return {**cached, "mode": "cached"}
-    if offline:
-        if not cached:
-            raise ValueError("No saved results for this search. Try the barcode examples below.")
-        return {**cached, "mode": "cached"}
-    url = "https://search.openfoodfacts.org/search"
+    saved = _cached_result(cached, offline,
+                           "No saved results for this search. Try the barcode examples below.", {}, {})
+    if saved:
+        return saved
     try:
-        response = get_json(url, {"q": query, "page_size": 10})
-        hits = response["hits"]
-        if not isinstance(hits, list):
-            raise ValueError("Unexpected search response.")
+        hits = _search_hits(query)
     except (requests.RequestException, ValueError, KeyError) as exc:
         if cached:
             return {**cached, "mode": "cached"}
         raise ValueError("Live search is unavailable. Use a saved barcode example below.") from exc
-    products = [{"code": h.get("code"), "product_name": h.get("product_name_en") or h.get("product_name"),
-                 "brands": h.get("brands"), "quantity": h.get("quantity")}
-                for h in hits if re.fullmatch(r"\d{8,14}", str(h.get("code", "")))]
-    result = {"query": query, "products": products, "source_url": url,
+    products = [_search_summary(h) for h in hits if re.fullmatch(r"\d{8,14}", str(h.get("code", "")))]
+    result = {"query": query, "products": products, "source_url": SEARCH_URL,
               "fetched_at": datetime.now(UTC).isoformat(), "license": "ODbL"}
     write_json(cache, result)
     return {**result, "mode": "live"}

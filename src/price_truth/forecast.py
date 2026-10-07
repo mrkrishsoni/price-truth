@@ -21,16 +21,20 @@ def _errors(prices: np.ndarray, start: int, end: int, method: str) -> list[float
     return [abs(float(prices[i]) - _predict(prices[:i], method)) for i in range(start, end)]
 
 
-def forecast_next_day(series: pd.DataFrame, today: date | None = None) -> dict:
-    """Gate on consecutive, recent daily observations; reserve final 10 days for testing."""
-    today = today or date.today()
+def _clean_history(series: pd.DataFrame) -> pd.DataFrame:
+    """Coerce dates and prices; unparseable values become missing rather than guessed."""
     data = series[["date", "price"]].copy()
     data["date"] = pd.to_datetime(data.date, errors="coerce")
     data["price"] = pd.to_numeric(data.price, errors="coerce")
+    # Every validity gate is order-independent, so sorting first changes no outcome.
+    return data.sort_values("date")
+
+
+def _history_gate(data: pd.DataFrame, today: date) -> dict | None:
+    """Return the first failed evidence gate as a result, or None when history qualifies."""
     if (data.isna().any().any() or not np.isfinite(data.price).all()
             or data.price.le(0).any() or data.date.duplicated().any()):
         return {"status": "invalid_history", "reason": "Need unique dates and finite positive prices."}
-    data = data.sort_values("date")
     if len(data) < 40:
         return {"status": "insufficient_history", "reason": "At least 40 consecutive daily observations required.",
                 "observed_days": len(data)}
@@ -39,7 +43,11 @@ def forecast_next_day(series: pd.DataFrame, today: date | None = None) -> dict:
     age = (today - data.date.iloc[-1].date()).days
     if age < 0 or age > 1:
         return {"status": "stale_history", "reason": "Last observation must be today or yesterday.", "age_days": age}
-    prices = data.price.to_numpy(dtype=float)
+    return None
+
+
+def _backtest(prices: np.ndarray) -> dict:
+    """Select a method on the validation window, then score it and the baseline on the test window."""
     n = len(prices)
     methods = ["last_price", "rolling_median", "local_trend"]
     validation = {m: float(np.mean(_errors(prices, n-20, n-10, m))) for m in methods}
@@ -48,10 +56,27 @@ def forecast_next_day(series: pd.DataFrame, today: date | None = None) -> dict:
     baseline = _errors(prices, n-10, n, "last_price")
     mae, baseline_mae = float(np.mean(errors)), float(np.mean(baseline))
     improves = selected != "last_price" and mae < baseline_mae
+    return {"selected": selected, "validation": validation, "mae": mae,
+            "baseline_mae": baseline_mae, "predictions": len(errors), "improves": improves}
+
+
+def forecast_next_day(series: pd.DataFrame, today: date | None = None) -> dict:
+    """Gate on consecutive, recent daily observations; reserve final 10 days for testing."""
+    today = today or date.today()
+    data = _clean_history(series)
+    gate = _history_gate(data, today)
+    if gate:
+        return gate
+    prices = data.price.to_numpy(dtype=float)
+    result = _backtest(prices)
+    improves, selected = result["improves"], result["selected"]
+    last = data.date.iloc[-1]
     return {"status": "evaluated" if improves else "baseline_preferred",
             "reason": "One-step historical backtest; not a guaranteed buying recommendation.",
-            "selected_on_validation": selected, "validation_mae": validation,
-            "test_mae": mae, "baseline_test_mae": baseline_mae, "test_predictions": len(errors),
-            "beats_baseline_on_test": improves, "forecast_date": (data.date.iloc[-1] + pd.Timedelta(days=1)).date().isoformat(),
+            "selected_on_validation": selected, "validation_mae": result["validation"],
+            "test_mae": result["mae"], "baseline_test_mae": result["baseline_mae"],
+            "test_predictions": result["predictions"],
+            "beats_baseline_on_test": improves,
+            "forecast_date": (last + pd.Timedelta(days=1)).date().isoformat(),
             "next_day_estimate": _predict(prices, selected) if improves else None,
-            "observed_days": n, "age_days": age}
+            "observed_days": len(prices), "age_days": (today - last.date()).days}
