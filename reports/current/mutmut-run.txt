@@ -1,0 +1,1148 @@
+
+⠋ Generating mutants
+⠙ Generating mutants
+⠹ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠴ Generating mutants
+⠦ Generating mutants
+⠧ Generating mutants
+⠇ Generating mutants
+⠏ Generating mutants
+⠋ Generating mutants
+⠙ Generating mutants
+⠹ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠴ Generating mutants
+⠦ Generating mutants
+⠧ Generating mutants
+⠇ Generating mutants
+⠏ Generating mutants
+⠋ Generating mutants
+⠙ Generating mutants
+⠹ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠴ Generating mutants
+⠦ Generating mutants
+⠧ Generating mutants
+⠇ Generating mutants
+⠏ Generating mutants
+⠋ Generating mutants
+⠙ Generating mutants
+⠹ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠴ Generating mutants
+⠦ Generating mutants
+⠧ Generating mutants
+⠇ Generating mutants
+⠏ Generating mutants
+⠋ Generating mutants
+⠙ Generating mutants
+⠹ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠴ Generating mutants
+⠦ Generating mutants
+⠧ Generating mutants
+⠇ Generating mutants
+⠏ Generating mutants
+⠋ Generating mutants
+⠙ Generating mutants
+⠹ Generating mutants
+⠸ Generating mutants
+⠸ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠼ Generating mutants
+⠼ Generating mutants
+    done in 92ms (1 files mutated, 0 ignored, 2 unmodified)
+    Warning: 2 non-Python file(s) changed since the last full run: pyproject.toml, requirements.txt
+    These cannot be tracked for behavioral changes, so cached results were kept.
+    If the changes affect your tests, delete the mutants/ directory or set on_dependency_change = "rerun".
+
+⠸ Listing all tests 
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+Found 18 new tests, rerunning stats collection
+
+⠏ Running stats    
+⠋ Running stats
+⠙ Running stats
+⠹ Running stats
+⠸ Running stats
+⠼ Running stats
+⠴ Running stats
+⠦ Running stats
+⠧ Running stats
+⠇ Running stats
+⠏ Running stats
+⠋ Running stats
+⠙ Running stats
+⠹ Running stats
+⠸ Running stats
+⠼ Running stats
+⠴ Running stats
+⠦ Running stats
+⠧ Running stats
+⠇ Running stats
+⠏ Running stats
+⠋ Running stats
+⠙ Running stats
+    done
+
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+    done
+
+⠧ Running forced fail test
+⠇ Running forced fail test
+⠏ Running forced fail test
+⠋ Running forced fail test
+⠙ Running forced fail test
+⠹ Running forced fail test
+⠸ Running forced fail test
+⠼ Running forced fail test
+⠴ Running forced fail test
+⠦ Running forced fail test
+⠧ Running forced fail test
+⠇ Running forced fail test
+⠏ Running forced fail test
+⠋ Running forced fail test
+⠙ Running forced fail test
+⠹ Running forced fail test
+    done
+Running mutation testing
+
+⠸ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 337/384  🎉 280 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 337/384  🎉 281 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠙ 337/384  🎉 281 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠹ 337/384  🎉 281 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠸ 337/384  🎉 281 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠼ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠴ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠦ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠧ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠇ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠏ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠋ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠙ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠹ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠸ 337/384  🎉 282 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠴ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠦ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠧ 337/384  🎉 283 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠇ 338/384  🎉 284 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠏ 339/384  🎉 285 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠋ 340/384  🎉 286 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠙ 341/384  🎉 287 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠹ 342/384  🎉 288 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠸ 343/384  🎉 289 🫥 0  ⏰ 0  🤔 0  🙁 54  🔇 0  🧙 0
+⠼ 344/384  🎉 289 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠴ 345/384  🎉 290 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠦ 346/384  🎉 291 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠧ 347/384  🎉 292 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠇ 348/384  🎉 293 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠏ 349/384  🎉 294 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠋ 350/384  🎉 295 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠙ 351/384  🎉 296 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠹ 352/384  🎉 297 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠸ 353/384  🎉 298 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠼ 354/384  🎉 299 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠴ 355/384  🎉 300 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠦ 356/384  🎉 301 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠧ 357/384  🎉 302 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠇ 358/384  🎉 303 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠏ 359/384  🎉 304 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠋ 360/384  🎉 305 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠙ 361/384  🎉 306 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠹ 362/384  🎉 307 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠸ 363/384  🎉 308 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠼ 364/384  🎉 309 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠴ 365/384  🎉 310 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠦ 366/384  🎉 311 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠧ 367/384  🎉 312 🫥 0  ⏰ 0  🤔 0  🙁 55  🔇 0  🧙 0
+⠇ 368/384  🎉 312 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠏ 369/384  🎉 313 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠋ 370/384  🎉 314 🫥 0  ⏰ 0  🤔 0  🙁 56  🔇 0  🧙 0
+⠙ 371/384  🎉 314 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 372/384  🎉 315 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 373/384  🎉 316 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 374/384  🎉 317 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 375/384  🎉 318 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 376/384  🎉 318 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠧ 377/384  🎉 319 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠇ 378/384  🎉 320 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠏ 379/384  🎉 320 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 380/384  🎉 321 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 381/384  🎉 322 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 382/384  🎉 322 🫥 0  ⏰ 0  🤔 0  🙁 60  🔇 0  🧙 0
+⠸ 383/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 60  🔇 0  🧙 0
+⠼ 383/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 60  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠧ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠇ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠏ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠋ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠙ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠹ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠸ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠼ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠧ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠇ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠏ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠋ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠙ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠹ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠸ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠼ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠧ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠇ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠏ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠋ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠙ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠹ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠸ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠼ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠧ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠇ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠏ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠋ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠙ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠹ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠸ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠼ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠧ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠇ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠏ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠋ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠙ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠹ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠸ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠼ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠧ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠇ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠏ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠋ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠙ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠹ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠸ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠼ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠴ 384/384  🎉 323 🫥 0  ⏰ 0  🤔 0  🙁 61  🔇 0  🧙 0
+⠦ 384/384  🎉 324 🫥 0  ⏰ 0  🤔 0  🙁 60  🔇 0  🧙 0
+⠧ 384/384  🎉 324 🫥 0  ⏰ 0  🤔 0  🙁 60  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠴ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠦ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠧ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠴ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠦ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠧ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠴ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠦ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠧ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠴ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠦ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠧ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠴ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠦ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠧ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠴ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠦ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠧ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠇ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠏ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠋ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠙ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠹ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠸ 384/384  🎉 325 🫥 0  ⏰ 0  🤔 0  🙁 59  🔇 0  🧙 0
+⠼ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠴ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠦ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠧ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠇ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠏ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠋ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠙ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠹ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠸ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠼ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠴ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠦ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠧ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠇ 384/384  🎉 326 🫥 0  ⏰ 0  🤔 0  🙁 58  🔇 0  🧙 0
+⠏ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠇ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠏ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠋ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠙ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠹ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠸ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠼ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠴ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠦ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+⠧ 384/384  🎉 327 🫥 0  ⏰ 0  🤔 0  🙁 57  🔇 0  🧙 0
+116.14 mutations/second
+
+Mutant results
+--------------
+🎉 price_truth.calculations.x_compare_packs__mutmut_1
+🎉 price_truth.calculations.x_compare_packs__mutmut_10
+🎉 price_truth.calculations.x_compare_packs__mutmut_11
+🎉 price_truth.calculations.x_compare_packs__mutmut_12
+🎉 price_truth.calculations.x_compare_packs__mutmut_13
+🎉 price_truth.calculations.x_compare_packs__mutmut_14
+🎉 price_truth.calculations.x_compare_packs__mutmut_15
+🎉 price_truth.calculations.x_compare_packs__mutmut_16
+🙁 price_truth.calculations.x_compare_packs__mutmut_17
+🙁 price_truth.calculations.x_compare_packs__mutmut_18
+🎉 price_truth.calculations.x_compare_packs__mutmut_19
+🎉 price_truth.calculations.x_compare_packs__mutmut_2
+🎉 price_truth.calculations.x_compare_packs__mutmut_20
+🎉 price_truth.calculations.x_compare_packs__mutmut_21
+🎉 price_truth.calculations.x_compare_packs__mutmut_22
+🎉 price_truth.calculations.x_compare_packs__mutmut_23
+🎉 price_truth.calculations.x_compare_packs__mutmut_24
+🎉 price_truth.calculations.x_compare_packs__mutmut_25
+🎉 price_truth.calculations.x_compare_packs__mutmut_26
+🎉 price_truth.calculations.x_compare_packs__mutmut_27
+🎉 price_truth.calculations.x_compare_packs__mutmut_28
+🎉 price_truth.calculations.x_compare_packs__mutmut_29
+🙁 price_truth.calculations.x_compare_packs__mutmut_3
+🎉 price_truth.calculations.x_compare_packs__mutmut_30
+🎉 price_truth.calculations.x_compare_packs__mutmut_31
+🎉 price_truth.calculations.x_compare_packs__mutmut_32
+🎉 price_truth.calculations.x_compare_packs__mutmut_33
+🎉 price_truth.calculations.x_compare_packs__mutmut_34
+🎉 price_truth.calculations.x_compare_packs__mutmut_35
+🎉 price_truth.calculations.x_compare_packs__mutmut_36
+🎉 price_truth.calculations.x_compare_packs__mutmut_37
+🎉 price_truth.calculations.x_compare_packs__mutmut_38
+🎉 price_truth.calculations.x_compare_packs__mutmut_39
+🙁 price_truth.calculations.x_compare_packs__mutmut_4
+🎉 price_truth.calculations.x_compare_packs__mutmut_40
+🎉 price_truth.calculations.x_compare_packs__mutmut_41
+🎉 price_truth.calculations.x_compare_packs__mutmut_42
+🎉 price_truth.calculations.x_compare_packs__mutmut_43
+🙁 price_truth.calculations.x_compare_packs__mutmut_44
+🙁 price_truth.calculations.x_compare_packs__mutmut_45
+🙁 price_truth.calculations.x_compare_packs__mutmut_46
+🙁 price_truth.calculations.x_compare_packs__mutmut_47
+🎉 price_truth.calculations.x_compare_packs__mutmut_48
+🎉 price_truth.calculations.x_compare_packs__mutmut_49
+🙁 price_truth.calculations.x_compare_packs__mutmut_5
+🎉 price_truth.calculations.x_compare_packs__mutmut_50
+🎉 price_truth.calculations.x_compare_packs__mutmut_51
+🎉 price_truth.calculations.x_compare_packs__mutmut_52
+🎉 price_truth.calculations.x_compare_packs__mutmut_53
+🎉 price_truth.calculations.x_compare_packs__mutmut_54
+🙁 price_truth.calculations.x_compare_packs__mutmut_6
+🎉 price_truth.calculations.x_compare_packs__mutmut_7
+🙁 price_truth.calculations.x_compare_packs__mutmut_8
+🎉 price_truth.calculations.x_compare_packs__mutmut_9
+🎉 price_truth.calculations.x_discount_percent__mutmut_1
+🎉 price_truth.calculations.x_discount_percent__mutmut_10
+🎉 price_truth.calculations.x_discount_percent__mutmut_11
+🎉 price_truth.calculations.x_discount_percent__mutmut_12
+🎉 price_truth.calculations.x_discount_percent__mutmut_13
+🎉 price_truth.calculations.x_discount_percent__mutmut_2
+🎉 price_truth.calculations.x_discount_percent__mutmut_3
+🎉 price_truth.calculations.x_discount_percent__mutmut_4
+🙁 price_truth.calculations.x_discount_percent__mutmut_5
+🙁 price_truth.calculations.x_discount_percent__mutmut_6
+🙁 price_truth.calculations.x_discount_percent__mutmut_7
+🙁 price_truth.calculations.x_discount_percent__mutmut_8
+🎉 price_truth.calculations.x_discount_percent__mutmut_9
+🎉 price_truth.calculations.x_positive__mutmut_1
+🙁 price_truth.calculations.x_positive__mutmut_10
+🙁 price_truth.calculations.x_positive__mutmut_11
+🎉 price_truth.calculations.x_positive__mutmut_2
+🎉 price_truth.calculations.x_positive__mutmut_3
+🎉 price_truth.calculations.x_positive__mutmut_4
+🎉 price_truth.calculations.x_positive__mutmut_5
+🎉 price_truth.calculations.x_positive__mutmut_6
+🎉 price_truth.calculations.x_positive__mutmut_7
+🙁 price_truth.calculations.x_positive__mutmut_8
+🙁 price_truth.calculations.x_positive__mutmut_9
+🎉 price_truth.calculations.x_shrink_change__mutmut_1
+🎉 price_truth.calculations.x_shrink_change__mutmut_10
+🎉 price_truth.calculations.x_shrink_change__mutmut_11
+🎉 price_truth.calculations.x_shrink_change__mutmut_12
+🎉 price_truth.calculations.x_shrink_change__mutmut_13
+🎉 price_truth.calculations.x_shrink_change__mutmut_14
+🎉 price_truth.calculations.x_shrink_change__mutmut_15
+🎉 price_truth.calculations.x_shrink_change__mutmut_16
+🎉 price_truth.calculations.x_shrink_change__mutmut_17
+🎉 price_truth.calculations.x_shrink_change__mutmut_18
+🎉 price_truth.calculations.x_shrink_change__mutmut_19
+🎉 price_truth.calculations.x_shrink_change__mutmut_2
+🎉 price_truth.calculations.x_shrink_change__mutmut_20
+🎉 price_truth.calculations.x_shrink_change__mutmut_21
+🎉 price_truth.calculations.x_shrink_change__mutmut_22
+🎉 price_truth.calculations.x_shrink_change__mutmut_3
+🎉 price_truth.calculations.x_shrink_change__mutmut_4
+🎉 price_truth.calculations.x_shrink_change__mutmut_5
+🎉 price_truth.calculations.x_shrink_change__mutmut_6
+🎉 price_truth.calculations.x_shrink_change__mutmut_7
+🎉 price_truth.calculations.x_shrink_change__mutmut_8
+🎉 price_truth.calculations.x_shrink_change__mutmut_9
+🎉 price_truth.calculations.x_unit_price__mutmut_1
+🎉 price_truth.calculations.x_unit_price__mutmut_10
+🎉 price_truth.calculations.x_unit_price__mutmut_11
+🎉 price_truth.calculations.x_unit_price__mutmut_12
+🎉 price_truth.calculations.x_unit_price__mutmut_13
+🎉 price_truth.calculations.x_unit_price__mutmut_14
+🙁 price_truth.calculations.x_unit_price__mutmut_15
+🙁 price_truth.calculations.x_unit_price__mutmut_16
+🙁 price_truth.calculations.x_unit_price__mutmut_17
+🙁 price_truth.calculations.x_unit_price__mutmut_18
+🎉 price_truth.calculations.x_unit_price__mutmut_19
+🎉 price_truth.calculations.x_unit_price__mutmut_2
+🎉 price_truth.calculations.x_unit_price__mutmut_20
+🎉 price_truth.calculations.x_unit_price__mutmut_21
+🎉 price_truth.calculations.x_unit_price__mutmut_22
+🎉 price_truth.calculations.x_unit_price__mutmut_23
+🎉 price_truth.calculations.x_unit_price__mutmut_24
+🎉 price_truth.calculations.x_unit_price__mutmut_25
+🎉 price_truth.calculations.x_unit_price__mutmut_26
+🎉 price_truth.calculations.x_unit_price__mutmut_27
+🎉 price_truth.calculations.x_unit_price__mutmut_28
+🎉 price_truth.calculations.x_unit_price__mutmut_29
+🎉 price_truth.calculations.x_unit_price__mutmut_3
+🎉 price_truth.calculations.x_unit_price__mutmut_30
+🎉 price_truth.calculations.x_unit_price__mutmut_31
+🎉 price_truth.calculations.x_unit_price__mutmut_32
+🎉 price_truth.calculations.x_unit_price__mutmut_33
+🎉 price_truth.calculations.x_unit_price__mutmut_34
+🎉 price_truth.calculations.x_unit_price__mutmut_35
+🎉 price_truth.calculations.x_unit_price__mutmut_36
+🎉 price_truth.calculations.x_unit_price__mutmut_37
+🎉 price_truth.calculations.x_unit_price__mutmut_38
+🎉 price_truth.calculations.x_unit_price__mutmut_39
+🎉 price_truth.calculations.x_unit_price__mutmut_4
+🎉 price_truth.calculations.x_unit_price__mutmut_40
+🎉 price_truth.calculations.x_unit_price__mutmut_41
+🎉 price_truth.calculations.x_unit_price__mutmut_42
+🎉 price_truth.calculations.x_unit_price__mutmut_43
+🎉 price_truth.calculations.x_unit_price__mutmut_44
+🎉 price_truth.calculations.x_unit_price__mutmut_45
+🎉 price_truth.calculations.x_unit_price__mutmut_46
+🎉 price_truth.calculations.x_unit_price__mutmut_47
+🎉 price_truth.calculations.x_unit_price__mutmut_48
+🎉 price_truth.calculations.x_unit_price__mutmut_49
+🎉 price_truth.calculations.x_unit_price__mutmut_5
+🙁 price_truth.calculations.x_unit_price__mutmut_6
+🙁 price_truth.calculations.x_unit_price__mutmut_7
+🙁 price_truth.calculations.x_unit_price__mutmut_8
+🙁 price_truth.calculations.x_unit_price__mutmut_9
+🎉 price_truth.catalogue.x_export_csv__mutmut_1
+🎉 price_truth.catalogue.x_export_csv__mutmut_10
+🙁 price_truth.catalogue.x_export_csv__mutmut_11
+🎉 price_truth.catalogue.x_export_csv__mutmut_12
+🎉 price_truth.catalogue.x_export_csv__mutmut_13
+🙁 price_truth.catalogue.x_export_csv__mutmut_14
+🎉 price_truth.catalogue.x_export_csv__mutmut_15
+🎉 price_truth.catalogue.x_export_csv__mutmut_16
+🎉 price_truth.catalogue.x_export_csv__mutmut_17
+🎉 price_truth.catalogue.x_export_csv__mutmut_18
+🎉 price_truth.catalogue.x_export_csv__mutmut_19
+🎉 price_truth.catalogue.x_export_csv__mutmut_2
+🎉 price_truth.catalogue.x_export_csv__mutmut_20
+🎉 price_truth.catalogue.x_export_csv__mutmut_21
+🙁 price_truth.catalogue.x_export_csv__mutmut_22
+🎉 price_truth.catalogue.x_export_csv__mutmut_23
+🙁 price_truth.catalogue.x_export_csv__mutmut_24
+🎉 price_truth.catalogue.x_export_csv__mutmut_25
+🙁 price_truth.catalogue.x_export_csv__mutmut_26
+🎉 price_truth.catalogue.x_export_csv__mutmut_27
+🎉 price_truth.catalogue.x_export_csv__mutmut_28
+🙁 price_truth.catalogue.x_export_csv__mutmut_29
+🎉 price_truth.catalogue.x_export_csv__mutmut_3
+🎉 price_truth.catalogue.x_export_csv__mutmut_4
+🎉 price_truth.catalogue.x_export_csv__mutmut_5
+🎉 price_truth.catalogue.x_export_csv__mutmut_6
+🎉 price_truth.catalogue.x_export_csv__mutmut_7
+🎉 price_truth.catalogue.x_export_csv__mutmut_8
+🎉 price_truth.catalogue.x_export_csv__mutmut_9
+🎉 price_truth.catalogue.x_safe_url__mutmut_1
+🎉 price_truth.catalogue.x_safe_url__mutmut_10
+🎉 price_truth.catalogue.x_safe_url__mutmut_11
+🎉 price_truth.catalogue.x_safe_url__mutmut_12
+🎉 price_truth.catalogue.x_safe_url__mutmut_13
+🎉 price_truth.catalogue.x_safe_url__mutmut_14
+🎉 price_truth.catalogue.x_safe_url__mutmut_15
+🎉 price_truth.catalogue.x_safe_url__mutmut_16
+🎉 price_truth.catalogue.x_safe_url__mutmut_17
+🎉 price_truth.catalogue.x_safe_url__mutmut_18
+🎉 price_truth.catalogue.x_safe_url__mutmut_2
+🎉 price_truth.catalogue.x_safe_url__mutmut_3
+🎉 price_truth.catalogue.x_safe_url__mutmut_4
+🎉 price_truth.catalogue.x_safe_url__mutmut_5
+🙁 price_truth.catalogue.x_safe_url__mutmut_6
+🎉 price_truth.catalogue.x_safe_url__mutmut_7
+🎉 price_truth.catalogue.x_safe_url__mutmut_8
+🎉 price_truth.catalogue.x_safe_url__mutmut_9
+🎉 price_truth.catalogue.x_search__mutmut_1
+🎉 price_truth.catalogue.x_search__mutmut_10
+🎉 price_truth.catalogue.x_search__mutmut_11
+🎉 price_truth.catalogue.x_search__mutmut_12
+🎉 price_truth.catalogue.x_search__mutmut_13
+🎉 price_truth.catalogue.x_search__mutmut_14
+🎉 price_truth.catalogue.x_search__mutmut_15
+🎉 price_truth.catalogue.x_search__mutmut_16
+🎉 price_truth.catalogue.x_search__mutmut_2
+🎉 price_truth.catalogue.x_search__mutmut_3
+🎉 price_truth.catalogue.x_search__mutmut_4
+🎉 price_truth.catalogue.x_search__mutmut_5
+🎉 price_truth.catalogue.x_search__mutmut_6
+🙁 price_truth.catalogue.x_search__mutmut_7
+🙁 price_truth.catalogue.x_search__mutmut_8
+🎉 price_truth.catalogue.x_search__mutmut_9
+🎉 price_truth.history.x_load_observations__mutmut_1
+🎉 price_truth.history.x_load_observations__mutmut_10
+🎉 price_truth.history.x_load_observations__mutmut_11
+🎉 price_truth.history.x_load_observations__mutmut_12
+🎉 price_truth.history.x_load_observations__mutmut_13
+🎉 price_truth.history.x_load_observations__mutmut_14
+🎉 price_truth.history.x_load_observations__mutmut_15
+🎉 price_truth.history.x_load_observations__mutmut_16
+🎉 price_truth.history.x_load_observations__mutmut_17
+🎉 price_truth.history.x_load_observations__mutmut_2
+🎉 price_truth.history.x_load_observations__mutmut_3
+🎉 price_truth.history.x_load_observations__mutmut_4
+🎉 price_truth.history.x_load_observations__mutmut_5
+🙁 price_truth.history.x_load_observations__mutmut_6
+🎉 price_truth.history.x_load_observations__mutmut_7
+🙁 price_truth.history.x_load_observations__mutmut_8
+🎉 price_truth.history.x_load_observations__mutmut_9
+🎉 price_truth.history.x_series_for__mutmut_1
+🎉 price_truth.history.x_series_for__mutmut_10
+🎉 price_truth.history.x_series_for__mutmut_11
+🎉 price_truth.history.x_series_for__mutmut_12
+🎉 price_truth.history.x_series_for__mutmut_13
+🎉 price_truth.history.x_series_for__mutmut_14
+🎉 price_truth.history.x_series_for__mutmut_15
+🎉 price_truth.history.x_series_for__mutmut_16
+🎉 price_truth.history.x_series_for__mutmut_17
+🎉 price_truth.history.x_series_for__mutmut_18
+🎉 price_truth.history.x_series_for__mutmut_19
+🎉 price_truth.history.x_series_for__mutmut_2
+🎉 price_truth.history.x_series_for__mutmut_20
+🎉 price_truth.history.x_series_for__mutmut_21
+🎉 price_truth.history.x_series_for__mutmut_22
+🙁 price_truth.history.x_series_for__mutmut_23
+🎉 price_truth.history.x_series_for__mutmut_24
+🎉 price_truth.history.x_series_for__mutmut_25
+🎉 price_truth.history.x_series_for__mutmut_26
+🎉 price_truth.history.x_series_for__mutmut_27
+🎉 price_truth.history.x_series_for__mutmut_28
+🎉 price_truth.history.x_series_for__mutmut_29
+🎉 price_truth.history.x_series_for__mutmut_3
+🎉 price_truth.history.x_series_for__mutmut_30
+🎉 price_truth.history.x_series_for__mutmut_31
+🎉 price_truth.history.x_series_for__mutmut_32
+🎉 price_truth.history.x_series_for__mutmut_33
+🎉 price_truth.history.x_series_for__mutmut_34
+🎉 price_truth.history.x_series_for__mutmut_35
+🎉 price_truth.history.x_series_for__mutmut_36
+🎉 price_truth.history.x_series_for__mutmut_37
+🎉 price_truth.history.x_series_for__mutmut_38
+🎉 price_truth.history.x_series_for__mutmut_39
+🎉 price_truth.history.x_series_for__mutmut_4
+🎉 price_truth.history.x_series_for__mutmut_40
+🎉 price_truth.history.x_series_for__mutmut_41
+🎉 price_truth.history.x_series_for__mutmut_42
+🎉 price_truth.history.x_series_for__mutmut_43
+🙁 price_truth.history.x_series_for__mutmut_44
+🎉 price_truth.history.x_series_for__mutmut_45
+🎉 price_truth.history.x_series_for__mutmut_46
+🎉 price_truth.history.x_series_for__mutmut_47
+🎉 price_truth.history.x_series_for__mutmut_48
+🎉 price_truth.history.x_series_for__mutmut_49
+🎉 price_truth.history.x_series_for__mutmut_5
+🎉 price_truth.history.x_series_for__mutmut_50
+🎉 price_truth.history.x_series_for__mutmut_51
+🎉 price_truth.history.x_series_for__mutmut_52
+🎉 price_truth.history.x_series_for__mutmut_53
+🎉 price_truth.history.x_series_for__mutmut_54
+🎉 price_truth.history.x_series_for__mutmut_55
+🎉 price_truth.history.x_series_for__mutmut_56
+🎉 price_truth.history.x_series_for__mutmut_57
+🎉 price_truth.history.x_series_for__mutmut_6
+🎉 price_truth.history.x_series_for__mutmut_7
+🎉 price_truth.history.x_series_for__mutmut_8
+🎉 price_truth.history.x_series_for__mutmut_9
+🎉 price_truth.history.x_timing_signal__mutmut_1
+🎉 price_truth.history.x_timing_signal__mutmut_10
+🎉 price_truth.history.x_timing_signal__mutmut_11
+🎉 price_truth.history.x_timing_signal__mutmut_12
+🎉 price_truth.history.x_timing_signal__mutmut_13
+🎉 price_truth.history.x_timing_signal__mutmut_14
+🎉 price_truth.history.x_timing_signal__mutmut_15
+🎉 price_truth.history.x_timing_signal__mutmut_16
+🙁 price_truth.history.x_timing_signal__mutmut_17
+🙁 price_truth.history.x_timing_signal__mutmut_18
+🙁 price_truth.history.x_timing_signal__mutmut_19
+🎉 price_truth.history.x_timing_signal__mutmut_2
+🙁 price_truth.history.x_timing_signal__mutmut_20
+🙁 price_truth.history.x_timing_signal__mutmut_21
+🙁 price_truth.history.x_timing_signal__mutmut_22
+🙁 price_truth.history.x_timing_signal__mutmut_23
+🎉 price_truth.history.x_timing_signal__mutmut_24
+🎉 price_truth.history.x_timing_signal__mutmut_25
+🎉 price_truth.history.x_timing_signal__mutmut_26
+🎉 price_truth.history.x_timing_signal__mutmut_27
+🎉 price_truth.history.x_timing_signal__mutmut_28
+🎉 price_truth.history.x_timing_signal__mutmut_29
+🎉 price_truth.history.x_timing_signal__mutmut_3
+🎉 price_truth.history.x_timing_signal__mutmut_30
+🎉 price_truth.history.x_timing_signal__mutmut_31
+🎉 price_truth.history.x_timing_signal__mutmut_32
+🎉 price_truth.history.x_timing_signal__mutmut_33
+🎉 price_truth.history.x_timing_signal__mutmut_34
+🎉 price_truth.history.x_timing_signal__mutmut_35
+🎉 price_truth.history.x_timing_signal__mutmut_36
+🎉 price_truth.history.x_timing_signal__mutmut_37
+🎉 price_truth.history.x_timing_signal__mutmut_38
+🎉 price_truth.history.x_timing_signal__mutmut_39
+🎉 price_truth.history.x_timing_signal__mutmut_4
+🎉 price_truth.history.x_timing_signal__mutmut_40
+🎉 price_truth.history.x_timing_signal__mutmut_41
+🎉 price_truth.history.x_timing_signal__mutmut_42
+🎉 price_truth.history.x_timing_signal__mutmut_43
+🎉 price_truth.history.x_timing_signal__mutmut_44
+🎉 price_truth.history.x_timing_signal__mutmut_45
+🎉 price_truth.history.x_timing_signal__mutmut_46
+🎉 price_truth.history.x_timing_signal__mutmut_47
+🎉 price_truth.history.x_timing_signal__mutmut_48
+🎉 price_truth.history.x_timing_signal__mutmut_49
+🎉 price_truth.history.x_timing_signal__mutmut_5
+🎉 price_truth.history.x_timing_signal__mutmut_50
+🎉 price_truth.history.x_timing_signal__mutmut_51
+🎉 price_truth.history.x_timing_signal__mutmut_52
+🎉 price_truth.history.x_timing_signal__mutmut_53
+🎉 price_truth.history.x_timing_signal__mutmut_54
+🎉 price_truth.history.x_timing_signal__mutmut_55
+🎉 price_truth.history.x_timing_signal__mutmut_56
+🎉 price_truth.history.x_timing_signal__mutmut_57
+🎉 price_truth.history.x_timing_signal__mutmut_58
+🎉 price_truth.history.x_timing_signal__mutmut_59
+🎉 price_truth.history.x_timing_signal__mutmut_6
+🎉 price_truth.history.x_timing_signal__mutmut_60
+🎉 price_truth.history.x_timing_signal__mutmut_61
+🎉 price_truth.history.x_timing_signal__mutmut_62
+🎉 price_truth.history.x_timing_signal__mutmut_63
+🎉 price_truth.history.x_timing_signal__mutmut_64
+🎉 price_truth.history.x_timing_signal__mutmut_65
+🎉 price_truth.history.x_timing_signal__mutmut_66
+🎉 price_truth.history.x_timing_signal__mutmut_67
+🎉 price_truth.history.x_timing_signal__mutmut_68
+🎉 price_truth.history.x_timing_signal__mutmut_69
+🎉 price_truth.history.x_timing_signal__mutmut_7
+🎉 price_truth.history.x_timing_signal__mutmut_70
+🎉 price_truth.history.x_timing_signal__mutmut_71
+🎉 price_truth.history.x_timing_signal__mutmut_72
+🎉 price_truth.history.x_timing_signal__mutmut_73
+🙁 price_truth.history.x_timing_signal__mutmut_74
+🙁 price_truth.history.x_timing_signal__mutmut_75
+🙁 price_truth.history.x_timing_signal__mutmut_76
+🙁 price_truth.history.x_timing_signal__mutmut_77
+🙁 price_truth.history.x_timing_signal__mutmut_78
+🎉 price_truth.history.x_timing_signal__mutmut_79
+🎉 price_truth.history.x_timing_signal__mutmut_8
+🎉 price_truth.history.x_timing_signal__mutmut_80
+🎉 price_truth.history.x_timing_signal__mutmut_81
+🎉 price_truth.history.x_timing_signal__mutmut_82
+🎉 price_truth.history.x_timing_signal__mutmut_83
+🎉 price_truth.history.x_timing_signal__mutmut_84
+🎉 price_truth.history.x_timing_signal__mutmut_85
+🎉 price_truth.history.x_timing_signal__mutmut_86
+🎉 price_truth.history.x_timing_signal__mutmut_87
+🎉 price_truth.history.x_timing_signal__mutmut_88
+🎉 price_truth.history.x_timing_signal__mutmut_89
+🎉 price_truth.history.x_timing_signal__mutmut_9
+🎉 price_truth.history.x_timing_signal__mutmut_90
+🎉 price_truth.history.x_timing_signal__mutmut_91
+🎉 price_truth.history.x_timing_signal__mutmut_92
+🎉 price_truth.history.x_timing_signal__mutmut_93
+🙁 price_truth.history.x_timing_signal__mutmut_94
+🙁 price_truth.history.x_timing_signal__mutmut_95
+🙁 price_truth.history.x_timing_signal__mutmut_96
+🙁 price_truth.history.x_timing_signal__mutmut_97
+🙁 price_truth.history.x_timing_signal__mutmut_98
+

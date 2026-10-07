@@ -1,0 +1,6 @@
+{
+  "first_assessment_seconds": 9.294358790997649,
+  "warm_calls": 29,
+  "warm_p95_seconds": 0.03713549120002426,
+  "scope": "Sequential local assessment including SHAP; not 100-user load or browser latency"
+}

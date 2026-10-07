@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-09-19T07:04:32.939358+00:00",
+  "sources": {
+    "amazon": {
+      "raw_rows": 1465,
+      "raw_unique_products": 1351,
+      "clean_rows": 1347,
+      "exclusions": {
+        "repeated_product_id_first_source_row_retained": 109,
+        "conflicting_prices_without_reliable_history": 9
+      },
+      "missing_rating": 1,
+      "missing_rating_count": 2,
+      "conflicting_product_ids": [
+        "amazon:B096MSW6CT",
+        "amazon:B09MT84WV5",
+        "amazon:B0B5B6PQCT",
+        "amazon:B0B5LVS732"
+      ],
+      "file": "datasets/amazon/amazon.csv",
+      "sha256": "4ba126c4ba8edd35e62e94ce1c853073d832de380184ab4f5f97d1e314882c77"
+    },
+    "flipkart": {
+      "raw_rows": 20000,
+      "raw_unique_products": 19998,
+      "clean_rows": 19920,
+      "exclusions": {
+        "invalid_or_missing_price": 78,
+        "repeated_product_id_first_source_row_retained": 2
+      },
+      "missing_rating": 18081,
+      "missing_rating_count": 19920,
+      "conflicting_product_ids": [],
+      "file": "datasets/flipkart/flipkart_com-ecommerce_sample.csv",
+      "sha256": "56f8f699c9e847356666c2eab3c3ab1244340f6a98ad08e39ea2199ebe993ad1"
+    }
+  },
+  "combined_rows": 21267,
+  "synthetic_observations": 0,
+  "authenticity_labels": 0,
+  "policy": "Keep platforms distinct; no currency conversion, no fabricated dates or ratings; quarantine all conflicting price IDs; retain first source row for other duplicate IDs."
+}

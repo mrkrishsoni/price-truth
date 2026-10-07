@@ -1,0 +1,13 @@
+{
+  "preset": "compact_reference_guide",
+  "header": "memo_masthead",
+  "overrides": {
+    "TableText": "9pt single spacing",
+    "Code": "8pt Consolas single spacing",
+    "Caption": "9pt, before/after4pt",
+    "title": "26pt"
+  },
+  "review_snapshot": "2026-09-19T07:35:28.854632+00:00",
+  "reviewed_source_hashes_match": true,
+  "tables": 26
+}

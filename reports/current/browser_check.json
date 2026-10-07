@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-10-06T15:15:49.486719+00:00",
+  "browser": "154.0.8037.98",
+  "initial_visible_load_seconds": 0.9618099170038477,
+  "javascript_errors": [],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "horizontal_page_overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "horizontal_page_overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontal_page_overflow": false
+    }
+  ],
+  "flows": [
+    "overview",
+    "workspace real assessment",
+    "actual PDF download"
+  ],
+  "scope": "Local Chrome, three viewport emulations. Not Firefox/Safari/Edge or physical devices."
+}

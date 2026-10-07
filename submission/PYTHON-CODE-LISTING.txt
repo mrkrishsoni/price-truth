@@ -1,0 +1,1853 @@
+PRICE TRUTH — ORIGINAL REVIEWED PYTHON SOURCE
+19 files. Line numbers are for reading; execute the original .py files.
+
+==============================================================================
+app.py
+SHA-256: be1e49fc0bca55f04b058bd99006e804475bee2ed8500cc8e32c26e11eedbfa1
+==============================================================================
+   1: """Price Truth Streamlit entrypoint; business logic lives in the price_truth package."""
+   2: import json
+   3: 
+   4: import streamlit as st
+   5: 
+   6: from price_truth.data import load_catalogue
+   7: from price_truth.model import load_model
+   8: from price_truth.paths import REPORTS
+   9: from price_truth.ui import (
+  10:     catalogue_page,
+  11:     checker_page,
+  12:     history_page,
+  13:     lookup_page,
+  14:     shrink_page,
+  15:     unit_page,
+  16: )
+  17: 
+  18: st.set_page_config(page_title="Price Truth", page_icon="₹", layout="wide")
+  19: 
+  20: 
+  21: @st.cache_data
+  22: def catalogue():
+  23:     """Cache read-only catalogue data across reruns."""
+  24:     return load_catalogue()
+  25: 
+  26: 
+  27: @st.cache_resource
+  28: def model():
+  29:     """Cache the locally generated model across sessions."""
+  30:     return load_model()
+  31: 
+  32: 
+  33: def main() -> None:
+  34:     """Route the functional application without coupling features to page styling."""
+  35:     st.sidebar.title("Price Truth")
+  36:     st.sidebar.caption("Truth. Transparency. Trust.")
+  37:     page = st.sidebar.radio("Explore", ["Overview", "Discount Checker", "Live Pack Lookup",
+  38:                                         "Unit Price Compare", "Buy Timing & History",
+  39:                                         "Shrink Timeline", "Platform Catalogue", "Evidence & Methods"])
+  40:     st.sidebar.caption("Academic prototype · real source data")
+  41:     try:
+  42:         data = catalogue()
+  43:     except FileNotFoundError:
+  44:         st.error("The catalogue is not prepared. Follow the setup steps in README.md.")
+  45:         return
+  46:     if page == "Overview":
+  47:         st.title("Know what your price means")
+  48:         st.write("Check a discount, compare pack sizes, and explore the evidence behind a price.")
+  49:         columns = st.columns(3)
+  50:         columns[0].metric("Catalogue listings", f"{len(data):,}")
+  51:         columns[1].metric("Platforms", data.platform.nunique())
+  52:         columns[2].metric("Generated training records", "0")
+  53:         st.info("Catalogue prices are historical snapshots: Flipkart 2015–2016; Amazon date unknown. "
+  54:                 "They are not live offers or verified fraud labels.")
+  55:         st.write("Use the sidebar to explore all five original features and the cross-platform catalogue.")
+  56:         st.write("**Discount Checker:** estimated selling-price range and a computed explanation.\n\n"
+  57:                  "**Live Pack Lookup:** barcode data from Open Food Facts, with saved offline examples.\n\n"
+  58:                  "**Unit Price Compare:** compare like-for-like pack sizes.\n\n"
+  59:                  "**Buy Timing & History:** compare a quote with real dated observations.\n\n"
+  60:                  "**Shrink Timeline:** documented quantity changes with source links.")
+  61:     elif page == "Discount Checker":
+  62:         try:
+  63:             checker_page(data, model())
+  64:         except FileNotFoundError:
+  65:             st.error("The trained model is missing. Follow the training step in README.md.")
+  66:     elif page == "Live Pack Lookup":
+  67:         lookup_page()
+  68:     elif page == "Unit Price Compare":
+  69:         unit_page()
+  70:     elif page == "Buy Timing & History":
+  71:         history_page()
+  72:     elif page == "Shrink Timeline":
+  73:         shrink_page()
+  74:     elif page == "Platform Catalogue":
+  75:         catalogue_page(data)
+  76:     else:
+  77:         st.title("Evidence & methods")
+  78:         st.write("The model predicts observed selling prices; it does not prove seller dishonesty. "
+  79:                  "There are no generated prices, dates, or authenticity labels in training.")
+  80:         for filename in ["data_audit.json", "model_evaluation.json"]:
+  81:             path = REPORTS / filename
+  82:             if path.exists():
+  83:                 with st.expander(filename):
+  84:                     st.json(json.loads(path.read_text()))
+  85:         st.write("Sources: supplied Kaggle Amazon and Flipkart listings; "
+  86:                  "[Open Food Facts](https://world.openfoodfacts.org) and "
+  87:                  "[Open Prices](https://prices.openfoodfacts.org) (ODbL); "
+  88:                  "attributed Bloomberg/Financial Express shrinkflation reporting.")
+  89: 
+  90: 
+  91: main()
+
+==============================================================================
+src/price_truth/__init__.py
+SHA-256: 967deff5bc718a9604e72e1384c05f23214f1b4f6604b643552b630b5f962fc9
+==============================================================================
+   1: """Price Truth: transparent analysis of observed retail prices."""
+   2: 
+
+==============================================================================
+src/price_truth/calculations.py
+SHA-256: 898e2d062a08d004adba2a70efc7e531d2f9f54406141e3004a7425b4a5fc832
+==============================================================================
+   1: """Validated discount and unit-price arithmetic, independent of ML and the UI."""
+   2: import math
+   3: 
+   4: UNITS = {"g": ("mass", 1), "kg": ("mass", 1000),
+   5:          "ml": ("volume", 1), "l": ("volume", 1000), "count": ("count", 1)}
+   6: 
+   7: 
+   8: def positive(value: float) -> float:
+   9:     """Return a finite positive number or raise a user-facing validation error."""
+  10:     number = float(value)
+  11:     if not math.isfinite(number) or number <= 0:
+  12:         raise ValueError("Enter a finite value greater than zero.")
+  13:     return number
+  14: 
+  15: 
+  16: def discount_percent(listed: float, selling: float) -> float:
+  17:     """Calculate the advertised discount; reject inverted price pairs."""
+  18:     listed, selling = positive(listed), positive(selling)
+  19:     if selling > listed:
+  20:         raise ValueError("Selling price cannot exceed the listed reference price.")
+  21:     return 100 * (1 - selling / listed)
+  22: 
+  23: 
+  24: def unit_price(price: float, quantity: float, unit: str, packs: int = 1) -> dict:
+  25:     """Normalize a pack price to 100 g/ml or one count, without mixing dimensions."""
+  26:     price, quantity = positive(price), positive(quantity)
+  27:     if unit not in UNITS:
+  28:         raise ValueError("Supported units: g, kg, ml, l, count.")
+  29:     if isinstance(packs, bool) or not isinstance(packs, int) or packs < 1:
+  30:         raise ValueError("Pack count must be a positive integer.")
+  31:     dimension, factor = UNITS[unit]
+  32:     scale = 1 if dimension == "count" else 100
+  33:     return {"dimension": dimension, "value": price * scale / (quantity * factor * packs),
+  34:             "basis": {"mass": "100 g", "volume": "100 ml", "count": "item"}[dimension]}
+  35: 
+  36: 
+  37: def compare_packs(packs: list[dict]) -> list[dict]:
+  38:     """Rank variants of one product, requiring a shared currency and dimension."""
+  39:     if len(packs) < 2:
+  40:         raise ValueError("Enter at least two packs of the same product.")
+  41:     currencies = {p["currency"].strip().upper() for p in packs}
+  42:     if len(currencies) != 1 or "" in currencies:
+  43:         raise ValueError("Use the same currency for every pack.")
+  44:     results = [{**p, **unit_price(p["price"], p["quantity"], p["unit"], p.get("packs", 1))}
+  45:                for p in packs]
+  46:     if len({r["dimension"] for r in results}) != 1:
+  47:         raise ValueError("Mass, volume, and item counts cannot be compared together.")
+  48:     return sorted(results, key=lambda r: r["value"])
+  49: 
+  50: 
+  51: def shrink_change(old_quantity: float, new_quantity: float,
+  52:                   old_price: float, new_price: float) -> dict:
+  53:     """Measure quantity change and unit-price change for comparable dated packs."""
+  54:     old_quantity, new_quantity = positive(old_quantity), positive(new_quantity)
+  55:     old_price, new_price = positive(old_price), positive(new_price)
+  56:     return {"quantity_reduction_pct": 100 * (1 - new_quantity / old_quantity),
+  57:             "unit_price_increase_pct": 100 * ((new_price / new_quantity) /
+  58:                                              (old_price / old_quantity) - 1)}
+  59: 
+
+==============================================================================
+src/price_truth/catalogue.py
+SHA-256: b0bcac843b1e196e963cc1f68a1eaac8ce34222402856715bb9cf9c192b063a3
+==============================================================================
+   1: """Search and safe exports for historical listings across both platforms."""
+   2: from urllib.parse import urlparse
+   3: 
+   4: import pandas as pd
+   5: 
+   6: 
+   7: def search(frame: pd.DataFrame, query: str, platforms: list[str] | None = None) -> pd.DataFrame:
+   8:     """Find literal query words in titles without treating user text as a regex."""
+   9:     result = frame
+  10:     if platforms is not None:
+  11:         result = result[result.platform.isin(platforms)]
+  12:     for word in query.strip().split():
+  13:         result = result[result.name.str.contains(word, case=False, regex=False, na=False)]
+  14:     return result
+  15: 
+  16: 
+  17: def safe_url(url: str) -> str | None:
+  18:     """Only expose source links to known retail domains; never fetch user URLs."""
+  19:     parsed = urlparse(url)
+  20:     if parsed.scheme not in {"http", "https"} or parsed.hostname not in {"www.amazon.in", "www.flipkart.com"}:
+  21:         return None
+  22:     return url
+  23: 
+  24: 
+  25: def export_csv(frame: pd.DataFrame) -> bytes:
+  26:     """Escape spreadsheet-formula prefixes when exporting external product text."""
+  27:     exported = frame.copy()
+  28:     for column in exported.select_dtypes(include=["object", "string"]):
+  29:         exported[column] = exported[column].map(
+  30:             lambda v: "'" + v if isinstance(v, str) and v.lstrip().startswith(("=", "+", "-", "@")) else v)
+  31:     return exported.to_csv(index=False).encode("utf-8-sig")
+  32: 
+
+==============================================================================
+src/price_truth/data.py
+SHA-256: 0c6bf91ff9f951699249a96b416280a6e0e330bf8c7f21618dbddf1a833804d6
+==============================================================================
+   1: """Normalize real supplied listings and preserve an audit of every exclusion."""
+   2: import hashlib
+   3: import json
+   4: import re
+   5: from datetime import UTC, datetime
+   6: 
+   7: import pandas as pd
+   8: 
+   9: from price_truth.paths import DATA, PROCESSED, REPORTS
+  10: 
+  11: SOURCES = {
+  12:     "amazon": (DATA / "amazon/amazon.csv", "product_id", "actual_price"),
+  13:     "flipkart": (DATA / "flipkart/flipkart_com-ecommerce_sample.csv", "pid", "retail_price"),
+  14: }
+  15: ROOTS = {
+  16:     "Computers&Accessories": "Computers", "Computers": "Computers",
+  17:     "Electronics": "Electronics", "Mobiles & Accessories": "Electronics",
+  18:     "Cameras & Accessories": "Electronics", "Home&Kitchen": "Home and kitchen",
+  19:     "Kitchen & Dining": "Home and kitchen", "Home Furnishing": "Home and kitchen",
+  20:     "Clothing": "Clothing", "Jewellery": "Jewellery", "Footwear": "Footwear",
+  21:     "OfficeProducts": "Office supplies", "Pens & Stationery": "Office supplies",
+  22:     "Beauty and Personal Care": "Personal care", "Health&PersonalCare": "Personal care",
+  23: }
+  24: 
+  25: 
+  26: def numeric(series: pd.Series) -> pd.Series:
+  27:     """Parse source numeric strings; unavailable values stay missing."""
+  28:     cleaned = series.str.replace(r"[₹,%\s]", "", regex=True)
+  29:     return pd.to_numeric(cleaned, errors="coerce").replace([float("inf"), -float("inf")], float("nan"))
+  30: 
+  31: 
+  32: def category_parts(value: str, platform: str) -> list[str]:
+  33:     """Read each source's category syntax without executing source text."""
+  34:     if platform == "amazon":
+  35:         return value.split("|")
+  36:     try:
+  37:         parsed = json.loads(value)
+  38:         return parsed[0].split(" >> ") if isinstance(parsed, list) and parsed else []
+  39:     except (ValueError, TypeError, AttributeError):
+  40:         return []
+  41: 
+  42: 
+  43: def name_group(name: str) -> str:
+  44:     """Group matching titles and colour/size variants conservatively for evaluation."""
+  45:     value = re.sub(r"\([^)]*\)", "", name.lower())
+  46:     value = re.sub(r"\b(black|white|blue|red|green|grey|gray|pink|gold|silver|navy)\b", "", value)
+  47:     value = re.sub(r"[^a-z0-9]+", " ", value).strip()
+  48:     return value
+  49: 
+  50: 
+  51: def normalize(platform: str, raw: pd.DataFrame) -> pd.DataFrame:
+  52:     """Map a source to common fields; listed price is not a historical price."""
+  53:     _, id_field, list_field = SOURCES[platform]
+  54:     amazon = platform == "amazon"
+  55:     category_field = "category" if amazon else "product_category_tree"
+  56:     parts = raw[category_field].map(lambda v: category_parts(v, platform))
+  57:     out = pd.DataFrame({"platform": platform, "source_row": raw.index + 2,
+  58:                         "product_id": raw[id_field], "name": raw.product_name,
+  59:                         "listed_price": numeric(raw[list_field]),
+  60:                         "selling_price": numeric(raw.discounted_price), "currency": "INR"})
+  61:     out["key"] = platform + ":" + out.product_id
+  62:     out["category_path"] = parts.map(lambda p: " > ".join(p))
+  63:     out["category_root"] = parts.map(lambda p: p[0] if p else "Unknown")
+  64:     out["category_group"] = out.category_root.map(ROOTS).fillna("Other")
+  65:     # Three levels avoid Flipkart's brand/product-name leaves; this is a source category,
+  66:     # not a claim that every member is an interchangeable product.
+  67:     out["subcategory"] = parts.map(lambda p: " > ".join(p[:3]) if len(p) > 1 else "Unknown")
+  68:     out["rating"] = numeric(raw["rating" if amazon else "product_rating"])
+  69:     out.loc[~out.rating.between(0, 5), "rating"] = float("nan")
+  70:     out["rating_count"] = numeric(raw.rating_count) if amazon else float("nan")
+  71:     out["brand"] = "" if amazon else raw.brand
+  72:     out["observed_at"] = "" if amazon else pd.to_datetime(raw.crawl_timestamp, utc=True).astype(str)
+  73:     out["product_url"] = raw["product_link" if amazon else "product_url"]
+  74:     out["name_group"] = out.name.map(name_group)
+  75:     return out
+  76: 
+  77: 
+  78: def clean_source(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+  79:     """Quarantine ambiguous prices and deduplicate IDs without fabricating recency."""
+  80:     bad_price = (frame.listed_price.isna() | frame.selling_price.isna()
+  81:                  | (frame.listed_price <= 0) | (frame.selling_price <= 0)
+  82:                  | (frame.selling_price > frame.listed_price))
+  83:     reasons = pd.Series("", index=frame.index)
+  84:     reasons.loc[bad_price] = "invalid_or_missing_price"
+  85:     conflicts = frame.groupby("key")[["listed_price", "selling_price"]].nunique().max(axis=1)
+  86:     conflict_keys = set(conflicts[conflicts > 1].index)
+  87:     reasons.loc[frame.key.isin(conflict_keys)] = "conflicting_prices_without_reliable_history"
+  88:     candidates = frame[reasons == ""].copy()
+  89:     duplicates = candidates.duplicated("key", keep="first")
+  90:     reasons.loc[candidates.index[duplicates]] = "repeated_product_id_first_source_row_retained"
+  91:     clean = frame[reasons == ""].copy()
+  92:     clean["discount_pct"] = 100 * (1 - clean.selling_price / clean.listed_price)
+  93:     excluded = frame[reasons != ""].copy()
+  94:     excluded["reason"] = reasons[reasons != ""]
+  95:     summary = {"raw_rows": len(frame), "raw_unique_products": frame.key.nunique(),
+  96:                "clean_rows": len(clean), "exclusions": reasons[reasons != ""].value_counts().to_dict(),
+  97:                "missing_rating": int(clean.rating.isna().sum()),
+  98:                "missing_rating_count": int(clean.rating_count.isna().sum()),
+  99:                "conflicting_product_ids": sorted(conflict_keys)}
+ 100:     return clean, excluded, summary
+ 101: 
+ 102: 
+ 103: def build_catalogue() -> dict:
+ 104:     """Write the combined catalogue and source hashes, leaving both originals intact."""
+ 105:     PROCESSED.mkdir(parents=True, exist_ok=True)
+ 106:     REPORTS.mkdir(parents=True, exist_ok=True)
+ 107:     clean_frames, excluded_frames, sources = [], [], {}
+ 108:     for platform, (path, _, _) in SOURCES.items():
+ 109:         raw = pd.read_csv(path, dtype=str, keep_default_na=False)
+ 110:         clean, excluded, summary = clean_source(normalize(platform, raw))
+ 111:         clean_frames.append(clean)
+ 112:         excluded_frames.append(excluded)
+ 113:         sources[platform] = {**summary, "file": str(path.relative_to(DATA.parent)),
+ 114:                              "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+ 115:     catalogue = pd.concat(clean_frames, ignore_index=True)
+ 116:     catalogue.to_csv(PROCESSED / "catalogue.csv", index=False)
+ 117:     pd.concat(excluded_frames, ignore_index=True).to_csv(PROCESSED / "excluded.csv", index=False)
+ 118:     report = {"generated_at": datetime.now(UTC).isoformat(), "sources": sources,
+ 119:               "combined_rows": len(catalogue), "synthetic_observations": 0,
+ 120:               "authenticity_labels": 0,
+ 121:               "policy": "Keep platforms distinct; no currency conversion, no fabricated dates or ratings; "
+ 122:                         "quarantine all conflicting price IDs; retain first source row for other duplicate IDs."}
+ 123:     (REPORTS / "data_audit.json").write_text(json.dumps(report, indent=2))
+ 124:     return report
+ 125: 
+ 126: 
+ 127: def load_catalogue() -> pd.DataFrame:
+ 128:     """Load generated data, requiring an explicit build if it is missing."""
+ 129:     frame = pd.read_csv(PROCESSED / "catalogue.csv", dtype={"product_id": str})
+ 130:     for column in ["brand", "observed_at", "subcategory", "category_path"]:
+ 131:         frame[column] = frame[column].fillna("")
+ 132:     return frame
+ 133: 
+ 134: 
+ 135: if __name__ == "__main__":
+ 136:     print(json.dumps(build_catalogue(), indent=2))
+
+==============================================================================
+src/price_truth/external.py
+SHA-256: 7b1f18606b475b40f69eddb719ac686aac60dc642a72e628b4b4e4750b337c8f
+==============================================================================
+   1: """Read-only Open Food Facts integration with explicit cached fallback."""
+   2: import hashlib
+   3: import json
+   4: import re
+   5: from datetime import UTC, datetime
+   6: from pathlib import Path
+   7: 
+   8: import requests
+   9: 
+  10: from price_truth.paths import EXTERNAL
+  11: 
+  12: HEADERS = {"User-Agent": "PriceTruthAcademic/0.1 (https://price-truth.netlify.app/)"}
+  13: 
+  14: 
+  15: def get_json(url: str, params: dict | None = None) -> dict:
+  16:     """Read a public API using a bounded request; never silently accept HTML."""
+  17:     response = requests.get(url, params=params, headers=HEADERS, timeout=(5, 15))
+  18:     response.raise_for_status()
+  19:     payload = response.json()
+  20:     if not isinstance(payload, dict):
+  21:         raise ValueError("The API returned an unexpected response.")
+  22:     return payload
+  23: 
+  24: 
+  25: def lookup_product(code: str, offline: bool = False, cache_dir: Path | None = None) -> dict:
+  26:     """Fetch a numeric barcode, falling back only to a previously saved real response."""
+  27:     code = code.strip()
+  28:     if not re.fullmatch(r"\d{8,14}", code):
+  29:         raise ValueError("Enter a barcode containing 8 to 14 digits.")
+  30:     cache_dir = cache_dir or EXTERNAL / "off"
+  31:     path = cache_dir / f"{code}.json"
+  32:     if offline:
+  33:         if not path.exists():
+  34:             raise ValueError("This barcode is not in the offline cache. Try a live lookup.")
+  35:         return {**json.loads(path.read_text()), "mode": "cached", "notice": "Offline saved response"}
+  36:     url = f"https://world.openfoodfacts.org/api/v2/product/{code}.json"
+  37:     try:
+  38:         result = get_json(url, {"fields": "code,product_name,brands,quantity,product_quantity,"
+  39:                               "product_quantity_unit,categories,countries,last_modified_t"})
+  40:     except (requests.RequestException, ValueError) as exc:
+  41:         if path.exists():
+  42:             return {**json.loads(path.read_text()), "mode": "cached",
+  43:                     "notice": f"Live lookup unavailable ({type(exc).__name__}); showing saved data."}
+  44:         raise ValueError("Live lookup is unavailable and no cached record exists.") from exc
+  45:     if result.get("status") != 1 or not result.get("product"):
+  46:         raise ValueError("No product found for this barcode.")
+  47:     record = {"product": result["product"], "source_url": url,
+  48:               "fetched_at": datetime.now(UTC).isoformat(), "license": "ODbL"}
+  49:     cache_dir.mkdir(parents=True, exist_ok=True)
+  50:     path.write_text(json.dumps(record, indent=2))
+  51:     return {**record, "mode": "live", "notice": "Live Open Food Facts response"}
+  52: 
+  53: 
+  54: def cached_products() -> list[dict]:
+  55:     """Expose saved names for offline browsing without inventing product information."""
+  56:     directory = EXTERNAL / "off"
+  57:     return [json.loads(path.read_text())["product"] for path in sorted(directory.glob("*.json"))]
+  58: 
+  59: 
+  60: def search_products(query: str, offline: bool = False) -> dict:
+  61:     """Search the official full-text API, retaining a dated real-response fallback."""
+  62:     query = query.strip()
+  63:     if not 2 <= len(query) <= 100:
+  64:         raise ValueError("Use between 2 and 100 characters for a product search.")
+  65:     cache = EXTERNAL / "search" / (hashlib.sha256(query.lower().encode()).hexdigest() + ".json")
+  66:     if offline:
+  67:         if not cache.exists():
+  68:             raise ValueError("No saved results for this search. Try the barcode examples below.")
+  69:         return {**json.loads(cache.read_text()), "mode": "cached"}
+  70:     url = "https://search.openfoodfacts.org/search"
+  71:     try:
+  72:         response = get_json(url, {"q": query, "page_size": 10})
+  73:         hits = response["hits"]
+  74:         if not isinstance(hits, list):
+  75:             raise ValueError("Unexpected search response.")
+  76:     except (requests.RequestException, ValueError, KeyError) as exc:
+  77:         if cache.exists():
+  78:             return {**json.loads(cache.read_text()), "mode": "cached"}
+  79:         raise ValueError("Live search is unavailable. Use a saved barcode example below.") from exc
+  80:     products = [{"code": h.get("code"), "product_name": h.get("product_name_en") or h.get("product_name"),
+  81:                  "brands": h.get("brands"), "quantity": h.get("quantity")}
+  82:                 for h in hits if re.fullmatch(r"\d{8,14}", str(h.get("code", "")))]
+  83:     result = {"query": query, "products": products, "source_url": url,
+  84:               "fetched_at": datetime.now(UTC).isoformat(), "license": "ODbL"}
+  85:     cache.parent.mkdir(parents=True, exist_ok=True)
+  86:     cache.write_text(json.dumps(result, indent=2))
+  87:     return {**result, "mode": "live"}
+
+==============================================================================
+src/price_truth/history.py
+SHA-256: 83aa18ba5b0a9adab7c387424d2d1496fd6b44e4f548b73e58563ee1951a7019
+==============================================================================
+   1: """Price-history signals restricted to one product, store, currency, and unit."""
+   2: import json
+   3: from datetime import date
+   4: 
+   5: import pandas as pd
+   6: 
+   7: from price_truth.calculations import positive
+   8: from price_truth.paths import EXTERNAL
+   9: 
+  10: 
+  11: def load_observations(example: bool = False) -> tuple[pd.DataFrame, dict]:
+  12:     """Load public observed INR prices separately from snapshot training data."""
+  13:     filename = "open_prices_example.json" if example else "open_prices_inr.json"
+  14:     payload = json.loads((EXTERNAL / filename).read_text())
+  15:     return pd.DataFrame(payload["observations"]), {k: v for k, v in payload.items() if k != "observations"}
+  16: 
+  17: 
+  18: def series_for(frame: pd.DataFrame, code: str, location_id: int, currency: str,
+  19:                price_per: str = "UNIT") -> pd.DataFrame:
+  20:     """Filter comparable dated observations and collapse same-day repeats to a median."""
+  21:     unit = frame.price_per.fillna("UNKNOWN")
+  22:     selected = frame[(frame.product_code == code) & (frame.location_id == location_id)
+  23:                      & (frame.currency == currency) & (unit == price_per)
+  24:                      & frame.duplicate_of.isna() & frame.proof_id.notna()
+  25:                      & (frame.location_type == "shop")
+  26:                      & (frame.price > 0)].copy()
+  27:     selected["date"] = pd.to_datetime(selected.date, errors="coerce")
+  28:     selected = selected.dropna(subset=["date"])
+  29:     selected = selected[selected.date.dt.date <= date.today()]
+  30:     return selected.groupby("date", as_index=False).agg(price=("price", "median"),
+  31:                                                         observations=("price", "size"))
+  32: 
+  33: 
+  34: def timing_signal(series: pd.DataFrame, current_price: float,
+  35:                   today: date | None = None) -> dict:
+  36:     """Compare a user's current quote with prior observations, not a seasonal forecast."""
+  37:     current_price = positive(current_price)
+  38:     today = today or date.today()
+  39:     prior = series[pd.to_datetime(series.date).dt.date < today].sort_values("date")
+  40:     if len(prior) < 5:
+  41:         return {"status": "insufficient_history", "days": len(prior),
+  42:                 "message": "At least five distinct prior observation dates are needed."}
+  43:     age = (today - pd.Timestamp(prior.date.iloc[-1]).date()).days
+  44:     span = (pd.Timestamp(prior.date.iloc[-1]) - pd.Timestamp(prior.date.iloc[0])).days
+  45:     median = float(prior.price.median())
+  46:     low, high = float(prior.price.quantile(.25)), float(prior.price.quantile(.75))
+  47:     result = {"days": len(prior), "span_days": span, "age_days": age, "median": median,
+  48:               "q25": low, "q75": high, "difference_from_median_pct": 100 * (current_price / median - 1)}
+  49:     if age > 90 or span < 14:
+  50:         return {**result, "status": "limited_history",
+  51:                 "message": "History is stale or spans fewer than 14 days; no buy/wait signal."}
+  52:     status = "below_usual" if current_price < low else "above_usual" if current_price > high else "within_usual"
+  53:     return {**result, "status": status,
+  54:             "message": "Comparison with observed prices only. Future prices and sale dates are unknown."}
+
+==============================================================================
+src/price_truth/model.py
+SHA-256: e70e9cd2b6e767cb6263eee4f971cbd8dc29e752abcbb01848089092be974fb7
+==============================================================================
+   1: """Train and explain observed-price models; no synthetic authenticity labels."""
+   2: import json
+   3: import math
+   4: import time
+   5: 
+   6: import joblib
+   7: import numpy as np
+   8: import pandas as pd
+   9: from sklearn.compose import ColumnTransformer
+  10: from sklearn.ensemble import HistGradientBoostingRegressor, RandomForestRegressor
+  11: from sklearn.impute import SimpleImputer
+  12: from sklearn.metrics import mean_absolute_error, r2_score
+  13: from sklearn.model_selection import GroupShuffleSplit
+  14: from sklearn.pipeline import make_pipeline
+  15: from sklearn.preprocessing import OneHotEncoder
+  16: 
+  17: from price_truth.calculations import discount_percent
+  18: from price_truth.data import load_catalogue
+  19: from price_truth.paths import MODEL, REPORTS
+  20: 
+  21: NUMERIC = ["log_listed_price", "rating", "log_rating_count"]
+  22: CATEGORICAL = ["platform", "category_group", "subcategory"]
+  23: 
+  24: 
+  25: def features(frame: pd.DataFrame) -> pd.DataFrame:
+  26:     """Use only known listing attributes; never selling price or derived discount."""
+  27:     out = frame[CATEGORICAL + ["listed_price", "rating", "rating_count"]].copy()
+  28:     out["log_listed_price"] = np.log1p(out.listed_price)
+  29:     out["log_rating_count"] = np.log1p(out.rating_count)
+  30:     return out[NUMERIC + CATEGORICAL]
+  31: 
+  32: 
+  33: def split_groups(frame: pd.DataFrame) -> dict[str, np.ndarray]:
+  34:     """Split related normalized titles before any preprocessing or fitting."""
+  35:     indices = np.arange(len(frame))
+  36:     remaining, test = next(GroupShuffleSplit(n_splits=1, test_size=.2, random_state=42)
+  37:                            .split(indices, groups=frame.name_group))
+  38:     rest, calibration = next(GroupShuffleSplit(n_splits=1, test_size=.2, random_state=43)
+  39:                             .split(remaining, groups=frame.iloc[remaining].name_group))
+  40:     rest, calibration = remaining[rest], remaining[calibration]
+  41:     train, validation = next(GroupShuffleSplit(n_splits=1, test_size=.2, random_state=44)
+  42:                              .split(rest, groups=frame.iloc[rest].name_group))
+  43:     return {"train": rest[train], "validation": rest[validation],
+  44:             "calibration": calibration, "test": test}
+  45: 
+  46: 
+  47: def preprocessing() -> ColumnTransformer:
+  48:     """Fit missing-value treatment and category vocabulary on training data only."""
+  49:     return ColumnTransformer([
+  50:         ("numeric", SimpleImputer(strategy="median", add_indicator=True), NUMERIC),
+  51:         ("category", OneHotEncoder(handle_unknown="infrequent_if_exist", min_frequency=20,
+  52:                                    max_categories=80, sparse_output=False), CATEGORICAL),
+  53:     ], verbose_feature_names_out=False)
+  54: 
+  55: 
+  56: def metrics(actual: np.ndarray, predicted_log: np.ndarray) -> dict:
+  57:     """Report currency errors and scale-balanced log error, not fraud accuracy."""
+  58:     predicted = np.maximum(np.expm1(predicted_log), 0)
+  59:     return {"n": len(actual), "mae_inr": float(mean_absolute_error(actual, predicted)),
+  60:             "median_absolute_percentage_error": float(np.median(np.abs(predicted - actual) / actual) * 100),
+  61:             "mean_absolute_log_error": float(mean_absolute_error(np.log1p(actual), predicted_log)),
+  62:             "r2": float(r2_score(actual, predicted))}
+  63: 
+  64: 
+  65: def baseline(train: pd.DataFrame, other: pd.DataFrame) -> np.ndarray:
+  66:     """Estimate selling price from training platform/category median price ratios."""
+  67:     ratios = train.assign(ratio=train.selling_price / train.listed_price)
+  68:     medians = ratios.groupby(["platform", "subcategory"]).ratio.median()
+  69:     fallback = float(ratios.ratio.median())
+  70:     return np.log1p([r.listed_price * medians.get((r.platform, r.subcategory), fallback)
+  71:                     for r in other.itertuples()])
+  72: 
+  73: 
+  74: def train_model() -> dict:
+  75:     """Select on validation data, calibrate separately, and evaluate a frozen test set."""
+  76:     started = time.perf_counter()
+  77:     frame = load_catalogue()
+  78:     splits = split_groups(frame)
+  79:     train, valid = frame.iloc[splits["train"]], frame.iloc[splits["validation"]]
+  80:     candidates = {
+  81:         "random_forest": RandomForestRegressor(n_estimators=100, max_depth=14,
+  82:                                                 min_samples_leaf=8, n_jobs=2, random_state=42),
+  83:         "hist_gradient_boosting": HistGradientBoostingRegressor(max_iter=180, max_leaf_nodes=20,
+  84:                                                                l2_regularization=2, random_state=42),
+  85:     }
+  86:     results = {"baseline": metrics(valid.selling_price.to_numpy(), baseline(train, valid))}
+  87:     for name, estimator in candidates.items():
+  88:         pipeline = make_pipeline(preprocessing(), estimator)
+  89:         pipeline.fit(features(train), np.log1p(train.selling_price))
+  90:         results[name] = metrics(valid.selling_price.to_numpy(), pipeline.predict(features(valid)))
+  91:     selected = min(candidates, key=lambda name: results[name]["mean_absolute_log_error"])
+  92:     fitting = frame.iloc[np.concatenate([splits["train"], splits["validation"]])]
+  93:     pipeline = make_pipeline(preprocessing(), candidates[selected])
+  94:     pipeline.fit(features(fitting), np.log1p(fitting.selling_price))
+  95:     calibration, test = frame.iloc[splits["calibration"]], frame.iloc[splits["test"]]
+  96:     residual = np.abs(np.log1p(calibration.selling_price) - pipeline.predict(features(calibration)))
+  97:     quantile = min(1., math.ceil((len(residual) + 1) * .9) / len(residual))
+  98:     radius = float(np.quantile(residual, quantile, method="higher"))
+  99:     predictions = pipeline.predict(features(test))
+ 100:     actual_log = np.log1p(test.selling_price.to_numpy())
+ 101:     test_results = metrics(test.selling_price.to_numpy(), predictions)
+ 102:     test_results["interval_coverage"] = float(np.mean(np.abs(actual_log - predictions) <= radius))
+ 103:     per_platform = {}
+ 104:     for platform in ["amazon", "flipkart"]:
+ 105:         mask = test.platform.to_numpy() == platform
+ 106:         separate = make_pipeline(preprocessing(), candidates[selected].__class__(
+ 107:             **candidates[selected].get_params()))
+ 108:         subset = fitting[fitting.platform == platform]
+ 109:         separate.fit(features(subset), np.log1p(subset.selling_price))
+ 110:         per_platform[platform] = {
+ 111:             "combined_model": metrics(test.selling_price.to_numpy()[mask], predictions[mask]),
+ 112:             "separate_model": metrics(test.selling_price.to_numpy()[mask], separate.predict(features(test[mask]))),
+ 113:             "baseline": metrics(test.selling_price.to_numpy()[mask], baseline(fitting, test[mask])),
+ 114:         }
+ 115:     split_rows = frame[["key", "name_group", "platform"]].copy()
+ 116:     split_rows["split"] = ""
+ 117:     for name, positions in splits.items():
+ 118:         split_rows.loc[positions, "split"] = name
+ 119:     REPORTS.mkdir(parents=True, exist_ok=True)
+ 120:     split_rows.to_csv(REPORTS / "evaluation_split.csv", index=False)
+ 121:     by_group = fitting.groupby(["platform", "subcategory"]).size().to_dict()
+ 122:     report = {
+ 123:         "target": "log(1 + observed selling price in INR)", "selected_model": selected,
+ 124:         "selection_criterion": "Lowest validation mean absolute log error among tree candidates",
+ 125:         "validation": results, "test": test_results,
+ 126:         "baseline_test": metrics(test.selling_price.to_numpy(), baseline(fitting, test)),
+ 127:         "platform_comparison": per_platform,
+ 128:         "splits": {k: len(v) for k, v in splits.items()},
+ 129:         "unique_title_groups": int(frame.name_group.nunique()),
+ 130:         "interval": {"nominal_coverage": .9, "log_radius": radius, "calibration_rows": len(residual)},
+ 131:         "elapsed_seconds": time.perf_counter() - started,
+ 132:         "limitations": ["No ground-truth fraud labels; prediction is not authenticity verification.",
+ 133:                         "Old/undated snapshots do not establish today's fair price.",
+ 134:                         "Title normalization reduces but cannot eliminate variant leakage.",
+ 135:                         "Listed price is a predictor, so inflated reference prices can bias estimates.",
+ 136:                         "Calibration coverage assumes comparable data; it is not a per-product confidence score.",
+ 137:                         "Platform and category shifts are confounded with unknown collection dates."]}
+ 138:     MODEL.parent.mkdir(parents=True, exist_ok=True)
+ 139:     joblib.dump({"pipeline": pipeline, "radius": radius, "support": by_group,
+ 140:                  "training_keys": set(fitting.key), "report": report}, MODEL)
+ 141:     (REPORTS / "model_evaluation.json").write_text(json.dumps(report, indent=2))
+ 142:     return report
+ 143: 
+ 144: 
+ 145: def load_model() -> dict:
+ 146:     """Load only the trusted locally generated model; never accept uploaded pickle files."""
+ 147:     return joblib.load(MODEL)
+ 148: 
+ 149: 
+ 150: def assess(bundle: dict, listing: dict, selling_price: float, listed_price: float) -> dict:
+ 151:     """Assess a quote against the historical catalogue model and compute real Tree SHAP."""
+ 152:     import shap
+ 153: 
+ 154:     claimed = discount_percent(listed_price, selling_price)
+ 155:     row = pd.DataFrame([{**listing, "listed_price": listed_price}])
+ 156:     pipeline = bundle["pipeline"]
+ 157:     transformed = pipeline.steps[0][1].transform(features(row))
+ 158:     estimator = pipeline.steps[-1][1]
+ 159:     estimate_log = float(estimator.predict(transformed)[0])
+ 160:     estimate = float(np.expm1(estimate_log))
+ 161:     lower = max(0., float(np.expm1(estimate_log - bundle["radius"])))
+ 162:     upper = float(np.expm1(estimate_log + bundle["radius"]))
+ 163:     support = bundle["support"].get((listing["platform"], listing["subcategory"]), 0)
+ 164:     explanation = shap.TreeExplainer(estimator)(transformed)
+ 165:     contributions = explanation.values[0]
+ 166:     base = float(np.asarray(explanation.base_values).reshape(-1)[0])
+ 167:     names = pipeline.steps[0][1].get_feature_names_out().tolist()
+ 168:     status = "limited_support" if support < 30 else (
+ 169:         "below_model_range" if selling_price < lower else
+ 170:         "above_model_range" if selling_price > upper else "within_model_range")
+ 171:     return {"claimed_discount_pct": claimed, "estimate": estimate, "lower": lower, "upper": upper,
+ 172:             "status": status, "support": int(support), "prediction_log": estimate_log,
+ 173:             "base_log": base, "shap": [{"feature": name, "contribution": float(value)}
+ 174:                                          for name, value in zip(names, contributions, strict=True)],
+ 175:             "explanation_error": abs(base + float(contributions.sum()) - estimate_log),
+ 176:             "seen_in_training": listing.get("key") in bundle["training_keys"]}
+ 177: 
+ 178: 
+ 179: if __name__ == "__main__":
+ 180:     print(json.dumps(train_model(), indent=2))
+
+==============================================================================
+src/price_truth/paths.py
+SHA-256: f3e7994098df41542629c652a4810fcc604456dca365ba87a5f79e3fad6556b5
+==============================================================================
+   1: """Project paths shared by the command-line tools and interface."""
+   2: from pathlib import Path
+   3: 
+   4: ROOT = Path(__file__).resolve().parents[2]
+   5: DATA = ROOT / "datasets"
+   6: PROCESSED = DATA / "processed"
+   7: EXTERNAL = DATA / "external"
+   8: REPORTS = ROOT / "reports"
+   9: MODEL = ROOT / "artifacts" / "price_model.joblib"
+  10: 
+
+==============================================================================
+src/price_truth/ui.py
+SHA-256: d400d1b1cb756c18ff930533d21878793d011bcedb70d38a4a222e91942bd22a
+==============================================================================
+   1: """Simple presentation functions, ready for later visual redesign."""
+   2: import json
+   3: 
+   4: import pandas as pd
+   5: import plotly.graph_objects as go
+   6: import streamlit as st
+   7: 
+   8: from price_truth.calculations import compare_packs, shrink_change
+   9: from price_truth.catalogue import export_csv, safe_url, search
+  10: from price_truth.external import cached_products, lookup_product, search_products
+  11: from price_truth.history import load_observations, series_for, timing_signal
+  12: from price_truth.model import assess
+  13: from price_truth.paths import DATA
+  14: 
+  15: 
+  16: def checker_page(data: pd.DataFrame, bundle: dict) -> None:
+  17:     """Assess a selected product's quote with actual model output and SHAP."""
+  18:     st.title("True Discount Checker")
+  19:     st.caption("A pricing assessment against historical listings—not a fraud verdict or a live price check.")
+  20:     platform = st.selectbox("Platform", ["amazon", "flipkart"])
+  21:     query = st.text_input("Find a product", placeholder="e.g. cable, television, shirt")
+  22:     matches = search(data, query, [platform])
+  23:     if matches.empty:
+  24:         st.info("No matching products. Try fewer search words.")
+  25:         return
+  26:     matches = matches.head(200)
+  27:     key = st.selectbox("Product (first 200 matches)", matches.key,
+  28:                        format_func=lambda k: matches.loc[matches.key == k, "name"].iloc[0])
+  29:     row = matches.loc[matches.key == key].iloc[0].to_dict()
+  30:     st.caption(f"Source category: {row['category_path']}")
+  31:     with st.form(f"quote_{key}"):
+  32:         listed = st.number_input("Listed reference price (INR)", min_value=.01, value=float(row["listed_price"]))
+  33:         selling = st.number_input("Selling price to assess (INR)", min_value=.01, value=float(row["selling_price"]))
+  34:         submitted = st.form_submit_button("Assess price")
+  35:     if not submitted:
+  36:         return
+  37:     try:
+  38:         result = assess(bundle, row, selling, listed)
+  39:     except ValueError as exc:
+  40:         st.error(str(exc))
+  41:         return
+  42:     columns = st.columns(3)
+  43:     columns[0].metric("Advertised discount", f"{result['claimed_discount_pct']:.1f}%")
+  44:     columns[1].metric("Estimated snapshot price", f"₹{result['estimate']:,.0f}")
+  45:     columns[2].metric("Model range", f"₹{result['lower']:,.0f}–{result['upper']:,.0f}")
+  46:     st.info(result["status"].replace("_", " ").capitalize())
+  47:     st.write(f"{result['support']} training listings share this platform and source subcategory. "
+  48:              "Products may differ in specifications; this estimate is not a current fair-value guarantee.")
+  49:     st.caption("The interval is calibrated for 90% coverage on comparable data, not 90% confidence "
+  50:                "that a discount is real. Listed price influences the estimate.")
+  51:     if result["seen_in_training"]:
+  52:         st.caption("This catalogue product was used in training. Published evaluation uses separate held-out products.")
+  53:     contributions = sorted(result["shap"], key=lambda x: abs(x["contribution"]), reverse=True)
+  54:     top, remainder = contributions[:8], sum(x["contribution"] for x in contributions[8:])
+  55:     chart = go.Figure(go.Waterfall(
+  56:         x=["Baseline"] + [x["feature"] for x in top] + ["Other features", "Prediction"],
+  57:         y=[result["base_log"]] + [x["contribution"] for x in top] + [remainder, 0],
+  58:         measure=["absolute"] + ["relative"] * (len(top) + 1) + ["total"]))
+  59:     chart.update_layout(title="Why the model estimated this price", yaxis_title="log(1 + selling price)")
+  60:     st.plotly_chart(chart, width="stretch")
+  61:     st.caption("Computed Tree SHAP contributions explain estimated price, not the probability of fraud.")
+  62:     st.download_button("Download assessment", json.dumps(result, indent=2),
+  63:                        file_name="price_assessment.json", mime="application/json")
+  64:     url = safe_url(row["product_url"])
+  65:     if url:
+  66:         st.link_button("Open original product listing", url)
+  67: 
+  68: 
+  69: def lookup_page() -> None:
+  70:     """Look up barcodes live or search names among real saved examples."""
+  71:     st.title("Live Pack Lookup")
+  72:     with st.expander("Search live by product name"):
+  73:         with st.form("name_search"):
+  74:             live_name = st.text_input("Product name", placeholder="e.g. Maggi")
+  75:             cached_search = st.checkbox("Use saved search results", value=False)
+  76:             search_submitted = st.form_submit_button("Search food database")
+  77:         if search_submitted:
+  78:             try:
+  79:                 found = search_products(live_name, cached_search)
+  80:                 st.session_state["food_search_results"] = found
+  81:             except ValueError as exc:
+  82:                 st.error(str(exc))
+  83:         if "food_search_results" in st.session_state:
+  84:             found = st.session_state["food_search_results"]
+  85:             st.caption(f"{found['mode']} results for {found['query']} · retrieved {found['fetched_at']}")
+  86:             st.dataframe(pd.DataFrame(found["products"]), hide_index=True)
+  87:             st.caption("Copy a result's barcode into the lookup below for pack details.")
+  88:     products = cached_products()
+  89:     name = st.text_input("Search saved product names", placeholder="Optional offline search")
+  90:     matches = [p for p in products if name.lower() in p.get("product_name", "").lower()]
+  91:     default = ""
+  92:     if matches:
+  93:         selection = st.selectbox("Saved examples", matches,
+  94:                                  format_func=lambda p: f"{p.get('product_name', 'Unknown')} · {p.get('code', '')}")
+  95:         default = selection.get("code", "")
+  96:     with st.form("lookup"):
+  97:         code = st.text_input("Barcode", value=default)
+  98:         offline = st.checkbox("Use saved response (offline)", value=False)
+  99:         submitted = st.form_submit_button("Look up pack")
+ 100:     if submitted:
+ 101:         try:
+ 102:             result = lookup_product(code, offline)
+ 103:         except ValueError as exc:
+ 104:             st.error(str(exc))
+ 105:             return
+ 106:         product = result["product"]
+ 107:         st.subheader(product.get("product_name") or "Name unavailable")
+ 108:         st.table({"Field": ["Brand", "Pack size", "Category"],
+ 109:                   "Value": [product.get("brands") or "Unavailable", product.get("quantity") or "Unavailable",
+ 110:                             product.get("categories") or "Unavailable"]})
+ 111:         st.info(result["notice"])
+ 112:         st.caption(f"Retrieved: {result['fetched_at']} · Open Food Facts · ODbL")
+ 113:         st.link_button("Source record", result["source_url"])
+ 114: 
+ 115: 
+ 116: def unit_page() -> None:
+ 117:     """Compare two user-entered pack options without storing the input."""
+ 118:     st.title("Unit Price Compare")
+ 119:     st.write("Enter two pack sizes of the same product. All prices must use the same currency.")
+ 120:     with st.form("units"):
+ 121:         currency = st.selectbox("Currency", ["INR", "EUR", "USD", "GBP"])
+ 122:         packs = []
+ 123:         for index, column in enumerate(st.columns(2), 1):
+ 124:             with column:
+ 125:                 st.subheader(f"Pack {index}")
+ 126:                 price = st.number_input("Price", min_value=.01, value=None, key=f"price{index}")
+ 127:                 quantity = st.number_input("Quantity per pack", min_value=.01, value=None, key=f"quantity{index}")
+ 128:                 unit = st.selectbox("Unit", ["g", "kg", "ml", "l", "count"], key=f"unit{index}")
+ 129:                 count = st.number_input("Number of packs", min_value=1, value=1, key=f"count{index}")
+ 130:                 packs.append({"name": f"Pack {index}", "price": price, "quantity": quantity,
+ 131:                               "unit": unit, "packs": count, "currency": currency})
+ 132:         submitted = st.form_submit_button("Compare value")
+ 133:     if submitted:
+ 134:         if any(p["price"] is None or p["quantity"] is None for p in packs):
+ 135:             st.error("Enter a price and quantity for both packs.")
+ 136:             return
+ 137:         try:
+ 138:             result = compare_packs(packs)
+ 139:         except ValueError as exc:
+ 140:             st.error(str(exc))
+ 141:             return
+ 142:         st.dataframe(pd.DataFrame(result)[["name", "value", "basis", "currency"]], hide_index=True)
+ 143:         equal = abs(result[0]["value"] - result[1]["value"]) < 1e-9
+ 144:         st.success("Both packs have the same unit price." if equal else f"{result[0]['name']} has the lower unit price.")
+ 145: 
+ 146: 
+ 147: def history_page() -> None:
+ 148:     """Explore real observations without extrapolating seasonal sale claims."""
+ 149:     st.title("Buy Timing & History")
+ 150:     example = st.selectbox("Observation collection", ["India / INR", "International history example / EUR"]) != "India / INR"
+ 151:     try:
+ 152:         frame, metadata = load_observations(example)
+ 153:     except FileNotFoundError:
+ 154:         st.info("No downloaded observations yet. Follow the data acquisition step in README.md.")
+ 155:         return
+ 156:     st.caption(f"Open Prices · ODbL · retrieved {metadata['fetched_at']}")
+ 157:     if example:
+ 158:         st.info("Real French-store observations in EUR. This example does not represent Indian prices.")
+ 159:     options = frame[frame.product_code.notna() & (frame.location_type == "shop")].copy()
+ 160:     if options.empty:
+ 161:         st.info("No identified retail-store observations available in this collection.")
+ 162:         return
+ 163:     options["label"] = options.product_name.fillna(options.product_code) + " · " + options.product_code
+ 164:     labels = options.groupby("label").size().sort_values(ascending=False).index.tolist()
+ 165:     label = st.selectbox("Product", labels)
+ 166:     product = options[options.label == label]
+ 167:     location = st.selectbox("Store", product.location_id.unique(),
+ 168:                             format_func=lambda i: str(product.loc[product.location_id == i, "location_name"].iloc[0]) + f" ({i})")
+ 169:     unit = st.selectbox("Recorded price basis", product[product.location_id == location].price_per.fillna("UNKNOWN").unique())
+ 170:     code, currency = product.iloc[0]["product_code"], product.iloc[0]["currency"]
+ 171:     series = series_for(frame, code, location, currency, unit)
+ 172:     st.line_chart(series.set_index("date")["price"], y_label=f"Observed price ({currency})")
+ 173:     st.dataframe(product[product.location_id == location][["date", "price", "currency", "source_url"]], hide_index=True)
+ 174:     quote = st.number_input(f"Your current quote ({currency})", min_value=.01, value=None)
+ 175:     if st.button("Compare with history"):
+ 176:         if quote is None:
+ 177:             st.error("Enter the quote you want to compare.")
+ 178:             return
+ 179:         result = timing_signal(series, quote)
+ 180:         st.info(result["status"].replace("_", " ").capitalize())
+ 181:         st.write(result["message"])
+ 182:         if "median" in result:
+ 183:             st.metric("Observed historical median", f"{currency} {result['median']:.2f}")
+ 184:             st.caption(f"{result['days']} prior dates; {result['span_days']} days of coverage; "
+ 185:                        f"latest prior observation {result['age_days']} days ago.")
+ 186:     if unit == "UNKNOWN":
+ 187:         st.warning("The source does not specify the price basis. Confirm the pack and purchase conditions "
+ 188:                    "before using a comparison; the barcode alone cannot verify unchanged packaging.")
+ 189:     st.caption("A low historical price does not predict tomorrow's price. Sparse or stale histories abstain "
+ 190:                "from a timing signal. No sale-calendar dates or future prices are invented.")
+ 191: 
+ 192: 
+ 193: def shrink_page() -> None:
+ 194:     """Show a sourced before/after sequence without inventing exact observation dates."""
+ 195:     st.title("Shrink Timeline")
+ 196:     evidence = json.loads((DATA / "evidence/shrink_cases.json").read_text())
+ 197:     case = st.selectbox("Documented case", evidence["cases"], format_func=lambda c: c["product"])
+ 198:     result = shrink_change(case["old_quantity"], case["new_quantity"], case["old_price"], case["new_price"])
+ 199:     columns = st.columns(2)
+ 200:     columns[0].metric("Quantity reduction", f"{result['quantity_reduction_pct']:.1f}%")
+ 201:     columns[1].metric("Unit-price increase", f"{result['unit_price_increase_pct']:.1f}%")
+ 202:     st.table(pd.DataFrame([
+ 203:         {"Period": case["old_period"], "Quantity (g)": case["old_quantity"], "Price (INR)": case["old_price"]},
+ 204:         {"Period": case["new_period"], "Quantity (g)": case["new_quantity"], "Price (INR)": case["new_price"]},
+ 205:     ]))
+ 206:     st.bar_chart(pd.DataFrame({"Quantity (g)": [case["old_quantity"], case["new_quantity"]]}, index=["Earlier pack", "Reported later pack"]))
+ 207:     st.caption(f"Reported {evidence['reported_on']} · {evidence['source_name']}")
+ 208:     st.write(case["notes"])
+ 209:     st.link_button("Read the evidence", evidence["source_url"])
+ 210: 
+ 211: 
+ 212: def catalogue_page(data: pd.DataFrame) -> None:
+ 213:     """Search both source catalogues without claiming exact cross-platform matches."""
+ 214:     st.title("Platform Catalogue")
+ 215:     st.info("Historical catalogue search across Amazon and Flipkart. Search matches can be different "
+ 216:             "products or variants; this is not a live same-product price aggregator.")
+ 217:     query = st.text_input("Search product names")
+ 218:     platforms = st.multiselect("Platforms", ["amazon", "flipkart"], default=["amazon", "flipkart"])
+ 219:     result = search(data, query, platforms)
+ 220:     columns = ["platform", "name", "listed_price", "selling_price", "discount_pct", "observed_at"]
+ 221:     st.caption(f"{len(result):,} matches · INR · displaying up to 500")
+ 222:     st.dataframe(result[columns].head(500), hide_index=True)
+ 223:     st.download_button("Download results CSV", export_csv(result[columns]),
+ 224:                        file_name="historical_catalogue_results.csv", mime="text/csv")
+
+==============================================================================
+scripts/browser_check.py
+SHA-256: edd883bab940d9036be9cadbb09ffdc3e4067dc75fa515e68233b9aaa42b5b6c
+==============================================================================
+   1: """Verify local UI flows in an isolated Chrome profile and save browser evidence."""
+   2: import json
+   3: import time
+   4: 
+   5: from playwright.sync_api import sync_playwright
+   6: 
+   7: from price_truth.paths import REPORTS
+   8: 
+   9: 
+  10: def main() -> None:
+  11:     """Measure actual visible load and check functional pages at two viewport sizes."""
+  12:     with sync_playwright() as playwright:
+  13:         browser = playwright.chromium.launch(
+  14:             executable_path="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  15:             headless=True)
+  16:         context = browser.new_context(viewport={"width": 1440, "height": 1000})
+  17:         page = context.new_page()
+  18:         errors = []
+  19:         page.on("pageerror", lambda error: errors.append(str(error)))
+  20:         start = time.perf_counter()
+  21:         page.goto("http://127.0.0.1:8501")
+  22:         page.get_by_role("heading", name="Know what your price means").wait_for()
+  23:         load_time = time.perf_counter() - start
+  24:         page.screenshot(path=str(REPORTS / "overview-desktop.png"), full_page=True)
+  25:         page.get_by_text("Discount Checker", exact=True).click()
+  26:         page.get_by_role("heading", name="True Discount Checker").wait_for()
+  27:         page.get_by_role("button", name="Assess price", exact=True).click()
+  28:         page.get_by_text("Advertised discount", exact=True).wait_for()
+  29:         page.get_by_text("Why the model estimated this price", exact=True).wait_for()
+  30:         page.screenshot(path=str(REPORTS / "checker-desktop.png"), full_page=True)
+  31:         page.get_by_text("Platform Catalogue", exact=True).first.click()
+  32:         page.get_by_role("textbox", name="Search product names", exact=True).fill("cable")
+  33:         page.get_by_role("textbox", name="Search product names", exact=True).press("Enter")
+  34:         page.get_by_role("button", name="Download results CSV").wait_for()
+  35:         page.set_viewport_size({"width": 390, "height": 844})
+  36:         # A resize retains the desktop sidebar state; close it as a mobile user would.
+  37:         close_sidebar = page.get_by_role("button", name="Collapse sidebar")
+  38:         if close_sidebar.count():
+  39:             close_sidebar.click()
+  40:         else:
+  41:             close_sidebar = page.get_by_role("button", name="Close sidebar")
+  42:             if close_sidebar.count():
+  43:                 close_sidebar.click()
+  44:         page.wait_for_function("document.querySelector('[data-testid=stSidebar]').getBoundingClientRect().right <= 1")
+  45:         page.screenshot(path=str(REPORTS / "catalogue-mobile.png"), full_page=True)
+  46:         overflow = page.evaluate("document.documentElement.scrollWidth > window.innerWidth")
+  47:         (REPORTS / "browser_check.json").write_text(json.dumps({
+  48:             "browser": browser.version, "desktop_viewport": [1440, 1000], "mobile_viewport": [390, 844],
+  49:             "initial_visible_load_seconds": load_time, "javascript_errors": errors,
+  50:             "mobile_horizontal_page_overflow": overflow,
+  51:             "flows": ["overview rendered", "discount + SHAP rendered", "catalogue search + export visible"],
+  52:             "scope": "Local Chrome only; mobile viewport emulation, not a physical-device or cross-browser certification."
+  53:         }, indent=2))
+  54:         browser.close()
+  55: 
+  56: 
+  57: if __name__ == "__main__":
+  58:     main()
+
+==============================================================================
+scripts/fetch_real_data.py
+SHA-256: 8a6dc7821c7e9bfc01b2f6945c9aa56778151760818da78855e6629cd0a1afce
+==============================================================================
+   1: """Download a bounded INR Open Prices snapshot and cache genuine food records."""
+   2: import hashlib
+   3: import json
+   4: from collections import Counter
+   5: from datetime import UTC, date, datetime
+   6: 
+   7: from price_truth.external import get_json, lookup_product
+   8: from price_truth.paths import EXTERNAL
+   9: 
+  10: 
+  11: def fetch_prices(params: dict, filename: str) -> list[dict]:
+  12:     """Save a bounded, attributed selection of observed prices."""
+  13:     url = "https://prices.openfoodfacts.org/api/v1/prices"
+  14:     first = get_json(url, params)
+  15:     items = list(first["items"])
+  16:     for page in range(2, min(first["pages"], 20) + 1):
+  17:         items.extend(get_json(url, {**params, "page": page})["items"])
+  18:     observations = []
+  19:     for item in items:
+  20:         product, location = item.get("product") or {}, item.get("location") or {}
+  21:         observations.append({
+  22:             "id": item["id"], "product_code": item.get("product_code"),
+  23:             "product_name": product.get("product_name") or item.get("product_name"),
+  24:             "price": item["price"], "currency": item["currency"], "date": item["date"],
+  25:             "price_per": item.get("price_per"), "price_is_discounted": item["price_is_discounted"],
+  26:             "price_without_discount": item.get("price_without_discount"),
+  27:             "location_id": item.get("location_id"), "location_name": location.get("osm_name"),
+  28:             "location_type": location.get("osm_tag_key"),
+  29:             "country": location.get("osm_address_country"), "proof_id": item.get("proof_id"),
+  30:             "duplicate_of": item.get("duplicate_of"),
+  31:             "source_url": f"https://prices.openfoodfacts.org/prices/{item['id']}",
+  32:         })
+  33:     record = {"source": url, "query": params, "fetched_at": datetime.now(UTC).isoformat(),
+  34:               "license": "ODbL-1.0", "total_at_source": first["total"],
+  35:               "complete_query": first["pages"] <= 20, "observations": observations}
+  36:     path = EXTERNAL / filename
+  37:     path.write_text(json.dumps(record, indent=2, ensure_ascii=False))
+  38:     return observations
+  39: 
+  40: 
+  41: def main() -> None:
+  42:     """Keep the ODbL collection separate from the Kaggle catalogue."""
+  43:     EXTERNAL.mkdir(parents=True, exist_ok=True)
+  44:     observations = fetch_prices({"currency": "INR", "size": 100,
+  45:                                  "date__lte": date.today().isoformat()}, "open_prices_inr.json")
+  46:     fetch_prices({"product_code": "3017620422003", "currency": "EUR", "location_id": 1920,
+  47:                   "size": 100, "date__lte": date.today().isoformat()}, "open_prices_example.json")
+  48:     codes = Counter(o["product_code"] for o in observations if o["product_code"])
+  49:     cached, failed = [], []
+  50:     for code, _ in codes.most_common(6):
+  51:         try:
+  52:             lookup_product(code)
+  53:             cached.append(code)
+  54:         except ValueError as exc:
+  55:             failed.append({"code": code, "error": str(exc)})
+  56:     summary = {"observations": len(observations), "unique_barcodes": len(codes),
+  57:                "cached_barcodes": cached, "lookup_failures": failed,
+  58:                "sha256": hashlib.sha256((EXTERNAL / "open_prices_inr.json").read_bytes()).hexdigest()}
+  59:     (EXTERNAL / "acquisition.json").write_text(json.dumps(summary, indent=2))
+  60:     print(json.dumps(summary, indent=2))
+  61: 
+  62: 
+  63: if __name__ == "__main__":
+  64:     main()
+
+==============================================================================
+scripts/review.py
+SHA-256: 5114b4e2960294e8fb9913fc9eeb9ab93f3fb6813cf0c91d33ae114c7bebd9b8
+==============================================================================
+   1: """Run the actual review tools and compile traceable, table-first evidence."""
+   2: import hashlib
+   3: import importlib.metadata
+   4: import json
+   5: import platform
+   6: import shlex
+   7: import shutil
+   8: import subprocess
+   9: import sys
+  10: import time
+  11: import xml.etree.ElementTree as ET
+  12: from collections import Counter
+  13: from datetime import UTC, datetime
+  14: 
+  15: import numpy as np
+  16: 
+  17: from price_truth.paths import REPORTS, ROOT
+  18: 
+  19: 
+  20: def run(args: list[str], name: str) -> str:
+  21:     """Save complete output and stop if a required check fails."""
+  22:     result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True, timeout=1800)
+  23:     output = result.stdout
+  24:     (REPORTS / name).write_text(output)
+  25:     if result.stderr:
+  26:         (REPORTS / f"{name}.stderr").write_text(result.stderr)
+  27:     commands.append({"command": shlex.join(args), "exit_code": result.returncode})
+  28:     if result.returncode:
+  29:         raise RuntimeError(f"Check failed: {args}; see reports/{name}")
+  30:     return output
+  31: 
+  32: 
+  33: def table(headers: list[str], rows: list) -> str:
+  34:     """Render a compact Markdown table with escaped cell delimiters."""
+  35:     def line(cells: list) -> str:
+  36:         return "| " + " | ".join(str(c).replace("|", "\\|") for c in cells) + " |"
+  37:     return "\n".join([line(headers), line(["---"] * len(headers)), *map(line, rows)])
+  38: 
+  39: 
+  40: def benchmark() -> dict:
+  41:     """Time real-row assessment including SHAP, separating first and warm calls."""
+  42:     from price_truth.data import load_catalogue
+  43:     from price_truth.model import assess, load_model
+  44: 
+  45:     start = time.perf_counter()
+  46:     frame, bundle = load_catalogue(), load_model()
+  47:     load_seconds = time.perf_counter() - start
+  48:     samples = frame.groupby("platform").head(15).to_dict("records")
+  49:     durations = []
+  50:     for row in samples:
+  51:         start = time.perf_counter()
+  52:         assess(bundle, row, row["selling_price"], row["listed_price"])
+  53:         durations.append(time.perf_counter() - start)
+  54:     result = {"catalogue_and_model_load_seconds": load_seconds,
+  55:               "first_assessment_including_shap_import_seconds": durations[0],
+  56:               "warm_calls": len(durations) - 1,
+  57:               "warm_median_seconds": float(np.median(durations[1:])),
+  58:               "warm_p95_seconds": float(np.quantile(durations[1:], .95)),
+  59:               "warm_max_seconds": max(durations[1:]),
+  60:               "scope": "Sequential local calls on real rows; includes SHAP; not concurrent load."}
+  61:     (REPORTS / "performance.json").write_text(json.dumps(result, indent=2))
+  62:     return result
+  63: 
+  64: 
+  65: commands: list[dict] = []
+  66: 
+  67: 
+  68: def mutation_examples(mutmut: str) -> str:
+  69:     """Keep representative actual diffs, including unresolved behavior gaps."""
+  70:     examples = [
+  71:         ("price_truth.calculations.x_positive__mutmut_1", "Numeric conversion removed", "Valid numeric inputs must work"),
+  72:         ("price_truth.calculations.x_compare_packs__mutmut_28", "Multipack count omitted", "Multipack ranking must use total quantity"),
+  73:         ("price_truth.calculations.x_positive__mutmut_8", "Validation message removed", "Survivor: exception type is checked, exact wording is not"),
+  74:         ("price_truth.history.x_series_for__mutmut_1", "Default unit changed", "Survivor: tests and UI pass the unit explicitly; default call remains a test gap"),
+  75:     ]
+  76:     diffs = []
+  77:     rows = []
+  78:     for name, change, explanation in examples:
+  79:         diff = run([mutmut, "show", name], f"{name}.diff")
+  80:         status = diff.splitlines()[0].rsplit(": ", 1)[-1]
+  81:         rows.append([name, change, status, explanation])
+  82:         diffs.append(f"```diff\n{diff.strip()}\n```")
+  83:     return table(["Mutant", "Change", "Observed outcome", "Test mechanism / gap"], rows) + "\n\n" + "\n\n".join(diffs)
+  84: 
+  85: 
+  86: def main() -> None:
+  87:     """Collect lint, tests, all Radon metrics, actual mutation results and timings."""
+  88:     REPORTS.mkdir(exist_ok=True)
+  89:     python = sys.executable
+  90:     run([python, "-m", "ruff", "check", "src", "app.py", "scripts", "tests",
+  91:          "--output-format", "json"], "ruff.json")
+  92:     run([python, "-m", "pytest", "--cov=price_truth", "--cov-branch",
+  93:          "--cov-report=json:reports/coverage.json", "--junitxml=reports/pytest.xml"],
+  94:         "pytest-run.txt")
+  95:     metrics = {}
+  96:     for metric in ["cc", "mi", "raw", "hal"]:
+  97:         metrics[metric] = json.loads(run([python, "-m", "radon", metric, "src", "app.py",
+  98:                                          "scripts", "tests", "-j"], f"radon-{metric}.json"))
+  99:     mutmut = str(ROOT / ".venv/bin/mutmut")
+ 100:     # Explicit wildcard reruns decided mutants after changes to their tests.
+ 101:     run([mutmut, "run", "price_truth.*"], "mutmut-run.log")
+ 102:     run([mutmut, "results", "--all", "true"], "mutmut-results.txt")
+ 103:     run([mutmut, "export-cicd-stats"], "mutmut-export.txt")
+ 104:     shutil.copyfile(ROOT / "mutants/mutmut-cicd-stats.json", REPORTS / "mutation.json")
+ 105:     mutation = json.loads((REPORTS / "mutation.json").read_text())
+ 106:     examples = mutation_examples(mutmut)
+ 107:     perf = benchmark()
+ 108:     packages = {name: importlib.metadata.version(name) for name in [
+ 109:         "pandas", "numpy", "scikit-learn", "shap", "streamlit", "plotly", "requests",
+ 110:         "pytest", "pytest-cov", "ruff", "mutmut", "radon", "playwright"]}
+ 111:     source_hashes = {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+ 112:                      for path in [ROOT / "app.py", *sorted((ROOT / "src").rglob("*.py")),
+ 113:                                   *sorted((ROOT / "scripts").glob("*.py")),
+ 114:                                   *sorted((ROOT / "tests").glob("*.py"))]}
+ 115:     metadata = {"generated_at": datetime.now(UTC).isoformat(), "python": sys.version,
+ 116:                 "system": platform.platform(), "versions": packages,
+ 117:                 "commands": commands, "source_sha256": source_hashes}
+ 118:     (REPORTS / "review_manifest.json").write_text(json.dumps(metadata, indent=2))
+ 119:     coverage = json.loads((REPORTS / "coverage.json").read_text())
+ 120:     suite = ET.parse(REPORTS / "pytest.xml").getroot().find("testsuite")
+ 121:     counts = Counter(case.attrib["classname"] for case in suite.findall("testcase"))
+ 122:     model = json.loads((REPORTS / "model_evaluation.json").read_text())
+ 123:     browser = json.loads((REPORTS / "browser_check.json").read_text())
+ 124:     initial = json.loads((REPORTS / "browser_initial_check.json").read_text())
+ 125:     raw, cc, mi, hal = (metrics[k] for k in ["raw", "cc", "mi", "hal"])
+ 126:     production = [p for p in raw if not p.startswith("tests/")]
+ 127:     blocks = [(p, b) for p in production for b in cc.get(p, [])]
+ 128:     rows = []
+ 129:     for label, paths in [
+ 130:         ("Data", ["src/price_truth/data.py"]),
+ 131:         ("ML", ["src/price_truth/model.py"]),
+ 132:         ("Domain / external services", [f"src/price_truth/{n}.py" for n in
+ 133:                                          ["calculations", "catalogue", "history", "external"]]),
+ 134:         ("Interface", ["app.py", "src/price_truth/ui.py"]),
+ 135:         ("Infrastructure / scripts", [p for p in production if p.startswith("scripts/") or
+ 136:                                       p.endswith(("paths.py", "__init__.py"))]),
+ 137:         ("Tests", [p for p in raw if p.startswith("tests/")])]:
+ 138:         rows.append([label, len(paths), sum(raw[p]["sloc"] for p in paths)])
+ 139:     sections = ["# Price Truth — code review report", table(["Field", "Value"], [
+ 140:         ["Module", "S3 Lab Work — Group 11"], ["Generated", metadata["generated_at"]],
+ 141:         ["Team", "Swagata Bhowmik B053; Charvi Rathod B049; Yashwi Shah B036"],
+ 142:         ["Course", "NMIMS MSc Data Science; Dr Yogesh Naik"],
+ 143:         ["Functional demo", "http://localhost:8501 (local server)"],
+ 144:         ["Reference prototype", "https://price-truth.netlify.app/"],
+ 145:         ["Environment", metadata["system"]], ["Python", platform.python_version()]]),
+ 146:         "## 1. Codebase — 10 marks",
+ 147:         "```text\napp.py                  # navigation and cached resources\nsrc/price_truth/\n  data.py               # real catalogue cleaning and audit\n  model.py              # training, calibration, SHAP\n  calculations.py       # unit price, discount, shrink arithmetic\n  history.py            # store/currency/date isolation and abstention\n  catalogue.py          # search and safe exports\n  external.py           # official API clients and dated caches\n  ui.py                 # feature screens\n  paths.py              # project paths\nscripts/                # acquisition, browser checks, this report\ntests/                  # domain, data, ML, service and interface checks\ndatasets/               # original, processed and attributed external data\nartifacts/              # trusted fitted model\nreports/                # raw and compiled review evidence\n```",
+ 148:         table(["Layer", "Python files", "SLOC"], rows + [["TOTAL", len(raw), sum(r["sloc"] for r in raw.values())]]),
+ 149:         "## 2. Frameworks — 10 marks",
+ 150:         table(["Library", "Version", "Role / justification"], [[n, v, {
+ 151:             "pandas": "Tabular ingestion and cleaning", "numpy": "Numerical arrays and log transforms",
+ 152:             "scikit-learn": "Grouped splits, tree candidates and preprocessing; boosting selected by validation error",
+ 153:             "shap": "Actual Tree SHAP contributions", "streamlit": "Functional Python interface and caching",
+ 154:             "plotly": "Interactive evidence charts", "requests": "Bounded official API requests",
+ 155:             "pytest": "Behavior and integration tests", "pytest-cov": "Statement and branch coverage",
+ 156:             "ruff": "Configured lint rules", "mutmut": "Executable mutation testing",
+ 157:             "radon": "Complexity, maintainability, raw and Halstead metrics",
+ 158:             "playwright": "Isolated local Chrome verification"}[n]] for n, v in packages.items()]),
+ 159:         "## 3. Code quality — 10 marks", "### Ruff",
+ 160:         table(["Rules", "Violations", "Evidence"], [["E4/E7/E9/F/I/B/UP", len(json.loads((REPORTS / "ruff.json").read_text())), "ruff.json"]]),
+ 161:         "Scope: src, app, scripts, tests. This is the configured rule set, not all possible style rules.",
+ 162:         "### PyTest and coverage", table(["Test module", "Executed cases"], sorted(counts.items())),
+ 163:         table(["Measure", "Result"], [[k, suite.attrib.get(k, 0)] for k in ["tests", "failures", "errors", "skipped", "time"]] +
+ 164:               [["Statement coverage", f"{coverage['totals']['covered_lines']}/{coverage['totals']['num_statements']}"],
+ 165:                ["Branch coverage", f"{coverage['totals']['covered_branches']}/{coverage['totals']['num_branches']}"]]),
+ 166:         table(["Package file", "Covered statements", "Statements", "Missing branches"],
+ 167:               [[p, d["summary"]["covered_lines"], d["summary"]["num_statements"], d["summary"]["missing_branches"]]
+ 168:                for p, d in coverage["files"].items()]),
+ 169:         "Coverage scope: price_truth package; app.py is exercised with Streamlit AppTest but is outside this coverage denominator. Scripts are linted and measured by Radon, not coverage. Test-only boundary fixtures do not enter model training or displayed data.",
+ 170:         "### Mutmut", table(["Outcome", "Count"], list(mutation.items())),
+ 171:         f"Actual kill rate: {100 * mutation['killed'] / mutation['total']:.2f}% of {mutation['total']} generated mutants. Scope: calculations.py, catalogue.py, history.py only. No whole-project mutation claim. All mutant IDs/statuses are in mutmut-results.txt; surviving mutants remain review work.",
+ 172:         "Mutation testing exposed missing multipack-ranking and history-isolation assertions; strengthened tests check pack counts, barcode, store, currency, unit basis, dates, proof and duplicate status. Error-message and cosmetic mutations can still survive; the count is not adjusted to exclude them.",
+ 173:         examples,
+ 174:         "### Radon: cyclomatic complexity",
+ 175:         table(["File", "Blocks", "Mean CC", "Max CC", "Worst rank"],
+ 176:               [[p, len(cc.get(p, [])), round(np.mean([b["complexity"] for b in cc[p]]), 2),
+ 177:                 max(b["complexity"] for b in cc[p]), max(b["rank"] for b in cc[p])]
+ 178:                for p in production if cc.get(p)]),
+ 179:         f"Production/scripts block mean: {np.mean([b['complexity'] for _, b in blocks]):.2f}; {len(blocks)} measured blocks. Report-generation code is included; test metrics remain in raw JSON.",
+ 180:         "### Radon: maintainability index", table(["File", "MI", "Rank"],
+ 181:               [[p, round(mi[p]["mi"], 2), mi[p]["rank"]] for p in sorted(production, key=lambda p: mi[p]["mi"])]),
+ 182:         "Radon's rank A starts above MI 19; it is not a percentage quality score.",
+ 183:         "### Radon: raw metrics", table(["Measure", "Production + scripts", "Tests"],
+ 184:               [[k, sum(raw[p][k] for p in production), sum(raw[p][k] for p in raw if p not in production)]
+ 185:                for k in ["loc", "lloc", "sloc", "comments", "multi", "blank"]]),
+ 186:         "### Radon: Halstead", table(["Module", "Vocabulary", "Volume", "Difficulty", "Effort", "Estimated bugs"],
+ 187:               [[p, *[round(hal[p]["total"][k], 3) for k in ["vocabulary", "volume", "difficulty", "effort", "bugs"]]]
+ 188:                for p in production if p.startswith("src/")]),
+ 189:         "Halstead bug values are formula estimates, not observed defect counts.",
+ 190:         "## 4. Real-data model evidence", table(["Measure", "Value"],
+ 191:               [["Cleaned real listings", 21267], ["Held-out test listings", model["test"]["n"]],
+ 192:                ["Selected model", model["selected_model"]], *model["test"].items()]),
+ 193:         table(["Validation candidate", "Mean absolute log error"],
+ 194:               [[n, round(v["mean_absolute_log_error"], 6)] for n, v in model["validation"].items()]),
+ 195:         table(["Test platform", "Combined log MAE", "Separate log MAE", "Baseline log MAE"],
+ 196:               [[p, *[round(v[n]["mean_absolute_log_error"], 6) for n in ["combined_model", "separate_model", "baseline"]]]
+ 197:                for p, v in model["platform_comparison"].items()]),
+ 198:         "Model estimates historical observed selling prices, not fraud or authenticity. No verified fraud labels exist. Listed price is a predictor; old/undated data and broad intervals limit current-price interpretation. Combining platforms does not improve every platform metric. See model_evaluation.json and ../docs/DATA-SOURCES.md.",
+ 199:         "### Auditable code excerpts", "```python\n" +
+ 200:         (ROOT / "src/price_truth/model.py").read_text().split("def features", 1)[1].split("def split_groups", 1)[0].join(["def features", ""]).strip() + "\n```",
+ 201:         "Feature inputs exclude selling price and derived advertised discount. Preprocessing is fitted after grouped splitting; validation selects the model, calibration sets intervals, test data measures final error.",
+ 202:         "## 5. NFRs — 10 marks (informal ISO 25010 mapping)",
+ 203:         table(["NFR", "Quality category", "Target", "Measured / status", "Evidence"], [
+ 204:             ["Performance", "Performance efficiency", "Page <3s; prediction <2s",
+ 205:              f"First browser {initial.get('initial_visible_load_seconds', initial.get('load_seconds', 'see JSON'))}s; latest {browser['initial_visible_load_seconds']:.3f}s. First assess {perf['first_assessment_including_shap_import_seconds']:.3f}s; warm p95 {perf['warm_p95_seconds']:.3f}s", "browser*_check.json; performance.json; first page target missed"],
+ 206:             ["Scalability", "Capacity", "100 concurrent users", "Not measured", "Sequential benchmark only"],
+ 207:             ["Usability", "Interaction capability", "Non-technical use without manual", "Functional flows checked; user study not conducted", "browser_check.json; test_app.py"],
+ 208:             ["Security", "Security", "HTTPS; no PII storage", "Local HTTP; deployment HTTPS unverified; raw source contains reviewer fields excluded from processed model data", "external.py bounded hosts; catalogue.py safe export; no accounts or quote persistence"],
+ 209:             ["Reliability", "Reliability", "99% evaluation-window uptime", "Not measured", "Local tests do not establish uptime"],
+ 210:             ["Portability", "Flexibility", "Desktop/tablet/mobile", f"1440px desktop and 390px mobile emulation; overflow={browser['mobile_horizontal_page_overflow']}; tablet/physical device not tested", "PNG screenshots; browser_check.json"],
+ 211:             ["Maintainability", "Maintainability", "Modular code", f"{len(production)} production/script files; CC/MI above", "Radon JSON; layer table"],
+ 212:             ["Availability", "Reliability", "24/7 accessible", "Local server only; not established", "Cloud deployment pending"],
+ 213:             ["Compatibility", "Compatibility", "Chrome/Firefox/Safari/Edge", f"Chrome {browser['browser']} tested; other browsers untested", "browser_check.json"]]),
+ 214:         "## 6. Reproduction and remaining work", "```sh\n" + "\n".join(c["command"] for c in commands) + "\n```",
+ 215:         "Use `.venv/bin/python scripts/review.py` from the repository root after setup; browser evidence is collected separately with `scripts/browser_check.py` while the app runs. Exact package versions, source hashes, platform and exit codes: review_manifest.json. Timings vary by hardware and warm-cache state.",
+ 216:         "Remaining: review surviving mutants and higher-complexity modules; visual polish; hosted deployment and HTTPS verification; sustained uptime and 100-user load evidence; other browsers/tablet/physical device; user usability study; final demonstration recording. Real histories presently require abstention from current buying advice. Confirm supplied dataset redistribution rights before publishing raw CSVs."]
+ 217:     (REPORTS / "CODE-REVIEW-REPORT.md").write_text("\n\n".join(sections) + "\n")
+ 218:     print(f"Review complete: {suite.attrib['tests']} tests; {mutation['killed']}/{mutation['total']} mutants killed.")
+ 219: 
+ 220: 
+ 221: if __name__ == "__main__":
+ 222:     main()
+
+==============================================================================
+tests/test_app.py
+SHA-256: 90dd0490b5b47f042b370aa2e246720851df9f7bdfc40b0e57177d964d3b5d8c
+==============================================================================
+   1: """End-to-end widget interactions using Streamlit's official AppTest harness."""
+   2: import pytest
+   3: from streamlit.testing.v1 import AppTest
+   4: 
+   5: from price_truth.paths import ROOT
+   6: 
+   7: 
+   8: def application(page="Overview"):
+   9:     """Load a page through the same entrypoint users run."""
+  10:     app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+  11:     if page != "Overview":
+  12:         app.sidebar.radio[0].set_value(page).run()
+  13:     return app
+  14: 
+  15: 
+  16: @pytest.mark.parametrize("page", ["Overview", "Discount Checker", "Live Pack Lookup", "Unit Price Compare",
+  17:                                   "Buy Timing & History", "Shrink Timeline", "Platform Catalogue", "Evidence & Methods"])
+  18: def test_pages_render(page):
+  19:     """Every navigation destination must load without a Python exception."""
+  20:     app = application(page)
+  21:     assert not app.exception
+  22: 
+  23: 
+  24: def test_checker_runs_real_model():
+  25:     """Submitting the quote displays computed metrics and an explanation chart."""
+  26:     app = application("Discount Checker")
+  27:     app.button[0].click().run()
+  28:     assert not app.exception
+  29:     assert len(app.metric) == 3
+  30:     assert len(app.get("plotly_chart")) == 1
+  31: 
+  32: 
+  33: def test_unit_comparison_flow():
+  34:     """Entering comparable packs produces a best-value result."""
+  35:     app = application("Unit Price Compare")
+  36:     app.number_input(key="price1").set_value(10)
+  37:     app.number_input(key="quantity1").set_value(100)
+  38:     app.number_input(key="price2").set_value(15)
+  39:     app.number_input(key="quantity2").set_value(200)
+  40:     app.button[0].click().run()
+  41:     assert not app.exception
+  42:     assert "Pack 2" in app.success[0].value
+  43: 
+  44: 
+  45: def test_offline_lookup_flow():
+  46:     """The real saved example can be displayed without network access."""
+  47:     app = application("Live Pack Lookup")
+  48:     app.checkbox[1].check()
+  49:     app.button[1].click().run()
+  50:     assert not app.exception
+  51:     assert "Offline" in app.info[0].value
+
+==============================================================================
+tests/test_calculations.py
+SHA-256: 8b2e341810f5cae9a7eca20f297e86602aeea5557254559900b13f1364ddd27e
+==============================================================================
+   1: """Behavior checks for the financial arithmetic used by the interface."""
+   2: import math
+   3: 
+   4: import pytest
+   5: 
+   6: from price_truth.calculations import (
+   7:     compare_packs,
+   8:     discount_percent,
+   9:     positive,
+  10:     shrink_change,
+  11:     unit_price,
+  12: )
+  13: 
+  14: 
+  15: @pytest.mark.parametrize("value", [0, -1, float("nan"), float("inf"), -float("inf")])
+  16: def test_reject_nonpositive_or_nonfinite(value):
+  17:     """Invalid user amounts must never reach a division or a model."""
+  18:     with pytest.raises(ValueError):
+  19:         positive(value)
+  20: 
+  21: 
+  22: @pytest.mark.parametrize("value", [.01, 1, 155, 571230])
+  23: def test_positive_preserves_amount(value):
+  24:     """Validation must not round or modify valid amounts."""
+  25:     assert positive(value) == value
+  26: 
+  27: 
+  28: def test_discount_from_actual_amazon_listing():
+  29:     """The first source record is listed at 1099 and sold for 399."""
+  30:     assert discount_percent(1099, 399) == pytest.approx(63.6942675159)
+  31:     assert discount_percent(399, 399) == 0
+  32: 
+  33: 
+  34: def test_reject_inverted_discount():
+  35:     """A reference-price discount cannot have a higher selling price."""
+  36:     with pytest.raises(ValueError):
+  37:         discount_percent(399, 400)
+  38: 
+  39: 
+  40: @pytest.mark.parametrize("listed,selling", [(0, 10), (10, 0), (math.inf, 10), (10, math.nan)])
+  41: def test_discount_rejects_invalid_prices(listed, selling):
+  42:     """Both price inputs must be validated."""
+  43:     with pytest.raises(ValueError):
+  44:         discount_percent(listed, selling)
+  45: 
+  46: 
+  47: @pytest.mark.parametrize("unit,quantity,expected,basis", [
+  48:     ("g", 500, 20, "100 g"), ("kg", .5, 20, "100 g"),
+  49:     ("ml", 500, 20, "100 ml"), ("l", .5, 20, "100 ml"), ("count", 5, 20, "item")])
+  50: def test_unit_conversions(unit, quantity, expected, basis):
+  51:     """Equivalent units must produce the same price per standard quantity."""
+  52:     result = unit_price(100, quantity, unit)
+  53:     assert result["value"] == pytest.approx(expected)
+  54:     assert result["basis"] == basis
+  55: 
+  56: 
+  57: def test_multipack_and_dimension():
+  58:     """Two 100g packs double the denominator, not the price."""
+  59:     assert unit_price(40, 100, "g", 2) == {"dimension": "mass", "value": 20, "basis": "100 g"}
+  60:     assert unit_price(40, 100, "ml")["dimension"] == "volume"
+  61:     assert unit_price(40, 2, "count")["dimension"] == "count"
+  62: 
+  63: 
+  64: @pytest.mark.parametrize("packs", [0, -1, 1.5, True, "2"])
+  65: def test_invalid_pack_counts(packs):
+  66:     """Only positive integer pack counts are meaningful."""
+  67:     with pytest.raises(ValueError):
+  68:         unit_price(10, 100, "g", packs)
+  69: 
+  70: 
+  71: @pytest.mark.parametrize("price,quantity,unit", [(0, 100, "g"), (10, 0, "g"),
+  72:                                                 (math.nan, 100, "g"), (10, 100, "oz")])
+  73: def test_invalid_units_and_amounts(price, quantity, unit):
+  74:     """Invalid input is rejected instead of returning a misleading comparison."""
+  75:     with pytest.raises(ValueError):
+  76:         unit_price(price, quantity, unit)
+  77: 
+  78: 
+  79: def packs():
+  80:     """Return isolated user-input fixtures, never part of training data."""
+  81:     return [{"name": "A", "price": 25, "quantity": 100, "unit": "g", "currency": "INR"},
+  82:             {"name": "B", "price": 40, "quantity": .2, "unit": "kg", "currency": "INR"}]
+  83: 
+  84: 
+  85: def test_compare_rank_and_no_mutation():
+  86:     """The cheaper normalized option wins without modifying user input."""
+  87:     options = packs()
+  88:     ranked = compare_packs(options)
+  89:     assert [p["name"] for p in ranked] == ["B", "A"]
+  90:     assert [p["value"] for p in ranked] == [20, 25]
+  91:     assert "value" not in options[0]
+  92: 
+  93: 
+  94: def test_currency_normalization():
+  95:     """Case and whitespace should not create artificial currency mismatches."""
+  96:     options = packs()
+  97:     options[0]["currency"] = " inr "
+  98:     assert len(compare_packs(options)) == 2
+  99: 
+ 100: 
+ 101: def test_comparison_respects_multipack_count():
+ 102:     """Mutation testing exposed a gap: ranking must include multipack quantities."""
+ 103:     options = packs()
+ 104:     options[0]["packs"] = 3
+ 105:     ranked = compare_packs(options)
+ 106:     assert ranked[0]["name"] == "A"
+ 107:     assert ranked[0]["value"] == pytest.approx(25 / 3)
+ 108: 
+ 109: 
+ 110: @pytest.mark.parametrize("currency", ["EUR", "", " "])
+ 111: def test_reject_mixed_or_missing_currency(currency):
+ 112:     """No hidden currency conversion is allowed."""
+ 113:     options = packs()
+ 114:     options[0]["currency"] = currency
+ 115:     with pytest.raises(ValueError):
+ 116:         compare_packs(options)
+ 117: 
+ 118: 
+ 119: def test_reject_mixed_dimensions_and_single_pack():
+ 120:     """Mass and volume cannot be ranked together."""
+ 121:     options = packs()
+ 122:     options[0]["unit"] = "ml"
+ 123:     with pytest.raises(ValueError):
+ 124:         compare_packs(options)
+ 125:     with pytest.raises(ValueError):
+ 126:         compare_packs(options[:1])
+ 127:     with pytest.raises(ValueError):
+ 128:         compare_packs([])
+ 129: 
+ 130: 
+ 131: def test_reported_vim_shrinkage():
+ 132:     """Quantity reduction and unit-price increase have different denominators."""
+ 133:     result = shrink_change(155, 135, 10, 10)
+ 134:     assert result["quantity_reduction_pct"] == pytest.approx(12.90322580645)
+ 135:     assert result["unit_price_increase_pct"] == pytest.approx(14.81481481481)
+ 136: 
+ 137: 
+ 138: def test_shrinkage_accounts_for_price_change():
+ 139:     """A larger pack or changed price must not be forced into a shrinkage label."""
+ 140:     result = shrink_change(100, 200, 10, 30)
+ 141:     assert result["quantity_reduction_pct"] == -100
+ 142:     assert result["unit_price_increase_pct"] == pytest.approx(50)
+ 143: 
+ 144: 
+ 145: @pytest.mark.parametrize("values", [(0, 100, 10, 10), (100, 0, 10, 10),
+ 146:                                     (100, 100, 0, 10), (100, 100, 10, 0)])
+ 147: def test_shrink_rejects_invalid_values(values):
+ 148:     """All four quantities/prices must be valid."""
+ 149:     with pytest.raises(ValueError):
+ 150:         shrink_change(*values)
+
+==============================================================================
+tests/test_data.py
+SHA-256: 3059d724fa92c76ac37ae4bc9b801f458dce33046e943cd552485d7b067ec125
+==============================================================================
+   1: """Source integrity, normalization, and evaluation leakage checks."""
+   2: import hashlib
+   3: import json
+   4: 
+   5: import pandas as pd
+   6: import pytest
+   7: 
+   8: from price_truth.data import (
+   9:     SOURCES,
+  10:     category_parts,
+  11:     clean_source,
+  12:     load_catalogue,
+  13:     normalize,
+  14:     numeric,
+  15: )
+  16: from price_truth.model import features
+  17: from price_truth.paths import REPORTS
+  18: 
+  19: 
+  20: def test_raw_hashes_and_partition():
+  21:     """Every source row is accounted for and both original files stay unchanged."""
+  22:     audit = json.loads((REPORTS / "data_audit.json").read_text())
+  23:     expected = {"amazon": "4ba126c4ba8edd35e62e94ce1c853073d832de380184ab4f5f97d1e314882c77",
+  24:                 "flipkart": "56f8f699c9e847356666c2eab3c3ab1244340f6a98ad08e39ea2199ebe993ad1"}
+  25:     for name, (path, _, _) in SOURCES.items():
+  26:         assert hashlib.sha256(path.read_bytes()).hexdigest() == expected[name]
+  27:         source = audit["sources"][name]
+  28:         assert source["raw_rows"] == source["clean_rows"] + sum(source["exclusions"].values())
+  29: 
+  30: 
+  31: def test_catalogue_invariants():
+  32:     """Rows have valid prices and unique platform-specific identities."""
+  33:     data = load_catalogue()
+  34:     assert data.key.is_unique
+  35:     assert (data.selling_price > 0).all()
+  36:     assert (data.listed_price >= data.selling_price).all()
+  37:     assert data[data.platform == "amazon"].observed_at.eq("").all()
+  38:     assert data[data.platform == "flipkart"].rating_count.isna().all()
+  39: 
+  40: 
+  41: def test_conflicting_actual_source_prices_are_quarantined():
+  42:     """Repeated IDs with changed selling OR reference prices are ambiguous."""
+  43:     raw = pd.read_csv(SOURCES["amazon"][0], dtype=str, keep_default_na=False)
+  44:     raw = raw[raw.product_id.isin(["B096MSW6CT", "B0B5B6PQCT", "B07JW9H4J1"])].reset_index(drop=True)
+  45:     clean, excluded, _ = clean_source(normalize("amazon", raw))
+  46:     assert clean.product_id.tolist() == ["B07JW9H4J1"]
+  47:     assert len(clean) + len(excluded) == len(raw)
+  48: 
+  49: 
+  50: def test_numeric_missing_is_not_zero():
+  51:     """Missing or malformed ratings must remain missing."""
+  52:     parsed = numeric(pd.Series(["₹1,099", "4.2", "No rating available", "", "|", "inf"]))
+  53:     assert parsed.iloc[:2].tolist() == [1099, 4.2]
+  54:     assert parsed.iloc[2:].isna().all()
+  55: 
+  56: 
+  57: @pytest.mark.parametrize("value", ["not json", "[]", "{}", "null"])
+  58: def test_category_rejects_invalid_structure(value):
+  59:     """Malformed source fields must not be executed or crash normalization."""
+  60:     assert category_parts(value, "flipkart") == []
+  61: 
+  62: 
+  63: def test_no_target_leakage_in_features():
+  64:     """Changing the prediction target must not change the model inputs."""
+  65:     data = load_catalogue().head(4)
+  66:     original = features(data)
+  67:     data["selling_price"] *= 10
+  68:     data["discount_pct"] = 100
+  69:     pd.testing.assert_frame_equal(features(data), original)
+  70: 
+  71: 
+  72: def test_evaluation_groups_do_not_overlap():
+  73:     """Related normalized titles must appear in exactly one split."""
+  74:     splits = pd.read_csv(REPORTS / "evaluation_split.csv")
+  75:     assert splits.groupby("name_group").split.nunique().max() == 1
+  76:     assert splits.key.is_unique
+  77:     assert set(splits.split) == {"train", "validation", "calibration", "test"}
+  78: 
+
+==============================================================================
+tests/test_model.py
+SHA-256: 78ef267acbd09b2eb9f836014f906e09d291f8f87e178cb93fce501c4b4ebffb
+==============================================================================
+   1: """Verify explanations against the real trained artifact and held-out listings."""
+   2: import numpy as np
+   3: import pandas as pd
+   4: import pytest
+   5: 
+   6: from price_truth.data import load_catalogue
+   7: from price_truth.model import assess, features, load_model
+   8: from price_truth.paths import REPORTS
+   9: 
+  10: 
+  11: @pytest.fixture(scope="module")
+  12: def bundle():
+  13:     """Load the trained artifact once."""
+  14:     return load_model()
+  15: 
+  16: 
+  17: @pytest.mark.parametrize("platform", ["amazon", "flipkart"])
+  18: def test_shap_reconstructs_actual_prediction(bundle, platform):
+  19:     """Every explanation must add up in the model's stated output space."""
+  20:     splits = pd.read_csv(REPORTS / "evaluation_split.csv")
+  21:     keys = splits[(splits.platform == platform) & (splits.split == "test")].key
+  22:     row = load_catalogue().set_index("key", drop=False).loc[keys.iloc[0]].to_dict()
+  23:     result = assess(bundle, row, row["selling_price"], row["listed_price"])
+  24:     assert result["explanation_error"] < 1e-6
+  25:     assert result["lower"] <= result["estimate"] <= result["upper"]
+  26:     assert not result["seen_in_training"]
+  27:     assert np.isfinite(result["estimate"]) and result["estimate"] > 0
+  28: 
+  29: 
+  30: def test_missing_rating_does_not_break_inference(bundle):
+  31:     """Flipkart records can be scored without inventing ratings or counts."""
+  32:     data = load_catalogue()
+  33:     rows = data[(data.platform == "flipkart") & data.rating.isna()].head(5)
+  34:     assert np.isfinite(bundle["pipeline"].predict(features(rows))).all()
+  35: 
+  36: 
+  37: def test_invalid_quote_and_sparse_category(bundle):
+  38:     """Inverted prices fail validation and unsupported categories abstain."""
+  39:     row = load_catalogue().iloc[0].to_dict()
+  40:     with pytest.raises(ValueError):
+  41:         assess(bundle, row, 200, 100)
+  42:     row["subcategory"] = "Unseen category"
+  43:     assert assess(bundle, row, 100, 200)["status"] == "limited_support"
+  44: 
+  45: 
+  46: def test_training_pipeline_on_real_data(monkeypatch, tmp_path):
+  47:     """Exercise fitting, calibration, and artifact output in an isolated directory."""
+  48:     from price_truth import model
+  49:     monkeypatch.setattr(model, "MODEL", tmp_path / "model.joblib")
+  50:     monkeypatch.setattr(model, "REPORTS", tmp_path)
+  51:     result = model.train_model()
+  52:     assert (tmp_path / "model.joblib").exists()
+  53:     assert sum(result["splits"].values()) == len(load_catalogue())
+  54:     assert result["interval"]["calibration_rows"] == result["splits"]["calibration"]
+  55:     assert result["test"]["mean_absolute_log_error"] < result["baseline_test"]["mean_absolute_log_error"]
+
+==============================================================================
+tests/test_search.py
+SHA-256: 5591ae4673282a0fda1fa480296cf209e4fe3b81a53bbba0e87844e4e11a7ab5
+==============================================================================
+   1: """Live-search schema and honest cached fallback using retrieved product records."""
+   2: import json
+   3: 
+   4: import pytest
+   5: import requests
+   6: 
+   7: from price_truth import external
+   8: 
+   9: 
+  10: def test_real_saved_name_search():
+  11:     """A downloaded search is usable offline and carries attribution."""
+  12:     result = external.search_products("Maggi", offline=True)
+  13:     assert result["mode"] == "cached"
+  14:     assert result["products"] and result["source_url"].startswith("https://search.openfoodfacts.org")
+  15: 
+  16: 
+  17: @pytest.mark.parametrize("query", ["", "x", "x" * 101])
+  18: def test_invalid_search(query):
+  19:     """Bound query size before network use."""
+  20:     with pytest.raises(ValueError):
+  21:         external.search_products(query)
+  22: 
+  23: 
+  24: def test_search_success_and_timeout(monkeypatch, tmp_path):
+  25:     """Use retrieved hits as the response fixture and then simulate an outage."""
+  26:     saved = external.search_products("Maggi", offline=True)
+  27:     monkeypatch.setattr(external, "EXTERNAL", tmp_path)
+  28:     monkeypatch.setattr(external, "get_json", lambda *a, **k: {"hits": saved["products"]})
+  29:     result = external.search_products("Maggi")
+  30:     assert result["mode"] == "live" and len(result["products"]) == len(saved["products"])
+  31:     def timeout(*args, **kwargs):
+  32:         raise requests.Timeout()
+  33:     monkeypatch.setattr(external, "get_json", timeout)
+  34:     assert external.search_products("Maggi")["mode"] == "cached"
+  35:     with pytest.raises(ValueError, match="unavailable"):
+  36:         external.search_products("unknown query")
+  37:     cache = next((tmp_path / "search").glob("*.json"))
+  38:     assert json.loads(cache.read_text())["query"] == "Maggi"
+
+==============================================================================
+tests/test_services.py
+SHA-256: 3788f82d25621b02ee657e22e9d6d0bf5757d01f4fbbd9f4323edcee24c8e9fc
+==============================================================================
+   1: """API degradation, safe exports, and time-series correctness."""
+   2: import json
+   3: from datetime import date
+   4: 
+   5: import pandas as pd
+   6: import pytest
+   7: import requests
+   8: 
+   9: from price_truth import external
+  10: from price_truth.catalogue import export_csv, safe_url, search
+  11: from price_truth.history import load_observations, series_for, timing_signal
+  12: 
+  13: 
+  14: @pytest.mark.parametrize("code", ["abc", "../../secret", "123", "1" * 15])
+  15: def test_invalid_barcode_never_calls_network(code, monkeypatch, tmp_path):
+  16:     """A barcode must not become an arbitrary path or URL."""
+  17:     monkeypatch.setattr(external, "get_json", lambda *_: pytest.fail("Network must not be used"))
+  18:     with pytest.raises(ValueError):
+  19:         external.lookup_product(code, cache_dir=tmp_path)
+  20: 
+  21: 
+  22: def test_offline_and_timeout_use_real_cache(monkeypatch, tmp_path):
+  23:     """A failed request returns a clearly marked, previously retrieved record."""
+  24:     source = next((external.EXTERNAL / "off").glob("*.json"))
+  25:     (tmp_path / source.name).write_bytes(source.read_bytes())
+  26:     code = source.stem
+  27:     def timeout(*args, **kwargs):
+  28:         raise requests.Timeout()
+  29:     monkeypatch.setattr(external, "get_json", timeout)
+  30:     assert external.lookup_product(code, True, tmp_path)["mode"] == "cached"
+  31:     result = external.lookup_product(code, False, tmp_path)
+  32:     assert "unavailable" in result["notice"]
+  33:     assert result["product"] == json.loads(source.read_text())["product"]
+  34: 
+  35: 
+  36: def test_not_found_and_missing_cache(monkeypatch, tmp_path):
+  37:     """Unavailable barcodes produce explicit errors, not fabricated products."""
+  38:     with pytest.raises(ValueError, match="offline cache"):
+  39:         external.lookup_product("12345678", True, tmp_path)
+  40:     monkeypatch.setattr(external, "get_json", lambda *a, **k: {"status": 0})
+  41:     with pytest.raises(ValueError, match="No product"):
+  42:         external.lookup_product("12345678", False, tmp_path)
+  43: 
+  44: 
+  45: def test_success_saves_real_response(monkeypatch, tmp_path):
+  46:     """Use an actual downloaded response as the deterministic integration fixture."""
+  47:     source = next((external.EXTERNAL / "off").glob("*.json"))
+  48:     record = json.loads(source.read_text())
+  49:     monkeypatch.setattr(external, "get_json", lambda *a, **k: {"status": 1, "product": record["product"]})
+  50:     result = external.lookup_product(source.stem, cache_dir=tmp_path)
+  51:     assert result["mode"] == "live"
+  52:     assert (tmp_path / source.name).exists()
+  53: 
+  54: 
+  55: def test_literal_search_and_empty_platforms():
+  56:     """User punctuation is literal; deselecting all platforms returns no products."""
+  57:     frame = pd.DataFrame({"name": ["Cable [USB]", "Cable lightning"], "platform": ["amazon", "flipkart"]})
+  58:     assert len(search(frame, "[USB]")) == 1
+  59:     assert search(frame, "Cable", []).empty
+  60: 
+  61: 
+  62: @pytest.mark.parametrize("url", ["javascript:alert(1)", "https://evil.test/", "https://www.amazon.in.evil.test/x"])
+  63: def test_reject_unsafe_links(url):
+  64:     """Only the two original retail hosts are permitted."""
+  65:     assert safe_url(url) is None
+  66: 
+  67: 
+  68: def test_safe_link_and_export():
+  69:     """Keep genuine links and neutralize spreadsheet formulas in source text."""
+  70:     assert safe_url("https://www.amazon.in/dp/B07JW9H4J1")
+  71:     result = export_csv(pd.DataFrame({"name": ["=1+1", " @SUM(A1)", "Cable"], "price": [1, 2, 3]})).decode("utf-8-sig")
+  72:     assert "'=1+1" in result and "' @SUM" in result
+  73: 
+  74: 
+  75: def test_real_history_stays_in_one_store_currency_and_product():
+  76:     """No apparent price trend may be created by mixing shops or currencies."""
+  77:     frame, _ = load_observations()
+  78:     row = frame[(frame.product_code == "8901030795589") & (frame.location_id == 2754)].iloc[0]
+  79:     series = series_for(frame, row.product_code, row.location_id, row.currency, "UNKNOWN")
+  80:     assert len(series) == 2
+  81:     assert (series.price > 0).all()
+  82:     assert series.date.is_unique
+  83:     assert series_for(frame, row.product_code, row.location_id, "USD", "UNKNOWN").empty
+  84: 
+  85: 
+  86: def test_history_filters_incompatible_or_unproven_observations():
+  87:     """Boundary records derived from one real observation must not contaminate a series."""
+  88:     frame, _ = load_observations()
+  89:     row = frame[(frame.product_code == "8901030795589") & (frame.location_id == 2754)].iloc[0]
+  90:     original = row.to_dict()
+  91:     records = [original]
+  92:     for changed in [{"currency": "EUR"}, {"location_id": -1}, {"product_code": "12345678"},
+  93:                     {"price_per": "KILOGRAM"}, {"duplicate_of": 1}, {"proof_id": None},
+  94:                     {"location_type": "boundary"}, {"date": "2099-01-01"},
+  95:                     {"date": "invalid"}, {"price": -1}]:
+  96:         records.append({**original, "price": 99999, **changed})
+  97:     series = series_for(pd.DataFrame(records), row.product_code, row.location_id, "INR", "UNKNOWN")
+  98:     assert len(series) == 1
+  99:     assert series.iloc[0].price == row.price
+ 100:     assert series.iloc[0].observations == 1
+ 101: 
+ 102: 
+ 103: def test_history_same_day_median_and_sorting():
+ 104:     """Repeated receipts on one date contribute one day, not extra historical coverage."""
+ 105:     frame, _ = load_observations()
+ 106:     row = frame[(frame.product_code == "8901030795589") & (frame.location_id == 2754)].iloc[0].to_dict()
+ 107:     records = [{**row, "date": "2026-01-02", "price": 10},
+ 108:                {**row, "date": "2026-01-01", "price": 20},
+ 109:                {**row, "date": "2026-01-02", "price": 30}]
+ 110:     result = series_for(pd.DataFrame(records), row["product_code"], row["location_id"], "INR", "UNKNOWN")
+ 111:     assert result.price.tolist() == [20, 20]
+ 112:     assert result.observations.tolist() == [1, 2]
+ 113: 
+ 114: 
+ 115: def test_search_multiple_words_case_and_platform():
+ 116:     """All literal words and the selected platform are required."""
+ 117:     frame = pd.DataFrame({"name": ["USB Cable", "USB Plug", "Cable usb", None],
+ 118:                           "platform": ["amazon", "amazon", "flipkart", "amazon"]})
+ 119:     assert search(frame, "  usb cable  ", ["amazon"]).index.tolist() == [0]
+ 120:     assert len(search(frame, "", ["flipkart"])) == 1
+ 121: 
+ 122: 
+ 123: @pytest.mark.parametrize("unit,currency", [("UNIT", "EUR"), ("UNKNOWN", "INR")])
+ 124: def test_collection_selection_and_metadata(unit, currency):
+ 125:     """The international example stays separate and source metadata is retained."""
+ 126:     frame, meta = load_observations(example=currency == "EUR")
+ 127:     assert set(frame.currency) == {currency}
+ 128:     assert "observations" not in meta
+ 129:     assert meta["license"] == "ODbL-1.0"
+ 130: 
+ 131: 
+ 132: def test_history_sparse_stale_and_future():
+ 133:     """Boundary fixtures test abstention; they are never training observations."""
+ 134:     frame = pd.DataFrame({"date": pd.to_datetime(["2026-01-01", "2026-01-10", "2026-02-01",
+ 135:                                                 "2026-02-10", "2026-03-01", "2099-01-01"]),
+ 136:                           "price": [10, 11, 12, 13, 14, 9999]})
+ 137:     assert timing_signal(frame.iloc[:2], 12)["status"] == "insufficient_history"
+ 138:     assert timing_signal(frame, 12, date(2026, 9, 19))["status"] == "limited_history"
+ 139:     result = timing_signal(frame, 8, date(2026, 3, 2))
+ 140:     assert result["status"] == "below_usual"
+ 141:     assert result["median"] == 12
+ 142:     assert result["days"] == 5
+ 143: 
+ 144: 
+ 145: @pytest.mark.parametrize("quote,status", [(8, "below_usual"), (20, "above_usual"),
+ 146:                                          (11, "within_usual"), (13, "within_usual")])
+ 147: def test_timing_quartile_boundaries(quote, status):
+ 148:     """Quartile boundaries are included in the usual range."""
+ 149:     frame = pd.DataFrame({"date": pd.to_datetime(["2026-01-01", "2026-01-05", "2026-01-08",
+ 150:                                                 "2026-01-10", "2026-01-15"]),
+ 151:                           "price": [10, 11, 12, 13, 14]})
+ 152:     result = timing_signal(frame, quote, date(2026, 1, 16))
+ 153:     assert result["status"] == status
+ 154:     assert result["q25"] == 11 and result["q75"] == 13
+ 155:     assert result["difference_from_median_pct"] == pytest.approx(100 * (quote / 12 - 1))
+ 156:     assert result["age_days"] == 1 and result["span_days"] == 14
+ 157: 
+ 158: 
+ 159: def test_timing_same_day_quote_excluded_and_short_span():
+ 160:     """The current quote cannot count as prior evidence."""
+ 161:     frame = pd.DataFrame({"date": pd.date_range("2026-01-01", periods=5), "price": [10, 11, 12, 13, 14]})
+ 162:     assert timing_signal(frame, 12, date(2026, 1, 5))["status"] == "insufficient_history"
+ 163:     assert timing_signal(frame, 12, date(2026, 1, 6))["status"] == "limited_history"
+ 164:     with pytest.raises(ValueError):
+ 165:         timing_signal(frame, 0)

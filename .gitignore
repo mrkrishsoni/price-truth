@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+mutants/
+.DS_Store
+.streamlit/secrets.toml
+*.egg-info/
+
+output/
+submission/*.zip
+reports/current/*.stderr
+reports/current/development_*.csv
+reports/*.diff
+*.log

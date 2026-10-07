@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-10-06T15:06:22.623766+00:00",
+  "model_sha256": "4100dc5db6927da4c97c8d1d9dd414ecdf51fd144c6cab737236cf43fdd97a26",
+  "held_out_rows": 4269,
+  "overall": {
+    "n": 4269,
+    "mae_inr": 356.8183279912241,
+    "median_absolute_percentage_error": 20.15700963101238,
+    "mean_absolute_log_error": 0.27304886114885685,
+    "r2": 0.9575523210096902
+  },
+  "subgroups_minimum_n": 30,
+  "subgroups": [
+    {
+      "platform": "amazon",
+      "category": "Computers",
+      "n": 78,
+      "mae_inr": 294.5082182739579,
+      "median_absolute_percentage_error": 30.10153449119522,
+      "mean_absolute_log_error": 0.3730357338989976,
+      "r2": 0.7348246219466803
+    },
+    {
+      "platform": "amazon",
+      "category": "Electronics",
+      "n": 100,
+      "mae_inr": 855.6877434152427,
+      "median_absolute_percentage_error": 22.58865580073541,
+      "mean_absolute_log_error": 0.31898828699968607,
+      "r2": 0.9215732454742067
+    },
+    {
+      "platform": "amazon",
+      "category": "Home and kitchen",
+      "n": 104,
+      "mae_inr": 449.3552777964139,
+      "median_absolute_percentage_error": 14.183294554049017,
+      "mean_absolute_log_error": 0.2142746724593751,
+      "r2": 0.7776022026501865
+    },
+    {
+      "platform": "flipkart",
+      "category": "Clothing",
+      "n": 1264,
+      "mae_inr": 194.45215103899727,
+      "median_absolute_percentage_error": 22.59615659881496,
+      "mean_absolute_log_error": 0.27066037652404357,
+      "r2": 0.7224906419533064
+    },
+    {
+      "platform": "flipkart",
+      "category": "Computers",
+      "n": 106,
+      "mae_inr": 311.2859233487815,
+      "median_absolute_percentage_error": 21.63146706493473,
+      "mean_absolute_log_error": 0.24122001588896425,
+      "r2": 0.8511610955222964
+    },
+    {
+      "platform": "flipkart",
+      "category": "Electronics",
+      "n": 324,
+      "mae_inr": 369.14120999876985,
+      "median_absolute_percentage_error": 27.356384798189204,
+      "mean_absolute_log_error": 0.4306264251891341,
+      "r2": -0.5733775414113067
+    },
+    {
+      "platform": "flipkart",
+      "category": "Footwear",
+      "n": 230,
+      "mae_inr": 298.0331117245936,
+      "median_absolute_percentage_error": 24.941226847196297,
+      "mean_absolute_log_error": 0.2884716111655289,
+      "r2": 0.6216252922635341
+    },
+    {
+      "platform": "flipkart",
+      "category": "Home and kitchen",
+      "n": 233,
+      "mae_inr": 210.5168714573552,
+      "median_absolute_percentage_error": 16.203877572860474,
+      "mean_absolute_log_error": 0.23016686148441784,
+      "r2": 0.8159636193266102
+    },
+    {
+      "platform": "flipkart",
+      "category": "Jewellery",
+      "n": 645,
+      "mae_inr": 617.8015168380088,
+      "median_absolute_percentage_error": 18.110535374130357,
+      "mean_absolute_log_error": 0.26328297074683027,
+      "r2": 0.9740113269553834
+    },
+    {
+      "platform": "flipkart",
+      "category": "Office supplies",
+      "n": 89,
+      "mae_inr": 271.2434995069104,
+      "median_absolute_percentage_error": 20.8397839593995,
+      "mean_absolute_log_error": 0.24783582487223083,
+      "r2": 0.8970737037594487
+    },
+    {
+      "platform": "flipkart",
+      "category": "Other",
+      "n": 941,
+      "mae_inr": 424.36340007161954,
+      "median_absolute_percentage_error": 18.067433027712188,
+      "mean_absolute_log_error": 0.24989683942804658,
+      "r2": 0.9333072793789863
+    },
+    {
+      "platform": "flipkart",
+      "category": "Personal care",
+      "n": 144,
+      "mae_inr": 197.84968093700658,
+      "median_absolute_percentage_error": 10.454158201448296,
+      "mean_absolute_log_error": 0.17877215055902618,
+      "r2": -0.7876337212741784
+    }
+  ],
+  "reference_price_sensitivity": {
+    "perturbation_pct": 25,
+    "median_prediction_change_pct": 22.164692990546264,
+    "p90_prediction_change_pct": 46.742344424525484,
+    "scope": "Controlled feature perturbation, not new market observations or a causal estimate"
+  },
+  "limitations": [
+    "Historical snapshots cannot establish prospective performance.",
+    "Diagnostic subgroup results must not be used to retune against the frozen test set."
+  ]
+}

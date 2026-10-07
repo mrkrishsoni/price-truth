@@ -1,0 +1,78 @@
+"""Source integrity, normalization, and evaluation leakage checks."""
+import hashlib
+import json
+
+import pandas as pd
+import pytest
+
+from price_truth.data import (
+    SOURCES,
+    category_parts,
+    clean_source,
+    load_catalogue,
+    normalize,
+    numeric,
+)
+from price_truth.model import features
+from price_truth.paths import REPORTS
+
+
+def test_raw_hashes_and_partition():
+    """Every source row is accounted for and both original files stay unchanged."""
+    audit = json.loads((REPORTS / "data_audit.json").read_text())
+    expected = {"amazon": "4ba126c4ba8edd35e62e94ce1c853073d832de380184ab4f5f97d1e314882c77",
+                "flipkart": "56f8f699c9e847356666c2eab3c3ab1244340f6a98ad08e39ea2199ebe993ad1"}
+    for name, (path, _, _) in SOURCES.items():
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == expected[name]
+        source = audit["sources"][name]
+        assert source["raw_rows"] == source["clean_rows"] + sum(source["exclusions"].values())
+
+
+def test_catalogue_invariants():
+    """Rows have valid prices and unique platform-specific identities."""
+    data = load_catalogue()
+    assert data.key.is_unique
+    assert (data.selling_price > 0).all()
+    assert (data.listed_price >= data.selling_price).all()
+    assert data[data.platform == "amazon"].observed_at.eq("").all()
+    assert data[data.platform == "flipkart"].rating_count.isna().all()
+
+
+def test_conflicting_actual_source_prices_are_quarantined():
+    """Repeated IDs with changed selling OR reference prices are ambiguous."""
+    raw = pd.read_csv(SOURCES["amazon"][0], dtype=str, keep_default_na=False)
+    raw = raw[raw.product_id.isin(["B096MSW6CT", "B0B5B6PQCT", "B07JW9H4J1"])].reset_index(drop=True)
+    clean, excluded, _ = clean_source(normalize("amazon", raw))
+    assert clean.product_id.tolist() == ["B07JW9H4J1"]
+    assert len(clean) + len(excluded) == len(raw)
+
+
+def test_numeric_missing_is_not_zero():
+    """Missing or malformed ratings must remain missing."""
+    parsed = numeric(pd.Series(["₹1,099", "4.2", "No rating available", "", "|", "inf"]))
+    assert parsed.iloc[:2].tolist() == [1099, 4.2]
+    assert parsed.iloc[2:].isna().all()
+
+
+@pytest.mark.parametrize("value", ["not json", "[]", "{}", "null"])
+def test_category_rejects_invalid_structure(value):
+    """Malformed source fields must not be executed or crash normalization."""
+    assert category_parts(value, "flipkart") == []
+
+
+def test_no_target_leakage_in_features():
+    """Changing the prediction target must not change the model inputs."""
+    data = load_catalogue().head(4)
+    original = features(data)
+    data["selling_price"] *= 10
+    data["discount_pct"] = 100
+    pd.testing.assert_frame_equal(features(data), original)
+
+
+def test_evaluation_groups_do_not_overlap():
+    """Related normalized titles must appear in exactly one split."""
+    splits = pd.read_csv(REPORTS / "evaluation_split.csv")
+    assert splits.groupby("name_group").split.nunique().max() == 1
+    assert splits.key.is_unique
+    assert set(splits.split) == {"train", "validation", "calibration", "test"}
+
