@@ -12,6 +12,8 @@ output
 reports/*
 !reports/data_audit.json
 !reports/model_evaluation.json
+!reports/current/model_audit.json
+!reports/current/collection_status.json
 tests
 scripts
 docs
@@ -25,3 +27,4 @@ datasets/processed/excluded.csv
 **/.DS_Store
 .github
 .browser-binaries
+.claude
