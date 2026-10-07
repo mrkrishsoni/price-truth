@@ -1,6 +1,6 @@
 # Price Truth — current engineering review
 
-Generated: 2026-10-07T07:22:33.088746+00:00
+Generated: 2026-10-07T07:38:29.621445+00:00
 
 Historical submission reports are preserved separately; these results apply to this source manifest.
 
@@ -16,17 +16,17 @@ Historical submission reports are preserved separately; these results apply to t
 | errors | 0 |
 | failures | 0 |
 | skipped | 0 |
-| tests | 370 |
-| time | 19.836 |
-| timestamp | 2026-10-07T12:51:43.356177+05:30 |
+| tests | 382 |
+| time | 18.172 |
+| timestamp | 2026-10-07T13:07:45.613318+05:30 |
 | hostname | Mac.lan |
 
 ## Coverage
 
 | Measure | Count | Percentage |
 | --- | --- | --- |
-| Statements | 1623/1725 | 94.09% |
-| Branches | 317/374 | 84.76% |
+| Statements | 1652/1754 | 94.18% |
+| Branches | 323/380 | 85.00% |
 
 Coverage scope: price_truth package; scripts and app.py are outside this denominator.
 
@@ -57,6 +57,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/synthetic.py | _sales | 5 | A |
 | src/price_truth/synthetic.py | reference_check | 5 | A |
 | src/price_truth/synthetic.py | sale_mask | 4 | A |
+| src/price_truth/synthetic.py | price_level_factor | 3 | A |
 | src/price_truth/synthetic.py | price_history | 3 | A |
 | src/price_truth/synthetic.py | food_history | 3 | A |
 | src/price_truth/synthetic.py | labelled_examples | 2 | A |
@@ -151,6 +152,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/market_ui.py | slim | 2 | A |
 | src/price_truth/market_ui.py | history_chart | 2 | A |
 | src/price_truth/market_ui.py | listing_history | 1 | A |
+| src/price_truth/market_ui.py | current_price | 1 | A |
 | src/price_truth/market_ui.py | market_tabs | 1 | A |
 | src/price_truth/price_api.py | valid_cache | 9 | B |
 | src/price_truth/price_api.py | fetch_observations | 8 | B |
@@ -193,6 +195,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/external.py | _search_summary | 2 | A |
 | src/price_truth/data.py | normalize | 10 | B |
 | src/price_truth/data.py | category_parts | 5 | A |
+| src/price_truth/data.py | title_category | 3 | A |
 | src/price_truth/data.py | build_catalogue | 2 | A |
 | src/price_truth/data.py | load_catalogue | 2 | A |
 | src/price_truth/data.py | numeric | 1 | A |
@@ -406,6 +409,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_synthetic.py | test_sale_events_follow_the_platform_calendar | 5 | A |
 | tests/test_synthetic.py | test_offers_rank_by_total_cost_and_include_own_platform | 5 | A |
 | tests/test_synthetic.py | test_classifier_trains_reports_and_explains | 5 | A |
+| tests/test_synthetic.py | test_price_level_factor_uses_official_cpi | 5 | A |
 | tests/test_synthetic.py | test_history_is_deterministic_and_stable_over_time | 4 | A |
 | tests/test_synthetic.py | test_labelled_examples_cover_sale_days_and_mark_inflators | 4 | A |
 | tests/test_synthetic.py | test_food_history_is_anchored_and_shaped_like_open_prices | 4 | A |
@@ -415,13 +419,16 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_synthetic.py | test_history_is_anchored_to_the_real_catalogue_price | 2 | A |
 | tests/test_synthetic.py | history | 2 | A |
 | tests/test_synthetic.py | test_rule_uses_prices_from_before_the_promotion | 2 | A |
+| tests/test_synthetic.py | test_history_starts_from_the_inflation_adjusted_price | 2 | A |
 | tests/test_data.py | test_build_catalogue_reproduces_shipped_catalogue | 11 | C |
 | tests/test_data.py | test_catalogue_invariants | 9 | B |
 | tests/test_data.py | test_raw_hashes_and_partition | 4 | A |
 | tests/test_data.py | test_evaluation_groups_do_not_overlap | 4 | A |
+| tests/test_data.py | test_category_groups_cover_source_roots | 4 | A |
 | tests/test_data.py | test_conflicting_actual_source_prices_are_quarantined | 3 | A |
 | tests/test_data.py | test_numeric_missing_is_not_zero | 3 | A |
 | tests/test_data.py | test_category_rejects_invalid_structure | 2 | A |
+| tests/test_data.py | test_title_category_rules | 2 | A |
 | tests/test_data.py | test_no_target_leakage_in_features | 1 | A |
 | tests/test_app.py | test_price_check_runs_real_model | 7 | B |
 | tests/test_app.py | test_unit_comparison_flow | 5 | A |
@@ -467,14 +474,14 @@ MI is an index, not percent maintainability.
 
 | File | MI | Rank |
 | --- | --- | --- |
-| src/price_truth/synthetic.py | 38.74 | A |
+| src/price_truth/synthetic.py | 36.89 | A |
 | src/price_truth/exports.py | 57.61 | A |
 | src/price_truth/forecast.py | 46.82 | A |
 | src/price_truth/evidence_store.py | 45.71 | A |
 | src/price_truth/theme.py | 47.21 | A |
 | src/price_truth/paths.py | 67.73 | A |
 | src/price_truth/authenticity.py | 49.74 | A |
-| src/price_truth/ui.py | 19.89 | A |
+| src/price_truth/ui.py | 19.82 | A |
 | src/price_truth/observations.py | 33.08 | A |
 | src/price_truth/present.py | 51.89 | A |
 | src/price_truth/cache.py | 55.71 | A |
@@ -482,12 +489,12 @@ MI is an index, not percent maintainability.
 | src/price_truth/offers.py | 50.97 | A |
 | src/price_truth/calculations.py | 42.83 | A |
 | src/price_truth/model.py | 42.86 | A |
-| src/price_truth/market_ui.py | 36.51 | A |
+| src/price_truth/market_ui.py | 36.02 | A |
 | src/price_truth/price_api.py | 38.91 | A |
 | src/price_truth/resources.py | 67.96 | A |
 | src/price_truth/workspace.py | 16.48 | B |
 | src/price_truth/external.py | 36.53 | A |
-| src/price_truth/data.py | 44.18 | A |
+| src/price_truth/data.py | 43.15 | A |
 | src/price_truth/catalogue.py | 51.84 | A |
 | src/price_truth/history.py | 44.55 | A |
 | app.py | 62.56 | A |
@@ -512,8 +519,8 @@ MI is an index, not percent maintainability.
 | tests/test_forecast.py | 20.97 | A |
 | tests/test_observations.py | 20.7 | A |
 | tests/test_calculations.py | 34.25 | A |
-| tests/test_synthetic.py | 29.74 | A |
-| tests/test_data.py | 41.13 | A |
+| tests/test_synthetic.py | 32.41 | A |
+| tests/test_data.py | 38.41 | A |
 | tests/test_app.py | 43.46 | A |
 | tests/test_evidence_store.py | 30.29 | A |
 | tests/test_offers.py | 35.02 | A |
@@ -522,14 +529,14 @@ MI is an index, not percent maintainability.
 
 | File | LOC | SLOC | Comments |
 | --- | --- | --- | --- |
-| src/price_truth/synthetic.py | 227 | 166 | 1 |
+| src/price_truth/synthetic.py | 242 | 178 | 1 |
 | src/price_truth/exports.py | 41 | 36 | 0 |
 | src/price_truth/forecast.py | 82 | 61 | 1 |
 | src/price_truth/evidence_store.py | 64 | 51 | 0 |
 | src/price_truth/theme.py | 167 | 127 | 2 |
 | src/price_truth/paths.py | 10 | 7 | 0 |
 | src/price_truth/authenticity.py | 153 | 119 | 1 |
-| src/price_truth/ui.py | 361 | 317 | 0 |
+| src/price_truth/ui.py | 367 | 322 | 0 |
 | src/price_truth/observations.py | 134 | 101 | 0 |
 | src/price_truth/present.py | 143 | 106 | 1 |
 | src/price_truth/cache.py | 38 | 28 | 0 |
@@ -537,12 +544,12 @@ MI is an index, not percent maintainability.
 | src/price_truth/offers.py | 36 | 30 | 0 |
 | src/price_truth/calculations.py | 59 | 41 | 0 |
 | src/price_truth/model.py | 195 | 154 | 0 |
-| src/price_truth/market_ui.py | 142 | 117 | 0 |
+| src/price_truth/market_ui.py | 148 | 120 | 0 |
 | src/price_truth/price_api.py | 86 | 67 | 0 |
 | src/price_truth/resources.py | 64 | 38 | 1 |
 | src/price_truth/workspace.py | 451 | 386 | 2 |
 | src/price_truth/external.py | 113 | 86 | 0 |
-| src/price_truth/data.py | 161 | 124 | 4 |
+| src/price_truth/data.py | 211 | 169 | 6 |
 | src/price_truth/catalogue.py | 38 | 27 | 0 |
 | src/price_truth/history.py | 54 | 42 | 0 |
 | app.py | 32 | 27 | 0 |
@@ -567,8 +574,8 @@ MI is an index, not percent maintainability.
 | tests/test_forecast.py | 190 | 132 | 0 |
 | tests/test_observations.py | 314 | 208 | 0 |
 | tests/test_calculations.py | 180 | 117 | 0 |
-| tests/test_synthetic.py | 127 | 84 | 0 |
-| tests/test_data.py | 104 | 76 | 1 |
+| tests/test_synthetic.py | 151 | 102 | 1 |
+| tests/test_data.py | 126 | 92 | 1 |
 | tests/test_app.py | 102 | 66 | 1 |
 | tests/test_evidence_store.py | 151 | 112 | 0 |
 | tests/test_offers.py | 158 | 113 | 0 |
@@ -577,7 +584,7 @@ MI is an index, not percent maintainability.
 
 | File | Volume | Estimated effort |
 | --- | --- | --- |
-| src/price_truth/synthetic.py | 2279.64 | 26119.14 |
+| src/price_truth/synthetic.py | 2585.01 | 30550.14 |
 | src/price_truth/exports.py | 72.0 | 280.8 |
 | src/price_truth/forecast.py | 452.51 | 3022.09 |
 | src/price_truth/evidence_store.py | 137.55 | 412.65 |
@@ -592,12 +599,12 @@ MI is an index, not percent maintainability.
 | src/price_truth/offers.py | 145.71 | 647.62 |
 | src/price_truth/calculations.py | 510.04 | 3559.89 |
 | src/price_truth/model.py | 493.63 | 3004.67 |
-| src/price_truth/market_ui.py | 237.82 | 1326.28 |
+| src/price_truth/market_ui.py | 250.05 | 1389.19 |
 | src/price_truth/price_api.py | 327.72 | 1474.74 |
 | src/price_truth/resources.py | 4.75 | 2.38 |
 | src/price_truth/workspace.py | 1426.7 | 11489.65 |
 | src/price_truth/external.py | 283.39 | 1055.85 |
-| src/price_truth/data.py | 570.62 | 4662.06 |
+| src/price_truth/data.py | 615.66 | 5442.43 |
 | src/price_truth/catalogue.py | 113.09 | 339.27 |
 | src/price_truth/history.py | 543.93 | 3451.88 |
 | app.py | 18.0 | 18.0 |
@@ -622,8 +629,8 @@ MI is an index, not percent maintainability.
 | tests/test_forecast.py | 1812.12 | 6543.11 |
 | tests/test_observations.py | 1119.08 | 4308.47 |
 | tests/test_calculations.py | 340.49 | 680.99 |
-| tests/test_synthetic.py | 1394.13 | 12954.8 |
-| tests/test_data.py | 711.83 | 3329.17 |
+| tests/test_synthetic.py | 1677.76 | 15381.49 |
+| tests/test_data.py | 831.0 | 4287.97 |
 | tests/test_app.py | 496.18 | 2364.15 |
 | tests/test_evidence_store.py | 817.84 | 2286.73 |
 | tests/test_offers.py | 222.94 | 111.47 |
@@ -632,9 +639,9 @@ MI is an index, not percent maintainability.
 
 | Measure | Value |
 | --- | --- |
-| first_assessment_seconds | 0.8378445410053246 |
+| first_assessment_seconds | 0.9567815829941537 |
 | warm_calls | 29 |
-| warm_p95_seconds | 0.01924854999524541 |
+| warm_p95_seconds | 0.019704725011251867 |
 | scope | Sequential local assessment including SHAP; not 100-user load or browser latency |
 
 ## Requirements still requiring external evidence

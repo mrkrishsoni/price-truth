@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-07T07:18:07.738282+00:00",
+  "generated_at": "2026-10-07T07:36:12.024122+00:00",
   "end_date": "2026-10-07",
   "real_listings": 21267,
   "price_history": {
-    "products": 518,
-    "rows": 523698,
+    "products": 758,
+    "rows": 766338,
     "first_date": "2024-01-01",
     "last_date": "2026-10-07"
   },
   "discount_training": {
-    "products": 1958,
-    "rows": 29276,
-    "inflated_share": 0.05581363574258778
+    "products": 2816,
+    "rows": 42118,
+    "inflated_share": 0.05185431406999383
   },
   "offers": {
-    "products": 518,
-    "rows": 2283
+    "products": 758,
+    "rows": 3040
   },
   "food_prices": {
     "synthetic": 60660,
@@ -26,13 +26,13 @@
     "synthetic": 5
   },
   "discount_model_test": {
-    "n": 5859,
-    "positive_rate": 0.05598224953063663,
-    "roc_auc": 0.8792344479673326,
-    "average_precision": 0.25668799080859767,
-    "precision": 0.22549019607843138,
-    "recall": 0.49085365853658536,
-    "f1": 0.30902111324376197,
-    "brier": 0.045725897182286306
+    "n": 8439,
+    "positive_rate": 0.048109965635738834,
+    "roc_auc": 0.8838843036023202,
+    "average_precision": 0.22382909403214246,
+    "precision": 0.22897196261682243,
+    "recall": 0.4827586206896552,
+    "f1": 0.31061806656101426,
+    "brier": 0.040392055590244155
   }
 }

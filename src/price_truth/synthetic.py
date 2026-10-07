@@ -89,13 +89,28 @@ def _sales(rng, regular, mrp, events, params, inflator, dynamics):
     return price, shown_mrp
 
 
+def price_level_factor(listing: dict) -> float:
+    """CPI scaling from the listing's crawl month to the anchor month (1.0 when the date is unknown)."""
+    level = assumptions()["price_level"]
+    general = level["general_index"]
+    observed = str(listing.get("observed_at") or "")[:7]
+    if observed not in general:
+        return 1.0
+    anchor = level["anchor_month"]
+    subgroup = level["subgroups"][level["category_subgroup"].get(listing["category_group"], "general")]
+    base = level["subgroups"]["general"]
+    drift = (subgroup["may_2025"] / subgroup["may_2016"]) / (base["may_2025"] / base["may_2016"])
+    months = (pd.Period(anchor, "M") - pd.Period(observed, "M")).n
+    return general[anchor] / general[observed] * drift ** (months / 108)
+
+
 def full_history(listing: dict) -> pd.DataFrame:
     """Simulate the whole calendar for one listing (cached by key in callers)."""
     params, dynamics = category_params(listing["category_group"]), assumptions()["dynamics"]
     rng = np.random.default_rng(seed_for(listing["key"], "history"))
     shares = assumptions()["inflator_share_by_platform"]
     inflator = rng.random() < shares.get(listing["platform"], shares["default"]) * params["inflator_weight"]
-    regular = _regular_path(rng, float(listing["selling_price"]), params, dynamics)
+    regular = _regular_path(rng, float(listing["selling_price"]) * price_level_factor(listing), params, dynamics)
     mrp = np.maximum(float(listing["listed_price"]) * regular / float(listing["selling_price"]), regular)
     events = sale_mask(listing["platform"])
     price, shown_mrp = _sales(rng, regular, mrp, events, params, inflator, dynamics)

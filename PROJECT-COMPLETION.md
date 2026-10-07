@@ -26,6 +26,12 @@ Updated: 7 October 2026. The day plan and remaining gates are in [docs/COMPLETIO
 - New discount-authenticity classifier: ROC AUC 0.88 on unseen products (synthetic labels).
 - Price check now has Discount check, Price history & timing, and Where to buy tabs.
 
+### Dataset v1.1 (7 Oct, evening)
+
+- 15 category groups; "Other" 4,901 → 60 listings (source-root mapping plus whole-word title rules for 320 malformed rows).
+- Synthetic anchors inflation-adjusted with MoSPI CPI (general monthly index plus category sub-groups): Flipkart ×1.48–1.57, Amazon ×1.09.
+- Price model retrained: R² 0.959, MAE ₹357; no category has negative R² any more.
+
 ### Still open (cannot be completed in one day)
 - Validated Indian buy-timing forecast: needs 40 consecutive days of real observations (collection started 7 Oct).
 - 14-day measured uptime window (starts at deployment).

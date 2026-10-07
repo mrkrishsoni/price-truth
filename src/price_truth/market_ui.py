@@ -12,13 +12,19 @@ from price_truth.history import timing_signal
 from price_truth.workspace import show_forecast, show_timing
 
 LISTING_FIELDS = ["key", "platform", "category_group", "listed_price", "selling_price", "name", "rating",
-                  "rating_count"]
+                  "rating_count", "observed_at"]
 
 
 @st.cache_data(max_entries=256, show_spinner=False)
 def listing_history(listing: dict, end: date) -> pd.DataFrame:
     """Cached daily history for one listing."""
     return synthetic.price_history(listing, end)
+
+
+def current_price(row: dict) -> tuple[float, float]:
+    """Today's selling price and shown MRP for a listing."""
+    latest = listing_history(slim(row), date.today()).iloc[-1]
+    return float(latest.price), float(latest.mrp)
 
 
 def slim(row: dict) -> dict:

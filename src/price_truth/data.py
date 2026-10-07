@@ -15,12 +15,55 @@ SOURCES = {
 ROOTS = {
     "Computers&Accessories": "Computers", "Computers": "Computers",
     "Electronics": "Electronics", "Mobiles & Accessories": "Electronics",
-    "Cameras & Accessories": "Electronics", "Home&Kitchen": "Home and kitchen",
-    "Kitchen & Dining": "Home and kitchen", "Home Furnishing": "Home and kitchen",
+    "Cameras & Accessories": "Electronics", "Gaming": "Electronics", "Home Entertainment": "Electronics",
+    "Wearable Smart Devices": "Electronics",
+    "Home&Kitchen": "Home and kitchen", "Kitchen & Dining": "Home and kitchen",
+    "Home Furnishing": "Home and kitchen", "Home & Kitchen": "Home and kitchen",
+    "Household Supplies": "Home and kitchen",
+    "Home Decor & Festive Needs": "Home decor and furniture", "Furniture": "Home decor and furniture",
+    "Tools & Hardware": "Tools and home improvement", "Home Improvement": "Tools and home improvement",
+    "HomeImprovement": "Tools and home improvement", "Automation & Robotics": "Tools and home improvement",
+    "Automotive": "Automotive", "Car&Motorbike": "Automotive",
+    "Watches": "Fashion accessories", "Bags, Wallets & Belts": "Fashion accessories",
+    "Sunglasses": "Fashion accessories", "Eyewear": "Fashion accessories",
+    "Baby Care": "Baby and kids", "Toys & School Supplies": "Baby and kids", "Toys&Games": "Baby and kids",
+    "Sports & Fitness": "Sports and fitness",
     "Clothing": "Clothing", "Jewellery": "Jewellery", "Footwear": "Footwear",
     "OfficeProducts": "Office supplies", "Pens & Stationery": "Office supplies",
     "Beauty and Personal Care": "Personal care", "Health&PersonalCare": "Personal care",
+    "Health & Personal Care Appliances": "Personal care",
 }
+# Some Flipkart rows carry the product title instead of a category tree. Classify those from
+# whole words in the title, first match wins; anything unmatched stays "Other".
+TITLE_RULES = [
+    ("Footwear", r"flats|bellies|wedges|shoes|slippers|sandals|heels|lace up|floaters"),
+    ("Clothing", r"bra|panty|panties|brief|boxer|vest|camisole|lingerie|kurta|kurti|sari|saree|salwar|"
+                 r"leggings|jeans|t-shirt|shirt|top|dress|jumpsuit|jacket|sweater|sweatshirt|blazer|"
+                 r"trousers|shorts|stole|socks|gloves|pyjama|capri|combo"),
+    ("Jewellery", r"bangles?|rings?|necklace|earrings?|pendant|bracelet|anklet|mangalsutra"),
+    ("Fashion accessories", r"sunglasses|clutch|wallet|belt|backpack|bag|watch|hair clip|hair band|cufflink"),
+    ("Automotive", r"car|bike|steering|rear view mirror|bajaj|royal enfield|helmet|side stand|grill"),
+    ("Home decor and furniture", r"tapestry|showpiece|lantern|candles?|artificial plant|sofa cover|"
+                                 r"table cover|bedsheet|mat|mattress|incense|cushion|paper weights?"),
+    ("Electronics", r"headset|binoculars|mixer|battery|lcd|mah|charging pack|pouch|screen guard|"
+                    r"guard glass|tempered glass"),
+    ("Home and kitchen", r"glass|bowl|wine cooler|cookware|bottle"),
+    ("Tools and home improvement", r"faucet|pump controller|mcb|fittings|roller brush|work bench|"
+                                   r"motion sensor|surge protector|seeds?"),
+    ("Personal care", r"foundation brush|hair dryer|conditioner|shaving|nail cutter|pain relief"),
+    ("Computers", r"keyboard"),
+    ("Baby and kids", r"baby|walker|board game|quilling"),
+    ("Sports and fitness", r"thigh guard|arm sleeve"),
+]
+
+
+def title_category(name: str) -> str:
+    """Category group from whole words in a product title, or "Other" when nothing matches."""
+    text = name.lower()
+    for group, pattern in TITLE_RULES:
+        if re.search(rf"\b(?:{pattern})\b", text):
+            return group
+    return "Other"
 
 
 def numeric(series: pd.Series) -> pd.Series:
@@ -72,7 +115,12 @@ def normalize(platform: str, raw: pd.DataFrame) -> pd.DataFrame:
     out["key"] = platform + ":" + out.product_id
     out["category_path"] = parts.map(lambda p: " > ".join(p))
     out["category_root"] = parts.map(lambda p: p[0] if p else "Unknown")
-    out["category_group"] = out.category_root.map(ROOTS).fillna("Other")
+    out["category_group"] = out.category_root.map(ROOTS)
+    broken = out.category_group.isna() & (parts.map(len) <= 1)
+    out.loc[broken, "category_group"] = out.loc[broken, "name"].map(title_category)
+    out["category_group"] = out.category_group.fillna("Other")
+    out["category_source"] = "source_tree"
+    out.loc[broken, "category_source"] = "title_keywords"
     # Three levels avoid Flipkart's brand/product-name leaves; this is a source category,
     # not a claim that every member is an interchangeable product.
     out["subcategory"] = parts.map(lambda p: " > ".join(p[:3]) if len(p) > 1 else "Unknown")
@@ -140,7 +188,9 @@ def build_catalogue() -> dict:
               "recovered_fields": {
                   "amazon.observed_at": "Unix timestamp in each product link's qid parameter",
                   "amazon.brand": "first word of the product title (brand_source=title_first_word)",
-                  "flipkart.rating_count": "0 where the source says 'No rating available'; otherwise unknown"},
+                  "flipkart.rating_count": "0 where the source says 'No rating available'; otherwise unknown",
+                  "category_group": "source category root mapped to 16 groups; rows whose category field holds "
+                                    "the product title are classified by title keywords (category_source)"},
               "policy": "Keep platforms distinct; no currency conversion; recovered fields are derived from "
                         "source text, never generated; quarantine all conflicting price IDs; retain first "
                         "source row for other duplicate IDs. Synthetic data lives in datasets/final with "
@@ -152,7 +202,7 @@ def build_catalogue() -> dict:
 def load_catalogue() -> pd.DataFrame:
     """Load generated data, requiring an explicit build if it is missing."""
     frame = pd.read_csv(PROCESSED / "catalogue.csv", dtype={"product_id": str})
-    for column in ["brand", "observed_at", "subcategory", "category_path", "brand_source"]:
+    for column in ["brand", "observed_at", "subcategory", "category_path", "brand_source", "category_source"]:
         frame[column] = frame[column].fillna("")
     return frame
 

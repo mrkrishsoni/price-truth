@@ -54,22 +54,22 @@
 ⠹ Generating mutants
 ⠸ Generating mutants
 ⠸ Generating mutants
-⠼ Generating mutants
-⠼ Generating mutants
-⠸ Generating mutants
 ⠸ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
 ⠼ Generating mutants
 ⠼ Generating mutants
+⠼ Generating mutants
 ⠸ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
 ⠸ Generating mutants
+⠸ Generating mutants
 ⠼ Generating mutants
 ⠼ Generating mutants
-    done in 31ms (0 files mutated, 0 ignored, 8 unmodified)
-    Warning: 60 non-Python file(s) changed since the last full run: .dockerignore, Dockerfile, artifacts/discount_model.joblib, artifacts/price_model.joblib, datasets/external/off/0048107251123.json, datasets/external/off/0099482410681.json, datasets/external/off/0706502578329.json, datasets/external/off/0724022008461.json, datasets/external/off/0742259099687.json, datasets/external/off/0799872395238.json, datasets/external/off/0810048090020.json, datasets/external/off/0811307031716.json, datasets/external/off/0946590641530.json, datasets/external/off/0986614900106.json, datasets/external/off/11928227.json, datasets/final/assumptions.json, datasets/final/build_summary.json, datasets/final/discount_training.csv.gz, datasets/final/food_prices.csv.gz, datasets/final/offers.csv, datasets/final/price_history.csv.gz, datasets/final/shrink_cases.json, datasets/final/shrink_research.json, datasets/final/shrink_simulated.json, datasets/processed/catalogue.csv, datasets/processed/excluded.csv, reports/current/browser-assessment.pdf, reports/current/browser_check.json, reports/current/coverage.json, reports/current/firefox/browser-assessment.pdf, reports/current/firefox/browser_check.json, reports/current/firefox/workspace-1440.png, reports/current/firefox/workspace-390.png, reports/current/firefox/workspace-768.png, reports/current/firefox/workspace-desktop.png, reports/current/model_audit.json, reports/current/mutation.json, reports/current/mutmut-results.txt, reports/current/mutmut-run.txt, reports/current/performance.json, reports/current/pytest-run.txt, reports/current/pytest.xml, reports/current/radon-cc.json, reports/current/radon-hal.json, reports/current/radon-mi.json, reports/current/radon-raw.json, reports/current/review_manifest.json, reports/current/webkit/browser-assessment.pdf, reports/current/webkit/browser_check.json, reports/current/webkit/workspace-1440.png, reports/current/webkit/workspace-390.png, reports/current/webkit/workspace-768.png, reports/current/webkit/workspace-desktop.png, reports/current/workspace-1440.png, reports/current/workspace-390.png, reports/current/workspace-768.png, reports/current/workspace-desktop.png, reports/data_audit.json, reports/discount_model_evaluation.json, reports/model_evaluation.json
+⠼ Generating mutants
+    done in 30ms (0 files mutated, 0 ignored, 8 unmodified)
+    Warning: 68 non-Python file(s) changed since the last full run: .dockerignore, Dockerfile, artifacts/discount_model.joblib, artifacts/price_model.joblib, datasets/external/off/0048107251123.json, datasets/external/off/0099482410681.json, datasets/external/off/0706502578329.json, datasets/external/off/0724022008461.json, datasets/external/off/0742259099687.json, datasets/external/off/0799872395238.json, datasets/external/off/0810048090020.json, datasets/external/off/0811307031716.json, datasets/external/off/0946590641530.json, datasets/external/off/0986614900106.json, datasets/external/off/11928227.json, datasets/external/off/1701040600001.json, datasets/external/off/3948719127465.json, datasets/external/off/3948764012990.json, datasets/external/off/4006040132974.json, datasets/external/off/4897036695678.json, datasets/external/off/6291100212606.json, datasets/external/off/6971606793495.json, datasets/final/assumptions.json, datasets/final/build_summary.json, datasets/final/discount_training.csv.gz, datasets/final/food_prices.csv.gz, datasets/final/offers.csv, datasets/final/price_history.csv.gz, datasets/final/shrink_cases.json, datasets/final/shrink_research.json, datasets/final/shrink_simulated.json, datasets/processed/catalogue.csv, datasets/processed/excluded.csv, reports/current/browser-assessment.pdf, reports/current/browser_check.json, reports/current/coverage.json, reports/current/firefox/browser-assessment.pdf, reports/current/firefox/browser_check.json, reports/current/firefox/workspace-1440.png, reports/current/firefox/workspace-390.png, reports/current/firefox/workspace-768.png, reports/current/firefox/workspace-desktop.png, reports/current/load_test_local.json, reports/current/model_audit.json, reports/current/mutation.json, reports/current/mutmut-results.txt, reports/current/mutmut-run.txt, reports/current/performance.json, reports/current/pytest-run.txt, reports/current/pytest.xml, reports/current/radon-cc.json, reports/current/radon-hal.json, reports/current/radon-mi.json, reports/current/radon-raw.json, reports/current/review_manifest.json, reports/current/webkit/browser-assessment.pdf, reports/current/webkit/browser_check.json, reports/current/webkit/workspace-1440.png, reports/current/webkit/workspace-390.png, reports/current/webkit/workspace-768.png, reports/current/webkit/workspace-desktop.png, reports/current/workspace-1440.png, reports/current/workspace-390.png, reports/current/workspace-768.png, reports/current/workspace-desktop.png, reports/data_audit.json, reports/discount_model_evaluation.json, reports/model_evaluation.json
     These cannot be tracked for behavioral changes, so cached results were kept.
     If the changes affect your tests, delete the mutants/ directory or set on_dependency_change = "rerun".
 
@@ -2503,7 +2503,7 @@ Running mutation testing
 ⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
 ⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
 ⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-68.36 mutations/second
+80.05 mutations/second
 
 Mutant results
 --------------

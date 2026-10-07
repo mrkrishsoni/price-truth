@@ -12,6 +12,7 @@ from price_truth.data import (
     load_catalogue,
     normalize,
     numeric,
+    title_category,
 )
 from price_truth.model import features
 from price_truth.paths import REPORTS
@@ -102,3 +103,24 @@ def test_evaluation_groups_do_not_overlap():
     assert splits.key.is_unique
     assert set(splits.split) == {"train", "validation", "calibration", "test"}
 
+
+
+@pytest.mark.parametrize(("title", "group"), [
+    ("Clovia Women's Full Coverage Bra", "Clothing"), ("Treppe Bellies", "Footwear"),
+    ("Pout Brass Bangle", "Jewellery"), ("Olvin Oval Sunglasses", "Fashion accessories"),
+    ("Speedwav 186136 Manual Rear View Mirror", "Automotive"),
+    ("Corcepts Universal Tablet HD Ultra Clear Transparency Guard Glass", "Electronics"),
+    ("Ocean GP/Pyramid Glass (300 ml, Clear, Pack of 12)", "Home and kitchen"),
+    ("Sumo Baby Walker (Red)", "Baby and kids"), ("Zixtro Bug", "Other"),
+])
+def test_title_category_rules(title, group):
+    """Whole-word title rules classify rows whose category field holds the product name."""
+    assert title_category(title) == group
+
+
+def test_category_groups_cover_source_roots():
+    """Almost every listing gets a real category group; title-classified rows are labelled as such."""
+    data = load_catalogue()
+    assert (data.category_group == "Other").mean() < .01
+    assert set(data.category_source) == {"source_tree", "title_keywords"}
+    assert data[data.category_source == "title_keywords"].category_path.str.count(" > ").eq(0).all()

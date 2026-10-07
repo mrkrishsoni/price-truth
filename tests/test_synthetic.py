@@ -125,3 +125,27 @@ def test_classifier_trains_reports_and_explains(tmp_path, monkeypatch):
     result = authenticity.assess_discount(bundle, LISTING, 600., 1000., True)
     assert 0 <= result["probability_inflated"] <= 1
     assert result["contributions"] and isinstance(result["flagged"], bool | np.bool_)
+
+
+def test_price_level_factor_uses_official_cpi():
+    """Flipkart 2016 prices scale by about 1.5; Amazon Jan 2023 by about 1.09; unknown dates are unscaled."""
+    level = synthetic.assumptions()["price_level"]
+    general = level["general_index"]
+    flipkart = {**LISTING, "observed_at": "2016-05-10T00:00:00+00:00", "category_group": "Jewellery"}
+    assert synthetic.price_level_factor(flipkart) == pytest.approx(general["2025-05"] / general["2016-05"])
+    clothing = synthetic.price_level_factor({**flipkart, "category_group": "Clothing"})
+    assert clothing == pytest.approx(198.0 / 132.2)  # full May 2016 → May 2025 sub-group change
+    amazon = synthetic.price_level_factor({**LISTING, "platform": "amazon", "observed_at": "2023-01-05",
+                                          "category_group": "Personal care"})
+    assert amazon == pytest.approx(193.0 / 176.5)
+    assert synthetic.price_level_factor({**LISTING, "observed_at": ""}) == 1.0
+
+
+def test_history_starts_from_the_inflation_adjusted_price():
+    """A 2016 listing's simulated regular price sits near its CPI-adjusted level, not its 2016 price."""
+    old = {**LISTING, "observed_at": "2016-05-10T00:00:00+00:00"}
+    factor = synthetic.price_level_factor(old)
+    history = synthetic.price_history(old, date(2026, 6, 1))
+    anchor = pd.Timestamp(synthetic.assumptions()["dynamics"]["anchor_date"])
+    nearby = history[(history.date - anchor).abs() <= pd.Timedelta(days=10)]
+    assert nearby.price.median() == pytest.approx(LISTING["selling_price"] * factor, rel=.25)
