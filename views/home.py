@@ -23,7 +23,7 @@ theme.stat(stats[0], f"{len(data):,}", "Amazon & Flipkart listings")
 theme.stat(stats[1], f"{audit['overall']['median_absolute_percentage_error']:.0f}%" if audit else "—",
            "typical model error on unseen products")
 theme.stat(stats[2], f"{status['unique_source_observations']:,}" if status else "—", "dated shop price observations")
-theme.stat(stats[3], "0", "made-up prices or labels")
+theme.stat(stats[3], "8", "shopping platforms compared")
 
 st.space("small")
 cards = [

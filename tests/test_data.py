@@ -34,8 +34,13 @@ def test_catalogue_invariants():
     assert data.key.is_unique
     assert (data.selling_price > 0).all()
     assert (data.listed_price >= data.selling_price).all()
-    assert data[data.platform == "amazon"].observed_at.eq("").all()
-    assert data[data.platform == "flipkart"].rating_count.isna().all()
+    amazon, flipkart = data[data.platform == "amazon"], data[data.platform == "flipkart"]
+    assert amazon.observed_at.str.startswith("2023-01-05").all()  # recovered from qid timestamps
+    assert amazon.brand.ne("").all() and amazon.brand_source.eq("title_first_word").all()
+    unrated = flipkart.rating.isna()
+    assert flipkart[unrated].rating_count.isin([0, None]).all()
+    assert flipkart[~unrated].rating_count.isna().all()
+    assert data.provenance.eq("real").all()
 
 
 def test_conflicting_actual_source_prices_are_quarantined():

@@ -42,7 +42,7 @@ def listing_picker(data: pd.DataFrame) -> dict | None:
     return matches.iloc[rows[0] if rows else 0].to_dict()
 
 
-def product_page(data: pd.DataFrame, model_loader) -> None:
+def product_page(data: pd.DataFrame, model_loader, discount_loader=None) -> None:
     """Primary journey: choose a listing, enter a price, see a verdict with its reasons."""
     theme.page_header("Price check", "Is this a good price?",
                       "Compare a price with what similar Amazon and Flipkart listings actually sold for.")
@@ -57,25 +57,36 @@ def product_page(data: pd.DataFrame, model_loader) -> None:
         st.warning(f"The model is less reliable for {row['platform'].title()} {row['category_group']} "
                    f"(held-out R² {weak['r2']:.2f}, typical error {weak['median_absolute_percentage_error']:.0f}%). "
                    "Treat the verdict as a rough guide.", icon="⚠️")
-    assessment_panel(row, model_loader())
+    assessment_panel(row, model_loader(), discount_loader() if discount_loader else None)
 
 
-def assessment_panel(row: dict, bundle: dict) -> None:
-    """Assess the selected listing and present the verdict, its range and its reasons."""
+def assessment_panel(row: dict, bundle: dict, discount_bundle: dict | None = None) -> None:
+    """Assess the selected listing; results persist across reruns until the inputs change."""
     with st.form(f"quote_{row['key']}", border=False):
         columns = st.columns(2)
         listed = columns[0].number_input("Listed (MRP) price, ₹", min_value=.01, value=float(row["listed_price"]),
                                          help="The 'was' or reference price the seller shows.")
         selling = columns[1].number_input("Price you were offered, ₹", min_value=.01,
                                           value=float(row["selling_price"]))
-        submitted = st.form_submit_button("Check this price", type="primary")
-    if not submitted:
+        if st.form_submit_button("Check this price", type="primary"):
+            st.session_state["price_check"] = {"key": row["key"], "selling": selling, "listed": listed}
+    saved = st.session_state.get("price_check")
+    if not saved or saved["key"] != row["key"]:
         return
+    selling, listed = saved["selling"], saved["listed"]
     try:
         result = assess(bundle, row, selling, listed)
     except ValueError as exc:
         st.error(str(exc))
         return
+    show_assessment(row, result, selling, listed)
+    from price_truth.market_ui import market_tabs
+
+    market_tabs(row, selling, listed, discount_bundle)
+
+
+def show_assessment(row: dict, result: dict, selling: float, listed: float) -> None:
+    """Verdict, range, reasons and exports for the price-position model."""
     title, text, tone = present.verdict(present.ASSESSMENT, result["status"])
     theme.verdict(title, text, tone)
     columns = st.columns(3)
@@ -182,34 +193,54 @@ def show_unit_result(result: list[dict], currency: str) -> None:
                "Inputs are your own quotes and are not stored.")
 
 
-def shrink_page() -> None:
-    """Documented pack reductions with source links; no dates are invented."""
-    theme.page_header("Shrinkflation", "Same price, smaller pack",
-                      "Reported cases where the pack got smaller while the price stayed the same.")
+def shrink_points(case: dict) -> list[dict]:
+    """Normalise a two-point reported case or a multi-step timeline into dated points."""
+    if "timeline" in case:
+        return case["timeline"]
+    return [{"period": case["old_period"], "quantity": case["old_quantity"], "price": case["old_price"]},
+            {"period": case["new_period"], "quantity": case["new_quantity"], "price": case["new_price"]}]
+
+
+def shrink_cases() -> list[dict]:
+    """Cases from the finalized dataset, falling back to the original cited evidence."""
+    final = DATA / "final" / "shrink_cases.json"
+    if final.exists():
+        return json.loads(final.read_text())["cases"]
     evidence = json.loads((DATA / "evidence/shrink_cases.json").read_text())
-    names = [c["product"] for c in evidence["cases"]]
-    name = st.segmented_control("Documented case", names, default=names[0], key="shrink_case") or names[0]
-    case = next(c for c in evidence["cases"] if c["product"] == name)
-    result = shrink_change(case["old_quantity"], case["new_quantity"], case["old_price"], case["new_price"])
-    theme.source_badge("reported", evidence["source_name"])
-    theme.verdict(f"{case['old_quantity']:g}{case['unit']} → {case['new_quantity']:g}{case['unit']} "
-                  f"at ₹{case['new_price']:g}",
-                  f"You get {result['quantity_reduction_pct']:.0f}% less for the same money, so the real price per gram "
-                  f"rose {result['unit_price_increase_pct']:.0f}%.", "bad")
-    columns = st.columns(2)
+    return [{**c, "source_name": evidence["source_name"], "source_url": evidence["source_url"],
+             "reported_on": evidence["reported_on"], "provenance": "real"} for c in evidence["cases"]]
+
+
+def shrink_page() -> None:
+    """Pack reductions at the same or similar price, with the hidden unit-price increase."""
+    theme.page_header("Shrinkflation", "Same price, smaller pack",
+                      "Cases where the pack got smaller while the price stayed about the same.")
+    cases = shrink_cases()
+    case = st.selectbox("Product", cases, key="shrink_case", format_func=lambda c: c["product"])
+    points = shrink_points(case)
+    first, last = points[0], points[-1]
+    result = shrink_change(first["quantity"], last["quantity"], first["price"], last["price"])
+    unit = case["unit"]
+    theme.verdict(f"{first['quantity']:g}{unit} → {last['quantity']:g}{unit}"
+                  f"{' at ₹' + format(last['price'], 'g') if first['price'] == last['price'] else ''}",
+                  f"You get {result['quantity_reduction_pct']:.0f}% less, so the real price per {unit} rose "
+                  f"{result['unit_price_increase_pct']:.0f}%.", "bad")
+    columns = st.columns(3)
     columns[0].metric("Quantity reduction", f"{result['quantity_reduction_pct']:.1f}%")
     columns[1].metric("Hidden price increase", f"{result['unit_price_increase_pct']:.1f}%")
-    figure = go.Figure(go.Bar(x=[case["old_period"], case["new_period"]],
-                              y=[case["old_quantity"], case["new_quantity"]],
-                              marker_color=[theme.PURPLE, theme.CORAL],
-                              text=[f"{case['old_quantity']:g} {case['unit']}", f"{case['new_quantity']:g} {case['unit']}"],
+    columns[2].metric("Label price", f"₹{first['price']:g} → ₹{last['price']:g}")
+    figure = go.Figure(go.Bar(x=[p["period"] for p in points], y=[p["quantity"] for p in points],
+                              marker_color=[theme.PURPLE] + [theme.CORAL] * (len(points) - 1),
+                              text=[f"{p['quantity']:g} {unit} · ₹{p['price']:g}" for p in points],
                               textposition="outside", cliponaxis=False))
-    figure.update_layout(title=f"Pack size at ₹{case['new_price']:g}")
-    figure.update_yaxes(ticksuffix=f" {case['unit']}", rangemode="tozero")
-    st.plotly_chart(theme.style_figure(figure, 300), width="stretch", config={"displayModeBar": False})
-    st.markdown(f"**About this evidence.** {case['notes']} Reported {evidence['reported_on']}; "
-                f"{evidence['evidence_type']}.")
-    st.link_button("Read the original report", evidence["source_url"])
+    figure.update_layout(title="Pack size over time")
+    figure.update_yaxes(ticksuffix=f" {unit}", rangemode="tozero")
+    st.plotly_chart(theme.style_figure(figure, 320), width="stretch", config={"displayModeBar": False})
+    if case.get("notes"):
+        st.markdown(f"**About this case.** {case['notes']}")
+    if case.get("source_url"):
+        st.caption(f"{case.get('source_name', 'Source')} · {case.get('reported_on', '')}")
+        st.link_button("Read the original report", case["source_url"])
     st.caption("To track your own packs over time, add dated observations under My observations and use "
                "Analyse pack-size changes.")
 
@@ -238,7 +269,40 @@ def catalogue_page(data: pd.DataFrame) -> None:
                        mime="text/csv")
 
 
-def methods_page(evaluation: dict | None, audit: dict | None, data_audit: dict | None) -> None:
+def dataset_tab(summary: dict | None, discount: dict | None) -> None:
+    """Composition of the finalized dataset by provenance, and the discount model's evaluation."""
+    if not summary:
+        theme.empty_state("Dataset not built", "Run scripts/build_final_dataset.py to generate the final dataset.")
+        return
+    rows = [["Marketplace listings (Amazon 2023, Flipkart 2015–16)", f"{summary['real_listings']:,}", "Real"],
+            ["Daily price histories", f"{summary['price_history']['rows']:,} days · "
+             f"{summary['price_history']['products']} products", "Synthetic"],
+            ["Labelled offers for the discount model", f"{summary['discount_training']['rows']:,}", "Synthetic"],
+            ["Cross-platform offers", f"{summary['offers']['rows']:,}", "Synthetic"]]
+    rows += [[f"Food shop prices ({k})", f"{v:,}", k.title()] for k, v in summary["food_prices"].items()]
+    rows += [[f"Shrinkflation cases ({k})", str(v), k.title()] for k, v in summary["shrink_cases"].items()]
+    st.dataframe(pd.DataFrame(rows, columns=["Table", "Rows", "Provenance"]), hide_index=True)
+    st.markdown(
+        "Synthetic layers are generated by a seeded simulator (`synthetic.py`) calibrated to researched Indian "
+        "e-commerce patterns — sale calendars, category discount depths, price-revision frequency, pre-sale price "
+        "rises and platform delivery fees. Each product's history is anchored to its real catalogue price. "
+        "Every synthetic row carries `provenance = synthetic` in the dataset files and exports. "
+        "The price model is trained and evaluated on real listings only.")
+    if discount:
+        test = discount["test"]
+        columns = st.columns(4)
+        columns[0].metric("Discount model ROC AUC", f"{test['roc_auc']:.2f}")
+        columns[1].metric("Precision", f"{test['precision']:.0%}")
+        columns[2].metric("Recall", f"{test['recall']:.0%}")
+        columns[3].metric("Test offers", f"{test['n']:,}")
+        st.caption(f"{discount['selected_model'].replace('_', ' ').title()} evaluated on products it never saw, "
+                   f"using synthetic labels. {discount['label_rule']}")
+    with st.expander("Generator assumptions and sources"):
+        st.json(json.loads((DATA / "final" / "assumptions.json").read_text()), expanded=False)
+
+
+def methods_page(evaluation: dict | None, audit: dict | None, data_audit: dict | None,
+                 summary: dict | None = None, discount: dict | None = None) -> None:
     """Explain data, model quality, limits and licences, using saved real reports."""
     theme.page_header("About", "Methods, data and limits",
                       "How Price Truth reaches its results, how accurate it is, and what it cannot tell you.")
@@ -250,7 +314,7 @@ def methods_page(evaluation: dict | None, audit: dict | None, data_audit: dict |
                           help="Median absolute percentage error on products never seen in training.")
         columns[2].metric("Mean absolute error", present.money(overall["mae_inr"]))
         columns[3].metric("R²", f"{overall['r2']:.3f}")
-    tabs = st.tabs(["Model quality", "Data sources & licences", "What this cannot do", "Raw reports"])
+    tabs = st.tabs(["Model quality", "Dataset", "Data sources & licences", "What this cannot do", "Raw reports"])
     with tabs[0]:
         st.markdown("The model is a histogram gradient-boosting regressor predicting **log(1 + selling price)** "
                     "from listed price, rating, rating count, platform and category. It was chosen over a baseline "
@@ -268,6 +332,8 @@ def methods_page(evaluation: dict | None, audit: dict | None, data_audit: dict |
                              "r2": st.column_config.NumberColumn("R²", format="%.2f")})
             st.caption("Held-out subgroups with at least 30 listings. Weak categories show a warning on the price check.")
     with tabs[1]:
+        dataset_tab(summary, discount)
+    with tabs[2]:
         st.dataframe(pd.DataFrame([
             ["Amazon Sales Dataset (Kaggle, Karkavelraja J)", "1,347 listings after cleaning", "CC BY-NC-SA 4.0"],
             ["Flipkart Products (Kaggle, PromptCloud)", "19,920 listings, 2015–2016", "CC BY-SA 4.0"],
@@ -277,15 +343,18 @@ def methods_page(evaluation: dict | None, audit: dict | None, data_audit: dict |
         ], columns=["Source", "Used for", "Licence"]), hide_index=True)
         st.caption("Datasets are used for non-commercial academic purposes with attribution. Derived data keeps the "
                    "same licences. No retailer websites are scraped.")
-    with tabs[2]:
-        st.markdown("- **Not a fraud detector.** There are no verified labels of fake discounts, so results describe "
-                    "price position, not seller honesty.\n"
-                    "- **Not live prices.** Catalogue prices are historical snapshots.\n"
-                    "- **No guessed forecasts.** Buy-timing forecasts need 40+ consecutive days of real prices for the "
-                    "same pack and store; otherwise the app explains why it will not forecast.\n"
+    with tabs[3]:
+        st.markdown("- **Not a legal finding about a seller.** Discount checks apply a reference-price rule and a "
+                    "model trained on simulated, research-calibrated price histories. They show what such a check "
+                    "would conclude, not proof of dishonesty.\n"
+                    "- **Catalogue prices are historical** (Amazon January 2023, Flipkart 2015–16). Daily histories, "
+                    "cross-platform offers and most food shop prices are simulated from those anchors; the Dataset "
+                    "tab lists exactly which tables are real and which are synthetic.\n"
+                    "- **Forecasts are gated.** A next-day estimate is shown only when it beats simply repeating the "
+                    "last price on held-out days.\n"
                     "- **No automatic product matching** between food barcodes and marketplace listings.\n"
                     "- **Your entries stay in your session** and are never used for training. Download a CSV to keep them.")
-    with tabs[3]:
+    with tabs[4]:
         for name, payload in [("Dataset audit", data_audit), ("Model evaluation", evaluation), ("Model audit", audit)]:
             if payload:
                 with st.expander(name):

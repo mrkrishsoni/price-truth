@@ -151,3 +151,17 @@ def effects_chart(effects: list[dict]) -> go.Figure:
     figure.update_xaxes(ticksuffix="%", zeroline=True, zerolinecolor="#B9B3CC")
     figure.update_layout(title="What moved the estimate")
     return style_figure(figure, height=max(260, 46 * len(effects) + 70))
+
+
+def contribution_chart(effects: list[dict], title: str) -> go.Figure:
+    """Signed contributions: coral raises the risk, purple lowers it; labels state direction in words."""
+    ordered = list(reversed(effects))
+    figure = go.Figure(go.Bar(
+        x=[e["value"] for e in ordered], y=[e["label"] for e in ordered], orientation="h",
+        marker_color=[CORAL if e["value"] >= 0 else PURPLE for e in ordered],
+        customdata=["raises risk" if e["value"] >= 0 else "lowers risk" for e in ordered],
+        hovertemplate="%{y}: %{customdata}<extra></extra>"))
+    figure.update_xaxes(zeroline=True, zerolinecolor="#B9B3CC", showticklabels=False,
+                        title_text="← lowers risk          raises risk →")
+    figure.update_layout(title=title)
+    return style_figure(figure, height=max(240, 46 * len(effects) + 70))

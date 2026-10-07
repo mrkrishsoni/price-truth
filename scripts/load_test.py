@@ -28,7 +28,7 @@ async def user(browser, base: str, start: asyncio.Event) -> dict:
         await button.wait_for(timeout=120_000)
         loaded = time.perf_counter() - began
         await button.click()
-        await page.get_by_text("Advertised discount", exact=True).wait_for(timeout=120_000)
+        await page.get_by_text("Advertised discount", exact=True).first.wait_for(timeout=120_000)
         return {"ok": True, "page_ready_s": loaded, "verdict_s": time.perf_counter() - began}
     except Exception as exc:  # noqa: BLE001 - every failure is recorded as a failed user
         return {"ok": False, "error": type(exc).__name__, "seconds": time.perf_counter() - began}

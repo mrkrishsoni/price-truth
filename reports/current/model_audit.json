@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-06T15:06:22.623766+00:00",
-  "model_sha256": "4100dc5db6927da4c97c8d1d9dd414ecdf51fd144c6cab737236cf43fdd97a26",
+  "generated_at": "2026-10-07T07:04:54.212020+00:00",
+  "model_sha256": "cc6da5708a96127b727cab23cfc92408c029a3e7bd7e5a78cba71e0bfa2b2873",
   "held_out_rows": 4269,
   "overall": {
     "n": 4269,
-    "mae_inr": 356.8183279912241,
-    "median_absolute_percentage_error": 20.15700963101238,
-    "mean_absolute_log_error": 0.27304886114885685,
-    "r2": 0.9575523210096902
+    "mae_inr": 354.1069370620353,
+    "median_absolute_percentage_error": 20.528378960729178,
+    "mean_absolute_log_error": 0.27335766236124714,
+    "r2": 0.9616127379594976
   },
   "subgroups_minimum_n": 30,
   "subgroups": [
@@ -15,115 +15,115 @@
       "platform": "amazon",
       "category": "Computers",
       "n": 78,
-      "mae_inr": 294.5082182739579,
-      "median_absolute_percentage_error": 30.10153449119522,
-      "mean_absolute_log_error": 0.3730357338989976,
-      "r2": 0.7348246219466803
+      "mae_inr": 309.6945139412459,
+      "median_absolute_percentage_error": 30.011464286364024,
+      "mean_absolute_log_error": 0.3802898293561692,
+      "r2": 0.6735442903120903
     },
     {
       "platform": "amazon",
       "category": "Electronics",
       "n": 100,
-      "mae_inr": 855.6877434152427,
-      "median_absolute_percentage_error": 22.58865580073541,
-      "mean_absolute_log_error": 0.31898828699968607,
-      "r2": 0.9215732454742067
+      "mae_inr": 850.6298204260657,
+      "median_absolute_percentage_error": 24.288722484800076,
+      "mean_absolute_log_error": 0.31795450106280543,
+      "r2": 0.9249505098966543
     },
     {
       "platform": "amazon",
       "category": "Home and kitchen",
       "n": 104,
-      "mae_inr": 449.3552777964139,
-      "median_absolute_percentage_error": 14.183294554049017,
-      "mean_absolute_log_error": 0.2142746724593751,
-      "r2": 0.7776022026501865
+      "mae_inr": 438.66607169563616,
+      "median_absolute_percentage_error": 15.66229271947316,
+      "mean_absolute_log_error": 0.2153260660758257,
+      "r2": 0.792674829078394
     },
     {
       "platform": "flipkart",
       "category": "Clothing",
       "n": 1264,
-      "mae_inr": 194.45215103899727,
-      "median_absolute_percentage_error": 22.59615659881496,
-      "mean_absolute_log_error": 0.27066037652404357,
-      "r2": 0.7224906419533064
+      "mae_inr": 194.75227825819508,
+      "median_absolute_percentage_error": 23.03480306277393,
+      "mean_absolute_log_error": 0.2718225817155645,
+      "r2": 0.7238392115080121
     },
     {
       "platform": "flipkart",
       "category": "Computers",
       "n": 106,
-      "mae_inr": 311.2859233487815,
-      "median_absolute_percentage_error": 21.63146706493473,
-      "mean_absolute_log_error": 0.24122001588896425,
-      "r2": 0.8511610955222964
+      "mae_inr": 303.4376580223437,
+      "median_absolute_percentage_error": 19.892101502500402,
+      "mean_absolute_log_error": 0.23773783381906533,
+      "r2": 0.8582195099274269
     },
     {
       "platform": "flipkart",
       "category": "Electronics",
       "n": 324,
-      "mae_inr": 369.14120999876985,
-      "median_absolute_percentage_error": 27.356384798189204,
-      "mean_absolute_log_error": 0.4306264251891341,
-      "r2": -0.5733775414113067
+      "mae_inr": 369.98196242930044,
+      "median_absolute_percentage_error": 31.52898893202335,
+      "mean_absolute_log_error": 0.43405792905878177,
+      "r2": -0.5368555857941535
     },
     {
       "platform": "flipkart",
       "category": "Footwear",
       "n": 230,
-      "mae_inr": 298.0331117245936,
-      "median_absolute_percentage_error": 24.941226847196297,
-      "mean_absolute_log_error": 0.2884716111655289,
-      "r2": 0.6216252922635341
+      "mae_inr": 295.08067031894336,
+      "median_absolute_percentage_error": 24.607275045421613,
+      "mean_absolute_log_error": 0.28681664616286356,
+      "r2": 0.6288190892179508
     },
     {
       "platform": "flipkart",
       "category": "Home and kitchen",
       "n": 233,
-      "mae_inr": 210.5168714573552,
-      "median_absolute_percentage_error": 16.203877572860474,
-      "mean_absolute_log_error": 0.23016686148441784,
-      "r2": 0.8159636193266102
+      "mae_inr": 212.72067808733232,
+      "median_absolute_percentage_error": 15.925380209796424,
+      "mean_absolute_log_error": 0.23121553248075677,
+      "r2": 0.8060761004002858
     },
     {
       "platform": "flipkart",
       "category": "Jewellery",
       "n": 645,
-      "mae_inr": 617.8015168380088,
-      "median_absolute_percentage_error": 18.110535374130357,
-      "mean_absolute_log_error": 0.26328297074683027,
-      "r2": 0.9740113269553834
+      "mae_inr": 610.8609478885661,
+      "median_absolute_percentage_error": 18.18087813557949,
+      "mean_absolute_log_error": 0.2634007425002778,
+      "r2": 0.9780827623566938
     },
     {
       "platform": "flipkart",
       "category": "Office supplies",
       "n": 89,
-      "mae_inr": 271.2434995069104,
-      "median_absolute_percentage_error": 20.8397839593995,
-      "mean_absolute_log_error": 0.24783582487223083,
-      "r2": 0.8970737037594487
+      "mae_inr": 213.46766107174764,
+      "median_absolute_percentage_error": 19.225004067521557,
+      "mean_absolute_log_error": 0.25067161474657756,
+      "r2": 0.957735370196414
     },
     {
       "platform": "flipkart",
       "category": "Other",
       "n": 941,
-      "mae_inr": 424.36340007161954,
-      "median_absolute_percentage_error": 18.067433027712188,
-      "mean_absolute_log_error": 0.24989683942804658,
-      "r2": 0.9333072793789863
+      "mae_inr": 424.1606094521483,
+      "median_absolute_percentage_error": 18.496851573223054,
+      "mean_absolute_log_error": 0.24922601339542425,
+      "r2": 0.9352905834921462
     },
     {
       "platform": "flipkart",
       "category": "Personal care",
       "n": 144,
-      "mae_inr": 197.84968093700658,
-      "median_absolute_percentage_error": 10.454158201448296,
-      "mean_absolute_log_error": 0.17877215055902618,
-      "r2": -0.7876337212741784
+      "mae_inr": 194.24323453658758,
+      "median_absolute_percentage_error": 11.589436877253409,
+      "mean_absolute_log_error": 0.17509237494752838,
+      "r2": -0.6269532933296518
     }
   ],
   "reference_price_sensitivity": {
     "perturbation_pct": 25,
-    "median_prediction_change_pct": 22.164692990546264,
-    "p90_prediction_change_pct": 46.742344424525484,
+    "median_prediction_change_pct": 22.034228585611217,
+    "p90_prediction_change_pct": 48.345077251681204,
     "scope": "Controlled feature perturbation, not new market observations or a causal estimate"
   },
   "limitations": [

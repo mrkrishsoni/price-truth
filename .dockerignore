@@ -12,6 +12,7 @@ output
 reports/*
 !reports/data_audit.json
 !reports/model_evaluation.json
+!reports/discount_model_evaluation.json
 !reports/current/model_audit.json
 !reports/current/collection_status.json
 tests

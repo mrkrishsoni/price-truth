@@ -28,7 +28,7 @@ def check_price(page, base: str, out: Path) -> None:
     """Real model flow: verdict, charts and an actual PDF download."""
     visit(page, base, "product", "Is this a good price?")
     page.get_by_role("button", name="Check this price", exact=True).click()
-    page.get_by_text("Advertised discount", exact=True).wait_for(timeout=60_000)
+    page.get_by_text("Advertised discount", exact=True).first.wait_for(timeout=60_000)
     page.get_by_text("What moved the estimate").first.wait_for()
     download = page.get_by_role("button", name="Download PDF report", exact=True)
     page.screenshot(path=str(out / "workspace-desktop.png"), full_page=True)

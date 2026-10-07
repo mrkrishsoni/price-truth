@@ -23,6 +23,7 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt
 .venv/bin/python -m price_truth.data
 .venv/bin/python -m price_truth.model
+.venv/bin/python scripts/build_final_dataset.py
 .venv/bin/python -m streamlit run app.py
 ```
 
@@ -43,7 +44,7 @@ This performs read-only public API calls and writes attributed snapshots under `
 | Page | What it does |
 |---|---|
 | Home | Search-first entry, real coverage numbers, links to each tool |
-| Price check | Pick a historical Amazon/Flipkart listing, enter a price, get a verdict (lower / in line / higher than expected), the model's range, a plain-language SHAP explanation in % effects, PDF and JSON export |
+| Price check | Pick an Amazon/Flipkart listing, enter a price, get a verdict (lower / in line / higher than expected), the model's range and a plain-language SHAP explanation; then **Discount check** (30-day reference-price rule + discount-authenticity model), **Price history & timing** (180-day chart with sale events, buy-timing signal, gated forecast, next sale) and **Where to buy** (8 platforms, delivery and fees); PDF/JSON/CSV export |
 | Unit price | Compare 2–4 pack options per 100 g, 100 ml or item; best-value verdict and chart |
 | Food & packs | Barcode or name lookup (Open Food Facts, live with saved fallback), pack details, dated Open Prices shop history, a long EUR history example; send a pack to Unit price |
 | Shrinkflation | Two cited Indian pack-reduction cases with hidden unit-price increase |
@@ -51,7 +52,7 @@ This performs read-only public API calls and writes attributed snapshots under `
 | Catalogue | Search and export both historical catalogues |
 | Methods & data | Model quality by category, data sources and licences, limits, raw reports |
 
-The model estimates prices, not discount authenticity. The supplied catalogues have no verified fraud labels or usable per-product histories. Flipkart prices are from 2015–2016 and Amazon's dates are unknown. Forecasts need 40+ consecutive real daily observations and otherwise decline with the reason shown. Read [data sources and limitations](docs/DATA-SOURCES.md).
+**Dataset.** Real listings (Amazon, crawled 5 Jan 2023; Flipkart 2015–16) are combined with research-calibrated synthetic layers that no public source provides: daily price histories, discount-authenticity labels and cross-platform offers. Every row carries `provenance` (`real`/`synthetic`); the price model uses real data only. See the [dataset card](datasets/final/DATA-CARD.md) and [data sources](docs/DATA-SOURCES.md).
 
 ## Architecture
 

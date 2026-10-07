@@ -48,6 +48,17 @@ def name_group(name: str) -> str:
     return value
 
 
+def amazon_observed_at(links: pd.Series) -> pd.Series:
+    """Recover the crawl time from the Unix timestamp in Amazon search links (qid=...)."""
+    seconds = pd.to_numeric(links.str.extract(r"[?&]qid=(\d{9,11})")[0], errors="coerce")
+    return pd.to_datetime(seconds, unit="s", utc=True).astype(str).replace("NaT", "")
+
+
+def title_brand(names: pd.Series) -> pd.Series:
+    """Amazon titles start with the brand name; take the first word as a derived brand."""
+    return names.str.strip().str.split(r"\s+", n=1).str[0].str.strip(" ,-|").fillna("")
+
+
 def normalize(platform: str, raw: pd.DataFrame) -> pd.DataFrame:
     """Map a source to common fields; listed price is not a historical price."""
     _, id_field, list_field = SOURCES[platform]
@@ -67,9 +78,17 @@ def normalize(platform: str, raw: pd.DataFrame) -> pd.DataFrame:
     out["subcategory"] = parts.map(lambda p: " > ".join(p[:3]) if len(p) > 1 else "Unknown")
     out["rating"] = numeric(raw["rating" if amazon else "product_rating"])
     out.loc[~out.rating.between(0, 5), "rating"] = float("nan")
-    out["rating_count"] = numeric(raw.rating_count) if amazon else float("nan")
-    out["brand"] = "" if amazon else raw.brand
-    out["observed_at"] = "" if amazon else pd.to_datetime(raw.crawl_timestamp, utc=True).astype(str)
+    if amazon:
+        out["rating_count"] = numeric(raw.rating_count)
+    else:
+        # Flipkart marks unrated products "No rating available": that is zero ratings, not unknown.
+        # Rated products carry no count in the source, so their count stays missing.
+        out["rating_count"] = (raw.product_rating.str.strip() == "No rating available").map({True: 0.0, False: float("nan")})
+    out["brand"] = title_brand(raw.product_name) if amazon else raw.brand
+    out["brand_source"] = "title_first_word" if amazon else "source_field"
+    out["observed_at"] = (amazon_observed_at(raw.product_link) if amazon
+                          else pd.to_datetime(raw.crawl_timestamp, utc=True).astype(str))
+    out["provenance"] = "real"
     out["product_url"] = raw["product_link" if amazon else "product_url"]
     out["name_group"] = out.name.map(name_group)
     return out
@@ -118,8 +137,14 @@ def build_catalogue() -> dict:
     report = {"generated_at": datetime.now(UTC).isoformat(), "sources": sources,
               "combined_rows": len(catalogue), "synthetic_observations": 0,
               "authenticity_labels": 0,
-              "policy": "Keep platforms distinct; no currency conversion, no fabricated dates or ratings; "
-                        "quarantine all conflicting price IDs; retain first source row for other duplicate IDs."}
+              "recovered_fields": {
+                  "amazon.observed_at": "Unix timestamp in each product link's qid parameter",
+                  "amazon.brand": "first word of the product title (brand_source=title_first_word)",
+                  "flipkart.rating_count": "0 where the source says 'No rating available'; otherwise unknown"},
+              "policy": "Keep platforms distinct; no currency conversion; recovered fields are derived from "
+                        "source text, never generated; quarantine all conflicting price IDs; retain first "
+                        "source row for other duplicate IDs. Synthetic data lives in datasets/final with "
+                        "provenance='synthetic'."}
     (REPORTS / "data_audit.json").write_text(json.dumps(report, indent=2))
     return report
 
@@ -127,7 +152,7 @@ def build_catalogue() -> dict:
 def load_catalogue() -> pd.DataFrame:
     """Load generated data, requiring an explicit build if it is missing."""
     frame = pd.read_csv(PROCESSED / "catalogue.csv", dtype={"product_id": str})
-    for column in ["brand", "observed_at", "subcategory", "category_path"]:
+    for column in ["brand", "observed_at", "subcategory", "category_path", "brand_source"]:
         frame[column] = frame[column].fillna("")
     return frame
 

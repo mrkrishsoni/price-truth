@@ -1,5 +1,7 @@
 # Data sources and modeling decisions
 
+> **Update, 7 October 2026.** The project now also uses research-calibrated **synthetic** layers (daily price histories, discount labels, cross-platform offers and food shop histories), each marked `provenance = synthetic`. See [the dataset card](../datasets/final/DATA-CARD.md). Three fields were recovered from the real data: Amazon dates from link timestamps (5 Jan 2023), Amazon brands from titles, and Flipkart zero rating counts. Statements below about "no synthetic data" describe the price-estimation model, which still uses real listings only.
+
 ## Sources actually used
 
 | Source | Provenance | Role | Limits |

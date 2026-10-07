@@ -21,10 +21,24 @@ def model():
     return load_model()
 
 
+@st.cache_resource(show_spinner="Loading discount model…")
+def discount_model():
+    """Cache the discount-authenticity classifier; None when it has not been trained."""
+    from price_truth.authenticity import MODEL, load
+
+    return load() if MODEL.exists() else None
+
+
 @st.cache_data
 def report(name: str) -> dict | None:
     """Read a saved evaluation report, or None when it is absent."""
     path = REPORTS / name
+    return json.loads(path.read_text()) if path.exists() else None
+
+
+@st.cache_data
+def json_file(path) -> dict | None:
+    """Read any JSON file, or None when it is absent."""
     return json.loads(path.read_text()) if path.exists() else None
 
 

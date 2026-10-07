@@ -42,8 +42,9 @@ def test_price_check_runs_real_model():
     app = application("views/product.py")
     button(app, "Check this price").click().run()
     assert not app.exception
-    assert len(app.metric) == 3
-    assert len(app.get("plotly_chart")) == 2
+    assert [m.label for m in app.metric][:3] == ["Advertised discount", "Model estimate", "Expected range"]
+    assert len(app.get("plotly_chart")) >= 2
+    assert [t.label for t in app.tabs] == ["Discount check", "Price history & timing", "Where to buy"]
     html = " ".join(str(h.proto.body) for h in app.get("html"))
     assert "pt-verdict" in html
 
@@ -97,5 +98,5 @@ def test_pack_transfer_prefills_unit_comparison():
 def test_methods_lists_licences():
     """Attribution and licences are visible in the app."""
     app = application("views/methods.py")
-    licences = app.dataframe[1].value.Licence.tolist()
+    licences = next(d.value for d in app.dataframe if "Licence" in d.value.columns).Licence.tolist()
     assert "CC BY-NC-SA 4.0" in licences and "ODbL 1.0" in licences

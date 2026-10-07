@@ -48,6 +48,8 @@ FEATURES = {
     "log_rating_count": "Number of ratings",
     "missingindicator_rating": "Rating unavailable",
     "missingindicator_log_rating_count": "Rating count unavailable",
+    "price_ratio": "Price compared with MRP",
+    "claimed_discount_pct": "Size of the claimed discount",
 }
 
 
@@ -72,7 +74,7 @@ def readable_feature(name: str) -> str:
 
 
 GROUPS = [("platform_", "Platform", "platform"), ("category_group_", "Category", "category_group"),
-          ("subcategory_", "Subcategory", "subcategory")]
+          ("subcategory_", "Subcategory", "subcategory"), ("in_sale_event_", "Sale period", "in_sale_event")]
 
 
 def feature_group(name: str, listing: dict) -> str:
@@ -108,6 +110,18 @@ def shap_effects(result: dict, listing: dict | None = None, top: int = 6) -> dic
     if abs(rest) > 1e-12:
         effects.append({"label": "All other factors", "effect_pct": 100 * math.expm1(rest)})
     return {"baseline": math.expm1(result["base_log"]), "estimate": result["estimate"], "effects": effects}
+
+
+def top_contributions(contributions: list[dict], listing: dict, top: int = 6) -> list[dict]:
+    """Group classifier contributions by attribute and keep the largest, signed (log-odds units)."""
+    totals: dict[str, float] = {}
+    for item in contributions:
+        label = feature_group(item["feature"], listing)
+        if label.startswith("Sale period"):
+            label = "Sale period"
+        totals[label] = totals.get(label, 0.) + item["contribution"]
+    items = sorted(((k, v) for k, v in totals.items() if abs(v) > 1e-9), key=lambda x: abs(x[1]), reverse=True)
+    return [{"label": k, "value": v} for k, v in items[:top]]
 
 
 def money(value: float, currency: str = "INR") -> str:

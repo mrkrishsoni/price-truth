@@ -20,7 +20,7 @@ from price_truth.observations import (
     validate_observations,
 )
 from price_truth.offers import compare_observed_offers
-from price_truth.paths import EXTERNAL
+from price_truth.paths import DATA, EXTERNAL
 from price_truth.price_api import fetch_observations
 
 COMPARE_PAGE = "views/compare.py"
@@ -40,10 +40,11 @@ def use_pack_for_comparison(product: dict) -> None:
 
 def price_chart(series: pd.DataFrame, currency: str, basis: str) -> go.Figure:
     """Line chart of daily median observed prices."""
-    figure = go.Figure(go.Scatter(x=series.date, y=series.price, mode="lines+markers",
+    figure = go.Figure(go.Scatter(x=series.date, y=series.price, mode="lines+markers" if len(series) <= 60 else "lines",
                                   line=dict(color=theme.PURPLE, width=2.5), marker=dict(size=7),
                                   hovertemplate=f"%{{x|%d %b %Y}}: {currency} %{{y:,.2f}}<extra></extra>"))
     figure.update_layout(title=f"Observed price ({currency}, per {basis.lower()})")
+    figure.update_xaxes(tickformat="%d %b %Y")
     return theme.style_figure(figure, 300)
 
 
@@ -55,7 +56,7 @@ def show_timing(result: dict, currency: str) -> None:
         columns = st.columns(3)
         columns[0].metric("Usual (median) price", present.money(result["median"], currency))
         columns[1].metric("Your quote vs median", f"{result['difference_from_median_pct']:+.0f}%")
-        columns[2].metric("History covered", f"{result['days']} dates / {result['span_days']} days")
+        columns[2].metric("History covered", f"{result['days']} dates")
 
 
 def show_forecast(result: dict) -> None:
@@ -67,7 +68,7 @@ def show_forecast(result: dict) -> None:
         columns[0].metric(f"Estimate for {result['forecast_date']}", f"{result['next_day_estimate']:,.2f}")
         columns[1].metric("Test error", f"{result['test_mae']:,.2f}")
         columns[2].metric("Last-price error", f"{result['baseline_test_mae']:,.2f}")
-    elif "observed_days" in result:
+    elif result["status"] == "insufficient_history" and "observed_days" in result:
         st.progress(min(result["observed_days"] / 40, 1.0),
                     text=f"{result['observed_days']} of 40 consecutive daily observations")
     with st.expander("Forecast details"):
@@ -87,10 +88,13 @@ def history_panel(frame: pd.DataFrame, code: str) -> None:
                           "Try refreshing, another barcode, or add your own observations.")
         return
     eligible["price_per"] = eligible.price_per.fillna("UNKNOWN")
-    options = list(eligible[["location_id", "currency", "price_per"]].drop_duplicates()
-                   .itertuples(index=False, name=None))
-    store, currency, basis = st.selectbox("Store, currency and price basis", options,
-                                          format_func=lambda v: f"Store {v[0]} · {v[1]} · per {v[2].lower()}")
+    counts = eligible.groupby(["location_id", "currency", "price_per"]).size().sort_values(ascending=False)
+    options = list(counts.index)  # longest history first
+    names = eligible.dropna(subset=["location_name"]).groupby("location_id").location_name.first().to_dict() \
+        if "location_name" in eligible else {}
+    store, currency, basis = st.selectbox(
+        "Store, currency and price basis", options,
+        format_func=lambda v: f"{names.get(v[0], f'Store {v[0]}')} · {v[1]} · per {v[2].lower()} · {counts[v]} prices")
     series = series_for(eligible, code, store, currency, basis)
     if series.empty:
         theme.empty_state("No usable observations", "All rows for this store were duplicates, unproven or future-dated.")
@@ -139,7 +143,32 @@ def price_collection() -> tuple[pd.DataFrame, str]:
                         f"{collection['snapshots']} collection runs · latest {collection['latest_retrieval'][:10]}")
         except ValueError:
             st.warning("The cumulative archive could not be read; using the dated snapshot instead.")
+    simulated = dataset_food_prices()
+    if not simulated.empty:
+        frame = pd.concat([frame.assign(provenance="real"), simulated], ignore_index=True)
+        note += f" · {simulated.product_code.nunique()} products with daily store histories"
     return frame, note
+
+
+@st.cache_data(show_spinner=False)
+def dataset_food_prices() -> pd.DataFrame:
+    """Synthetic daily store histories from the finalized dataset (real rows come from the archive)."""
+    path = DATA / "final" / "food_prices.csv.gz"
+    if not path.exists():
+        return pd.DataFrame()
+    frame = pd.read_csv(path, dtype={"product_code": str, "id": str, "proof_id": str, "price_per": str,
+                                     "duplicate_of": object, "source_url": object}, low_memory=False)
+    return frame[frame.provenance == "synthetic"].dropna(axis=1, how="all")
+
+
+def dataset_food_products() -> list[dict]:
+    """Products that have daily histories in the dataset, as lookup candidates."""
+    frame = dataset_food_prices()
+    if frame.empty:
+        return []
+    names = frame.drop_duplicates("product_code")
+    return [{"code": r.product_code, "product_name": r.product_name, "countries": "India"}
+            for r in names.itertuples()]
 
 
 def find_food(offline: bool) -> None:
@@ -194,10 +223,12 @@ def food_page() -> None:
                       "Find a product by name or barcode, check its pack size and see what shops charged on which dates.")
     offline = st.toggle("Saved responses only (works offline)", value=False, key="food_offline")
     find_food(offline)
-    products = st.session_state.get("workspace_food_candidates") or cached_products()
+    products = st.session_state.get("workspace_food_candidates") or cached_products() + dataset_food_products()
     # Named products sold in India first; unnamed saved records stay available at the end.
-    products = sorted((p for p in products if p.get("code")),
-                      key=lambda p: (not p.get("product_name"), "India" not in str(p.get("countries", ""))))
+    with_history = {p["code"] for p in dataset_food_products()}
+    products = sorted({p["code"]: p for p in products if p.get("code")}.values(),
+                      key=lambda p: (p["code"] not in with_history, not p.get("product_name"),
+                                     "India" not in str(p.get("countries", ""))))
     if not products:
         theme.empty_state("No matching products", "Try another name, or paste a barcode from the pack.")
         return

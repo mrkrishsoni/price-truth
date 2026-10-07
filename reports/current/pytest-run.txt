@@ -5,22 +5,23 @@ configfile: pyproject.toml
 testpaths: tests
 plugins: cov-7.1.0, anyio-4.12.1, asyncio-1.4.0
 asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
-collected 358 items
+collected 370 items
 
 tests/test_app.py ................                                       [  4%]
-tests/test_calculations.py ............................................. [ 17%]
+tests/test_calculations.py ............................................. [ 16%]
 ......                                                                   [ 18%]
 tests/test_data.py ...........                                           [ 21%]
-tests/test_evidence_store.py ..............                              [ 25%]
-tests/test_forecast.py ..........................                        [ 32%]
-tests/test_model.py .....                                                [ 34%]
-tests/test_observations.py ............................................. [ 46%]
-.......................................                                  [ 57%]
-tests/test_offers.py ................                                    [ 62%]
-tests/test_present.py ............                                       [ 65%]
-tests/test_price_api.py ........................................         [ 76%]
-tests/test_search.py ...........                                         [ 79%]
-tests/test_services.py ................................................  [ 93%]
+tests/test_evidence_store.py ..............                              [ 24%]
+tests/test_forecast.py ..........................                        [ 31%]
+tests/test_model.py .....                                                [ 33%]
+tests/test_observations.py ............................................. [ 45%]
+.......................................                                  [ 55%]
+tests/test_offers.py ................                                    [ 60%]
+tests/test_present.py ............                                       [ 63%]
+tests/test_price_api.py ........................................         [ 74%]
+tests/test_search.py ...........                                         [ 77%]
+tests/test_services.py ................................................  [ 90%]
+tests/test_synthetic.py ............                                     [ 93%]
 tests/test_workspace_evidence.py ........................                [100%]
 
 - generated xml file: /Users/krishsoni/Documents/price-truth/reports/current/pytest.xml -
@@ -28,4 +29,4 @@ tests/test_workspace_evidence.py ........................                [100%]
 _______________ coverage: platform darwin, python 3.12.0-final-0 _______________
 
 Coverage JSON written to file /Users/krishsoni/Documents/price-truth/reports/current/coverage.json
-============================= 358 passed in 16.27s =============================
+============================= 370 passed in 19.84s =============================

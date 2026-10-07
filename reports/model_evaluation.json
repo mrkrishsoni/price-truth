@@ -12,26 +12,26 @@
     },
     "random_forest": {
       "n": 2708,
-      "mae_inr": 388.8924032736274,
-      "median_absolute_percentage_error": 21.12392595467992,
-      "mean_absolute_log_error": 0.2651838407453234,
-      "r2": 0.9688239373125173
+      "mae_inr": 389.91147459873605,
+      "median_absolute_percentage_error": 21.27699062225784,
+      "mean_absolute_log_error": 0.2651493344925574,
+      "r2": 0.9687404896962039
     },
     "hist_gradient_boosting": {
       "n": 2708,
-      "mae_inr": 429.25098849360774,
-      "median_absolute_percentage_error": 20.473844994885543,
-      "mean_absolute_log_error": 0.2617435573532736,
-      "r2": 0.9318541244653324
+      "mae_inr": 436.57134689471445,
+      "median_absolute_percentage_error": 20.164768888657868,
+      "mean_absolute_log_error": 0.26054475552878825,
+      "r2": 0.9213033741565909
     }
   },
   "test": {
     "n": 4269,
-    "mae_inr": 356.8183279912241,
-    "median_absolute_percentage_error": 20.15700963101238,
-    "mean_absolute_log_error": 0.27304886114885685,
-    "r2": 0.9575523210096902,
-    "interval_coverage": 0.8976341063480909
+    "mae_inr": 354.1069370620353,
+    "median_absolute_percentage_error": 20.528378960729178,
+    "mean_absolute_log_error": 0.27335766236124714,
+    "r2": 0.9616127379594976,
+    "interval_coverage": 0.8971656125556337
   },
   "baseline_test": {
     "n": 4269,
@@ -44,10 +44,10 @@
     "amazon": {
       "combined_model": {
         "n": 293,
-        "mae_inr": 535.2725367969188,
-        "median_absolute_percentage_error": 21.845391717345674,
-        "mean_absolute_log_error": 0.29245808686348956,
-        "r2": 0.9186355539890053
+        "mae_inr": 532.1997350274809,
+        "median_absolute_percentage_error": 22.112706798574045,
+        "mean_absolute_log_error": 0.292716235575722,
+        "r2": 0.9216145336915084
       },
       "separate_model": {
         "n": 293,
@@ -67,10 +67,10 @@
     "flipkart": {
       "combined_model": {
         "n": 3976,
-        "mae_inr": 343.6676531471426,
-        "median_absolute_percentage_error": 20.15700963101238,
-        "mean_absolute_log_error": 0.2716185535194838,
-        "r2": 0.9600933813213314
+        "mae_inr": 340.9828953608593,
+        "median_absolute_percentage_error": 20.43825577706477,
+        "mean_absolute_log_error": 0.27193108742366134,
+        "r2": 0.9642290897734701
       },
       "separate_model": {
         "n": 3976,
@@ -97,10 +97,10 @@
   "unique_title_groups": 13709,
   "interval": {
     "nominal_coverage": 0.9,
-    "log_radius": 0.6272548019926001,
+    "log_radius": 0.6268296758837506,
     "calibration_rows": 3513
   },
-  "elapsed_seconds": 8.982258500007447,
+  "elapsed_seconds": 4.8284724580007605,
   "limitations": [
     "No ground-truth fraud labels; prediction is not authenticity verification.",
     "Old/undated snapshots do not establish today's fair price.",

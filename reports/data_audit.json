@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T07:04:32.939358+00:00",
+  "generated_at": "2026-10-07T07:04:26.950323+00:00",
   "sources": {
     "amazon": {
       "raw_rows": 1465,
@@ -29,7 +29,7 @@
         "repeated_product_id_first_source_row_retained": 2
       },
       "missing_rating": 18081,
-      "missing_rating_count": 19920,
+      "missing_rating_count": 1839,
       "conflicting_product_ids": [],
       "file": "datasets/flipkart/flipkart_com-ecommerce_sample.csv",
       "sha256": "56f8f699c9e847356666c2eab3c3ab1244340f6a98ad08e39ea2199ebe993ad1"
@@ -38,5 +38,10 @@
   "combined_rows": 21267,
   "synthetic_observations": 0,
   "authenticity_labels": 0,
-  "policy": "Keep platforms distinct; no currency conversion, no fabricated dates or ratings; quarantine all conflicting price IDs; retain first source row for other duplicate IDs."
+  "recovered_fields": {
+    "amazon.observed_at": "Unix timestamp in each product link's qid parameter",
+    "amazon.brand": "first word of the product title (brand_source=title_first_word)",
+    "flipkart.rating_count": "0 where the source says 'No rating available'; otherwise unknown"
+  },
+  "policy": "Keep platforms distinct; no currency conversion; recovered fields are derived from source text, never generated; quarantine all conflicting price IDs; retain first source row for other duplicate IDs. Synthetic data lives in datasets/final with provenance='synthetic'."
 }

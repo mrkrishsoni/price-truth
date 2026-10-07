@@ -19,6 +19,13 @@ Updated: 7 October 2026. The day plan and remaining gates are in [docs/COMPLETIO
 | Data collection | Daily Open Prices INR workflow running; archives only changed observations | `collect-prices.yml` |
 | Uptime | 15-minute probe workflow; activates when `HEALTH_URL` is set | `uptime.yml`, `scripts/uptime_report.py` |
 
+### Dataset finalisation (7 Oct, afternoon)
+
+- Real fields recovered: Amazon crawl date (5 Jan 2023) from link timestamps, Amazon brand from titles, Flipkart zero rating counts. Price model retrained on the corrected real data: R² 0.962, MAE ₹354 on the same 4,269 held-out listings.
+- Research-calibrated synthetic layers added with `provenance`: daily price histories, discount labels (EU Omnibus 30-day reference rule adapted to MRP listings), offers on 8 platforms, food shop histories; 8 newly researched real shrinkflation cases plus 5 generic simulated timelines. See `datasets/final/DATA-CARD.md`.
+- New discount-authenticity classifier: ROC AUC 0.88 on unseen products (synthetic labels).
+- Price check now has Discount check, Price history & timing, and Where to buy tabs.
+
 ### Still open (cannot be completed in one day)
 - Validated Indian buy-timing forecast: needs 40 consecutive days of real observations (collection started 7 Oct).
 - 14-day measured uptime window (starts at deployment).
