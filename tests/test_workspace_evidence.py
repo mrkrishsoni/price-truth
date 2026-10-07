@@ -136,16 +136,18 @@ def test_price_api_filters_identity_and_contributor_fields(monkeypatch, tmp_path
         price_api.fetch_observations("../private")
 
 
-def test_workspace_real_assessment_and_empty_import():
-    """The connected journey uses the selected real listing and renders every evidence path."""
-    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=45).run()
-    app.sidebar.radio[0].set_value("Product Workspace").run()
-    assert not app.exception
-    app.button[0].click().run()
-    assert len(app.metric) == 3 and not app.exception
-    app.radio(key="workspace_source").set_value("My observations").run()
+def observations_app():
+    """Open the observations page through the real navigation."""
+    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=45)
+    app.session_state["food_offline"] = True  # no live API calls from tests
+    return app.run().switch_page("views/observations.py")
+
+
+def test_observations_and_food_pages_render_empty_states():
+    """Every evidence path renders before any user data exists."""
+    app = observations_app().run()
     assert not app.exception and any("Upload real" in i.value for i in app.info)
-    app.radio(key="workspace_source").set_value("Food barcode / dated prices").run()
+    app.switch_page("views/food.py").run()
     assert not app.exception
 
 
@@ -169,9 +171,7 @@ def test_pdf_export_is_generated_in_memory():
 
 def test_manual_observation_validation_and_clear():
     """Manual evidence persists within the session, and explicit deletion removes it."""
-    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=45).run()
-    app.sidebar.radio[0].set_value("Product Workspace").run()
-    app.radio(key="workspace_source").set_value("My observations").run()
+    app = observations_app().run()
     for field, value in [("product_id", "00123"), ("name", "Test food"), ("variant", "plain"), ("store", "shop")]:
         app.text_input(key=f"manual_{field}").set_value(value)
     next(i for i in app.text_input if i.label == "HTTPS source / evidence link").set_value("https://example.com/receipt")
@@ -181,6 +181,7 @@ def test_manual_observation_validation_and_clear():
     assert not app.exception
     assert app.session_state["observations"].iloc[0].product_id == "00123"
     assert "insufficient_history" in app.json[0].value
+    assert any("Not enough history yet" in str(h.proto.body) for h in app.get("html"))
     next(i for i in app.button if i.label == "Clear session observations").click().run()
     assert not app.exception and any("Upload real" in i.value for i in app.info)
 
@@ -201,13 +202,12 @@ def test_pack_changes_rejects_ambiguous_same_day_evidence():
 
 def test_workspace_quote_comparison_uses_confirmed_session_evidence():
     """The new cross-store path reaches real ranking and retains its evidence label."""
-    app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=45).run()
+    app = observations_app()
     row = records().iloc[0].to_dict()
     row["date"] = date.today().isoformat()
     data = pd.DataFrame([row, {**row, "store": "second shop", "price": 8}])
     app.session_state["observations"] = validate_observations(data)
-    app.sidebar.radio[0].set_value("Product Workspace").run()
-    app.radio(key="workspace_source").set_value("My observations").run()
+    app.run()
     app.checkbox(key="offers_confirmed").check()
     next(i for i in app.button if i.label == "Compare sourced store quotes").click().run()
     assert not app.exception

@@ -1,11 +1,13 @@
-"""Connected product workspace: identity, evidence, analysis and portable user observations."""
+"""Food pack lookup with dated price history, and the user's own observations."""
 import json
 from datetime import date
 
 import pandas as pd
+import plotly.graph_objects as go
 import streamlit as st
 
-from price_truth.catalogue import export_csv, search
+from price_truth import present, theme
+from price_truth.catalogue import export_csv
 from price_truth.evidence_store import accumulated_observations
 from price_truth.external import cached_products, lookup_product, search_products
 from price_truth.forecast import forecast_next_day
@@ -20,253 +22,394 @@ from price_truth.observations import (
 from price_truth.offers import compare_observed_offers
 from price_truth.paths import EXTERNAL
 from price_truth.price_api import fetch_observations
-from price_truth.ui import assessment_panel, unit_page
+
+COMPARE_PAGE = "views/compare.py"
+PACK_UNITS = {"g", "kg", "ml", "l", "count"}
 
 
 def use_pack_for_comparison(product: dict) -> None:
-    """Transfer only structured pack quantity, never invent a missing retailer price."""
+    """Transfer only the structured pack quantity; the price is left for the user to enter."""
     st.session_state["quantity1"] = float(product["product_quantity"])
     st.session_state["unit1"] = product["product_quantity_unit"].lower()
     st.session_state["price1"] = None
     st.session_state["count1"] = 1
-    st.session_state["workspace_source"] = "Pack value comparison"
+    st.session_state["prefill_note"] = (f"Option 1 is pre-filled with {product.get('product_name') or 'the pack'} "
+                                        f"({product.get('quantity') or product['product_quantity']}). Add its price.")
+    st.session_state["go_compare"] = True
+
+
+def price_chart(series: pd.DataFrame, currency: str, basis: str) -> go.Figure:
+    """Line chart of daily median observed prices."""
+    figure = go.Figure(go.Scatter(x=series.date, y=series.price, mode="lines+markers",
+                                  line=dict(color=theme.PURPLE, width=2.5), marker=dict(size=7),
+                                  hovertemplate=f"%{{x|%d %b %Y}}: {currency} %{{y:,.2f}}<extra></extra>"))
+    figure.update_layout(title=f"Observed price ({currency}, per {basis.lower()})")
+    return theme.style_figure(figure, 300)
+
+
+def show_timing(result: dict, currency: str) -> None:
+    """Present the historical-position result in plain language."""
+    title, text, tone = present.verdict(present.TIMING, result["status"])
+    theme.verdict(title, f"{text} {result['message']}", tone)
+    if "median" in result:
+        columns = st.columns(3)
+        columns[0].metric("Usual (median) price", present.money(result["median"], currency))
+        columns[1].metric("Your quote vs median", f"{result['difference_from_median_pct']:+.0f}%")
+        columns[2].metric("History covered", f"{result['days']} dates / {result['span_days']} days")
+
+
+def show_forecast(result: dict) -> None:
+    """Present a forecast or the reason none is given; details stay in an expander."""
+    title, text, tone = present.verdict(present.FORECAST, result["status"])
+    theme.verdict(title, text, tone)
+    if result.get("next_day_estimate") is not None:
+        columns = st.columns(3)
+        columns[0].metric(f"Estimate for {result['forecast_date']}", f"{result['next_day_estimate']:,.2f}")
+        columns[1].metric("Test error", f"{result['test_mae']:,.2f}")
+        columns[2].metric("Last-price error", f"{result['baseline_test_mae']:,.2f}")
+    elif "observed_days" in result:
+        st.progress(min(result["observed_days"] / 40, 1.0),
+                    text=f"{result['observed_days']} of 40 consecutive daily observations")
+    with st.expander("Forecast details"):
+        st.json(result, expanded=False)
 
 
 def history_panel(frame: pd.DataFrame, code: str) -> None:
-    """Keep barcode, store, currency and recorded basis fixed throughout analysis."""
+    """Keep barcode, store, currency and recorded basis fixed throughout the analysis."""
     if frame.empty or "product_code" not in frame:
-        st.info("No dated price observations available for this barcode.")
+        theme.empty_state("No dated prices yet", "No shop has reported a price for this barcode. "
+                          "Add your own receipts under My observations to start a history.")
         return
-    eligible = frame[(frame.product_code == code) & frame.location_id.notna()
-                     & frame.currency.notna()].copy()
+    eligible = frame[(frame.product_code == code) & frame.location_id.notna() & frame.currency.notna()].copy()
     if eligible.empty:
-        st.info("No identified store and currency observations available for this barcode.")
+        theme.empty_state("No dated prices for this barcode",
+                          "Open Prices has no shop observation with a store and currency for this product. "
+                          "Try refreshing, another barcode, or add your own observations.")
         return
     eligible["price_per"] = eligible.price_per.fillna("UNKNOWN")
-    groups = eligible[["location_id", "currency", "price_per"]].drop_duplicates()
-    options = list(groups.itertuples(index=False, name=None))
-    store, currency, basis = st.selectbox("Comparable store / currency / basis", options,
-                                         format_func=lambda v: f"Store {v[0]} · {v[1]} · {v[2]}")
+    options = list(eligible[["location_id", "currency", "price_per"]].drop_duplicates()
+                   .itertuples(index=False, name=None))
+    store, currency, basis = st.selectbox("Store, currency and price basis", options,
+                                          format_func=lambda v: f"Store {v[0]} · {v[1]} · per {v[2].lower()}")
     series = series_for(eligible, code, store, currency, basis)
-    st.line_chart(series.set_index("date")["price"], y_label=f"{currency} / {basis}")
+    if series.empty:
+        theme.empty_state("No usable observations", "All rows for this store were duplicates, unproven or future-dated.")
+    else:
+        st.plotly_chart(price_chart(series, currency, basis), width="stretch", config={"displayModeBar": False})
     evidence = eligible[(eligible.location_id == store) & (eligible.currency == currency)
                         & (eligible.price_per == basis)]
-    st.dataframe(evidence[["date", "price", "currency", "source_url"]], hide_index=True)
-    st.caption("The chart excludes duplicate, unproven, future and non-shop observations. Source rows remain visible for audit.")
-    quote = st.number_input("Current quote for this exact recorded basis", min_value=.01, value=None)
-    if st.button("Evaluate historical position"):
-        if quote is None:
-            st.warning("Enter a current quote first.")
-        elif basis == "UNKNOWN":
-            st.warning("The source lacks a price basis, so a comparable quote cannot be established.")
-        else:
-            st.json(timing_signal(series, quote))
-    with st.expander("Next-day forecast evidence"):
-        st.caption("Only recent consecutive daily history can be backtested. A barcode does not prove unchanged pack size.")
-        confirmed = st.checkbox("I checked that this history represents the same pack and purchase conditions")
-        if confirmed and basis != "UNKNOWN":
-            st.json(forecast_next_day(series))
-    st.download_button("Export sourced observations", export_csv(evidence),
-                       file_name=f"price_evidence_{code}.csv", mime="text/csv")
-
-
-def food_workspace() -> None:
-    """Search or choose one barcode and carry it through lookup and price history."""
-    products = cached_products()
-    with st.form("workspace_food_search"):
-        query = st.text_input("Food name or barcode", placeholder="Search by name, or paste 8–14 digits")
-        offline = st.checkbox("Use saved responses only", value=True)
-        submitted = st.form_submit_button("Find food product")
-    if submitted:
-        try:
-            if query.strip().isdigit():
-                found = lookup_product(query.strip(), offline)
-                st.session_state["workspace_food_candidates"] = [found["product"]]
-            else:
-                found = search_products(query, offline)
-                st.session_state["workspace_food_candidates"] = found["products"]
-            st.session_state.pop("workspace_price_result", None)
-        except ValueError as exc:
-            st.error(str(exc))
-    products = st.session_state.get("workspace_food_candidates", products)
-    if not products:
-        st.info("No matching products. Try another query or barcode.")
+    with st.expander(f"Source observations ({len(evidence)})"):
+        st.dataframe(evidence[["date", "price", "currency", "source_url"]], hide_index=True,
+                     column_config={"source_url": st.column_config.LinkColumn("Source")})
+        st.download_button("Export these observations (CSV)", export_csv(evidence),
+                           file_name=f"price_evidence_{code}.csv", mime="text/csv")
+    if basis == "UNKNOWN":
+        st.warning("The source does not say whether this price is per item or per kilogram, so a quote cannot be "
+                   "compared reliably.")
         return
-    product = st.selectbox("Selected food product", products,
-                           format_func=lambda p: f"{p.get('product_name') or 'Unnamed'} · {p.get('code')}")
-    code = str(product.get("code", ""))
-    st.caption(f"Identity: barcode {code}. No automatic match to the historical Amazon/Flipkart catalogue.")
-    if st.button("Load pack details"):
-        try:
-            result = lookup_product(code, offline)
-            st.session_state["workspace_pack"] = {"code": code, "result": result}
-        except ValueError as exc:
-            st.error(str(exc))
-    pack = st.session_state.get("workspace_pack", {})
-    if pack.get("code") == code:
-        result = pack["result"]
-        st.write(result["product"])
-        st.caption(f"{result['mode']} · fetched {result['fetched_at']} · Open Food Facts / ODbL")
-        details = result["product"]
-        quantity = pd.to_numeric(details.get("product_quantity"), errors="coerce")
-        if pd.notna(quantity) and 0 < quantity < 1e12 and str(details.get("product_quantity_unit", "")).lower() in {"g", "kg", "ml", "l", "count"}:
-            st.button("Use this pack in unit comparison", on_click=use_pack_for_comparison, args=(details,))
+    columns = st.columns([2, 1], vertical_alignment="bottom")
+    quote = columns[0].number_input(f"Your current price ({currency}, per {basis.lower()})", min_value=.01, value=None)
+    if columns[1].button("Compare with history", width="stretch"):
+        if quote is None:
+            st.warning("Enter your current price first.")
+        else:
+            show_timing(timing_signal(series, quote), currency)
+    with st.expander("Next-day forecast"):
+        st.caption("Only recent, consecutive daily history can be tested. A barcode alone does not prove the pack "
+                   "size stayed the same.")
+        if st.checkbox("This history is the same pack bought under the same conditions"):
+            show_forecast(forecast_next_day(series))
+
+
+def price_collection() -> tuple[pd.DataFrame, str]:
+    """Load the most complete saved Open Prices collection and describe its date."""
     frame, metadata = load_observations()
     latest = EXTERNAL / "current/open_prices_inr.json"
     if latest.exists():
         snapshot = json.loads(latest.read_text())
         frame, metadata = pd.DataFrame(snapshot["observations"]), snapshot
+    note = f"Saved collection fetched {metadata['fetched_at'][:10]}"
     archive = EXTERNAL / "archive"
     if archive.exists():
         try:
             accumulated, collection = accumulated_observations(archive)
             if not accumulated.empty:
                 frame = accumulated
-                metadata["fetched_at"] = collection["latest_retrieval"]
-                st.caption(f"Cumulative collection: {collection['unique_source_observations']} source observations across {collection['snapshots']} snapshots. Retrieval does not create new observation dates.")
+                note = (f"{collection['unique_source_observations']} observations from "
+                        f"{collection['snapshots']} collection runs · latest {collection['latest_retrieval'][:10]}")
         except ValueError:
-            st.warning("The cumulative archive could not be read; using the separately dated snapshot.")
-    st.caption(f"Saved price collection fetched {metadata['fetched_at']}")
-    if st.button("Refresh this barcode's dated prices", disabled=offline):
-        try:
-            st.session_state["workspace_price_result"] = {"code": code, "result": fetch_observations(code)}
-        except ValueError as exc:
-            st.error(str(exc))
-    saved = st.session_state.get("workspace_price_result", {})
-    if saved.get("code") == code:
-        result = saved["result"]
-        frame = pd.DataFrame(result["observations"])
-        st.caption(f"{result['notice']} Fetched {result['fetched_at']} · ODbL-1.0")
-        if not result["complete_query"]:
-            st.warning("Showing at most 100 observations; this is a partial history.")
-    history_panel(frame, code)
+            st.warning("The cumulative archive could not be read; using the dated snapshot instead.")
+    return frame, note
 
 
-def imported_history() -> None:
-    """Keep personal observations in the session; users control CSV persistence and deletion."""
-    st.subheader("Your dated observations")
-    st.write("Import your own receipts or sourced observations for one or more products. Records stay in this browser session and never enter model training. Download a CSV to keep them; clear the session data when finished.")
-    st.caption("Quantity is the total quantity purchased at the recorded price. Use stable IDs and variant names, and HTTPS evidence links. Personal data and receipt images are not needed.")
-    st.download_button("Download empty CSV template", ",".join(COLUMNS)+"\n",
-                       file_name="observations_template.csv", mime="text/csv")
-    with st.expander("Add an observation from your own evidence"):
+def find_food(offline: bool) -> None:
+    """Search by name or barcode and remember the candidates."""
+    with st.form("workspace_food_search", border=False):
+        columns = st.columns([3, 1], vertical_alignment="bottom")
+        query = columns[0].text_input("Food name or barcode", placeholder="e.g. Maggi, or 8–14 digit barcode")
+        submitted = columns[1].form_submit_button("Search", type="primary", width="stretch")
+    if not submitted:
+        return
+    try:
+        if query.strip().isdigit():
+            st.session_state["workspace_food_candidates"] = [lookup_product(query.strip(), offline)["product"]]
+        else:
+            st.session_state["workspace_food_candidates"] = search_products(query, offline)["products"]
+        st.session_state.pop("workspace_price_result", None)
+    except ValueError as exc:
+        st.error(str(exc))
+
+
+def pack_details(code: str, offline: bool) -> None:
+    """Show the selected pack's details with their source and offer the unit comparison."""
+    try:
+        result = lookup_product(code, offline)
+    except ValueError as exc:
+        theme.empty_state("Pack details unavailable", f"{exc} Saved examples work offline.")
+        return
+    details = result["product"]
+    countries = details.get("countries") or ""
+    theme.product_card(details.get("product_name") or "Unnamed product",
+                       [("Brand", ", ".join(details["brands"]) if isinstance(details.get("brands"), list)
+                         else details.get("brands")), ("Pack size", details.get("quantity")),
+                        ("Barcode", code), ("Sold in", countries[:60])],
+                       "live" if result["mode"] == "live" else "cached",
+                       f"Open Food Facts · {result['fetched_at'][:10]}")
+    if details.get("categories"):
+        st.caption(f"Categories: {details['categories']}")
+    quantity = pd.to_numeric(details.get("product_quantity"), errors="coerce")
+    unit = str(details.get("product_quantity_unit", "")).lower()
+    if pd.notna(quantity) and 0 < quantity < 1e12 and unit in PACK_UNITS:
+        st.button("Compare this pack's value", on_click=use_pack_for_comparison, args=(details,), type="primary")
+    else:
+        st.caption("No structured pack size is recorded, so it cannot be sent to the unit comparison.")
+    st.link_button("View source record", result["source_url"])
+
+
+def food_page() -> None:
+    """Pick one barcode and carry it through pack details and dated shop prices."""
+    if st.session_state.pop("go_compare", False):
+        st.switch_page(COMPARE_PAGE)
+    theme.page_header("Food & packs", "Look up a food pack",
+                      "Find a product by name or barcode, check its pack size and see what shops charged on which dates.")
+    offline = st.toggle("Saved responses only (works offline)", value=False, key="food_offline")
+    find_food(offline)
+    products = st.session_state.get("workspace_food_candidates") or cached_products()
+    # Named products sold in India first; unnamed saved records stay available at the end.
+    products = sorted((p for p in products if p.get("code")),
+                      key=lambda p: (not p.get("product_name"), "India" not in str(p.get("countries", ""))))
+    if not products:
+        theme.empty_state("No matching products", "Try another name, or paste a barcode from the pack.")
+        return
+    product = st.selectbox("Product", products, key="food_product",
+                           format_func=lambda p: f"{p.get('product_name') or 'Unnamed'} · {p.get('code')}")
+    code = str(product["code"])
+    tabs = st.tabs(["Pack details", "Price history", "Long-history example"])
+    with tabs[0]:
+        pack_details(code, offline)
+        st.caption("Food barcodes are never matched automatically to Amazon or Flipkart listings.")
+    with tabs[1]:
+        frame, note = price_collection()
+        columns = st.columns([3, 1], vertical_alignment="center")
+        columns[0].caption(f"Open Prices (ODbL) · {note}")
+        if columns[1].button("Refresh prices", disabled=offline, width="stretch"):
+            try:
+                st.session_state["workspace_price_result"] = {"code": code, "result": fetch_observations(code)}
+            except ValueError as exc:
+                st.error(str(exc))
+        saved = st.session_state.get("workspace_price_result", {})
+        if saved.get("code") == code:
+            result = saved["result"]
+            frame = pd.DataFrame(result["observations"])
+            st.caption(f"{result['notice']} Fetched {result['fetched_at'][:16]}.")
+            if not result["complete_query"]:
+                st.warning("Showing at most 100 observations; this history is partial.")
+        history_panel(frame, code)
+    with tabs[2]:
+        history_example()
+
+
+def history_example() -> None:
+    """A real, longer EUR store history that demonstrates the history tools; not Indian prices."""
+    try:
+        frame, metadata = load_observations(True)
+    except FileNotFoundError:
+        theme.empty_state("Example not downloaded", "Run scripts/fetch_real_data.py to save the example collection.")
+        return
+    theme.source_badge("cached", f"Open Prices · {metadata['fetched_at'][:10]}")
+    st.caption("Real observations from a French store in EUR, included because Indian histories are still short. "
+               "It does not represent Indian prices.")
+    shops = frame[frame.product_code.notna() & (frame.location_type == "shop")].copy()
+    if shops.empty:
+        theme.empty_state("No store observations", "The saved example contains no identified shop prices.")
+        return
+    shops["label"] = shops.product_name.fillna(shops.product_code) + " · " + shops.product_code
+    label = st.selectbox("Example product", shops.groupby("label").size().sort_values(ascending=False).index.tolist())
+    product = shops[shops.label == label]
+    location = product.location_id.iloc[0]
+    basis = product[product.location_id == location].price_per.fillna("UNKNOWN").iloc[0]
+    code, currency = product.iloc[0]["product_code"], product.iloc[0]["currency"]
+    series = series_for(frame, code, location, currency, basis)
+    st.plotly_chart(price_chart(series, currency, basis), width="stretch", config={"displayModeBar": False})
+    columns = st.columns([2, 1], vertical_alignment="bottom")
+    quote = columns[0].number_input(f"Try a quote ({currency})", min_value=.01, value=None, key="example_quote")
+    if columns[1].button("Compare", key="example_compare", width="stretch") and quote is not None:
+        show_timing(timing_signal(series, quote), currency)
+
+
+def observations_page() -> None:
+    """The user's own dated observations: entry, import, history, store comparison, pack changes."""
+    theme.page_header("My observations", "Track prices you have seen",
+                      "Add receipts or prices you saw in shops. They stay in this browser session, are never used for "
+                      "training, and you can download or clear them at any time.")
+    data = st.session_state.get("observations")
+    tabs = st.tabs(["Add or import", "Price history", "Compare stores", "Pack changes"])
+    with tabs[0]:
+        if flash := st.session_state.pop("obs_flash", None):
+            st.success(flash)
+        add_or_import(data)
+    if data is None:
+        for tab in tabs[1:]:
+            with tab:
+                theme.empty_state("No observations yet",
+                                  "Upload real dated observations or add one in the first tab to analyse them here.")
+        return
+    with tabs[1]:
+        selected = choose_identity(data, ["product_id", "variant", "store", "currency"], "obs")
+        observation_history(selected)
+    with tabs[2]:
+        offers_panel(data)
+    with tabs[3]:
+        selected = choose_identity(data, ["product_id", "variant", "store", "currency"], "pack")
+        pack_change_panel(selected)
+
+
+def add_or_import(data: pd.DataFrame | None) -> None:
+    """Manual entry, CSV import, template, export and clear."""
+    with st.expander("Add one observation", expanded=data is None):
         observation_form()
-    upload = st.file_uploader("Observation CSV (UTF-8, at most 2 MB)", type=["csv"])
-    if upload is not None and st.button("Validate and replace session observations"):
+    upload = st.file_uploader("Or import a CSV (UTF-8, up to 2 MB)", type=["csv"])
+    if upload is not None and st.button("Validate and replace my observations"):
         try:
             validated = read_csv(upload.getvalue())
             st.session_state["observations"] = validated
-            st.success(f"Imported {len(validated)} observations. Sources are user-supplied, not independently verified.")
+            st.session_state["obs_flash"] = (f"Imported {len(validated)} observations. "
+                                             "They are your entries, not independently verified.")
+            st.rerun()
         except ValueError as exc:
             st.error(str(exc))
-    if "observations" not in st.session_state:
-        st.info("Upload real dated observations to analyse history and pack changes.")
+    columns = st.columns(3)
+    columns[0].download_button("CSV template", ",".join(COLUMNS) + "\n", file_name="observations_template.csv",
+                               mime="text/csv", width="stretch")
+    if data is None:
+        st.info("Upload real dated observations or add one above to start.", icon="📝")
         return
-    frame = st.session_state["observations"]
-    if st.button("Clear session observations"):
+    columns[1].download_button("Save my observations", export_csv(data[COLUMNS]), file_name="my_observations.csv",
+                               mime="text/csv", width="stretch")
+    if columns[2].button("Clear session observations", width="stretch"):
         del st.session_state["observations"]
         st.rerun()
-    st.download_button("Save observations CSV", export_csv(frame[COLUMNS]),
-                       file_name="my_observations.csv", mime="text/csv")
-    with st.expander("Compare recent quotes across stores"):
-        offers_panel(frame)
-    # Stepwise selectors guarantee an explicit product/store/currency identity.
+    theme.source_badge("user", f"{len(data)} observation{'s' if len(data) != 1 else ''}")
+    st.dataframe(data[COLUMNS], hide_index=True, column_config={"source_url": st.column_config.LinkColumn("Source")})
+
+
+def choose_identity(frame: pd.DataFrame, columns: list[str], prefix: str) -> pd.DataFrame:
+    """Narrow step by step to one product, variant, store and currency."""
     selected = frame
-    for column in ["product_id", "variant", "store", "currency"]:
-        value = st.selectbox(column.replace("_", " ").title(), selected[column].unique(), key=f"obs_{column}")
+    layout = st.columns(len(columns))
+    for slot, column in zip(layout, columns, strict=True):
+        value = slot.selectbox(column.replace("_", " ").capitalize(), selected[column].unique(),
+                               key=f"{prefix}_{column}")
         selected = selected[selected[column] == value]
-    st.dataframe(selected, hide_index=True)
-    st.caption("Analysis below uses user-supplied evidence. A valid CSV is not independent verification.")
-    sizes = selected[["quantity", "unit"]].drop_duplicates()
-    size = st.selectbox("Exact pack for price history", list(sizes.itertuples(index=False, name=None)))
+    return selected
+
+
+def observation_history(selected: pd.DataFrame) -> None:
+    """Daily price history and the forecast gate for one exact pack."""
+    sizes = list(selected[["quantity", "unit"]].drop_duplicates().itertuples(index=False, name=None))
+    size = st.selectbox("Exact pack", sizes, format_func=lambda s: f"{s[0]:g} {s[1]}")
     series = daily_series(selected[(selected.quantity == size[0]) & (selected.unit == size[1])])
-    st.line_chart(series.set_index("date")["price"], y_label=selected.currency.iloc[0])
+    currency = selected.currency.iloc[0]
+    st.plotly_chart(price_chart(series, currency, f"{size[0]:g} {size[1]} pack"), width="stretch",
+                    config={"displayModeBar": False})
     result = forecast_next_day(series)
-    st.write("Next-day forecast assessment")
-    st.json(result)
+    st.subheader("Next-day forecast")
+    show_forecast(result)
     st.download_button("Download forecast assessment", json.dumps(result, indent=2),
                        file_name="forecast_assessment.json", mime="application/json")
+
+
+def pack_change_panel(selected: pd.DataFrame) -> None:
+    """Detect pack-size reductions for one confirmed variant over time."""
     confirmed = st.checkbox("These records track the same variant over time, not different packs sold together")
-    if st.button("Analyse pack-size changes"):
-        try:
-            changes = pack_changes(selected, confirmed)
-            if changes.empty:
-                st.info("At least two distinct observation dates are needed.")
-            else:
-                st.dataframe(changes, hide_index=True)
-                st.bar_chart(changes.set_index("to_date")[["quantity_reduction_pct", "unit_price_increase_pct"]],
-                             y_label="Change (%)")
-                st.download_button("Export pack changes", export_csv(changes),
-                                   file_name="pack_changes.csv", mime="text/csv")
-        except ValueError as exc:
-            st.error(str(exc))
+    if not st.button("Analyse pack-size changes", type="primary"):
+        return
+    try:
+        changes = pack_changes(selected, confirmed)
+    except ValueError as exc:
+        st.error(str(exc))
+        return
+    if changes.empty:
+        theme.empty_state("No change to analyse", "At least two distinct observation dates are needed.")
+        return
+    st.dataframe(changes, hide_index=True)
+    figure = go.Figure([go.Bar(name="Quantity reduction", x=changes.to_date, y=changes.quantity_reduction_pct,
+                               marker_color=theme.PURPLE),
+                        go.Bar(name="Unit-price increase", x=changes.to_date, y=changes.unit_price_increase_pct,
+                               marker_color=theme.CORAL)])
+    figure.update_layout(title="Pack changes", barmode="group")
+    figure.update_yaxes(ticksuffix="%")
+    st.plotly_chart(theme.style_figure(figure, 300), width="stretch", config={"displayModeBar": False})
+    st.download_button("Export pack changes", export_csv(changes), file_name="pack_changes.csv", mime="text/csv")
 
 
 def offers_panel(frame: pd.DataFrame) -> None:
-    """Expose exact-pack quote comparison without calling user observations live offers."""
-    st.caption("Uses only quotes dated today or yesterday. Match the same product and pack; include the same taxes, delivery and membership conditions in each total price.")
-    selected = frame
-    for column in ["product_id", "variant", "currency"]:
-        value = st.selectbox(column.replace("_", " ").title(), selected[column].unique(), key=f"offer_{column}")
-        selected = selected[selected[column] == value]
+    """Rank recent quotes for one identical pack across stores."""
+    st.caption("Uses only quotes dated today or yesterday. Each total must include the same taxes, delivery and "
+               "membership conditions.")
+    selected = choose_identity(frame, ["product_id", "variant", "currency"], "offer")
     confirmed = st.checkbox("These are identical packs under the same purchase conditions", key="offers_confirmed")
-    if st.button("Compare sourced store quotes"):
-        try:
-            result = compare_observed_offers(selected, confirmed)
-            st.dataframe(result, hide_index=True)
-            st.caption("Rank 1 is the lowest supplied quote, not a guarantee of the lowest available market price.")
-            st.download_button("Export quote comparison", export_csv(result), file_name="store_quotes.csv", mime="text/csv")
-        except ValueError as exc:
-            st.warning(str(exc))
+    if not st.button("Compare sourced store quotes", type="primary"):
+        return
+    try:
+        result = compare_observed_offers(selected, confirmed)
+    except ValueError as exc:
+        st.warning(str(exc))
+        return
+    best = result.iloc[0]
+    theme.verdict(f"Cheapest: {best.store}", f"{present.money(best.price, best.currency)} on {best.date}. "
+                  "This is the lowest of your quotes, not a guarantee of the lowest market price.", "good")
+    st.dataframe(result, hide_index=True, column_config={"source_url": st.column_config.LinkColumn("Source")})
+    st.download_button("Export quote comparison", export_csv(result), file_name="store_quotes.csv", mime="text/csv")
 
 
 def observation_form() -> None:
-    """Accept a dated source-backed manual quote with the same validation as CSV imports."""
+    """A dated, source-backed manual quote with the same validation as CSV imports."""
     with st.form("manual_observation"):
         record = {}
-        for column, label in [("product_id", "Stable product ID or barcode"), ("name", "Product name"),
-                              ("variant", "Variant (flavour/model)"), ("store", "Store / retailer")]:
-            record[column] = st.text_input(label, key=f"manual_{column}")
-        record["currency"] = st.selectbox("Quote currency", ["INR", "EUR", "USD", "GBP"])
-        record["date"] = st.date_input("Observation date", value=date.today(), max_value=date.today()).isoformat()
-        record["price"] = st.number_input("Total price paid", min_value=.01, value=None)
-        record["quantity"] = st.number_input("Total quantity purchased", min_value=.01, value=None)
-        record["unit"] = st.selectbox("Quantity unit", ["g", "kg", "ml", "l", "count"])
-        record["source_url"] = st.text_input("HTTPS source / evidence link")
-        submitted = st.form_submit_button("Add to my session observations")
+        columns = st.columns(2)
+        for index, (column, label) in enumerate([("product_id", "Stable product ID or barcode"),
+                                                 ("name", "Product name"), ("variant", "Variant (flavour/model)"),
+                                                 ("store", "Store / retailer")]):
+            record[column] = columns[index % 2].text_input(label, key=f"manual_{column}")
+        columns = st.columns(3)
+        record["currency"] = columns[0].selectbox("Quote currency", ["INR", "EUR", "USD", "GBP"])
+        record["date"] = columns[1].date_input("Observation date", value=date.today(),
+                                               max_value=date.today()).isoformat()
+        record["price"] = columns[2].number_input("Total price paid", min_value=.01, value=None)
+        columns = st.columns(2)
+        record["quantity"] = columns[0].number_input("Total quantity purchased", min_value=.01, value=None)
+        record["unit"] = columns[1].selectbox("Quantity unit", ["g", "kg", "ml", "l", "count"])
+        record["source_url"] = st.text_input("HTTPS source / evidence link",
+                                             help="A link to the shop page, receipt photo or other evidence.")
+        submitted = st.form_submit_button("Add to my session observations", type="primary")
     if submitted:
         previous = st.session_state.get("observations", pd.DataFrame(columns=COLUMNS))
         try:
             incoming = validate_observations(pd.DataFrame([record]))
             combined = incoming if previous.empty else pd.concat([previous, incoming], ignore_index=True)
             st.session_state["observations"] = validate_observations(combined)
-            st.success("Observation added to this session. Download the CSV to retain it.")
+            st.session_state["obs_flash"] = "Observation added. Download your observations to keep them."
+            st.rerun()
         except ValueError as exc:
             st.error(str(exc))
-
-
-def workspace_page(data: pd.DataFrame, model_loader) -> None:
-    """One entry point for product identity, price/pack evidence and user observations."""
-    st.title("Product Workspace")
-    st.write("Choose an evidence source, select a product, and analyse what its data supports.")
-    source = st.radio("Evidence source", ["Historical marketplace listing", "Food barcode / dated prices",
-                                         "My observations", "Pack value comparison"], horizontal=True,
-                      key="workspace_source")
-    if source == "Food barcode / dated prices":
-        food_workspace()
-    elif source == "My observations":
-        imported_history()
-    elif source == "Pack value comparison":
-        unit_page()
-    else:
-        query = st.text_input("Search both historical catalogues", placeholder="Product name")
-        matches = search(data, query).head(200)
-        if matches.empty:
-            st.info("No matching listing. Try fewer words.")
-            return
-        key = st.selectbox("Selected listing", matches.key,
-                           format_func=lambda k: f"{matches.loc[matches.key == k, 'platform'].iloc[0]} · {matches.loc[matches.key == k, 'name'].iloc[0]}")
-        row = matches[matches.key == key].iloc[0].to_dict()
-        st.caption(f"Identity: {key} · INR · observed {row.get('observed_at') or 'date unknown'}")
-        st.info("Historical marketplace evidence. This listing is not a live offer or a verified match to a food barcode.")
-        assessment_panel(row, model_loader())

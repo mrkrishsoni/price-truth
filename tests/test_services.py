@@ -22,7 +22,9 @@ def test_invalid_barcode_never_calls_network(code, monkeypatch, tmp_path):
 def test_offline_and_timeout_use_real_cache(monkeypatch, tmp_path):
     """A failed request returns a clearly marked, previously retrieved record."""
     source = next((external.EXTERNAL / "off").glob("*.json"))
-    (tmp_path / source.name).write_bytes(source.read_bytes())
+    record = json.loads(source.read_text())
+    record["fetched_at"] = "2025-01-01T00:00:00+00:00"  # older than the one-hour cache, so a live call is tried
+    (tmp_path / source.name).write_text(json.dumps(record))
     code = source.stem
     def timeout(*args, **kwargs):
         raise requests.Timeout()
