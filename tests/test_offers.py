@@ -117,6 +117,35 @@ def test_quantities_must_match_exactly_and_dimension_message():
         compare_observed_offers(frame, True, date(2026, 10, 6))
 
 
+def test_explicit_today_is_used_for_validation():
+    """Quotes dated after the real calendar date are valid when the caller's date allows them."""
+    frame = quotes().iloc[:2].copy()
+    frame["date"] = "2099-01-01"
+    result = compare_observed_offers(frame, True, date(2099, 1, 2))
+    assert result.age_days.tolist() == [1, 1]
+
+
+def test_tiny_pack_differences_are_not_absorbed_by_absolute_tolerance():
+    """Comparison is relative only, so very small packs must still match exactly."""
+    frame = quotes().iloc[:2].copy()
+    frame["unit"] = "g"
+    frame["quantity"] = [1e-9, 2e-9]
+    with pytest.raises(ValueError, match="same total pack quantity"):
+        compare_observed_offers(frame, True, date(2026, 10, 6))
+
+
+def test_single_quote_is_not_a_comparison():
+    """One quote is reported as too few stores rather than failing unexpectedly."""
+    with pytest.raises(ValueError, match="at least two stores"):
+        compare_observed_offers(quotes().iloc[:1], True, date(2026, 10, 6))
+
+
+def test_rank_is_an_integer():
+    """Ranks are whole numbers."""
+    result = compare_observed_offers(quotes(), True, date(2026, 10, 6))
+    assert pd.api.types.is_integer_dtype(result.price_rank)
+
+
 def test_default_today_and_conflict_message():
     """Without a date, today's quotes are used; conflicts carry the documented message."""
     frame = quotes().iloc[:2].copy()

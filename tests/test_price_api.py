@@ -17,7 +17,7 @@ def item(**changes) -> dict:
             "product_name": "Flat name", "price_per": "UNIT", "price_is_discounted": True,
             "price_without_discount": 15, "location_id": 3,
             "location": {"osm_name": "Shop", "osm_tag_key": "shop", "owner": "x"},
-            "proof_id": 9, "duplicate_of": None, "owner": "secret", "proof": {"owner": "p"}}
+            "proof_id": 9, "duplicate_of": 4, "owner": "secret", "proof": {"owner": "p"}}
     return {**base, **changes}
 
 
@@ -27,7 +27,7 @@ def test_normalize_maps_every_retained_field():
         "id": 7, "product_code": CODE, "product_name": "Nested name", "price": 12.5,
         "currency": "INR", "date": "2026-01-01", "price_per": "UNIT", "price_is_discounted": True,
         "price_without_discount": 15, "location_id": 3, "location_name": "Shop",
-        "location_type": "shop", "proof_id": 9, "duplicate_of": None,
+        "location_type": "shop", "proof_id": 9, "duplicate_of": 4,
         "source_url": "https://prices.openfoodfacts.org/prices/7"}
 
 
@@ -143,6 +143,7 @@ def test_live_fetch_requests_filters_and_saves(cache_root, monkeypatch):
     assert result["complete_query"] is True
     assert [o["id"] for o in result["observations"]] == [7]
     assert datetime.fromisoformat(result["fetched_at"]).tzinfo is not None
+    assert [p.name for p in cache_root.parent.iterdir()] == ["price_cache"]
     saved = read_json(cache_root / f"{CODE}.json")
     assert saved == {k: v for k, v in result.items() if k not in {"mode", "notice"}}
 

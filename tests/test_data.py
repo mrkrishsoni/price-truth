@@ -69,6 +69,27 @@ def test_no_target_leakage_in_features():
     pd.testing.assert_frame_equal(features(data), original)
 
 
+def test_build_catalogue_reproduces_shipped_catalogue(monkeypatch, tmp_path):
+    """Rebuilding from the original sources in isolation reproduces the shipped catalogue."""
+    from price_truth import data
+    monkeypatch.setattr(data, "PROCESSED", tmp_path / "processed")
+    monkeypatch.setattr(data, "REPORTS", tmp_path / "reports")
+    report = data.build_catalogue()
+    shipped = json.loads((REPORTS / "data_audit.json").read_text())
+    assert report["combined_rows"] == shipped["combined_rows"] == len(load_catalogue())
+    assert report["synthetic_observations"] == 0 and report["authenticity_labels"] == 0
+    for name in SOURCES:
+        rebuilt = {k: v for k, v in report["sources"][name].items()}
+        assert rebuilt["sha256"] == shipped["sources"][name]["sha256"]
+        assert rebuilt["clean_rows"] == shipped["sources"][name]["clean_rows"]
+        assert rebuilt["exclusions"] == shipped["sources"][name]["exclusions"]
+    rebuilt = pd.read_csv(tmp_path / "processed" / "catalogue.csv", dtype={"product_id": str})
+    assert rebuilt.key.tolist() == load_catalogue().key.tolist()
+    assert json.loads((tmp_path / "reports" / "data_audit.json").read_text()) == report
+    excluded = pd.read_csv(tmp_path / "processed" / "excluded.csv")
+    assert len(excluded) == sum(sum(s["exclusions"].values()) for s in report["sources"].values())
+
+
 def test_evaluation_groups_do_not_overlap():
     """Related normalized titles must appear in exactly one split."""
     splits = pd.read_csv(REPORTS / "evaluation_split.csv")

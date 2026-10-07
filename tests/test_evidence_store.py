@@ -115,6 +115,16 @@ def test_latest_revision_follows_retrieval_time_not_file_name(tmp_path):
     assert sorted(frame.price.tolist()) == [5, 30]
 
 
+def test_distinct_ids_in_one_snapshot_are_kept(tmp_path):
+    """Different source observation IDs remain separate observations."""
+    record = snapshot()
+    record["observations"].append({**record["observations"][0], "id": 2, "price": 11})
+    archive_snapshot(record, tmp_path)
+    frame, metadata = accumulated_observations(tmp_path)
+    assert metadata["unique_source_observations"] == 2
+    assert frame.price.tolist() == [10, 11]
+
+
 def test_archived_snapshot_without_rows_is_invalid(tmp_path):
     """A JSON object without an observations list is an explicit archive error."""
     write_json(tmp_path / "x.json", {"fetched_at": "2026-01-01T00:00:00+00:00"})

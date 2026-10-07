@@ -88,6 +88,27 @@ def test_constant_prices_prefer_the_baseline():
     assert result["test_mae"] == result["baseline_test_mae"] == 0
 
 
+def test_rolling_median_can_win_and_forecasts_with_itself():
+    """A repeating 100, 100, 110 pattern favours the median, which then makes the estimate."""
+    result = forecast_next_day(daily(np.resize([100., 100., 110.], 60)), END)
+    assert result["selected_on_validation"] == "rolling_median"
+    assert result["status"] == "evaluated"
+    assert result["test_mae"] == pytest.approx(4)
+    assert result["baseline_test_mae"] == pytest.approx(7)
+    assert result["next_day_estimate"] == pytest.approx(100)
+
+
+def test_equal_test_error_is_not_an_improvement():
+    """A non-baseline method must be strictly better on test data to be promoted."""
+    prices = np.full(60, 100.)
+    prices[42] = 110
+    result = forecast_next_day(daily(prices), END)
+    assert result["selected_on_validation"] == "rolling_median"
+    assert result["test_mae"] == result["baseline_test_mae"] == 0
+    assert result["status"] == "baseline_preferred"
+    assert result["next_day_estimate"] is None
+
+
 def test_selected_method_that_loses_on_test_is_not_promoted():
     """A method chosen on validation must still beat the baseline on the test window."""
     prices = np.arange(60.) + 100

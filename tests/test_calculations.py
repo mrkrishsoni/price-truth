@@ -157,3 +157,24 @@ def test_blank_currencies_cannot_be_compared():
         pack["currency"] = "  "
     with pytest.raises(ValueError, match="currency"):
         compare_packs(options)
+
+
+@pytest.mark.parametrize(("call", "message"), [
+    (lambda: positive(0), "Enter a finite value greater than zero."),
+    (lambda: discount_percent(100, 120), "Selling price cannot exceed the listed reference price."),
+    (lambda: unit_price(10, 100, "box"), "Supported units: g, kg, ml, l, count."),
+    (lambda: unit_price(10, 100, "g", 0), "Pack count must be a positive integer."),
+    (lambda: compare_packs([{"price": 1, "quantity": 1, "unit": "g", "currency": "INR"}]),
+     "Enter at least two packs of the same product."),
+    (lambda: compare_packs([{"price": 1, "quantity": 1, "unit": "g", "currency": "INR"},
+                            {"price": 1, "quantity": 1, "unit": "g", "currency": "USD"}]),
+     "Use the same currency for every pack."),
+    (lambda: compare_packs([{"price": 1, "quantity": 1, "unit": "g", "currency": "INR"},
+                            {"price": 1, "quantity": 1, "unit": "ml", "currency": "INR"}]),
+     "Mass, volume, and item counts cannot be compared together."),
+])
+def test_validation_messages_are_exact(call, message):
+    """User-facing validation text is part of the interface contract."""
+    with pytest.raises(ValueError) as error:
+        call()
+    assert str(error.value) == message

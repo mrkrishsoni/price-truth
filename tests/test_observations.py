@@ -287,6 +287,15 @@ def test_pack_change_converts_units_and_reports_sources():
                               "not independently verified")
 
 
+def test_pack_change_converts_the_later_pack_too():
+    """An 800 g pack replaced by a 1 kg pack is a 25% size increase, not a shrink."""
+    data = history(row(quantity=800, unit="g", price=100),
+                   row(date="2026-02-01", quantity=1, unit="kg", price=100))
+    result = pack_changes(data, True).iloc[0]
+    assert result.quantity_reduction_pct == pytest.approx(-25)
+    assert result.unit_price_increase_pct == pytest.approx(-20)
+
+
 def test_pack_change_same_day_duplicates_collapse():
     """Identical same-day records count once and a single date yields no change rows."""
     data = history(row(), row(source_url="https://example.com/2"))
