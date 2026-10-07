@@ -77,22 +77,22 @@ The Netlify features "Saved products" and "History" are only added in Section D,
 
 Decisions taken: **Streamlit Community Cloud** hosting from a **public GitHub repo**; **no login/accounts** (D2 and C3 dropped — the app stays account-free, and users keep their data by CSV download/upload).
 
-| Step | Work | Owner |
-|---|---|---|
-| 1 | Git repo, `.gitignore`, docs consolidated (B1, B7, B8) | Claude |
-| 2 | Code quality in parallel: complexity, warnings, mutation scope, tests (B3, B5, B6) | Claude (sub-agent) |
-| 3 | UI redesign A1–A12 with `AppTest` tests (B4) | Claude |
-| 4 | Daily Open Prices collection workflow (D1 start); licence/attribution page (C2) | Claude |
-| 5 | Push to GitHub → CI (review + Docker build, B2) green | Claude |
-| 6 | Deploy on share.streamlit.io (needs the owner's Streamlit login) | **User**, ~3 clicks |
-| 7 | Hosted checks: browsers, load test against the live URL, uptime monitor (C4–C6) | Claude + User for monitor signup and phone check |
-| 8 | Re-run review on final code, regenerate report, demo recording, viva notes (E1–E3) | Claude |
+| Step | Work | Owner | Status |
+|---|---|---|---|
+| 1 | Git repo, `.gitignore`, docs consolidated (B1, B7, B8) | Claude | ✅ Done |
+| 2 | Code quality in parallel: complexity, warnings, mutation scope, tests (B3, B5, B6) | Claude (sub-agent) | ✅ 98.3% mutation kill; app functions rank A/B; warning fixed |
+| 3 | UI redesign A1–A12 with `AppTest` tests (B4) | Claude | ✅ Done |
+| 4 | Daily Open Prices collection workflow (D1 start); licence/attribution page (C2) | Claude | ✅ Done; first run verified |
+| 5 | Push to GitHub → CI (review + Docker build, B2) green | Claude | ✅ Review + Docker jobs green |
+| 6 | Deploy on share.streamlit.io (needs the owner's Streamlit login) | **User**, ~3 clicks | ⏳ Waiting on owner |
+| 7 | Hosted checks: browsers, load test against the live URL, uptime monitor (C4–C6) | Claude + User for phone check | ✅ Local Chrome/Firefox/WebKit + axe; hosted run after deploy |
+| 8 | Re-run review on final code, regenerate report, demo recording, viva notes (E1–E3) | Claude | ✅ Review regenerated (358 tests); demo after deploy |
 
 ### Cannot finish today (time- or third-party-bound) — started today
 - **D1 forecasts:** need 40 consecutive days of real data. The collection job starts today; earliest validated forecast ≈ 16 November.
 - **C4 uptime:** the monitor starts today; a 14-day record completes ≈ 21 October.
 - **D3 live retailer prices:** depends on Flipkart/Amazon approving API applications.
-- **E4 usability study:** needs 5 real participants; the study kit is prepared today.
+- **E4 usability study:** needs 5 real participants; the study kit is in `docs/USABILITY-STUDY.md`.
 - **D4 model v2:** promotion needs an untouched new test set; development evidence exists, and the deployed v1 stays with per-category warnings.
 
 ## 3. Definition of done
