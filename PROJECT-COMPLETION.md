@@ -1,6 +1,34 @@
 # Price Truth — completion tracker
 
-Updated: 6 October 2026. This is the canonical active plan and handoff. Earlier submission reports describe the September 19 code snapshot. Current engineering evidence is under `reports/current/`.
+Updated: 7 October 2026. The day plan and remaining gates are in [docs/COMPLETION-PLAN.md](docs/COMPLETION-PLAN.md). Current evidence is under `reports/current/` and was regenerated on the final code today. Sections below the line are the 6 October record, kept for history; their numbers are superseded.
+
+## 7 October 2026 status
+
+| Area | Status | Evidence |
+|---|---|---|
+| Interface | Redesigned: grouped navigation, branded theme, verdict cards, readable SHAP (% effects), empty states, mobile layout | `views/`, `theme.py`, `present.py`; screenshots in `reports/current/` |
+| Tests | 358 passing, no warnings | `reports/current/pytest.xml` |
+| Coverage | 92.68% statements, 85.33% branches (package incl. UI) | `reports/current/coverage.json` |
+| Mutation | 1,517/1,543 killed (98.3%) across 8 domain modules; 26 equivalent survivors justified | `docs/MUTATION-SURVIVORS.md` |
+| Complexity | All application functions Radon rank A/B | `reports/current/radon-cc.json` |
+| Performance | First assessment 0.88 s (was 9.3 s) after background warm-up; single browser user: page 0.9 s, verdict 1.5 s | `performance.json`, `load_test_local.json` |
+| Browsers | Chrome, Firefox, WebKit: all flows incl. PDF download pass, no JS errors, no overflow at 390/768/1440 px | `browser_check.json` (+ `firefox/`, `webkit/`) |
+| Accessibility | axe-core WCAG A/AA: own contrast issue fixed; remaining findings are inside Streamlit's sidebar navigation (list markup, `aria-expanded`) | `browser_check.json` |
+| CI | GitHub Actions: review + Docker build/health check green | github.com/mrkrishsoni/price-truth/actions |
+| Deployment | Streamlit Community Cloud from public repo (owner completes the 3-click deploy) | README → Deployment |
+| Data collection | Daily Open Prices INR workflow running; archives only changed observations | `collect-prices.yml` |
+| Uptime | 15-minute probe workflow; activates when `HEALTH_URL` is set | `uptime.yml`, `scripts/uptime_report.py` |
+
+### Still open (cannot be completed in one day)
+- Validated Indian buy-timing forecast: needs 40 consecutive days of real observations (collection started 7 Oct).
+- 14-day measured uptime window (starts at deployment).
+- Live retailer offers: depends on Flipkart Affiliate / Amazon API approval.
+- Usability study with five real participants: kit in `docs/USABILITY-STUDY.md`.
+- Physical phone/tablet and branded Safari/Edge checks.
+- Model v2: needs an untouched new test set; v1 stays with per-category reliability warnings.
+
+---
+
 
 ## Objective and decisions
 

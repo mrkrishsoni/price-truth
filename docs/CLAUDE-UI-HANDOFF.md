@@ -1,5 +1,7 @@
 # Claude handoff: Price Truth interface polish
 
+> **Completed 7 October 2026.** The redesign described here has been implemented; see PROJECT-COMPLETION.md. This brief is kept for reference.
+
 Copy the prompt below into Claude and provide the project files listed afterward. This is a handoff document; Claude has not been contacted and no files have been uploaded.
 
 ## Prompt

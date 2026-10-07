@@ -1,7 +1,9 @@
 {
-  "generated_at": "2026-10-06T15:32:55.597885+00:00",
+  "generated_at": "2026-10-07T06:28:05.486603+00:00",
+  "url": "http://127.0.0.1:8501",
   "browser": "26.6",
-  "initial_visible_load_seconds": 3.098772957979236,
+  "engine": "webkit",
+  "initial_visible_load_seconds": 0.5061574580031447,
   "javascript_errors": [],
   "viewports": [
     {
@@ -20,10 +22,13 @@
       "horizontal_page_overflow": false
     }
   ],
+  "accessibility_serious_or_critical": null,
   "flows": [
-    "overview",
-    "workspace real assessment",
-    "actual PDF download"
+    "home",
+    "price check with real model and PDF download",
+    "unit comparison",
+    "offline food lookup",
+    "shrinkflation case"
   ],
-  "scope": "Local webkit, three viewport emulations. WebKit is not branded Safari. No physical devices tested."
+  "scope": "Local webkit; three viewport emulations. WebKit is not branded Safari; emulation is not a physical device."
 }

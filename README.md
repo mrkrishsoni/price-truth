@@ -38,38 +38,33 @@ Refresh public evidence when needed:
 
 This performs read-only public API calls and writes attributed snapshots under `datasets/external`. It does not scrape Amazon/Flipkart, create accounts, or upload user data. Price histories remain separate from the training catalogue. The search page saves its own successful queries as offline fallbacks.
 
-## Feature status
+## Pages
 
-| Feature | Implemented behavior |
+| Page | What it does |
 |---|---|
-| Product Workspace | Connected listing assessment, barcode history, pack-to-comparison transfer, manual/CSV observations and exports |
-| Discount Checker | Select an actual catalogue product, enter a quote, receive a calibrated snapshot-price estimate and real SHAP waterfall; export JSON and PDF |
-| Live Pack Lookup | Live barcode lookup and product-name search; real dated cached fallback |
-| Unit Price Compare | Validate quantities/currencies, normalize g/kg/ml/l/count and multipacks, rank two variants |
-| Buy Timing & History | Show real observations by barcode/store/currency and compare a quote; abstain when evidence is sparse or stale |
-| Shrink Timeline | Two cited Indian pack-change cases with quantity and unit-price calculations |
-| Platform Catalogue | Literal search across both historical catalogues and safe CSV export |
-| Evidence & Methods | Display source audit and held-out model evaluation |
+| Home | Search-first entry, real coverage numbers, links to each tool |
+| Price check | Pick a historical Amazon/Flipkart listing, enter a price, get a verdict (lower / in line / higher than expected), the model's range, a plain-language SHAP explanation in % effects, PDF and JSON export |
+| Unit price | Compare 2–4 pack options per 100 g, 100 ml or item; best-value verdict and chart |
+| Food & packs | Barcode or name lookup (Open Food Facts, live with saved fallback), pack details, dated Open Prices shop history, a long EUR history example; send a pack to Unit price |
+| Shrinkflation | Two cited Indian pack-reduction cases with hidden unit-price increase |
+| My observations | Manual or CSV observations kept in the session: price history, gated next-day forecast, cross-store quote ranking, pack-change analysis, CSV export |
+| Catalogue | Search and export both historical catalogues |
+| Methods & data | Model quality by category, data sources and licences, limits, raw reports |
 
-The model estimates prices, not discount authenticity. The supplied catalogues have no verified fraud labels or usable per-product histories. Flipkart prices are from 2015–2016 and Amazon's dates are unknown. The current price-history examples are sparse/stale, so no current buying forecast is promised. Read [data sources and limitations](docs/DATA-SOURCES.md).
+The model estimates prices, not discount authenticity. The supplied catalogues have no verified fraud labels or usable per-product histories. Flipkart prices are from 2015–2016 and Amazon's dates are unknown. Forecasts need 40+ consecutive real daily observations and otherwise decline with the reason shown. Read [data sources and limitations](docs/DATA-SOURCES.md).
 
 ## Architecture
 
 ```text
-app.py → src/price_truth/ui.py → independent feature functions
-                                   ├─ data.py → supplied CSVs → processed catalogue
-                                   ├─ model.py → trained tree model + real SHAP
-                                   ├─ external.py → read-only APIs + dated caches
-                                   ├─ calculations.py → discounts / unit prices / shrinkage
-                                   ├─ history.py → comparable dated observations
-                                   └─ catalogue.py → search / safe links / CSV exports
+app.py (st.navigation) → views/*.py → page bodies in ui.py / workspace.py
+                                        ├─ present.py   plain-language verdicts, SHAP % effects (pure, tested)
+                                        ├─ theme.py     brand CSS, verdict/empty-state components, chart styling
+                                        └─ resources.py cached catalogue/model + background warm-up
+domain modules: data.py · model.py · calculations.py · catalogue.py · history.py · forecast.py
+                observations.py · offers.py · external.py · price_api.py · evidence_store.py · exports.py
 ```
 
-Observation uploads and manual entries are validated atomically and held in Streamlit session memory; download CSV to retain them. Closing/restarting a session can lose unsaved observations. They are labelled user-supplied and never silently included in model training. Pack changes require confirmation of variant continuity and reject ambiguous same-day evidence.
-
-The next-day forecasting engine requires at least 40 consecutive recent daily observations, selects a method on chronological validation, evaluates ten later predictions against persistence, and withholds an estimate if the baseline wins. The current INR data does not qualify. Synthetic data is used only in clearly labelled tests.
-
-The interface is intentionally simple. Restyle `app.py`, `ui.py`, and `.streamlit/config.toml` later without rewriting the data or model logic.
+Pages never compute results themselves; they call the domain modules. Observation uploads and manual entries are validated atomically and held in session memory only.
 
 ## Review and tests
 
@@ -89,27 +84,43 @@ Additional checks:
 
 The data audit makes bounded public API requests and saves a separate current snapshot. The browser check needs the local app running and Chrome (macOS detection, or `PRICE_TRUTH_CHROME` for another executable); otherwise install Playwright Chromium. `PRICE_TRUTH_URL` can override localhost. Viewport emulation is not physical-device testing.
 
-## Deployment preparation
+## Deployment
 
-A non-root Dockerfile with a Streamlit health check is provided. Docker is unavailable on the development machine, so the image is **not build-verified**. On a machine with Docker:
+**Live host: Streamlit Community Cloud** (free, HTTPS), deployed from this public repository's `main` branch with `app.py` as the entry point and Python 3.12. Every push to `main` redeploys.
+
+1. Sign in at https://share.streamlit.io with GitHub and choose **Create app → Deploy a public app from GitHub**.
+2. Repository `mrkrishsoni/price-truth`, branch `main`, main file `app.py`; under **Advanced settings** pick Python **3.12**.
+3. After it starts, set the repository variable `HEALTH_URL` (Settings → Secrets and variables → Actions → Variables) to `https://<app>.streamlit.app/~/+/_stcore/health` to enable the 15-minute uptime probe.
+
+A non-root Dockerfile is also provided and is built and health-checked in CI on every push, for hosts such as Render or Hugging Face Spaces:
 
 ```bash
 docker build -t price-truth .
 docker run --rm -p 8501:8501 price-truth
 ```
 
-Use HTTPS at the hosting proxy. Container caches and session observations are ephemeral unless storage is deliberately configured. Supply source attribution and verify dataset redistribution rights before public hosting. No credentials or public site changes are included. Claude's current handoff is [docs/CLAUDE-UI-HANDOFF.md](docs/CLAUDE-UI-HANDOFF.md).
+Containers and Community Cloud have ephemeral storage: session observations are lost on restart unless downloaded. Dataset licences: Amazon CC BY-NC-SA 4.0, Flipkart CC BY-SA 4.0, Open Food Facts/Open Prices ODbL — non-commercial use with attribution (shown on the Methods & data page).
+
+## Automation
+
+| Workflow | Schedule | Purpose |
+|---|---|---|
+| `checks.yml` | every push | Ruff, PyTest + coverage, Radon, Mutmut and source manifest; Docker build + health check |
+| `collect-prices.yml` | daily 08:00 IST | Bounded Open Prices INR snapshot, archived only when observations changed; builds the real history forecasts need |
+| `uptime.yml` | every 15 min | Probes the deployed health endpoint; `scripts/uptime_report.py` summarises measured uptime |
+
+Hosted checks: `PRICE_TRUTH_URL=https://<app>.streamlit.app/~/+ python scripts/browser_current.py` and `... scripts/load_test.py --users 25 50 100`.
 
 ## Demo route
 
-1. Overview: explain real catalogue sizes and snapshot dates. Open Product Workspace for the connected journey; use My observations for real sourced manual/CSV records.
-2. Discount Checker: submit the initial Wayona listing; inspect the actual SHAP chart and export.
-3. Live Pack Lookup: use a saved barcode offline; optionally search `Maggi` live or use saved search results.
-4. Unit Price Compare: enter two real pack options and compare price per 100g/ml.
-5. History: show the INR evidence and explain why sparse data produces abstention; switch to the separate EUR example to show a longer real history.
-6. Shrink Timeline: inspect a reported case and open its source.
-7. Evidence & Methods: show the real evaluation and review report.
+1. Home: search "charging cable" → Price check.
+2. Price check: pick a listing, keep or change the price, **Check this price**; read the verdict, range chart and "What moved the estimate"; download the PDF.
+3. Food & packs: pick a saved product (or search `Maggi` live), open Pack details, **Compare this pack's value** → Unit price, add prices for 2–3 options.
+4. Food & packs → Price history: explain why sparse INR data gives no forecast; Long-history example shows a real EUR series.
+5. Shrinkflation: show the hidden unit-price increase and open the cited report.
+6. My observations: add a receipt, see the forecast gate (n of 40 days).
+7. Methods & data: per-category reliability, licences, and what the app cannot do.
 
 ## Remaining external work
 
-Public deployment, measured uptime, a true 100-user load test, Firefox/Safari/Edge verification, physical-device testing, a demo video, and optional final visual redesign have not been claimed complete. No public site has been replaced. [PROJECT-COMPLETION.md](PROJECT-COMPLETION.md) tracks current acceptance gates. Reliable current Indian buying forecasts and verified live retailer comparisons still require suitable data access.
+Time- or third-party-bound items are tracked in [docs/COMPLETION-PLAN.md](docs/COMPLETION-PLAN.md): a 40-day real history before any Indian forecast can be validated, a 14-day uptime window, retailer API approvals, a usability study with real participants ([kit](docs/USABILITY-STUDY.md)) and physical-device checks.
