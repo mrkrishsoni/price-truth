@@ -218,3 +218,59 @@ def test_malformed_and_credential_links_are_not_exposed(url):
 def test_both_source_retailer_links_remain_available(url):
     """Both original retailer domains can be opened for source inspection."""
     assert safe_url(url) == url
+
+
+@pytest.mark.parametrize("url", ["https://user@www.amazon.in/x", "https://:pw@www.amazon.in/x"])
+def test_username_or_password_alone_is_rejected(url):
+    """Either credential component on its own blocks the link."""
+    assert safe_url(url) is None
+
+
+def test_export_exact_bytes_leave_safe_values_untouched():
+    """Only formula-like text is prefixed; other values, the BOM and CRLF rows are exact."""
+    frame = pd.DataFrame({"name": ["=1", "Cable", None, 5], "price": [1, 2, 3, 4]})
+    assert export_csv(frame) == "﻿name,price\r\n'=1,1\r\nCable,2\r\n,3\r\n5,4\r\n".encode()
+
+
+def test_history_reads_the_documented_files(monkeypatch):
+    """The INR collection and the international example are read by their exact file names."""
+    from price_truth import history
+    requested, real = [], history.EXTERNAL
+
+    class Recorder:
+        """Record file names joined to the data directory (case-insensitive file systems
+        would otherwise hide a wrongly cased name)."""
+
+        def __truediv__(self, name):
+            requested.append(name)
+            return real / name
+
+    monkeypatch.setattr(history, "EXTERNAL", Recorder())
+    load_observations()
+    load_observations(example=True)
+    assert requested == ["open_prices_inr.json", "open_prices_example.json"]
+
+
+def test_history_keeps_prices_below_one():
+    """Any positive price, including fractions of a currency unit, is a valid observation."""
+    frame, _ = load_observations()
+    row = frame.iloc[0].to_dict()
+    row.update(product_code="12345678", location_id=1, currency="INR", price_per="UNIT",
+               duplicate_of=None, proof_id=1, location_type="shop", price=0.5, date="2026-01-01")
+    assert series_for(pd.DataFrame([row]), "12345678", 1, "INR").price.tolist() == [0.5]
+
+
+def test_timing_signal_result_keys_and_messages():
+    """Each outcome carries its documented explanation."""
+    dates = pd.to_datetime(["2026-01-01", "2026-01-05", "2026-01-08", "2026-01-10", "2026-01-15"])
+    frame = pd.DataFrame({"date": dates, "price": [10, 11, 12, 13, 14]})
+    assert timing_signal(frame.iloc[:2], 12, date(2026, 1, 16)) == {
+        "status": "insufficient_history", "days": 2,
+        "message": "At least five distinct prior observation dates are needed."}
+    limited = timing_signal(frame, 12, date(2026, 6, 1))
+    assert limited["message"] == "History is stale or spans fewer than 14 days; no buy/wait signal."
+    usual = timing_signal(frame, 12, date(2026, 1, 16))
+    assert usual["message"] == ("Comparison with observed prices only. Future prices and sale "
+                                "dates are unknown.")
+    assert set(usual) == {"days", "span_days", "age_days", "median", "q25", "q75",
+                          "difference_from_median_pct", "status", "message"}

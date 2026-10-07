@@ -30,21 +30,31 @@ def normalize(item: dict) -> dict:
             "source_url": f"https://prices.openfoodfacts.org/prices/{item['id']}"}
 
 
+def _saved_response(path, code: str) -> dict | None:
+    """Return a schema-valid saved response for this barcode, or None."""
+    cached = read_json(path)
+    return cached if cached and valid_cache(cached, code) else None
+
+
+def _live_observations(code: str) -> tuple[dict, list[dict]]:
+    """Request one bounded page and keep normalized rows for this exact barcode only."""
+    payload = get_json(URL, {"product_code": code, "size": 100, "order_by": "-date"})
+    observations = [normalize(i) for i in payload["items"] if str(i.get("product_code")) == code]
+    return payload, observations
+
+
 def fetch_observations(code: str, offline: bool = False) -> dict:
     """Fetch up to 100 observations; label truncation and retain a dated offline fallback."""
     if not re.fullmatch(r"[0-9]{8,14}", code):
         raise ValueError("Enter an 8-14 digit barcode.")
     path = EXTERNAL / "price_cache" / f"{code}.json"
-    cached = read_json(path)
-    if cached and not valid_cache(cached, code):
-        cached = None
+    cached = _saved_response(path, code)
     if cached and (offline or fresh(cached)):
         return {**cached, "mode": "cached", "notice": "Dated saved response (one-hour refresh limit)."}
     if offline:
         raise ValueError("No saved price response for this barcode.")
     try:
-        payload = get_json(URL, {"product_code": code, "size": 100, "order_by": "-date"})
-        observations = [normalize(i) for i in payload["items"] if str(i.get("product_code")) == code]
+        payload, observations = _live_observations(code)
     except (requests.RequestException, ValueError, KeyError, TypeError) as exc:
         if cached:
             return {**cached, "mode": "cached", "notice": "Live request failed; showing dated saved observations."}

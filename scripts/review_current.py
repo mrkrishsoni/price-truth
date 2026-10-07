@@ -8,8 +8,10 @@ import shutil
 import subprocess
 import sys
 import time
+import tomllib
 import xml.etree.ElementTree as ET
 from datetime import UTC, datetime
+from pathlib import Path
 
 import numpy as np
 
@@ -17,6 +19,12 @@ from price_truth.paths import REPORTS, ROOT
 
 OUT = REPORTS / "current"
 TARGETS = ["src", "app.py", "scripts", "tests"]
+
+
+def mutation_scope() -> list[str]:
+    """Read the mutated module list from pyproject.toml so reports never drift from config."""
+    config = tomllib.loads((ROOT / "pyproject.toml").read_text())["tool"]["mutmut"]
+    return [path.rsplit("/", 1)[-1] for path in config["source_paths"]]
 
 
 def execute(args: list[str], filename: str, commands: list) -> str:
@@ -47,8 +55,8 @@ def collect_checks(commands: list) -> dict:
 
 
 def collect_mutations(commands: list) -> dict:
-    """Rerun the declared three-module mutation scope; retain every survivor."""
-    mutmut = str(ROOT / ".venv/bin/mutmut")
+    """Rerun the mutation scope declared in pyproject.toml; retain every survivor."""
+    mutmut = str(Path(sys.executable).with_name("mutmut"))
     execute([mutmut, "run", "price_truth.*"], "mutmut-run.txt", commands)
     execute([mutmut, "results", "--all", "true"], "mutmut-results.txt", commands)
     execute([mutmut, "export-cicd-stats"], "mutmut-export.txt", commands)
@@ -82,7 +90,7 @@ def source_manifest(commands: list) -> dict:
             "system": platform.platform(), "commands": commands,
             "versions": {p: importlib.metadata.version(p) for p in packages},
             "source_sha256": {str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest() for f in files},
-            "mutation_scope": ["calculations.py", "catalogue.py", "history.py"]}
+            "mutation_scope": mutation_scope()}
 
 
 def table(headers: list, rows: list) -> str:
@@ -120,7 +128,8 @@ def render_report(metrics: dict, mutations: dict, timings: dict, manifest: dict)
                   ["Branches", f"{coverage['covered_branches']}/{coverage['num_branches']}", f"{100*coverage['covered_branches']/coverage['num_branches']:.2f}%"]]),
                 "Coverage scope: price_truth package; scripts and app.py are outside this denominator.",
                 "## Mutmut", table(["Outcome", "Count"], list(mutations.items())),
-                f"Kill rate: {100*killed/total:.2f}% ({killed}/{total}). Scope: calculations, catalogue, history only.",
+                f"Kill rate: {100*killed/total:.2f}% ({killed}/{total}). Scope: {', '.join(manifest['mutation_scope'])}.",
+                "Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.",
                 *metrics_sections(metrics), "## Local timing", table(["Measure", "Value"], list(timings.items())),
                 "## Requirements still requiring external evidence",
                 "Public deployment/HTTPS, monitored uptime, real-user usability, physical devices and 100-user concurrency are not established by these checks. Browser evidence is recorded separately. Forecasts require sufficient recent comparable observations; controlled test fixtures are not market evaluation."]

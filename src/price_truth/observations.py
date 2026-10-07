@@ -25,14 +25,21 @@ def evidence_url(value: str) -> str:
     return value
 
 
-def validate_observations(frame: pd.DataFrame, today: date | None = None) -> pd.DataFrame:
-    """Validate an entire import before returning it; no partial ingestion or fuzzy identity."""
+TEXT_COLUMNS = ["product_id", "name", "variant", "store", "currency", "unit"]
+DATE_PATTERN = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
+def _require_shape(frame: pd.DataFrame) -> None:
+    """Reject missing columns and empty or oversized imports before any parsing."""
     if not set(COLUMNS).issubset(frame.columns):
         raise ValueError("Required columns: " + ", ".join(COLUMNS))
     if frame.empty or len(frame) > MAX_ROWS:
         raise ValueError(f"Supply between 1 and {MAX_ROWS:,} observations.")
-    out = frame[COLUMNS].copy()
-    for column in ["product_id", "name", "variant", "store", "currency", "unit"]:
+
+
+def _clean_text(out: pd.DataFrame) -> None:
+    """Strip identity text, then normalize and check currency codes and units in place."""
+    for column in TEXT_COLUMNS:
         out[column] = out[column].fillna("").astype(str).str.strip()
         if out[column].eq("").any() or out[column].str.len().gt(200).any():
             raise ValueError(f"{column}: supply non-empty text of at most 200 characters.")
@@ -42,18 +49,35 @@ def validate_observations(frame: pd.DataFrame, today: date | None = None) -> pd.
         raise ValueError("Currency must be a three-letter code, for example INR.")
     if not out.unit.isin(UNITS).all():
         raise ValueError("Units must be g, kg, ml, l or count.")
-    raw_dates = out.date.astype(str)
-    if not raw_dates.map(lambda v: bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", v))).all():
+
+
+def _clean_dates(dates: pd.Series, today: date) -> pd.Series:
+    """Accept only strict ISO calendar dates that are not after today."""
+    raw_dates = dates.astype(str)
+    if not raw_dates.map(lambda v: bool(DATE_PATTERN.fullmatch(v))).all():
         raise ValueError("Dates must use YYYY-MM-DD.")
-    dates = pd.to_datetime(raw_dates, errors="coerce")
-    if dates.isna().any() or (dates.dt.date > (today or date.today())).any():
+    parsed = pd.to_datetime(raw_dates, errors="coerce")
+    if parsed.isna().any() or (parsed.dt.date > today).any():
         raise ValueError("Dates must be valid and cannot be in the future.")
-    out["date"] = dates.dt.strftime("%Y-%m-%d")
+    return parsed.dt.strftime("%Y-%m-%d")
+
+
+def _clean_amounts(out: pd.DataFrame) -> None:
+    """Convert prices and quantities to finite positive floats in place."""
     try:
         out["price"] = out.price.map(positive)
         out["quantity"] = out.quantity.map(positive)
     except (TypeError, ValueError, OverflowError) as exc:
         raise ValueError("Prices and quantities must be finite positive numbers.") from exc
+
+
+def validate_observations(frame: pd.DataFrame, today: date | None = None) -> pd.DataFrame:
+    """Validate an entire import before returning it; no partial ingestion or fuzzy identity."""
+    _require_shape(frame)
+    out = frame[COLUMNS].copy()
+    _clean_text(out)
+    out["date"] = _clean_dates(out.date, today or date.today())
+    _clean_amounts(out)
     out["source_url"] = out.source_url.map(evidence_url)
     if out.groupby("product_id").name.nunique().gt(1).any():
         raise ValueError("One product ID cannot have conflicting names within an import.")

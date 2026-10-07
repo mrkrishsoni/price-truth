@@ -46,8 +46,13 @@ def split_groups(frame: pd.DataFrame) -> dict[str, np.ndarray]:
 
 def preprocessing() -> ColumnTransformer:
     """Fit missing-value treatment and category vocabulary on training data only."""
+    return _preprocessing(NUMERIC)
+
+
+def _preprocessing(numeric: list[str]) -> ColumnTransformer:
+    """Build the shared transformer for an explicit list of numeric inputs."""
     return ColumnTransformer([
-        ("numeric", SimpleImputer(strategy="median", add_indicator=True), NUMERIC),
+        ("numeric", SimpleImputer(strategy="median", add_indicator=True), numeric),
         ("category", OneHotEncoder(handle_unknown="infrequent_if_exist", min_frequency=20,
                                    max_categories=80, sparse_output=False), CATEGORICAL),
     ], verbose_feature_names_out=False)
@@ -60,6 +65,16 @@ def metrics(actual: np.ndarray, predicted_log: np.ndarray) -> dict:
             "median_absolute_percentage_error": float(np.median(np.abs(predicted - actual) / actual) * 100),
             "mean_absolute_log_error": float(mean_absolute_error(np.log1p(actual), predicted_log)),
             "r2": float(r2_score(actual, predicted))}
+
+
+def observed_numeric(frame: pd.DataFrame) -> list[str]:
+    """Numeric features with at least one observed value; a source may never record some.
+
+    Flipkart listings carry no rating counts, so a Flipkart-only model must omit that
+    feature explicitly instead of relying on the imputer to drop it with a warning.
+    """
+    data = features(frame)
+    return [column for column in NUMERIC if data[column].notna().any()]
 
 
 def baseline(train: pd.DataFrame, other: pd.DataFrame) -> np.ndarray:
@@ -103,9 +118,9 @@ def train_model() -> dict:
     per_platform = {}
     for platform in ["amazon", "flipkart"]:
         mask = test.platform.to_numpy() == platform
-        separate = make_pipeline(preprocessing(), candidates[selected].__class__(
-            **candidates[selected].get_params()))
         subset = fitting[fitting.platform == platform]
+        separate = make_pipeline(_preprocessing(observed_numeric(subset)),
+                                 candidates[selected].__class__(**candidates[selected].get_params()))
         separate.fit(features(subset), np.log1p(subset.selling_price))
         per_platform[platform] = {
             "combined_model": metrics(test.selling_price.to_numpy()[mask], predictions[mask]),
