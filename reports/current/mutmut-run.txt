@@ -56,20 +56,20 @@
 ⠸ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+⠼ Generating mutants
 ⠼ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
-⠼ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
-⠸ Generating mutants
-⠼ Generating mutants
-    done in 50ms (0 files mutated, 0 ignored, 8 unmodified)
-    Warning: 61 non-Python file(s) changed since the last full run: .dockerignore, Dockerfile, artifacts/discount_model.joblib, artifacts/price_model.joblib, datasets/external/off/0048107251123.json, datasets/external/off/0099482410681.json, datasets/external/off/0706502578329.json, datasets/external/off/0724022008461.json, datasets/external/off/0742259099687.json, datasets/external/off/0799872395238.json, datasets/external/off/0810048090020.json, datasets/external/off/0811307031716.json, datasets/external/off/0946590641530.json, datasets/external/off/0986614900106.json, datasets/external/off/11928227.json, datasets/final/assumptions.json, datasets/final/build_summary.json, datasets/final/discount_training.csv.gz, datasets/final/food_prices.csv.gz, datasets/final/offers.csv, datasets/final/price_history.csv.gz, datasets/final/shrink_cases.json, datasets/final/shrink_research.json, datasets/final/shrink_simulated.json, datasets/processed/catalogue.csv, datasets/processed/excluded.csv, reports/current/browser-assessment.pdf, reports/current/browser_check.json, reports/current/coverage.json, reports/current/firefox/browser-assessment.pdf, reports/current/firefox/browser_check.json, reports/current/firefox/workspace-1440.png, reports/current/firefox/workspace-390.png, reports/current/firefox/workspace-768.png, reports/current/firefox/workspace-desktop.png, reports/current/load_test_local.json, reports/current/model_audit.json, reports/current/mutation.json, reports/current/mutmut-results.txt, reports/current/mutmut-run.txt, reports/current/performance.json, reports/current/pytest-run.txt, reports/current/pytest.xml, reports/current/radon-cc.json, reports/current/radon-hal.json, reports/current/radon-mi.json, reports/current/radon-raw.json, reports/current/review_manifest.json, reports/current/webkit/browser-assessment.pdf, reports/current/webkit/browser_check.json, reports/current/webkit/workspace-1440.png, reports/current/webkit/workspace-390.png, reports/current/webkit/workspace-768.png, reports/current/webkit/workspace-desktop.png, reports/current/workspace-1440.png, reports/current/workspace-390.png, reports/current/workspace-768.png, reports/current/workspace-desktop.png, reports/data_audit.json, reports/discount_model_evaluation.json, reports/model_evaluation.json
+    done in 37ms (0 files mutated, 0 ignored, 8 unmodified)
+    Warning: 24 non-Python file(s) changed since the last full run: datasets/external/off/0048107251123.json, datasets/external/off/8901058000290.json, datasets/external/price_cache/8901725118921.json, datasets/external/search/dd05b5fbe33fcf09d365021477b8ff513db57290635b64e3fb4a7d7d59f599a6.json, pyproject.toml, reports/current/browser-assessment.pdf, reports/current/browser_check.json, reports/current/coverage.json, reports/current/firefox/browser-assessment.pdf, reports/current/firefox/browser_check.json, reports/current/mutation.json, reports/current/mutmut-results.txt, reports/current/mutmut-run.txt, reports/current/performance.json, reports/current/pytest-run.txt, reports/current/pytest.xml, reports/current/radon-cc.json, reports/current/radon-hal.json, reports/current/radon-mi.json, reports/current/radon-raw.json, reports/current/review_manifest.json, reports/current/webkit/browser-assessment.pdf, reports/current/webkit/browser_check.json, reports/current/workspace-1440.png
     These cannot be tracked for behavioral changes, so cached results were kept.
     If the changes affect your tests, delete the mutants/ directory or set on_dependency_change = "rerun".
 
@@ -657,290 +657,343 @@
 ⠼ Listing all tests
 ⠴ Listing all tests
 ⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+⠏ Listing all tests
+⠋ Listing all tests
+⠙ Listing all tests
+⠹ Listing all tests
+⠸ Listing all tests
+⠼ Listing all tests
+⠴ Listing all tests
+⠦ Listing all tests
+⠧ Listing all tests
+⠇ Listing all tests
+Found 1 new tests, rerunning stats collection
 
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
-⠧ Running clean tests
-⠇ Running clean tests
-⠏ Running clean tests
-⠋ Running clean tests
-⠙ Running clean tests
-⠹ Running clean tests
-⠸ Running clean tests
-⠼ Running clean tests
-⠴ Running clean tests
-⠦ Running clean tests
+⠏ Running stats    
+⠋ Running stats
+⠙ Running stats
+⠹ Running stats
+⠸ Running stats
+⠼ Running stats
     done
 
-⠧ Running forced fail test
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+⠇ Running clean tests
+⠏ Running clean tests
+⠋ Running clean tests
+⠙ Running clean tests
+⠹ Running clean tests
+⠸ Running clean tests
+⠼ Running clean tests
+⠴ Running clean tests
+⠦ Running clean tests
+⠧ Running clean tests
+    done
+
 ⠇ Running forced fail test
 ⠏ Running forced fail test
 ⠋ Running forced fail test
@@ -956,1554 +1009,1594 @@
 ⠋ Running forced fail test
 ⠙ Running forced fail test
 ⠹ Running forced fail test
+⠸ Running forced fail test
     done
 Running mutation testing
 
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠧ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠇ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠏ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠋ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠙ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠹ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠸ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠼ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠴ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-⠦ 1543/1543  🎉 1517 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-56.57 mutations/second
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1549 🫥 0  ⏰ 0  🤔 0  🙁 33  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1550 🫥 0  ⏰ 0  🤔 0  🙁 32  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1551 🫥 0  ⏰ 0  🤔 0  🙁 31  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1552 🫥 0  ⏰ 0  🤔 0  🙁 30  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1552 🫥 0  ⏰ 0  🤔 0  🙁 30  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1553 🫥 0  ⏰ 0  🤔 0  🙁 29  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1554 🫥 0  ⏰ 0  🤔 0  🙁 28  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1555 🫥 0  ⏰ 0  🤔 0  🙁 27  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1555 🫥 0  ⏰ 0  🤔 0  🙁 27  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1555 🫥 0  ⏰ 0  🤔 0  🙁 27  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1555 🫥 0  ⏰ 0  🤔 0  🙁 27  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1555 🫥 0  ⏰ 0  🤔 0  🙁 27  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠧ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠙ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠹ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠸ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠼ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠴ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+⠦ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
+72.65 mutations/second
 
 Mutant results
 --------------
@@ -2759,7 +2852,14 @@ Mutant results
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_43
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_44
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_45
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_46
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_47
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_48
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_49
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_5
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_50
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_51
+🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_52
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_6
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_7
 🎉 price_truth.evidence_store.x_accumulated_observations__mutmut_8
@@ -3657,39 +3757,12 @@ Mutant results
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_1
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_10
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_100
-🙁 price_truth.offers.x_compare_observed_offers__mutmut_101
+🎉 price_truth.offers.x_compare_observed_offers__mutmut_101
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_102
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_103
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_104
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_105
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_106
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_107
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_108
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_109
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_11
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_110
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_111
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_112
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_113
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_114
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_115
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_116
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_117
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_118
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_119
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_12
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_120
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_121
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_122
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_123
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_124
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_125
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_126
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_127
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_128
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_129
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_13
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_130
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_14
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_15
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_16
@@ -3705,12 +3778,12 @@ Mutant results
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_25
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_26
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_27
-🙁 price_truth.offers.x_compare_observed_offers__mutmut_28
+🎉 price_truth.offers.x_compare_observed_offers__mutmut_28
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_29
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_3
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_30
-🙁 price_truth.offers.x_compare_observed_offers__mutmut_31
-🙁 price_truth.offers.x_compare_observed_offers__mutmut_32
+🎉 price_truth.offers.x_compare_observed_offers__mutmut_31
+🎉 price_truth.offers.x_compare_observed_offers__mutmut_32
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_33
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_34
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_35
@@ -3749,14 +3822,14 @@ Mutant results
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_65
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_66
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_67
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_68
+🙁 price_truth.offers.x_compare_observed_offers__mutmut_68
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_69
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_7
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_70
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_71
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_72
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_73
-🎉 price_truth.offers.x_compare_observed_offers__mutmut_74
+🙁 price_truth.offers.x_compare_observed_offers__mutmut_74
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_75
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_76
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_77
@@ -3779,11 +3852,43 @@ Mutant results
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_92
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_93
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_94
-🙁 price_truth.offers.x_compare_observed_offers__mutmut_95
+🎉 price_truth.offers.x_compare_observed_offers__mutmut_95
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_96
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_97
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_98
 🎉 price_truth.offers.x_compare_observed_offers__mutmut_99
+🎉 price_truth.offers.x_require_same_pack__mutmut_1
+🎉 price_truth.offers.x_require_same_pack__mutmut_10
+🎉 price_truth.offers.x_require_same_pack__mutmut_11
+🙁 price_truth.offers.x_require_same_pack__mutmut_12
+🙁 price_truth.offers.x_require_same_pack__mutmut_13
+🎉 price_truth.offers.x_require_same_pack__mutmut_14
+🎉 price_truth.offers.x_require_same_pack__mutmut_15
+🎉 price_truth.offers.x_require_same_pack__mutmut_16
+🎉 price_truth.offers.x_require_same_pack__mutmut_17
+🎉 price_truth.offers.x_require_same_pack__mutmut_18
+🎉 price_truth.offers.x_require_same_pack__mutmut_19
+🎉 price_truth.offers.x_require_same_pack__mutmut_2
+🎉 price_truth.offers.x_require_same_pack__mutmut_20
+🎉 price_truth.offers.x_require_same_pack__mutmut_21
+🎉 price_truth.offers.x_require_same_pack__mutmut_22
+🎉 price_truth.offers.x_require_same_pack__mutmut_23
+🎉 price_truth.offers.x_require_same_pack__mutmut_24
+🎉 price_truth.offers.x_require_same_pack__mutmut_25
+🎉 price_truth.offers.x_require_same_pack__mutmut_26
+🎉 price_truth.offers.x_require_same_pack__mutmut_27
+🎉 price_truth.offers.x_require_same_pack__mutmut_28
+🎉 price_truth.offers.x_require_same_pack__mutmut_29
+🎉 price_truth.offers.x_require_same_pack__mutmut_3
+🎉 price_truth.offers.x_require_same_pack__mutmut_30
+🎉 price_truth.offers.x_require_same_pack__mutmut_31
+🎉 price_truth.offers.x_require_same_pack__mutmut_32
+🎉 price_truth.offers.x_require_same_pack__mutmut_4
+🎉 price_truth.offers.x_require_same_pack__mutmut_5
+🎉 price_truth.offers.x_require_same_pack__mutmut_6
+🎉 price_truth.offers.x_require_same_pack__mutmut_7
+🎉 price_truth.offers.x_require_same_pack__mutmut_8
+🙁 price_truth.offers.x_require_same_pack__mutmut_9
 🎉 price_truth.price_api.x__live_observations__mutmut_1
 🎉 price_truth.price_api.x__live_observations__mutmut_10
 🎉 price_truth.price_api.x__live_observations__mutmut_11
@@ -3800,6 +3905,12 @@ Mutant results
 🎉 price_truth.price_api.x__live_observations__mutmut_21
 🎉 price_truth.price_api.x__live_observations__mutmut_22
 🎉 price_truth.price_api.x__live_observations__mutmut_23
+🎉 price_truth.price_api.x__live_observations__mutmut_24
+🎉 price_truth.price_api.x__live_observations__mutmut_25
+🎉 price_truth.price_api.x__live_observations__mutmut_26
+🎉 price_truth.price_api.x__live_observations__mutmut_27
+🎉 price_truth.price_api.x__live_observations__mutmut_28
+🎉 price_truth.price_api.x__live_observations__mutmut_29
 🎉 price_truth.price_api.x__live_observations__mutmut_3
 🎉 price_truth.price_api.x__live_observations__mutmut_4
 🎉 price_truth.price_api.x__live_observations__mutmut_5
@@ -3807,6 +3918,19 @@ Mutant results
 🎉 price_truth.price_api.x__live_observations__mutmut_7
 🎉 price_truth.price_api.x__live_observations__mutmut_8
 🎉 price_truth.price_api.x__live_observations__mutmut_9
+🎉 price_truth.price_api.x__normalize_valid__mutmut_1
+🎉 price_truth.price_api.x__normalize_valid__mutmut_10
+🎉 price_truth.price_api.x__normalize_valid__mutmut_11
+🎉 price_truth.price_api.x__normalize_valid__mutmut_12
+🎉 price_truth.price_api.x__normalize_valid__mutmut_13
+🎉 price_truth.price_api.x__normalize_valid__mutmut_2
+🎉 price_truth.price_api.x__normalize_valid__mutmut_3
+🎉 price_truth.price_api.x__normalize_valid__mutmut_4
+🎉 price_truth.price_api.x__normalize_valid__mutmut_5
+🎉 price_truth.price_api.x__normalize_valid__mutmut_6
+🎉 price_truth.price_api.x__normalize_valid__mutmut_7
+🎉 price_truth.price_api.x__normalize_valid__mutmut_8
+🎉 price_truth.price_api.x__normalize_valid__mutmut_9
 🎉 price_truth.price_api.x__saved_response__mutmut_1
 🎉 price_truth.price_api.x__saved_response__mutmut_2
 🎉 price_truth.price_api.x__saved_response__mutmut_3
@@ -3910,11 +4034,19 @@ Mutant results
 🎉 price_truth.price_api.x_fetch_observations__mutmut_92
 🎉 price_truth.price_api.x_fetch_observations__mutmut_93
 🎉 price_truth.price_api.x_fetch_observations__mutmut_94
+🎉 price_truth.price_api.x_fetch_observations__mutmut_95
+🎉 price_truth.price_api.x_fetch_observations__mutmut_96
+🎉 price_truth.price_api.x_fetch_observations__mutmut_97
+🎉 price_truth.price_api.x_fetch_observations__mutmut_98
+🎉 price_truth.price_api.x_latest_valid_date__mutmut_1
+🎉 price_truth.price_api.x_latest_valid_date__mutmut_2
+🎉 price_truth.price_api.x_latest_valid_date__mutmut_3
 🎉 price_truth.price_api.x_normalize__mutmut_1
 🎉 price_truth.price_api.x_normalize__mutmut_10
 🎉 price_truth.price_api.x_normalize__mutmut_100
 🎉 price_truth.price_api.x_normalize__mutmut_101
 🎉 price_truth.price_api.x_normalize__mutmut_102
+🎉 price_truth.price_api.x_normalize__mutmut_103
 🎉 price_truth.price_api.x_normalize__mutmut_11
 🎉 price_truth.price_api.x_normalize__mutmut_12
 🎉 price_truth.price_api.x_normalize__mutmut_13

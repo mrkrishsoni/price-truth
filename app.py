@@ -22,11 +22,11 @@ PAGES = {
 }
 
 page = st.navigation(PAGES)
-start_warmup()
 try:
     catalogue()
+    start_warmup()
 except FileNotFoundError:
-    st.error("The catalogue is not prepared. Follow the setup steps in README.md.")
+    st.error("The catalogue or model is not prepared. Follow the setup steps in README.md.")
     st.stop()
 st.sidebar.caption("Historical prices, real sources. Not live offers or fraud verdicts.")
 page.run()

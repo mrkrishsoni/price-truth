@@ -993,6 +993,38 @@
     price_truth.forecast.x_forecast_next_day__mutmut_70: killed
     price_truth.forecast.x_forecast_next_day__mutmut_71: killed
     price_truth.forecast.x_forecast_next_day__mutmut_72: killed
+    price_truth.offers.x_require_same_pack__mutmut_1: killed
+    price_truth.offers.x_require_same_pack__mutmut_2: killed
+    price_truth.offers.x_require_same_pack__mutmut_3: killed
+    price_truth.offers.x_require_same_pack__mutmut_4: killed
+    price_truth.offers.x_require_same_pack__mutmut_5: killed
+    price_truth.offers.x_require_same_pack__mutmut_6: killed
+    price_truth.offers.x_require_same_pack__mutmut_7: killed
+    price_truth.offers.x_require_same_pack__mutmut_8: killed
+    price_truth.offers.x_require_same_pack__mutmut_9: survived
+    price_truth.offers.x_require_same_pack__mutmut_10: killed
+    price_truth.offers.x_require_same_pack__mutmut_11: killed
+    price_truth.offers.x_require_same_pack__mutmut_12: survived
+    price_truth.offers.x_require_same_pack__mutmut_13: survived
+    price_truth.offers.x_require_same_pack__mutmut_14: killed
+    price_truth.offers.x_require_same_pack__mutmut_15: killed
+    price_truth.offers.x_require_same_pack__mutmut_16: killed
+    price_truth.offers.x_require_same_pack__mutmut_17: killed
+    price_truth.offers.x_require_same_pack__mutmut_18: killed
+    price_truth.offers.x_require_same_pack__mutmut_19: killed
+    price_truth.offers.x_require_same_pack__mutmut_20: killed
+    price_truth.offers.x_require_same_pack__mutmut_21: killed
+    price_truth.offers.x_require_same_pack__mutmut_22: killed
+    price_truth.offers.x_require_same_pack__mutmut_23: killed
+    price_truth.offers.x_require_same_pack__mutmut_24: killed
+    price_truth.offers.x_require_same_pack__mutmut_25: killed
+    price_truth.offers.x_require_same_pack__mutmut_26: killed
+    price_truth.offers.x_require_same_pack__mutmut_27: killed
+    price_truth.offers.x_require_same_pack__mutmut_28: killed
+    price_truth.offers.x_require_same_pack__mutmut_29: killed
+    price_truth.offers.x_require_same_pack__mutmut_30: killed
+    price_truth.offers.x_require_same_pack__mutmut_31: killed
+    price_truth.offers.x_require_same_pack__mutmut_32: killed
     price_truth.offers.x_compare_observed_offers__mutmut_1: killed
     price_truth.offers.x_compare_observed_offers__mutmut_2: killed
     price_truth.offers.x_compare_observed_offers__mutmut_3: killed
@@ -1020,11 +1052,11 @@
     price_truth.offers.x_compare_observed_offers__mutmut_25: killed
     price_truth.offers.x_compare_observed_offers__mutmut_26: killed
     price_truth.offers.x_compare_observed_offers__mutmut_27: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_28: survived
+    price_truth.offers.x_compare_observed_offers__mutmut_28: killed
     price_truth.offers.x_compare_observed_offers__mutmut_29: killed
     price_truth.offers.x_compare_observed_offers__mutmut_30: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_31: survived
-    price_truth.offers.x_compare_observed_offers__mutmut_32: survived
+    price_truth.offers.x_compare_observed_offers__mutmut_31: killed
+    price_truth.offers.x_compare_observed_offers__mutmut_32: killed
     price_truth.offers.x_compare_observed_offers__mutmut_33: killed
     price_truth.offers.x_compare_observed_offers__mutmut_34: killed
     price_truth.offers.x_compare_observed_offers__mutmut_35: killed
@@ -1060,13 +1092,13 @@
     price_truth.offers.x_compare_observed_offers__mutmut_65: killed
     price_truth.offers.x_compare_observed_offers__mutmut_66: killed
     price_truth.offers.x_compare_observed_offers__mutmut_67: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_68: killed
+    price_truth.offers.x_compare_observed_offers__mutmut_68: survived
     price_truth.offers.x_compare_observed_offers__mutmut_69: killed
     price_truth.offers.x_compare_observed_offers__mutmut_70: killed
     price_truth.offers.x_compare_observed_offers__mutmut_71: killed
     price_truth.offers.x_compare_observed_offers__mutmut_72: killed
     price_truth.offers.x_compare_observed_offers__mutmut_73: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_74: killed
+    price_truth.offers.x_compare_observed_offers__mutmut_74: survived
     price_truth.offers.x_compare_observed_offers__mutmut_75: killed
     price_truth.offers.x_compare_observed_offers__mutmut_76: killed
     price_truth.offers.x_compare_observed_offers__mutmut_77: killed
@@ -1087,42 +1119,15 @@
     price_truth.offers.x_compare_observed_offers__mutmut_92: killed
     price_truth.offers.x_compare_observed_offers__mutmut_93: killed
     price_truth.offers.x_compare_observed_offers__mutmut_94: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_95: survived
+    price_truth.offers.x_compare_observed_offers__mutmut_95: killed
     price_truth.offers.x_compare_observed_offers__mutmut_96: killed
     price_truth.offers.x_compare_observed_offers__mutmut_97: killed
     price_truth.offers.x_compare_observed_offers__mutmut_98: killed
     price_truth.offers.x_compare_observed_offers__mutmut_99: killed
     price_truth.offers.x_compare_observed_offers__mutmut_100: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_101: survived
+    price_truth.offers.x_compare_observed_offers__mutmut_101: killed
     price_truth.offers.x_compare_observed_offers__mutmut_102: killed
     price_truth.offers.x_compare_observed_offers__mutmut_103: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_104: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_105: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_106: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_107: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_108: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_109: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_110: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_111: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_112: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_113: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_114: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_115: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_116: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_117: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_118: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_119: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_120: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_121: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_122: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_123: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_124: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_125: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_126: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_127: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_128: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_129: killed
-    price_truth.offers.x_compare_observed_offers__mutmut_130: killed
     price_truth.evidence_store.x_archive_snapshot__mutmut_1: killed
     price_truth.evidence_store.x_archive_snapshot__mutmut_2: killed
     price_truth.evidence_store.x_archive_snapshot__mutmut_3: killed
@@ -1210,6 +1215,13 @@
     price_truth.evidence_store.x_accumulated_observations__mutmut_43: killed
     price_truth.evidence_store.x_accumulated_observations__mutmut_44: killed
     price_truth.evidence_store.x_accumulated_observations__mutmut_45: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_46: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_47: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_48: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_49: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_50: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_51: killed
+    price_truth.evidence_store.x_accumulated_observations__mutmut_52: killed
     price_truth.evidence_store.x_history_readiness__mutmut_1: killed
     price_truth.evidence_store.x_history_readiness__mutmut_2: killed
     price_truth.evidence_store.x_history_readiness__mutmut_3: killed
@@ -1377,6 +1389,23 @@
     price_truth.price_api.x_normalize__mutmut_100: killed
     price_truth.price_api.x_normalize__mutmut_101: killed
     price_truth.price_api.x_normalize__mutmut_102: killed
+    price_truth.price_api.x_normalize__mutmut_103: killed
+    price_truth.price_api.x_latest_valid_date__mutmut_1: killed
+    price_truth.price_api.x_latest_valid_date__mutmut_2: killed
+    price_truth.price_api.x_latest_valid_date__mutmut_3: killed
+    price_truth.price_api.x__normalize_valid__mutmut_1: killed
+    price_truth.price_api.x__normalize_valid__mutmut_2: killed
+    price_truth.price_api.x__normalize_valid__mutmut_3: killed
+    price_truth.price_api.x__normalize_valid__mutmut_4: killed
+    price_truth.price_api.x__normalize_valid__mutmut_5: killed
+    price_truth.price_api.x__normalize_valid__mutmut_6: killed
+    price_truth.price_api.x__normalize_valid__mutmut_7: killed
+    price_truth.price_api.x__normalize_valid__mutmut_8: killed
+    price_truth.price_api.x__normalize_valid__mutmut_9: killed
+    price_truth.price_api.x__normalize_valid__mutmut_10: killed
+    price_truth.price_api.x__normalize_valid__mutmut_11: killed
+    price_truth.price_api.x__normalize_valid__mutmut_12: killed
+    price_truth.price_api.x__normalize_valid__mutmut_13: killed
     price_truth.price_api.x__saved_response__mutmut_1: killed
     price_truth.price_api.x__saved_response__mutmut_2: killed
     price_truth.price_api.x__saved_response__mutmut_3: killed
@@ -1409,6 +1438,12 @@
     price_truth.price_api.x__live_observations__mutmut_21: killed
     price_truth.price_api.x__live_observations__mutmut_22: killed
     price_truth.price_api.x__live_observations__mutmut_23: killed
+    price_truth.price_api.x__live_observations__mutmut_24: killed
+    price_truth.price_api.x__live_observations__mutmut_25: killed
+    price_truth.price_api.x__live_observations__mutmut_26: killed
+    price_truth.price_api.x__live_observations__mutmut_27: killed
+    price_truth.price_api.x__live_observations__mutmut_28: killed
+    price_truth.price_api.x__live_observations__mutmut_29: killed
     price_truth.price_api.x_fetch_observations__mutmut_1: killed
     price_truth.price_api.x_fetch_observations__mutmut_2: killed
     price_truth.price_api.x_fetch_observations__mutmut_3: killed
@@ -1503,6 +1538,10 @@
     price_truth.price_api.x_fetch_observations__mutmut_92: killed
     price_truth.price_api.x_fetch_observations__mutmut_93: killed
     price_truth.price_api.x_fetch_observations__mutmut_94: killed
+    price_truth.price_api.x_fetch_observations__mutmut_95: killed
+    price_truth.price_api.x_fetch_observations__mutmut_96: killed
+    price_truth.price_api.x_fetch_observations__mutmut_97: killed
+    price_truth.price_api.x_fetch_observations__mutmut_98: killed
     price_truth.price_api.x_valid_cache__mutmut_1: killed
     price_truth.price_api.x_valid_cache__mutmut_2: killed
     price_truth.price_api.x_valid_cache__mutmut_3: killed

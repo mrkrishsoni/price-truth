@@ -1,6 +1,6 @@
 # Price Truth — current engineering review
 
-Generated: 2026-10-07T07:52:01.552830+00:00
+Generated: 2026-10-07T08:33:08.561744+00:00
 
 Historical submission reports are preserved separately; these results apply to this source manifest.
 
@@ -16,17 +16,17 @@ Historical submission reports are preserved separately; these results apply to t
 | errors | 0 |
 | failures | 0 |
 | skipped | 0 |
-| tests | 383 |
-| time | 18.873 |
-| timestamp | 2026-10-07T13:21:08.264938+05:30 |
+| tests | 405 |
+| time | 19.639 |
+| timestamp | 2026-10-07T14:02:19.944812+05:30 |
 | hostname | Mac.lan |
 
 ## Coverage
 
 | Measure | Count | Percentage |
 | --- | --- | --- |
-| Statements | 1675/1777 | 94.26% |
-| Branches | 331/388 | 85.31% |
+| Statements | 1720/1820 | 94.51% |
+| Branches | 351/408 | 86.03% |
 
 Coverage scope: price_truth package; scripts and app.py are outside this denominator.
 
@@ -34,9 +34,9 @@ Coverage scope: price_truth package; scripts and app.py are outside this denomin
 
 | Outcome | Count |
 | --- | --- |
-| killed | 1517 |
+| killed | 1556 |
 | survived | 26 |
-| total | 1543 |
+| total | 1582 |
 | no_tests | 0 |
 | skipped | 0 |
 | suspicious | 0 |
@@ -44,7 +44,7 @@ Coverage scope: price_truth package; scripts and app.py are outside this denomin
 | check_was_interrupted_by_user | 0 |
 | segfault | 0 |
 
-Kill rate: 98.31% (1517/1543). Scope: calculations.py, catalogue.py, history.py, observations.py, forecast.py, offers.py, evidence_store.py, price_api.py.
+Kill rate: 98.36% (1556/1582). Scope: calculations.py, catalogue.py, history.py, observations.py, forecast.py, offers.py, evidence_store.py, price_api.py.
 
 Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 
@@ -75,7 +75,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/forecast.py | _backtest | 3 | A |
 | src/price_truth/forecast.py | _errors | 2 | A |
 | src/price_truth/forecast.py | _clean_history | 1 | A |
-| src/price_truth/evidence_store.py | accumulated_observations | 7 | B |
+| src/price_truth/evidence_store.py | accumulated_observations | 9 | B |
 | src/price_truth/evidence_store.py | archive_snapshot | 6 | B |
 | src/price_truth/evidence_store.py | history_readiness | 3 | A |
 | src/price_truth/theme.py | contribution_chart | 7 | B |
@@ -99,7 +99,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/authenticity.py | best_threshold | 1 | A |
 | src/price_truth/authenticity.py | load | 1 | A |
 | src/price_truth/ui.py | unit_page | 9 | B |
-| src/price_truth/ui.py | listing_picker | 7 | B |
+| src/price_truth/ui.py | listing_picker | 8 | B |
 | src/price_truth/ui.py | shrink_page | 7 | B |
 | src/price_truth/ui.py | methods_page | 7 | B |
 | src/price_truth/ui.py | product_page | 6 | B |
@@ -130,7 +130,8 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/cache.py | read_json | 3 | A |
 | src/price_truth/cache.py | fresh | 3 | A |
 | src/price_truth/cache.py | write_json | 2 | A |
-| src/price_truth/offers.py | compare_observed_offers | 10 | B |
+| src/price_truth/offers.py | compare_observed_offers | 7 | B |
+| src/price_truth/offers.py | require_same_pack | 5 | A |
 | src/price_truth/calculations.py | compare_packs | 8 | B |
 | src/price_truth/calculations.py | unit_price | 6 | B |
 | src/price_truth/calculations.py | positive | 3 | A |
@@ -153,12 +154,15 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/market_ui.py | history_chart | 2 | A |
 | src/price_truth/market_ui.py | listing_history | 1 | A |
 | src/price_truth/market_ui.py | current_price | 1 | A |
+| src/price_truth/market_ui.py | quote_history | 1 | A |
 | src/price_truth/market_ui.py | market_tabs | 1 | A |
 | src/price_truth/price_api.py | valid_cache | 9 | B |
 | src/price_truth/price_api.py | fetch_observations | 8 | B |
 | src/price_truth/price_api.py | normalize | 6 | B |
+| src/price_truth/price_api.py | _normalize_valid | 4 | A |
 | src/price_truth/price_api.py | _saved_response | 3 | A |
 | src/price_truth/price_api.py | _live_observations | 3 | A |
+| src/price_truth/price_api.py | latest_valid_date | 1 | A |
 | src/price_truth/resources.py | discount_model | 2 | A |
 | src/price_truth/resources.py | report | 2 | A |
 | src/price_truth/resources.py | json_file | 2 | A |
@@ -171,7 +175,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/workspace.py | food_page | 8 | B |
 | src/price_truth/workspace.py | add_or_import | 7 | B |
 | src/price_truth/workspace.py | price_collection | 6 | B |
-| src/price_truth/workspace.py | price_history_tab | 5 | A |
+| src/price_truth/workspace.py | price_history_tab | 6 | B |
 | src/price_truth/workspace.py | history_example | 5 | A |
 | src/price_truth/workspace.py | observation_form | 5 | A |
 | src/price_truth/workspace.py | show_forecast | 4 | A |
@@ -186,11 +190,12 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/workspace.py | dataset_food_prices | 2 | A |
 | src/price_truth/workspace.py | choose_identity | 2 | A |
 | src/price_truth/workspace.py | observation_history | 1 | A |
-| src/price_truth/external.py | lookup_product | 8 | B |
+| src/price_truth/external.py | lookup_product | 7 | B |
 | src/price_truth/external.py | search_products | 7 | B |
 | src/price_truth/external.py | _cached_result | 5 | A |
+| src/price_truth/external.py | _lookup_fallback | 5 | A |
+| src/price_truth/external.py | cached_products | 5 | A |
 | src/price_truth/external.py | get_json | 2 | A |
-| src/price_truth/external.py | cached_products | 2 | A |
 | src/price_truth/external.py | _search_hits | 2 | A |
 | src/price_truth/external.py | _search_summary | 2 | A |
 | src/price_truth/data.py | normalize | 10 | B |
@@ -256,8 +261,8 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_price_api.py | test_valid_cache_rejects_missing_keys | 6 | B |
 | tests/test_price_api.py | test_fresh_cache_is_served_without_network | 5 | A |
 | tests/test_price_api.py | test_stale_cache_offline_and_after_failure | 5 | A |
+| tests/test_price_api.py | test_normalize_accepts_today_and_rejects_bad_values | 4 | A |
 | tests/test_price_api.py | test_valid_cache_accepts_schema_valid_record | 4 | A |
-| tests/test_price_api.py | test_normalize_accepts_today_and_rejects_bad_values | 3 | A |
 | tests/test_price_api.py | test_normalize_maps_every_retained_field | 2 | A |
 | tests/test_price_api.py | test_valid_cache_rejects_bad_metadata | 2 | A |
 | tests/test_price_api.py | test_valid_cache_rejects_bad_rows | 2 | A |
@@ -328,6 +333,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_services.py | test_history_keeps_prices_below_one | 2 | A |
 | tests/test_services.py | test_invalid_barcode_never_calls_network | 1 | A |
 | tests/test_services.py | test_not_found_and_missing_cache | 1 | A |
+| tests/test_services.py | test_unknown_barcode_is_reported_as_not_found | 1 | A |
 | tests/test_present.py | test_verdict_tables_cover_every_domain_status | 5 | A |
 | tests/test_present.py | test_one_hot_columns_are_merged_under_the_listing_value | 4 | A |
 | tests/test_present.py | test_small_effects_are_grouped_as_other_factors | 4 | A |
@@ -354,6 +360,21 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_forecast.py | test_missing_days_are_not_interpolated | 2 | A |
 | tests/test_forecast.py | test_default_today | 2 | A |
 | tests/test_forecast.py | daily | 1 | A |
+| tests/test_review_fixes_domain.py | test_one_bad_row_does_not_discard_a_live_fetch | 4 | A |
+| tests/test_review_fixes_domain.py | test_all_malformed_rows_count_as_an_outage | 4 | A |
+| tests/test_review_fixes_domain.py | test_require_same_pack_compares_normalised_quantities | 4 | A |
+| tests/test_review_fixes_domain.py | test_normalize_valid_skips_and_counts_bad_rows_for_this_barcode_only | 3 | A |
+| tests/test_review_fixes_domain.py | test_saved_responses_accept_tomorrow_dated_rows | 3 | A |
+| tests/test_review_fixes_domain.py | test_latest_valid_date_allows_exactly_one_day_of_skew | 2 | A |
+| tests/test_review_fixes_domain.py | quotes | 2 | A |
+| tests/test_review_fixes_domain.py | test_old_quotes_of_another_size_do_not_block_ranking | 2 | A |
+| tests/test_review_fixes_domain.py | test_valid_archive_still_loads | 2 | A |
+| tests/test_review_fixes_domain.py | test_corrupt_saved_products_are_skipped | 2 | A |
+| tests/test_review_fixes_domain.py | test_unknown_barcode_with_saved_copy_serves_the_copy | 2 | A |
+| tests/test_review_fixes_domain.py | item | 1 | A |
+| tests/test_review_fixes_domain.py | quote | 1 | A |
+| tests/test_review_fixes_domain.py | test_recent_quotes_of_different_sizes_are_still_rejected | 1 | A |
+| tests/test_review_fixes_domain.py | test_malformed_archive_snapshot_is_a_handled_error | 1 | A |
 | tests/test_observations.py | test_pack_change_converts_units_and_reports_sources | 13 | C |
 | tests/test_observations.py | test_valid_import_is_normalized_sorted_and_labelled | 11 | C |
 | tests/test_observations.py | test_daily_series_identity_and_median | 6 | B |
@@ -434,6 +455,13 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_data.py | test_category_rejects_invalid_structure | 2 | A |
 | tests/test_data.py | test_title_category_rules | 2 | A |
 | tests/test_data.py | test_no_target_leakage_in_features | 1 | A |
+| tests/test_review_fixes.py | test_pdf_is_built_only_on_download | 5 | A |
+| tests/test_review_fixes.py | test_new_search_resets_the_selected_row | 4 | A |
+| tests/test_review_fixes.py | test_quote_replaces_todays_row_in_the_reference_window | 3 | A |
+| tests/test_review_fixes.py | test_empty_food_search_shows_no_matches | 3 | A |
+| tests/test_review_fixes.py | test_price_collection_reads_files_once | 3 | A |
+| tests/test_review_fixes.py | test_warmup_reuses_cached_objects | 2 | A |
+| tests/test_review_fixes.py | app | 1 | A |
 | tests/test_app.py | test_price_check_runs_real_model | 7 | B |
 | tests/test_app.py | test_unit_comparison_flow | 5 | A |
 | tests/test_app.py | test_offline_food_lookup_flow | 4 | A |
@@ -481,23 +509,23 @@ MI is an index, not percent maintainability.
 | src/price_truth/synthetic.py | 36.89 | A |
 | src/price_truth/exports.py | 57.61 | A |
 | src/price_truth/forecast.py | 46.82 | A |
-| src/price_truth/evidence_store.py | 45.71 | A |
+| src/price_truth/evidence_store.py | 44.04 | A |
 | src/price_truth/theme.py | 47.21 | A |
 | src/price_truth/paths.py | 67.73 | A |
 | src/price_truth/authenticity.py | 49.74 | A |
-| src/price_truth/ui.py | 19.6 | A |
+| src/price_truth/ui.py | 22.45 | A |
 | src/price_truth/observations.py | 33.08 | A |
 | src/price_truth/present.py | 51.89 | A |
 | src/price_truth/cache.py | 55.71 | A |
 | src/price_truth/__init__.py | 100.0 | A |
-| src/price_truth/offers.py | 50.97 | A |
+| src/price_truth/offers.py | 59.56 | A |
 | src/price_truth/calculations.py | 42.83 | A |
 | src/price_truth/model.py | 42.86 | A |
-| src/price_truth/market_ui.py | 36.02 | A |
-| src/price_truth/price_api.py | 38.91 | A |
-| src/price_truth/resources.py | 67.96 | A |
-| src/price_truth/workspace.py | 16.48 | B |
-| src/price_truth/external.py | 36.53 | A |
+| src/price_truth/market_ui.py | 35.48 | A |
+| src/price_truth/price_api.py | 42.47 | A |
+| src/price_truth/resources.py | 72.07 | A |
+| src/price_truth/workspace.py | 17.09 | B |
+| src/price_truth/external.py | 40.06 | A |
 | src/price_truth/data.py | 38.17 | A |
 | src/price_truth/catalogue.py | 51.84 | A |
 | src/price_truth/history.py | 44.55 | A |
@@ -515,16 +543,18 @@ MI is an index, not percent maintainability.
 | scripts/model_audit.py | 49.41 | A |
 | scripts/model_development.py | 42.99 | A |
 | tests/test_model.py | 45.38 | A |
-| tests/test_price_api.py | 24.57 | A |
+| tests/test_price_api.py | 24.18 | A |
 | tests/test_workspace_evidence.py | 27.58 | A |
 | tests/test_search.py | 31.62 | A |
-| tests/test_services.py | 27.18 | A |
+| tests/test_services.py | 26.46 | A |
 | tests/test_present.py | 39.59 | A |
 | tests/test_forecast.py | 20.97 | A |
+| tests/test_review_fixes_domain.py | 38.36 | A |
 | tests/test_observations.py | 20.7 | A |
 | tests/test_calculations.py | 34.25 | A |
 | tests/test_synthetic.py | 32.41 | A |
 | tests/test_data.py | 35.88 | A |
+| tests/test_review_fixes.py | 51.33 | A |
 | tests/test_app.py | 43.46 | A |
 | tests/test_evidence_store.py | 30.29 | A |
 | tests/test_offers.py | 35.02 | A |
@@ -536,23 +566,23 @@ MI is an index, not percent maintainability.
 | src/price_truth/synthetic.py | 242 | 178 | 1 |
 | src/price_truth/exports.py | 41 | 36 | 0 |
 | src/price_truth/forecast.py | 82 | 61 | 1 |
-| src/price_truth/evidence_store.py | 64 | 51 | 0 |
+| src/price_truth/evidence_store.py | 70 | 57 | 0 |
 | src/price_truth/theme.py | 167 | 127 | 2 |
 | src/price_truth/paths.py | 10 | 7 | 0 |
 | src/price_truth/authenticity.py | 153 | 119 | 1 |
-| src/price_truth/ui.py | 370 | 325 | 0 |
+| src/price_truth/ui.py | 374 | 328 | 1 |
 | src/price_truth/observations.py | 134 | 101 | 0 |
 | src/price_truth/present.py | 143 | 106 | 1 |
 | src/price_truth/cache.py | 38 | 28 | 0 |
 | src/price_truth/__init__.py | 2 | 0 | 0 |
-| src/price_truth/offers.py | 36 | 30 | 0 |
+| src/price_truth/offers.py | 43 | 34 | 1 |
 | src/price_truth/calculations.py | 59 | 41 | 0 |
 | src/price_truth/model.py | 195 | 154 | 0 |
-| src/price_truth/market_ui.py | 148 | 120 | 0 |
-| src/price_truth/price_api.py | 86 | 67 | 0 |
-| src/price_truth/resources.py | 64 | 38 | 1 |
-| src/price_truth/workspace.py | 451 | 386 | 2 |
-| src/price_truth/external.py | 113 | 86 | 0 |
+| src/price_truth/market_ui.py | 154 | 123 | 0 |
+| src/price_truth/price_api.py | 106 | 81 | 1 |
+| src/price_truth/resources.py | 64 | 37 | 2 |
+| src/price_truth/workspace.py | 458 | 393 | 3 |
+| src/price_truth/external.py | 125 | 94 | 1 |
 | src/price_truth/data.py | 252 | 199 | 6 |
 | src/price_truth/catalogue.py | 38 | 27 | 0 |
 | src/price_truth/history.py | 54 | 42 | 0 |
@@ -570,16 +600,18 @@ MI is an index, not percent maintainability.
 | scripts/model_audit.py | 48 | 40 | 0 |
 | scripts/model_development.py | 95 | 81 | 0 |
 | tests/test_model.py | 56 | 39 | 0 |
-| tests/test_price_api.py | 222 | 153 | 0 |
+| tests/test_price_api.py | 224 | 155 | 0 |
 | tests/test_workspace_evidence.py | 215 | 161 | 1 |
 | tests/test_search.py | 152 | 110 | 0 |
-| tests/test_services.py | 276 | 190 | 1 |
+| tests/test_services.py | 292 | 201 | 1 |
 | tests/test_present.py | 80 | 53 | 0 |
 | tests/test_forecast.py | 190 | 132 | 0 |
+| tests/test_review_fixes_domain.py | 162 | 110 | 2 |
 | tests/test_observations.py | 314 | 208 | 0 |
 | tests/test_calculations.py | 180 | 117 | 0 |
 | tests/test_synthetic.py | 151 | 102 | 1 |
 | tests/test_data.py | 140 | 103 | 1 |
+| tests/test_review_fixes.py | 78 | 52 | 2 |
 | tests/test_app.py | 102 | 66 | 1 |
 | tests/test_evidence_store.py | 151 | 112 | 0 |
 | tests/test_offers.py | 158 | 113 | 0 |
@@ -591,23 +623,23 @@ MI is an index, not percent maintainability.
 | src/price_truth/synthetic.py | 2585.01 | 30550.14 |
 | src/price_truth/exports.py | 72.0 | 280.8 |
 | src/price_truth/forecast.py | 452.51 | 3022.09 |
-| src/price_truth/evidence_store.py | 137.55 | 412.65 |
+| src/price_truth/evidence_store.py | 155.11 | 465.34 |
 | src/price_truth/theme.py | 256.46 | 1057.91 |
 | src/price_truth/paths.py | 59.79 | 39.86 |
 | src/price_truth/authenticity.py | 289.35 | 1302.07 |
-| src/price_truth/ui.py | 775.54 | 5531.08 |
+| src/price_truth/ui.py | 822.42 | 5838.09 |
 | src/price_truth/observations.py | 410.43 | 1258.06 |
 | src/price_truth/present.py | 387.63 | 2076.59 |
 | src/price_truth/cache.py | 33.22 | 66.44 |
 | src/price_truth/__init__.py | 0 | 0 |
-| src/price_truth/offers.py | 145.71 | 647.62 |
+| src/price_truth/offers.py | 147.4 | 620.64 |
 | src/price_truth/calculations.py | 510.04 | 3559.89 |
 | src/price_truth/model.py | 493.63 | 3004.67 |
-| src/price_truth/market_ui.py | 250.05 | 1389.19 |
-| src/price_truth/price_api.py | 327.72 | 1474.74 |
+| src/price_truth/market_ui.py | 262.4 | 1452.55 |
+| src/price_truth/price_api.py | 402.84 | 1812.79 |
 | src/price_truth/resources.py | 4.75 | 2.38 |
 | src/price_truth/workspace.py | 1426.7 | 11489.65 |
-| src/price_truth/external.py | 283.39 | 1055.85 |
+| src/price_truth/external.py | 397.07 | 1871.9 |
 | src/price_truth/data.py | 815.53 | 7998.45 |
 | src/price_truth/catalogue.py | 113.09 | 339.27 |
 | src/price_truth/history.py | 543.93 | 3451.88 |
@@ -625,16 +657,18 @@ MI is an index, not percent maintainability.
 | scripts/model_audit.py | 208.59 | 866.43 |
 | scripts/model_development.py | 208.08 | 560.21 |
 | tests/test_model.py | 274.84 | 1205.75 |
-| tests/test_price_api.py | 1040.71 | 5641.73 |
+| tests/test_price_api.py | 1089.68 | 5888.66 |
 | tests/test_workspace_evidence.py | 1163.73 | 6831.34 |
 | tests/test_search.py | 548.04 | 1096.07 |
 | tests/test_services.py | 1646.5 | 10290.63 |
 | tests/test_present.py | 568.17 | 3409.04 |
 | tests/test_forecast.py | 1812.12 | 6543.11 |
+| tests/test_review_fixes_domain.py | 1089.9 | 4331.22 |
 | tests/test_observations.py | 1119.08 | 4308.47 |
 | tests/test_calculations.py | 340.49 | 680.99 |
 | tests/test_synthetic.py | 1677.76 | 15381.49 |
 | tests/test_data.py | 1023.15 | 5797.87 |
+| tests/test_review_fixes.py | 441.2 | 2205.99 |
 | tests/test_app.py | 496.18 | 2364.15 |
 | tests/test_evidence_store.py | 817.84 | 2286.73 |
 | tests/test_offers.py | 222.94 | 111.47 |
@@ -643,9 +677,9 @@ MI is an index, not percent maintainability.
 
 | Measure | Value |
 | --- | --- |
-| first_assessment_seconds | 0.983479582995642 |
+| first_assessment_seconds | 0.9402221249765716 |
 | warm_calls | 29 |
-| warm_p95_seconds | 0.02317562461248598 |
+| warm_p95_seconds | 0.019289291999302804 |
 | scope | Sequential local assessment including SHAP; not 100-user load or browser latency |
 
 ## Requirements still requiring external evidence

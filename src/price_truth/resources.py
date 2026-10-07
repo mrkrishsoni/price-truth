@@ -42,13 +42,12 @@ def json_file(path) -> dict | None:
     return json.loads(path.read_text()) if path.exists() else None
 
 
-def _warm() -> None:
-    """Pay one-off import and font-cache costs before the first visitor asks for them."""
+def _warm(frame, bundle: dict) -> None:
+    """Pay one-off SHAP and font-cache costs before the first visitor asks for them."""
     try:
         from price_truth.exports import assessment_pdf
         from price_truth.model import assess
 
-        frame, bundle = load_catalogue(), load_model()
         row = frame.iloc[0].to_dict()
         result = assess(bundle, row, row["selling_price"], row["listed_price"])
         assessment_pdf(row, result, row["selling_price"], row["listed_price"])
@@ -59,6 +58,7 @@ def _warm() -> None:
 @st.cache_resource
 def start_warmup() -> threading.Thread:
     """Start the warm-up once per server process."""
-    thread = threading.Thread(target=_warm, name="price-truth-warmup", daemon=True)
+    # Load through the shared caches here (main thread) so the warm-up never makes its own copies.
+    thread = threading.Thread(target=_warm, args=(catalogue(), model()), name="price-truth-warmup", daemon=True)
     thread.start()
     return thread

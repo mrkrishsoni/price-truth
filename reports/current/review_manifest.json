@@ -1,52 +1,52 @@
 {
-  "generated_at": "2026-10-07T07:52:01.552830+00:00",
+  "generated_at": "2026-10-07T08:33:08.561744+00:00",
   "python": "3.12.0 | packaged by Anaconda, Inc. | (main, Oct  2 2023, 12:22:05) [Clang 14.0.6 ]",
   "system": "macOS-26.5.2-arm64-arm-64bit",
   "commands": [
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/python -m ruff check src app.py scripts tests --output-format json",
       "exit_code": 0,
-      "elapsed_seconds": 0.05644195797503926
+      "elapsed_seconds": 0.026275457988958806
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/python -m pytest --cov=price_truth --cov-branch --cov-report=json:/Users/krishsoni/Documents/price-truth/reports/current/coverage.json --junitxml=/Users/krishsoni/Documents/price-truth/reports/current/pytest.xml",
       "exit_code": 0,
-      "elapsed_seconds": 19.706694499996956
+      "elapsed_seconds": 20.576005166978575
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/python -m radon cc src app.py scripts tests -j",
       "exit_code": 0,
-      "elapsed_seconds": 0.2313387499889359
+      "elapsed_seconds": 0.205806375015527
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/python -m radon mi src app.py scripts tests -j",
       "exit_code": 0,
-      "elapsed_seconds": 0.23425929198856466
+      "elapsed_seconds": 0.23781904100906104
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/python -m radon raw src app.py scripts tests -j",
       "exit_code": 0,
-      "elapsed_seconds": 0.1578834590036422
+      "elapsed_seconds": 0.15416387500590645
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/python -m radon hal src app.py scripts tests -j",
       "exit_code": 0,
-      "elapsed_seconds": 0.1451864170085173
+      "elapsed_seconds": 0.15130450000287965
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/mutmut run 'price_truth.*'",
       "exit_code": 0,
-      "elapsed_seconds": 29.52765362500213
+      "elapsed_seconds": 24.098027167026885
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/mutmut results --all true",
       "exit_code": 0,
-      "elapsed_seconds": 0.28344883301178925
+      "elapsed_seconds": 0.26977633297792636
     },
     {
       "command": "/Users/krishsoni/Documents/price-truth/.venv/bin/mutmut export-cicd-stats",
       "exit_code": 0,
-      "elapsed_seconds": 0.2196003330172971
+      "elapsed_seconds": 0.22190295800101012
     }
   ],
   "versions": {
@@ -65,30 +65,30 @@
     "plotly": "6.6.0"
   },
   "source_sha256": {
-    "app.py": "29e21b6449a8e9657ef5fe2c5be689417bd7e8db37e8aca46c040c048f1afc30",
+    "app.py": "bc6ea0e609ae2bd5eff42f8b2147afb8a5abb9547b3d03e3abfac0f5cbd7ae2d",
     "src/price_truth/__init__.py": "967deff5bc718a9604e72e1384c05f23214f1b4f6604b643552b630b5f962fc9",
     "src/price_truth/authenticity.py": "8b5d766098aac2efb720869e6a0a4fd7b20dfb16a3f5e320bb3d4876b93f437f",
     "src/price_truth/cache.py": "6bf0558eede4e46ad9092cd8e2c84666103d0f593509d0f04e48187b3e2ccbd6",
     "src/price_truth/calculations.py": "898e2d062a08d004adba2a70efc7e531d2f9f54406141e3004a7425b4a5fc832",
     "src/price_truth/catalogue.py": "c8cc3207739c508f5aa5c5c7ab1ed7db2cad618c1dd9678337769ab78fa025f7",
     "src/price_truth/data.py": "cf51fbb1c915fe766c38d4db4172b4b652f8a3a3350322c2f8ec841da39f0bc8",
-    "src/price_truth/evidence_store.py": "207a4d4e1b2f97ecced113d7717198eedfa904826767c962265bcf93f4640afb",
+    "src/price_truth/evidence_store.py": "45817d7716e8ae21f53bd2c53f0c58723c1a675fa0698e657da83609dc0be098",
     "src/price_truth/exports.py": "c2315411f101bf3a8227ee49dd7e3e77bb33d63c19f7a0f46d1a64881f0aabf9",
-    "src/price_truth/external.py": "e538537fbceb5887d6ac55d29c49757f29550a065f7740dccb6ddcd384f968d7",
+    "src/price_truth/external.py": "3a3c09594d71d04c559e1374436d7ce3a3a8c1a2df48b3b6090a0c8b0a6d77da",
     "src/price_truth/forecast.py": "eba394f30250307ad449b7a0e7c59da7cdada60562fbaa731b43b07355e69c47",
     "src/price_truth/history.py": "83aa18ba5b0a9adab7c387424d2d1496fd6b44e4f548b73e58563ee1951a7019",
-    "src/price_truth/market_ui.py": "e78d9e3fe557c43a7238466f291152304d9b582c08f6d55c847ac54320853fd1",
+    "src/price_truth/market_ui.py": "56fd37904fcd555e17f368134771483ae4fae1ecefb3b07aa79d8afffb07c627",
     "src/price_truth/model.py": "fbb5782abcd605ffe267a6b0e804afec6fc1e50bfa9052ce3617e68962389398",
     "src/price_truth/observations.py": "0c0a6fa9953a59d8373d76e40ed65b908927e435b4949cc12bd87fbb16eb6124",
-    "src/price_truth/offers.py": "d8ff3aaac6c4589643b8dc56bce6c5552dbf0cad440c01dd2539d36914d985f0",
+    "src/price_truth/offers.py": "b11f75831b01dd0383638fe2cbf936189ccb2f3c8e5633f46837b4e2b93165a6",
     "src/price_truth/paths.py": "f3e7994098df41542629c652a4810fcc604456dca365ba87a5f79e3fad6556b5",
     "src/price_truth/present.py": "008c787f3fd126c5d7292345fe3a5acea35787e84ba3a580f6f47871556bf3d8",
-    "src/price_truth/price_api.py": "ebfb238d2ecac39417d7770e65337781e62497288e1300569d19b378068b2127",
-    "src/price_truth/resources.py": "08d7057e5693846b47c380cc42ac60ee43b512c7e7b9b2c9b70095e1a07cef70",
+    "src/price_truth/price_api.py": "444d1504f75c83948d0a18eb6e1422074eab2f24840660abe0f0acf057f5eaa3",
+    "src/price_truth/resources.py": "6560b75486cd3f2455271f15463a8ea55766c171e068534bdc5bbb51208072e1",
     "src/price_truth/synthetic.py": "345310646ae3d09607f11782ebdb7265376a06342f8ba3cbab647b1705bf16b9",
     "src/price_truth/theme.py": "549793733aa7df0b475bb07234acfeac225dcc72d9747574974a951b110ae5da",
-    "src/price_truth/ui.py": "caaee8f69bcf0a6ce1d1b5f94a969e64ef37b4d5a509c85f42f1f668b34d73b3",
-    "src/price_truth/workspace.py": "377f1b3c72d2490809e9bab247111204ca6f40486eeb749a8651869ff87ad4ff",
+    "src/price_truth/ui.py": "9fb1e300e36a3ce096945c5fc3cfa7cdc59756b8f9cb5a951a2ac7ffcb8a5422",
+    "src/price_truth/workspace.py": "3ca7e98679545403ce2d5dab92b519d2fc541c7e7c2b6e68a1d68003e41803ee",
     "scripts/browser_check.py": "edd883bab940d9036be9cadbb09ffdc3e4067dc75fa515e68233b9aaa42b5b6c",
     "scripts/browser_current.py": "e0857f86a3b81f23e9c1e5d2fb4b8fdd38c6de6c5fae34843f5f47d229ae3dd8",
     "scripts/build_final_dataset.py": "4af11784bfc73740be1575cca7b52c1f9ad4c096a926d07e0b68e35d28861129",
@@ -110,9 +110,11 @@
     "tests/test_observations.py": "8fa838fece110a062adb4cf37efe2553b367a64bf10522ccb665578e710bbcfa",
     "tests/test_offers.py": "054f5c6e59186b632254116ebb4b1348ede5869d429af8b5018381907a10b7dc",
     "tests/test_present.py": "e4ea706499919f5d6a8b4fcf95eae23d20caef06c5485b915bb11f4403aea11f",
-    "tests/test_price_api.py": "62d2a85ba3d9001b1aa3a0914fd7583c80090c26e2497638569d3c114abac005",
+    "tests/test_price_api.py": "75ac4021eee5cdd044fd9be871d9ab8429d3204d8a0c5eeaf0d275d40cad4650",
+    "tests/test_review_fixes.py": "0469ac600d579d26429995d8dc69cb806b03a7f64637f90caa8410d030ca0c71",
+    "tests/test_review_fixes_domain.py": "3ee33045637aeded0b194d3b835a8f7dc1c8c5155eba4cc90108c84a364400e6",
     "tests/test_search.py": "a3815c0f58046f4af61bccb89d122977eabb58830d491889c641215c6b79258a",
-    "tests/test_services.py": "ce0d8f6adbb0168dd336a691474360767efc7b6f0a525385554db6c79f36c6c5",
+    "tests/test_services.py": "e86cd3dbe95966437244ea952b567b15caf11629c0c7075b0320918cc91e68da",
     "tests/test_synthetic.py": "5574299b0f73b22d24233881f9518832f06e4cc458244d763123e3a126a2d630",
     "tests/test_workspace_evidence.py": "f885bf931b9773072fc6ecd2da73d5d5725f7d392aaeb04060fadcc65ea50e05"
   },

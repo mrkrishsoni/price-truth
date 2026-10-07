@@ -1,4 +1,5 @@
 """Streamlit page bodies. Calculations come from domain modules; this file only presents them."""
+import hashlib
 import json
 
 import pandas as pd
@@ -34,15 +35,18 @@ def listing_picker(data: pd.DataFrame) -> dict | None:
                           "ID": matches.product_id})
     st.caption(f"{len(matches):,} listing{'s' if len(matches) != 1 else ''} shown · prices as recorded on the "
                "catalogue date · click a row to choose")
+    # A new search gets a new widget key, so a selection never points into a different result set.
+    results_id = hashlib.sha256("|".join(matches.key).encode()).hexdigest()[:12]
     event = st.dataframe(table, hide_index=True, on_select="rerun", selection_mode="single-row",
-                         key="product_table", height=230, column_config={
+                         key=f"product_table_{results_id}", height=230, column_config={
                              "Listed": st.column_config.NumberColumn(format="₹%.0f"),
                              "Sold at": st.column_config.NumberColumn(format="₹%.0f"),
                              "Discount": st.column_config.NumberColumn(format="%.0f%%"),
                              "Product": st.column_config.TextColumn(width="large"),
                              "Variant": st.column_config.TextColumn(width="medium")})
     rows = event.selection.rows if event and event.selection else []
-    return matches.iloc[rows[0] if rows else 0].to_dict()
+    index = rows[0] if rows and rows[0] < len(matches) else 0
+    return matches.iloc[index].to_dict()
 
 
 def product_page(data: pd.DataFrame, model_loader, discount_loader=None) -> None:
@@ -124,7 +128,7 @@ def show_assessment(row: dict, result: dict, selling: float, listed: float) -> N
                 "quoted_price": selling, "listed_price": listed, "currency": "INR",
                 "scope": "historical_price_assessment_not_fraud_verification"}
     columns = st.columns(3)
-    columns[0].download_button("Download PDF report", assessment_pdf(row, result, selling, listed),
+    columns[0].download_button("Download PDF report", lambda: assessment_pdf(row, result, selling, listed),
                                file_name="price_assessment.pdf", mime="application/pdf", on_click="ignore",
                                width="stretch")
     columns[1].download_button("Download data (JSON)", json.dumps(document, indent=2),

@@ -51,10 +51,16 @@ def history_chart(history: pd.DataFrame, quote: float) -> go.Figure:
     return theme.style_figure(figure, 360)
 
 
+def quote_history(history: pd.DataFrame, selling: float, listed: float) -> pd.DataFrame:
+    """History with today's simulated offer replaced by the user's quote (same day, same sale event)."""
+    frame = history.copy()
+    frame.loc[frame.index[-1], ["price", "mrp"]] = [float(selling), float(listed)]
+    return frame
+
+
 def authenticity_tab(row: dict, history: pd.DataFrame, selling: float, listed: float, bundle: dict | None) -> None:
     """30-day lowest-price rule on the history, then the classifier's probability and reasons."""
-    check = synthetic.reference_check(pd.concat([history, history.tail(1).assign(price=selling, mrp=listed)]),
-                                      selling, listed)
+    check = synthetic.reference_check(quote_history(history, selling, listed), selling, listed)
     if check["inflated"]:
         theme.verdict("The discount looks inflated",
                       f"{check['claimed_discount_pct']:.0f}% off is advertised, well above this product's usual "

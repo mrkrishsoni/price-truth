@@ -45,11 +45,13 @@ def test_normalize_optional_fields():
 
 
 def test_normalize_accepts_today_and_rejects_bad_values():
-    """Today's date is valid; future dates, bad currencies and prices are not."""
+    """Today and tomorrow (contributor-timezone skew) are valid; later dates, bad currencies and prices are not."""
     today = date.today().isoformat()
     assert price_api.normalize(item(date=today))["date"] == today
     tomorrow = (date.today() + timedelta(days=1)).isoformat()
-    for bad in [{"date": tomorrow}, {"currency": "inr"}, {"currency": "INRX"}]:
+    assert price_api.normalize(item(date=tomorrow))["date"] == tomorrow
+    later = (date.today() + timedelta(days=2)).isoformat()
+    for bad in [{"date": later}, {"currency": "inr"}, {"currency": "INRX"}]:
         with pytest.raises(ValueError, match="^Source returned an invalid date or currency.$"):
             price_api.normalize(item(**bad))
     with pytest.raises(ValueError):
@@ -83,7 +85,7 @@ def test_valid_cache_rejects_bad_metadata(changes):
 
 @pytest.mark.parametrize("changes", [
     {"product_code": "99999999"}, {"price": 0}, {"price": "x"}, {"price": None},
-    {"date": (date.today() + timedelta(days=1)).isoformat()}, {"date": "bad"},
+    {"date": (date.today() + timedelta(days=2)).isoformat()}, {"date": "bad"},
     {"currency": "inr"}, {"currency": None},
 ])
 def test_valid_cache_rejects_bad_rows(changes):

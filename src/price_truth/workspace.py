@@ -125,14 +125,16 @@ def history_panel(frame: pd.DataFrame, code: str) -> None:
             show_forecast(forecast_next_day(series))
 
 
-def price_collection() -> tuple[pd.DataFrame, str]:
-    """Load the most complete saved Open Prices collection and describe its date."""
-    frame, metadata = load_observations()
+@st.cache_data(ttl=600, show_spinner=False)
+def price_collection() -> tuple[pd.DataFrame, str, bool]:
+    """Most complete saved Open Prices collection, a description, and whether the archive was unreadable."""
     latest = EXTERNAL / "current/open_prices_inr.json"
     if latest.exists():
         snapshot = json.loads(latest.read_text())
         frame, metadata = pd.DataFrame(snapshot["observations"]), snapshot
-    note = f"Saved collection fetched {metadata['fetched_at'][:10]}"
+    else:
+        frame, metadata = load_observations()
+    note, archive_failed = f"Saved collection fetched {metadata['fetched_at'][:10]}", False
     archive = EXTERNAL / "archive"
     if archive.exists():
         try:
@@ -142,12 +144,12 @@ def price_collection() -> tuple[pd.DataFrame, str]:
                 note = (f"{collection['unique_source_observations']} observations from "
                         f"{collection['snapshots']} collection runs · latest {collection['latest_retrieval'][:10]}")
         except ValueError:
-            st.warning("The cumulative archive could not be read; using the dated snapshot instead.")
+            archive_failed = True
     simulated = dataset_food_prices()
     if not simulated.empty:
         frame = pd.concat([frame.assign(provenance="real"), simulated], ignore_index=True)
         note += f" · {simulated.product_code.nunique()} products with daily store histories"
-    return frame, note
+    return frame, note, archive_failed
 
 
 @st.cache_data(show_spinner=False)
@@ -223,7 +225,10 @@ def food_page() -> None:
                       "Find a product by name or barcode, check its pack size and see what shops charged on which dates.")
     offline = st.toggle("Saved responses only (works offline)", value=False, key="food_offline")
     find_food(offline)
-    products = st.session_state.get("workspace_food_candidates") or cached_products() + dataset_food_products()
+    if "workspace_food_candidates" in st.session_state:
+        products = st.session_state["workspace_food_candidates"]  # may be empty: the search found nothing
+    else:
+        products = cached_products() + dataset_food_products()
     # Named products sold in India first; unnamed saved records stay available at the end.
     with_history = {p["code"] for p in dataset_food_products()}
     products = sorted({p["code"]: p for p in products if p.get("code")}.values(),
@@ -247,7 +252,9 @@ def food_page() -> None:
 
 def price_history_tab(code: str, offline: bool) -> None:
     """Saved or refreshed Open Prices observations for one barcode."""
-    frame, note = price_collection()
+    frame, note, archive_failed = price_collection()
+    if archive_failed:
+        st.warning("The cumulative archive could not be read; using the dated snapshot instead.")
     columns = st.columns([3, 1], vertical_alignment="center")
     columns[0].caption(f"Open Prices (ODbL) · {note}")
     if columns[1].button("Refresh prices", disabled=offline, width="stretch"):

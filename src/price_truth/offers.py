@@ -8,6 +8,14 @@ from price_truth.calculations import UNITS
 from price_truth.observations import validate_observations
 
 
+def require_same_pack(data: pd.DataFrame) -> None:
+    """All quotes must measure the same dimension and the same total quantity."""
+    dimensions = {UNITS[u][0] for u in data.unit}
+    quantities = np.array([q*UNITS[u][1] for q, u in zip(data.quantity, data.unit, strict=True)])
+    if len(dimensions) != 1 or not np.isclose(quantities, quantities[0], rtol=1e-9, atol=0).all():
+        raise ValueError("Quotes must refer to the same total pack quantity and dimension.")
+
+
 def compare_observed_offers(frame: pd.DataFrame, confirmed: bool = False,
                             today: date | None = None) -> pd.DataFrame:
     """Rank like-for-like quotes only; never imply verified availability or completeness."""
@@ -17,12 +25,11 @@ def compare_observed_offers(frame: pd.DataFrame, confirmed: bool = False,
     data = validate_observations(frame, today=today)
     if len(data[["product_id", "variant", "currency"]].drop_duplicates()) != 1:
         raise ValueError("Select exactly one product, variant and currency.")
-    dimensions = {UNITS[u][0] for u in data.unit}
-    quantities = np.array([q*UNITS[u][1] for q, u in zip(data.quantity, data.unit, strict=True)])
-    if len(dimensions) != 1 or not np.isclose(quantities, quantities[0], rtol=1e-9, atol=0).all():
-        raise ValueError("Quotes must refer to the same total pack quantity and dimension.")
     data["age_days"] = (pd.Timestamp(today)-pd.to_datetime(data.date)).dt.days
-    data = data[data.age_days <= 1]
+    data = data[data.age_days <= 1]  # only recent quotes are ranked, so only they must share a pack size
+    if data.empty:
+        raise ValueError("Need at least two stores with quotes dated today or yesterday.")
+    require_same_pack(data)
     latest = data.groupby("store").date.transform("max")
     data = data[data.date == latest]
     if data.groupby("store").price.nunique().gt(1).any():

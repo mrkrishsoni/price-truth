@@ -52,4 +52,5 @@ pytest_add_cli_args_test_selection = [
     "tests/test_observations.py",
     "tests/test_forecast.py",
     "tests/test_price_api.py",
+    "tests/test_review_fixes_domain.py",
 ]

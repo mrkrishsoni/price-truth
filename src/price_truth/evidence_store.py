@@ -31,6 +31,12 @@ def accumulated_observations(directory: Path) -> tuple[pd.DataFrame, dict]:
         record = read_json(path)
         if not record or not isinstance(record.get("observations"), list):
             raise ValueError(f"Invalid archived snapshot: {path.name}")
+        try:
+            retrieved = datetime.fromisoformat(record["fetched_at"])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(f"Archived snapshot without a valid retrieval time: {path.name}") from exc
+        if retrieved.tzinfo is None:
+            raise ValueError(f"Archived snapshot retrieval time lacks a timezone: {path.name}")
         records.append(record)
     records.sort(key=lambda r: datetime.fromisoformat(r["fetched_at"]))
     by_id = {}

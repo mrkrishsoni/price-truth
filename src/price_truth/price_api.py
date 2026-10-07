@@ -1,6 +1,6 @@
 """Bounded, cached public price observations, never advertised as current retailer offers."""
 import re
-from datetime import UTC, date, datetime
+from datetime import UTC, date, datetime, timedelta
 
 import requests
 
@@ -17,7 +17,7 @@ def normalize(item: dict) -> dict:
     product, store = item.get("product") or {}, item.get("location") or {}
     price = positive(item["price"])
     observed = date.fromisoformat(item["date"])
-    if observed > date.today() or not re.fullmatch(r"[A-Z]{3}", item["currency"]):
+    if observed > latest_valid_date() or not re.fullmatch(r"[A-Z]{3}", str(item["currency"])):
         raise ValueError("Source returned an invalid date or currency.")
     return {"id": item["id"], "product_code": item.get("product_code"),
             "product_name": product.get("product_name") or item.get("product_name"),
@@ -30,6 +30,24 @@ def normalize(item: dict) -> dict:
             "source_url": f"https://prices.openfoodfacts.org/prices/{item['id']}"}
 
 
+def latest_valid_date() -> date:
+    """Contributors date prices in local time (India is UTC+5:30), so allow one day of clock skew."""
+    return date.today() + timedelta(days=1)
+
+
+def _normalize_valid(items: list[dict], code: str) -> tuple[list[dict], int]:
+    """Normalize this barcode's rows, skipping individually malformed ones and counting them."""
+    rows, skipped = [], 0
+    for item in items:
+        if str(item.get("product_code")) != code:
+            continue
+        try:
+            rows.append(normalize(item))
+        except (KeyError, TypeError, ValueError, OverflowError):
+            skipped += 1
+    return rows, skipped
+
+
 def _saved_response(path, code: str) -> dict | None:
     """Return a schema-valid saved response for this barcode, or None."""
     cached = read_json(path)
@@ -37,10 +55,12 @@ def _saved_response(path, code: str) -> dict | None:
 
 
 def _live_observations(code: str) -> tuple[dict, list[dict]]:
-    """Request one bounded page and keep normalized rows for this exact barcode only."""
+    """Request one bounded page and keep valid normalized rows for this exact barcode only."""
     payload = get_json(URL, {"product_code": code, "size": 100, "order_by": "-date"})
-    observations = [normalize(i) for i in payload["items"] if str(i.get("product_code")) == code]
-    return payload, observations
+    observations, skipped = _normalize_valid(payload["items"], code)
+    if skipped and not observations:
+        raise ValueError("Every observation in the response was malformed.")  # schema change: treat as outage
+    return {**payload, "skipped_invalid": skipped}, observations
 
 
 def fetch_observations(code: str, offline: bool = False) -> dict:
@@ -61,7 +81,7 @@ def fetch_observations(code: str, offline: bool = False) -> dict:
         raise ValueError("Price source unavailable; no saved response for this product.") from exc
     record = {"source": URL, "fetched_at": datetime.now(UTC).isoformat(), "license": "ODbL-1.0",
               "total_at_source": payload.get("total"), "complete_query": payload.get("pages", 1) <= 1,
-              "observations": observations}
+              "skipped_invalid": payload["skipped_invalid"], "observations": observations}
     write_json(path, record)
     return {**record, "mode": "live", "notice": "Live retrieval of dated observations, not a live retailer quote."}
 
@@ -77,7 +97,7 @@ def valid_cache(record: dict, code: str) -> bool:
             if str(row["product_code"]) != code:
                 return False
             positive(row["price"])
-            if date.fromisoformat(row["date"]) > date.today():
+            if date.fromisoformat(row["date"]) > latest_valid_date():
                 return False
             if not re.fullmatch(r"[A-Z]{3}", row["currency"]):
                 return False

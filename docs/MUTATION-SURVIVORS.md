@@ -4,8 +4,8 @@ Tool: mutmut 3.8.0, run with `mutmut run` from the repository root (Unix only).
 Scope comes from `[tool.mutmut] source_paths` in `pyproject.toml`: `calculations`, `catalogue`,
 `history`, `observations`, `forecast`, `offers`, `evidence_store` and `price_api`.
 
-Result on 7 October 2026: **1517 of 1543 mutants killed (98.3%), 26 survived, 0 timeouts,
-0 suspicious.** Before this work the extended scope gave 1453/1543 (94.2%) with 90 survivors.
+Result on 7 October 2026 (after the code-review fixes): **1556 of 1582 mutants killed (98.4%), 26 survived,
+0 untested, 0 timeouts, 0 suspicious.** Before this work the extended scope gave 1453/1543 (94.2%) with 90 survivors.
 
 Every survivor below was reviewed by hand. None changes observable behaviour, so no test can
 kill it. Each is equivalent for one of the reasons listed. Check them again after any
@@ -24,15 +24,15 @@ as `False`.
 | `history.x_series_for__mutmut_44` | `as_index=False` to `as_index=None` | `groupby` treats a falsy `as_index` as `False`. Tests confirm `date` stays a column |
 | `observations.x_daily_series__mutmut_16` | `as_index=False` to `as_index=None` | Same reason as above |
 | `evidence_store.x_archive_snapshot__mutmut_28` | `allow_nan=False` to `allow_nan=None` | `json` checks `if not allow_nan`, so NaN is still rejected (tested) |
-| `offers.x_compare_observed_offers__mutmut_95` | `reset_index(drop=True)` to `drop=None` | The extra `index` column this adds is dropped by the final column selection |
-| `offers.x_compare_observed_offers__mutmut_101` | `reset_index(drop=True)` to `drop=False` | Same reason as above |
+| `offers.x_compare_observed_offers__mutmut_68` | `reset_index(drop=True)` to `drop=None` | The extra `index` column this adds is dropped by the final column selection |
+| `offers.x_compare_observed_offers__mutmut_74` | `reset_index(drop=True)` to `drop=False` | Same reason as above |
 
 ## `zip` strictness on sequences that always match in length
 
 | Mutant | Change | Why it is equivalent |
 |---|---|---|
 | `observations.x_pack_changes__mutmut_38`, `_41`, `_42` | `strict=True` to `None`, removed, or `False` | Both sequences are columns of the same DataFrame, so they always have the same length |
-| `offers.x_compare_observed_offers__mutmut_28`, `_31`, `_32` | Same change | Same reason as above |
+| `offers.x_require_same_pack__mutmut_9`, `_12`, `_13` | Same change | Same reason as above |
 | `observations.x_pack_changes__mutmut_74`, `_77` | `strict=False` to `None` or removed | `False` is already the default. The shorter sequence `ordered[1:]` is meant to end the loop |
 
 ## Case changes the program normalises anyway
