@@ -57,6 +57,36 @@ TITLE_RULES = [
 ]
 
 
+SPEC_KEYS = ["Model ID", "Style Code", "Model Number", "Model Name", "Color", "Pattern", "Type", "Size"]
+DESCRIPTION_CODE = re.compile(r"\b(?:model\s*(?:id|no\.?|number)|style\s*code)\s*[:\-]?\s*([A-Za-z0-9][\w\-/.]{2,30})",
+                              re.IGNORECASE)
+
+
+def spec_value(text: str, key: str) -> str:
+    """Read one key from Flipkart's product_specifications text without evaluating it."""
+    match = re.search(rf'"key"=>"{re.escape(key)}",\s*"value"=>"([^"]*)"', text or "")
+    return match.group(1).strip() if match else ""
+
+
+def flipkart_variant(specifications: str, description: str) -> str:
+    """Distinguishing details for listings that share a title: specs first, then a model code in the text."""
+    parts = []
+    for key in SPEC_KEYS:
+        value = spec_value(specifications, key)
+        if value and value not in parts:
+            parts.append(value)
+    code = DESCRIPTION_CODE.search(description or "")
+    if code and code.group(1) not in parts:
+        parts.insert(0, code.group(1))
+    return " · ".join(parts[:3])
+
+
+def amazon_variant(name: str) -> str:
+    """Amazon titles end with variant details in brackets, e.g. '(3 FT Pack of 1, Grey)'."""
+    match = re.search(r"\(([^()]*)\)\s*$", name or "")
+    return match.group(1).strip() if match else ""
+
+
 def title_category(name: str) -> str:
     """Category group from whole words in a product title, or "Other" when nothing matches."""
     text = name.lower()
@@ -132,8 +162,15 @@ def normalize(platform: str, raw: pd.DataFrame) -> pd.DataFrame:
         # Flipkart marks unrated products "No rating available": that is zero ratings, not unknown.
         # Rated products carry no count in the source, so their count stays missing.
         out["rating_count"] = (raw.product_rating.str.strip() == "No rating available").map({True: 0.0, False: float("nan")})
-    out["brand"] = title_brand(raw.product_name) if amazon else raw.brand
-    out["brand_source"] = "title_first_word" if amazon else "source_field"
+    if amazon:
+        out["brand"], out["brand_source"] = title_brand(raw.product_name), "title_first_word"
+        out["variant"] = raw.product_name.map(amazon_variant)
+    else:
+        missing = raw.brand.str.strip() == ""
+        out["brand"] = raw.brand.where(~missing, title_brand(raw.product_name))
+        out["brand_source"] = missing.map({True: "title_first_word", False: "source_field"})
+        out["variant"] = [flipkart_variant(spec, text) for spec, text
+                          in zip(raw.product_specifications, raw.description, strict=True)]
     out["observed_at"] = (amazon_observed_at(raw.product_link) if amazon
                           else pd.to_datetime(raw.crawl_timestamp, utc=True).astype(str))
     out["provenance"] = "real"
@@ -187,7 +224,10 @@ def build_catalogue() -> dict:
               "authenticity_labels": 0,
               "recovered_fields": {
                   "amazon.observed_at": "Unix timestamp in each product link's qid parameter",
-                  "amazon.brand": "first word of the product title (brand_source=title_first_word)",
+                  "brand": "Amazon, and Flipkart rows without a brand: first word of the title "
+                           "(brand_source=title_first_word)",
+                  "variant": "Flipkart specification fields (model ID, style code, colour, pattern...) or a model "
+                             "code in the description; Amazon bracketed title suffix",
                   "flipkart.rating_count": "0 where the source says 'No rating available'; otherwise unknown",
                   "category_group": "source category root mapped to 16 groups; rows whose category field holds "
                                     "the product title are classified by title keywords (category_source)"},
@@ -202,7 +242,8 @@ def build_catalogue() -> dict:
 def load_catalogue() -> pd.DataFrame:
     """Load generated data, requiring an explicit build if it is missing."""
     frame = pd.read_csv(PROCESSED / "catalogue.csv", dtype={"product_id": str})
-    for column in ["brand", "observed_at", "subcategory", "category_path", "brand_source", "category_source"]:
+    for column in ["brand", "observed_at", "subcategory", "category_path", "brand_source", "category_source",
+                   "variant"]:
         frame[column] = frame[column].fillna("")
     return frame
 

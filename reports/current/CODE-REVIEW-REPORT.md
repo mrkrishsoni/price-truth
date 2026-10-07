@@ -1,6 +1,6 @@
 # Price Truth — current engineering review
 
-Generated: 2026-10-07T07:38:29.621445+00:00
+Generated: 2026-10-07T07:52:01.552830+00:00
 
 Historical submission reports are preserved separately; these results apply to this source manifest.
 
@@ -16,17 +16,17 @@ Historical submission reports are preserved separately; these results apply to t
 | errors | 0 |
 | failures | 0 |
 | skipped | 0 |
-| tests | 382 |
-| time | 18.172 |
-| timestamp | 2026-10-07T13:07:45.613318+05:30 |
+| tests | 383 |
+| time | 18.873 |
+| timestamp | 2026-10-07T13:21:08.264938+05:30 |
 | hostname | Mac.lan |
 
 ## Coverage
 
 | Measure | Count | Percentage |
 | --- | --- | --- |
-| Statements | 1652/1754 | 94.18% |
-| Branches | 323/380 | 85.00% |
+| Statements | 1675/1777 | 94.26% |
+| Branches | 331/388 | 85.31% |
 
 Coverage scope: price_truth package; scripts and app.py are outside this denominator.
 
@@ -102,8 +102,8 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/ui.py | listing_picker | 7 | B |
 | src/price_truth/ui.py | shrink_page | 7 | B |
 | src/price_truth/ui.py | methods_page | 7 | B |
+| src/price_truth/ui.py | product_page | 6 | B |
 | src/price_truth/ui.py | show_unit_result | 6 | B |
-| src/price_truth/ui.py | product_page | 5 | A |
 | src/price_truth/ui.py | assessment_panel | 5 | A |
 | src/price_truth/ui.py | dataset_tab | 5 | A |
 | src/price_truth/ui.py | show_assessment | 3 | A |
@@ -194,7 +194,10 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | src/price_truth/external.py | _search_hits | 2 | A |
 | src/price_truth/external.py | _search_summary | 2 | A |
 | src/price_truth/data.py | normalize | 10 | B |
+| src/price_truth/data.py | flipkart_variant | 7 | B |
 | src/price_truth/data.py | category_parts | 5 | A |
+| src/price_truth/data.py | spec_value | 3 | A |
+| src/price_truth/data.py | amazon_variant | 3 | A |
 | src/price_truth/data.py | title_category | 3 | A |
 | src/price_truth/data.py | build_catalogue | 2 | A |
 | src/price_truth/data.py | load_catalogue | 2 | A |
@@ -422,6 +425,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_synthetic.py | test_history_starts_from_the_inflation_adjusted_price | 2 | A |
 | tests/test_data.py | test_build_catalogue_reproduces_shipped_catalogue | 11 | C |
 | tests/test_data.py | test_catalogue_invariants | 9 | B |
+| tests/test_data.py | test_variant_and_brand_recovered_from_source_text | 6 | B |
 | tests/test_data.py | test_raw_hashes_and_partition | 4 | A |
 | tests/test_data.py | test_evaluation_groups_do_not_overlap | 4 | A |
 | tests/test_data.py | test_category_groups_cover_source_roots | 4 | A |
@@ -481,7 +485,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/theme.py | 47.21 | A |
 | src/price_truth/paths.py | 67.73 | A |
 | src/price_truth/authenticity.py | 49.74 | A |
-| src/price_truth/ui.py | 19.82 | A |
+| src/price_truth/ui.py | 19.6 | A |
 | src/price_truth/observations.py | 33.08 | A |
 | src/price_truth/present.py | 51.89 | A |
 | src/price_truth/cache.py | 55.71 | A |
@@ -494,7 +498,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/resources.py | 67.96 | A |
 | src/price_truth/workspace.py | 16.48 | B |
 | src/price_truth/external.py | 36.53 | A |
-| src/price_truth/data.py | 43.15 | A |
+| src/price_truth/data.py | 38.17 | A |
 | src/price_truth/catalogue.py | 51.84 | A |
 | src/price_truth/history.py | 44.55 | A |
 | app.py | 62.56 | A |
@@ -520,7 +524,7 @@ MI is an index, not percent maintainability.
 | tests/test_observations.py | 20.7 | A |
 | tests/test_calculations.py | 34.25 | A |
 | tests/test_synthetic.py | 32.41 | A |
-| tests/test_data.py | 38.41 | A |
+| tests/test_data.py | 35.88 | A |
 | tests/test_app.py | 43.46 | A |
 | tests/test_evidence_store.py | 30.29 | A |
 | tests/test_offers.py | 35.02 | A |
@@ -536,7 +540,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/theme.py | 167 | 127 | 2 |
 | src/price_truth/paths.py | 10 | 7 | 0 |
 | src/price_truth/authenticity.py | 153 | 119 | 1 |
-| src/price_truth/ui.py | 367 | 322 | 0 |
+| src/price_truth/ui.py | 370 | 325 | 0 |
 | src/price_truth/observations.py | 134 | 101 | 0 |
 | src/price_truth/present.py | 143 | 106 | 1 |
 | src/price_truth/cache.py | 38 | 28 | 0 |
@@ -549,7 +553,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/resources.py | 64 | 38 | 1 |
 | src/price_truth/workspace.py | 451 | 386 | 2 |
 | src/price_truth/external.py | 113 | 86 | 0 |
-| src/price_truth/data.py | 211 | 169 | 6 |
+| src/price_truth/data.py | 252 | 199 | 6 |
 | src/price_truth/catalogue.py | 38 | 27 | 0 |
 | src/price_truth/history.py | 54 | 42 | 0 |
 | app.py | 32 | 27 | 0 |
@@ -575,7 +579,7 @@ MI is an index, not percent maintainability.
 | tests/test_observations.py | 314 | 208 | 0 |
 | tests/test_calculations.py | 180 | 117 | 0 |
 | tests/test_synthetic.py | 151 | 102 | 1 |
-| tests/test_data.py | 126 | 92 | 1 |
+| tests/test_data.py | 140 | 103 | 1 |
 | tests/test_app.py | 102 | 66 | 1 |
 | tests/test_evidence_store.py | 151 | 112 | 0 |
 | tests/test_offers.py | 158 | 113 | 0 |
@@ -591,7 +595,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/theme.py | 256.46 | 1057.91 |
 | src/price_truth/paths.py | 59.79 | 39.86 |
 | src/price_truth/authenticity.py | 289.35 | 1302.07 |
-| src/price_truth/ui.py | 752.25 | 5378.62 |
+| src/price_truth/ui.py | 775.54 | 5531.08 |
 | src/price_truth/observations.py | 410.43 | 1258.06 |
 | src/price_truth/present.py | 387.63 | 2076.59 |
 | src/price_truth/cache.py | 33.22 | 66.44 |
@@ -604,7 +608,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/resources.py | 4.75 | 2.38 |
 | src/price_truth/workspace.py | 1426.7 | 11489.65 |
 | src/price_truth/external.py | 283.39 | 1055.85 |
-| src/price_truth/data.py | 615.66 | 5442.43 |
+| src/price_truth/data.py | 815.53 | 7998.45 |
 | src/price_truth/catalogue.py | 113.09 | 339.27 |
 | src/price_truth/history.py | 543.93 | 3451.88 |
 | app.py | 18.0 | 18.0 |
@@ -630,7 +634,7 @@ MI is an index, not percent maintainability.
 | tests/test_observations.py | 1119.08 | 4308.47 |
 | tests/test_calculations.py | 340.49 | 680.99 |
 | tests/test_synthetic.py | 1677.76 | 15381.49 |
-| tests/test_data.py | 831.0 | 4287.97 |
+| tests/test_data.py | 1023.15 | 5797.87 |
 | tests/test_app.py | 496.18 | 2364.15 |
 | tests/test_evidence_store.py | 817.84 | 2286.73 |
 | tests/test_offers.py | 222.94 | 111.47 |
@@ -639,9 +643,9 @@ MI is an index, not percent maintainability.
 
 | Measure | Value |
 | --- | --- |
-| first_assessment_seconds | 0.9567815829941537 |
+| first_assessment_seconds | 0.983479582995642 |
 | warm_calls | 29 |
-| warm_p95_seconds | 0.019704725011251867 |
+| warm_p95_seconds | 0.02317562461248598 |
 | scope | Sequential local assessment including SHAP; not 100-user load or browser latency |
 
 ## Requirements still requiring external evidence

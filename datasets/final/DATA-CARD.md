@@ -1,6 +1,6 @@
 # Price Truth — final dataset card
 
-Version 1.1 · built 7 October 2026 by `scripts/build_final_dataset.py` · generator `src/price_truth/synthetic.py` · parameters `assumptions.json`.
+Version 1.2 · built 7 October 2026 by `scripts/build_final_dataset.py` · generator `src/price_truth/synthetic.py` · parameters `assumptions.json`.
 
 The dataset combines **real** marketplace and food-price records with **synthetic** layers that fill gaps no public source covers (daily price histories, discount-authenticity labels, cross-platform offers). Every row or case carries a `provenance` field: `real` or `synthetic`. The price-estimation model is trained and evaluated on real listings only.
 
@@ -20,7 +20,8 @@ The app generates any listing's history on demand with the same seeded function,
 ## Fields recovered from the real data (not synthetic)
 
 - **Amazon observation date:** the `qid` Unix timestamp in each product link → 5 January 2023 for all 1,347 listings.
-- **Amazon brand:** the first word of the title (`brand_source = title_first_word`).
+- **Brand:** Amazon titles, and the 5,851 Flipkart rows with an empty brand field, use the first word of the title (`brand_source = title_first_word`). Only 3 listings remain without a brand.
+- **Variant:** distinguishing details for listings that share a title. Flipkart: specification fields (model ID, style code, model number, colour, pattern, type, size) or a model code in the description (95% filled). Amazon: the bracketed suffix of the title (53% filled). 2,074 listings still share title, price and all recorded details with another listing, so the picker also shows the product ID.
 - **Flipkart rating count:** `0` where the source says "No rating available"; unknown otherwise.
 - **Category groups:** source category roots map to 15 groups (6 added in v1.1: Automotive, Home decor and furniture, Tools and home improvement, Fashion accessories, Baby and kids, Sports and fitness). 320 Flipkart rows whose category field holds the product title are classified by whole-word title rules (`category_source = title_keywords`; 43 of 45 correct in a spot check). "Other" fell from 4,901 to 60 listings.
 
@@ -44,6 +45,10 @@ Every parameter in `assumptions.json` records its source URL, or is marked `assu
 | Discount authenticity (logistic regression, chosen over gradient boosting on validation) | Synthetic labelled offers, split by product | 8,439 offers from unseen products: ROC AUC 0.88, precision 23%, recall 48% at the validation-tuned threshold 0.17 |
 
 The discount model sees only listing information. The history-based rule is the primary check in the app; the model gives a secondary risk score.
+
+## Changes in v1.2
+
+- Added `variant`; filled missing Flipkart brands from titles. Neither is a model input, so models and synthetic layers are unchanged.
 
 ## Changes in v1.1
 

@@ -29,8 +29,9 @@ def listing_picker(data: pd.DataFrame) -> dict | None:
                           "Try fewer or more general words, or switch the platform filter to Both.")
         return None
     table = pd.DataFrame({"Platform": matches.platform.str.title(), "Product": matches.name,
-                          "Listed": matches.listed_price, "Sold at": matches.selling_price,
-                          "Discount": matches.discount_pct})
+                          "Variant": matches.variant, "Listed": matches.listed_price,
+                          "Sold at": matches.selling_price, "Discount": matches.discount_pct,
+                          "ID": matches.product_id})
     st.caption(f"{len(matches):,} listing{'s' if len(matches) != 1 else ''} shown · prices as recorded on the "
                "catalogue date · click a row to choose")
     event = st.dataframe(table, hide_index=True, on_select="rerun", selection_mode="single-row",
@@ -38,7 +39,8 @@ def listing_picker(data: pd.DataFrame) -> dict | None:
                              "Listed": st.column_config.NumberColumn(format="₹%.0f"),
                              "Sold at": st.column_config.NumberColumn(format="₹%.0f"),
                              "Discount": st.column_config.NumberColumn(format="%.0f%%"),
-                             "Product": st.column_config.TextColumn(width="large")})
+                             "Product": st.column_config.TextColumn(width="large"),
+                             "Variant": st.column_config.TextColumn(width="medium")})
     rows = event.selection.rows if event and event.selection else []
     return matches.iloc[rows[0] if rows else 0].to_dict()
 
@@ -51,6 +53,7 @@ def product_page(data: pd.DataFrame, model_loader, discount_loader=None) -> None
     if row is None:
         return
     theme.product_card(row["name"], [("Platform", row["platform"].title()), ("Category", row["category_group"]),
+                                     ("Variant", row.get("variant") or ""), ("ID", row["product_id"]),
                                      ("Currency", "INR"), ("Observed", row.get("observed_at") or "date unknown")],
                        "historical", "not a live offer")
     weak = present.category_quality(REPORTS / "current/model_audit.json", row["platform"], row["category_group"])

@@ -5,18 +5,18 @@ configfile: pyproject.toml
 testpaths: tests
 plugins: cov-7.1.0, anyio-4.12.1, asyncio-1.4.0
 asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
-collected 382 items
+collected 383 items
 
 tests/test_app.py ................                                       [  4%]
 tests/test_calculations.py ............................................. [ 15%]
 ......                                                                   [ 17%]
-tests/test_data.py .....................                                 [ 23%]
+tests/test_data.py ......................                                [ 23%]
 tests/test_evidence_store.py ..............                              [ 26%]
 tests/test_forecast.py ..........................                        [ 33%]
 tests/test_model.py .....                                                [ 34%]
 tests/test_observations.py ............................................. [ 46%]
 .......................................                                  [ 56%]
-tests/test_offers.py ................                                    [ 60%]
+tests/test_offers.py ................                                    [ 61%]
 tests/test_present.py ............                                       [ 64%]
 tests/test_price_api.py ........................................         [ 74%]
 tests/test_search.py ...........                                         [ 77%]
@@ -29,4 +29,4 @@ tests/test_workspace_evidence.py ........................                [100%]
 _______________ coverage: platform darwin, python 3.12.0-final-0 _______________
 
 Coverage JSON written to file /Users/krishsoni/Documents/price-truth/reports/current/coverage.json
-============================= 382 passed in 18.17s =============================
+============================= 383 passed in 18.87s =============================

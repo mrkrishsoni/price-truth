@@ -7,8 +7,10 @@ import pytest
 
 from price_truth.data import (
     SOURCES,
+    amazon_variant,
     category_parts,
     clean_source,
+    flipkart_variant,
     load_catalogue,
     normalize,
     numeric,
@@ -124,3 +126,15 @@ def test_category_groups_cover_source_roots():
     assert (data.category_group == "Other").mean() < .01
     assert set(data.category_source) == {"source_tree", "title_keywords"}
     assert data[data.category_source == "title_keywords"].category_path.str.count(" > ").eq(0).all()
+
+
+def test_variant_and_brand_recovered_from_source_text():
+    """Variant details come from specifications, description codes or Amazon's bracketed suffix."""
+    specs = '{"product_specification"=>[{"key"=>"Brand", "value"=>"X"}, {"key"=>"Model ID", "value"=>"AB12"}, ' \
+            '{"key"=>"Color", "value"=>"Black"}]}'
+    assert flipkart_variant(specs, "") == "AB12 · Black"
+    assert flipkart_variant("", "Notebook Model id NB00664 Type Notebook") == "NB00664"
+    assert amazon_variant("Wayona Cable for iPhone (3 FT Pack of 1, Grey)") == "3 FT Pack of 1, Grey"
+    data = load_catalogue()
+    assert (data.brand == "").sum() < 10
+    assert (data[data.platform == "flipkart"].variant != "").mean() > .9
