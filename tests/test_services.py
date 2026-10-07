@@ -274,3 +274,19 @@ def test_timing_signal_result_keys_and_messages():
                                 "dates are unknown.")
     assert set(usual) == {"days", "span_days", "age_days", "median", "q25", "q75",
                           "difference_from_median_pct", "status", "message"}
+
+
+def test_unknown_barcode_is_reported_as_not_found(monkeypatch, tmp_path):
+    """A 404 from Open Food Facts means the product is unknown, not that the service is down."""
+    response = requests.Response()
+    response.status_code = 404
+
+    def not_found(*args, **kwargs):
+        raise requests.HTTPError(response=response)
+
+    monkeypatch.setattr(external, "get_json", not_found)
+    with pytest.raises(ValueError, match="No product found"):
+        external.lookup_product("12345678", False, tmp_path)
+    response.status_code = 503
+    with pytest.raises(ValueError, match="unavailable"):
+        external.lookup_product("12345678", False, tmp_path)

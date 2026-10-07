@@ -53,17 +53,27 @@ def lookup_product(code: str, offline: bool = False, cache_dir: Path | None = No
     try:
         result = get_json(url, {"fields": "code,product_name,brands,quantity,product_quantity,"
                               "product_quantity_unit,categories,countries,last_modified_t"})
+    except requests.HTTPError as exc:
+        # Open Food Facts answers 404 for barcodes it does not know: that is "not found", not an outage.
+        if exc.response is not None and exc.response.status_code == 404 and not cached:
+            raise ValueError("No product found for this barcode.") from exc
+        return _lookup_fallback(cached, exc)
     except (requests.RequestException, ValueError) as exc:
-        if cached:
-            return {**cached, "mode": "cached",
-                    "notice": f"Live lookup unavailable ({type(exc).__name__}); showing saved data."}
-        raise ValueError("Live lookup is unavailable and no cached record exists.") from exc
+        return _lookup_fallback(cached, exc)
     if result.get("status") != 1 or not result.get("product"):
         raise ValueError("No product found for this barcode.")
     record = {"product": result["product"], "source_url": url,
               "fetched_at": datetime.now(UTC).isoformat(), "license": "ODbL"}
     write_json(path, record)
     return {**record, "mode": "live", "notice": "Live Open Food Facts response"}
+
+
+def _lookup_fallback(cached: dict | None, exc: Exception) -> dict:
+    """Serve the saved record when the live source fails; otherwise report the outage."""
+    if cached:
+        return {**cached, "mode": "cached",
+                "notice": f"Live lookup unavailable ({type(exc).__name__}); showing saved data."}
+    raise ValueError("Live lookup is unavailable and no cached record exists.") from exc
 
 
 def cached_products() -> list[dict]:

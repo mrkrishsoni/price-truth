@@ -47,7 +47,7 @@ This performs read-only public API calls and writes attributed snapshots under `
 | Price check | Pick an Amazon/Flipkart listing, enter a price, get a verdict (lower / in line / higher than expected), the model's range and a plain-language SHAP explanation; then **Discount check** (30-day reference-price rule + discount-authenticity model), **Price history & timing** (180-day chart with sale events, buy-timing signal, gated forecast, next sale) and **Where to buy** (8 platforms, delivery and fees); PDF/JSON/CSV export |
 | Unit price | Compare 2–4 pack options per 100 g, 100 ml or item; best-value verdict and chart |
 | Food & packs | Barcode or name lookup (Open Food Facts, live with saved fallback), pack details, dated Open Prices shop history, a long EUR history example; send a pack to Unit price |
-| Shrinkflation | Two cited Indian pack-reduction cases with hidden unit-price increase |
+| Shrinkflation | 10 cited Indian pack-reduction cases (Vim, Haldiram's, Parle-G, Maggi ×7) and 5 simulated multi-step timelines, with the hidden unit-price increase |
 | My observations | Manual or CSV observations kept in the session: price history, gated next-day forecast, cross-store quote ranking, pack-change analysis, CSV export |
 | Catalogue | Search and export both historical catalogues |
 | Methods & data | Model quality by category, data sources and licences, limits, raw reports |
