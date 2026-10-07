@@ -5,7 +5,7 @@ from streamlit.testing.v1 import AppTest
 from price_truth.paths import ROOT
 
 PAGES = ["views/home.py", "views/product.py", "views/compare.py", "views/food.py", "views/shrink.py",
-         "views/observations.py", "views/catalogue.py", "views/methods.py"]
+         "views/observations.py", "views/catalogue.py", "views/methods.py", "views/user-guide.py"]
 
 
 def application(page="views/home.py"):
@@ -100,3 +100,11 @@ def test_methods_lists_licences():
     app = application("views/methods.py")
     licences = next(d.value for d in app.dataframe if "Licence" in d.value.columns).Licence.tolist()
     assert "CC BY-NC-SA 4.0" in licences and "ODbL 1.0" in licences
+
+
+def test_user_guide_page_embeds_the_guide():
+    """The guide page embeds the illustrated HTML guide and offers it as a download."""
+    app = application("views/user-guide.py")
+    assert not app.exception
+    assert any(b.proto.label == "Download guide" for b in app.get("download_button"))
+    assert len(app.get("iframe")) == 1

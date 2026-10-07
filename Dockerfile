@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt && useradd --create-home --ui
 COPY --chown=appuser:appuser app.py ./
 COPY --chown=appuser:appuser views ./views
 COPY --chown=appuser:appuser assets ./assets
+COPY --chown=appuser:appuser docs/USER-GUIDE.html ./docs/USER-GUIDE.html
 COPY --chown=appuser:appuser .streamlit ./.streamlit
 COPY --chown=appuser:appuser datasets ./datasets
 COPY --chown=appuser:appuser artifacts ./artifacts

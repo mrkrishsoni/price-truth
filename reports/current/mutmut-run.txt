@@ -53,23 +53,23 @@
 ⠙ Generating mutants
 ⠹ Generating mutants
 ⠸ Generating mutants
-⠸ Generating mutants
-⠸ Generating mutants
+⠼ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
-⠼ Generating mutants
-⠼ Generating mutants
+⠸ Generating mutants
 ⠼ Generating mutants
 ⠸ Generating mutants
 ⠸ Generating mutants
-⠸ Generating mutants
-⠼ Generating mutants
 ⠼ Generating mutants
 ⠸ Generating mutants
 ⠼ Generating mutants
 ⠼ Generating mutants
-    done in 30ms (0 files mutated, 0 ignored, 8 unmodified)
-    Warning: 22 non-Python file(s) changed since the last full run: datasets/external/off/0048107251123.json, pyproject.toml, reports/current/browser-assessment.pdf, reports/current/browser_check.json, reports/current/coverage.json, reports/current/firefox/browser-assessment.pdf, reports/current/firefox/browser_check.json, reports/current/load_test_local.json, reports/current/mutation.json, reports/current/mutmut-results.txt, reports/current/mutmut-run.txt, reports/current/performance.json, reports/current/pytest-run.txt, reports/current/pytest.xml, reports/current/radon-cc.json, reports/current/radon-hal.json, reports/current/radon-mi.json, reports/current/radon-raw.json, reports/current/review_manifest.json, reports/current/webkit/browser-assessment.pdf, reports/current/webkit/browser_check.json, reports/current/workspace-1440.png
+⠸ Generating mutants
+⠼ Generating mutants
+⠸ Generating mutants
+⠼ Generating mutants
+    done in 39ms (0 files mutated, 0 ignored, 8 unmodified)
+    Warning: 23 non-Python file(s) changed since the last full run: .dockerignore, Dockerfile, pyproject.toml, reports/current/browser-assessment.pdf, reports/current/browser_check.json, reports/current/coverage.json, reports/current/firefox/browser-assessment.pdf, reports/current/firefox/browser_check.json, reports/current/load_test_local.json, reports/current/mutation.json, reports/current/mutmut-results.txt, reports/current/mutmut-run.txt, reports/current/performance.json, reports/current/pytest-run.txt, reports/current/pytest.xml, reports/current/radon-cc.json, reports/current/radon-hal.json, reports/current/radon-mi.json, reports/current/radon-raw.json, reports/current/review_manifest.json, reports/current/webkit/browser-assessment.pdf, reports/current/webkit/browser_check.json, reports/current/workspace-1440.png
     These cannot be tracked for behavioral changes, so cached results were kept.
     If the changes affect your tests, delete the mutants/ directory or set on_dependency_change = "rerun".
 
@@ -2587,7 +2587,7 @@ Running mutation testing
 ⠇ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
 ⠏ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
 ⠋ 1582/1582  🎉 1556 🫥 0  ⏰ 0  🤔 0  🙁 26  🔇 0  🧙 0
-77.17 mutations/second
+81.26 mutations/second
 
 Mutant results
 --------------

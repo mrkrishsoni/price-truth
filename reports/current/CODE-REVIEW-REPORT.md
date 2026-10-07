@@ -1,6 +1,6 @@
 # Price Truth — current engineering review
 
-Generated: 2026-10-07T09:16:22.395048+00:00
+Generated: 2026-10-07T09:33:58.146657+00:00
 
 Historical submission reports are preserved separately; these results apply to this source manifest.
 
@@ -16,9 +16,9 @@ Historical submission reports are preserved separately; these results apply to t
 | errors | 0 |
 | failures | 0 |
 | skipped | 0 |
-| tests | 405 |
-| time | 19.745 |
-| timestamp | 2026-10-07T14:45:35.784283+05:30 |
+| tests | 407 |
+| time | 19.083 |
+| timestamp | 2026-10-07T15:03:13.119066+05:30 |
 | hostname | Mac.lan |
 
 ## Coverage
@@ -466,6 +466,7 @@ Surviving mutants are justified individually in docs/MUTATION-SURVIVORS.md.
 | tests/test_app.py | test_unit_comparison_flow | 5 | A |
 | tests/test_app.py | test_offline_food_lookup_flow | 4 | A |
 | tests/test_app.py | test_methods_lists_licences | 4 | A |
+| tests/test_app.py | test_user_guide_page_embeds_the_guide | 4 | A |
 | tests/test_app.py | button | 3 | A |
 | tests/test_app.py | test_home_shows_real_coverage | 3 | A |
 | tests/test_app.py | test_price_check_search_with_no_match_shows_empty_state | 3 | A |
@@ -555,7 +556,7 @@ MI is an index, not percent maintainability.
 | tests/test_synthetic.py | 32.41 | A |
 | tests/test_data.py | 35.88 | A |
 | tests/test_review_fixes.py | 51.33 | A |
-| tests/test_app.py | 43.46 | A |
+| tests/test_app.py | 41.76 | A |
 | tests/test_evidence_store.py | 30.29 | A |
 | tests/test_offers.py | 35.02 | A |
 
@@ -586,7 +587,7 @@ MI is an index, not percent maintainability.
 | src/price_truth/data.py | 252 | 199 | 6 |
 | src/price_truth/catalogue.py | 38 | 27 | 0 |
 | src/price_truth/history.py | 54 | 42 | 0 |
-| app.py | 32 | 27 | 0 |
+| app.py | 33 | 28 | 0 |
 | scripts/uptime_report.py | 25 | 18 | 0 |
 | scripts/concurrency_check.py | 67 | 56 | 0 |
 | scripts/review_current.py | 154 | 118 | 0 |
@@ -612,7 +613,7 @@ MI is an index, not percent maintainability.
 | tests/test_synthetic.py | 151 | 102 | 1 |
 | tests/test_data.py | 140 | 103 | 1 |
 | tests/test_review_fixes.py | 78 | 52 | 2 |
-| tests/test_app.py | 102 | 66 | 1 |
+| tests/test_app.py | 110 | 71 | 1 |
 | tests/test_evidence_store.py | 151 | 112 | 0 |
 | tests/test_offers.py | 158 | 113 | 0 |
 
@@ -669,7 +670,7 @@ MI is an index, not percent maintainability.
 | tests/test_synthetic.py | 1677.76 | 15381.49 |
 | tests/test_data.py | 1023.15 | 5797.87 |
 | tests/test_review_fixes.py | 441.2 | 2205.99 |
-| tests/test_app.py | 496.18 | 2364.15 |
+| tests/test_app.py | 554.06 | 2626.83 |
 | tests/test_evidence_store.py | 817.84 | 2286.73 |
 | tests/test_offers.py | 222.94 | 111.47 |
 
@@ -677,9 +678,9 @@ MI is an index, not percent maintainability.
 
 | Measure | Value |
 | --- | --- |
-| first_assessment_seconds | 0.7486485409899615 |
+| first_assessment_seconds | 0.7663114999886602 |
 | warm_calls | 29 |
-| warm_p95_seconds | 0.019921849796082823 |
+| warm_p95_seconds | 0.020085033401846884 |
 | scope | Sequential local assessment including SHAP; not 100-user load or browser latency |
 
 ## Requirements still requiring external evidence

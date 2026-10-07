@@ -554,7 +554,14 @@ footer{margin-top:48px;padding:22px 0;border-top:1px solid var(--line);color:var
 (() => {
   const toc = document.getElementById('toc'), btn = document.getElementById('menuBtn');
   btn.addEventListener('click', () => { const open = toc.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
-  toc.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toc.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
+  // Scroll in script: when embedded in the app, a plain '#section' link would resolve against the app's URL.
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    toc.classList.remove('open'); btn.setAttribute('aria-expanded', false);
+  }));
   const links = [...toc.querySelectorAll('a')];
   const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   const spy = new IntersectionObserver(entries => {

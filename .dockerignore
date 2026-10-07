@@ -17,7 +17,8 @@ reports/*
 !reports/current/collection_status.json
 tests
 scripts
-docs
+docs/*
+!docs/USER-GUIDE.html
 .aws
 .codex
 .agents

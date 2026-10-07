@@ -19,6 +19,7 @@ PAGES = {
     "Explore": [st.Page("views/observations.py", title="My observations", icon=":material/edit_note:"),
                 st.Page("views/catalogue.py", title="Catalogue", icon=":material/storefront:"),
                 st.Page("views/methods.py", title="Methods & data", icon=":material/info:")],
+    "Help": [st.Page("views/user-guide.py", title="User guide", icon=":material/menu_book:")],
 }
 
 page = st.navigation(PAGES)
