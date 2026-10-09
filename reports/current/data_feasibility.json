@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-10-08T09:11:48.189663+00:00",
-  "raw_observations": 408,
-  "identified_barcodes": 382,
+  "fetched_at": "2026-10-09T09:21:06.090684+00:00",
+  "raw_observations": 409,
+  "identified_barcodes": 383,
   "eligible_shop_observations": 283,
   "complete_query": true,
   "largest_distinct_date_count": 2,
