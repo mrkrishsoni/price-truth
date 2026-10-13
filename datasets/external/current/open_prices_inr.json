@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-09"
+    "date__lte": "2026-10-13"
   },
-  "fetched_at": "2026-10-09T09:21:06.090684+00:00",
+  "fetched_at": "2026-10-13T09:35:41.774071+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 409,
+  "total_at_source": 410,
   "observations": [
     {
       "id": 3210,
@@ -6962,6 +6962,23 @@
       "proof_id": 138380,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/342619"
+    },
+    {
+      "id": 344792,
+      "product_code": "8908020265039",
+      "product_name": "PAAWAK JAGGERY CUBES",
+      "price": 120.0,
+      "currency": "INR",
+      "date": "2026-10-12",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7585,
+      "location_name": "DMart",
+      "location_type": "shop",
+      "proof_id": 138834,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/344792"
     }
   ]
 }
