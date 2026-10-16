@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-13"
+    "date__lte": "2026-10-16"
   },
-  "fetched_at": "2026-10-13T09:35:41.774071+00:00",
+  "fetched_at": "2026-10-16T07:22:41.800991+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 410,
+  "total_at_source": 411,
   "observations": [
     {
       "id": 3210,
@@ -6979,6 +6979,23 @@
       "proof_id": 138834,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/344792"
+    },
+    {
+      "id": 347923,
+      "product_code": "8906071690329",
+      "product_name": "Garlic Tadka",
+      "price": 10.0,
+      "currency": "INR",
+      "date": "2026-10-16",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7619,
+      "location_name": "Ahmedabad",
+      "location_type": "amenity",
+      "proof_id": 139749,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/347923"
     }
   ]
 }
