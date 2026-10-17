@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-16"
+    "date__lte": "2026-10-17"
   },
-  "fetched_at": "2026-10-16T07:22:41.800991+00:00",
+  "fetched_at": "2026-10-17T07:04:58.125813+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 411,
+  "total_at_source": 412,
   "observations": [
     {
       "id": 3210,
@@ -4501,7 +4501,7 @@
     {
       "id": 168851,
       "product_code": "8906161680049",
-      "product_name": "Furpro-40",
+      "product_name": "Furpro 40",
       "price": 650.0,
       "currency": "INR",
       "date": "2025-12-01",
@@ -6996,6 +6996,23 @@
       "proof_id": 139749,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/347923"
+    },
+    {
+      "id": 347927,
+      "product_code": "8901248154130",
+      "product_name": "Boro plus aloe Vera gel haldhi Chandan kesar",
+      "price": 125.0,
+      "currency": "INR",
+      "date": "2026-10-16",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 4666,
+      "location_name": "Lulu Mall",
+      "location_type": "shop",
+      "proof_id": 139752,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/347927"
     }
   ]
 }
