@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-17"
+    "date__lte": "2026-10-23"
   },
-  "fetched_at": "2026-10-17T07:04:58.125813+00:00",
+  "fetched_at": "2026-10-23T07:45:32.072000+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 412,
+  "total_at_source": 413,
   "observations": [
     {
       "id": 3210,
@@ -7013,6 +7013,23 @@
       "proof_id": 139752,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/347927"
+    },
+    {
+      "id": 352341,
+      "product_code": "8906161393925",
+      "product_name": "Jumbo Puffs - Cheese",
+      "price": 19.0,
+      "currency": "INR",
+      "date": "2026-10-22",
+      "price_per": null,
+      "price_is_discounted": true,
+      "price_without_discount": 60.0,
+      "location_id": 1697,
+      "location_name": "Swiggy Instamart",
+      "location_type": "shop",
+      "proof_id": 140647,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/352341"
     }
   ]
 }
