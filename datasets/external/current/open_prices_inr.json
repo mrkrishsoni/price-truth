@@ -3,9 +3,9 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-25"
+    "date__lte": "2026-10-26"
   },
-  "fetched_at": "2026-10-25T07:42:19.767179+00:00",
+  "fetched_at": "2026-10-26T07:57:14.257187+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
   "total_at_source": 517,
@@ -7051,7 +7051,7 @@
     {
       "id": 353728,
       "product_code": "8908010900339",
-      "product_name": "Crunchy Almond Butter",
+      "product_name": "Almond Butter",
       "price": 398.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7102,7 +7102,7 @@
     {
       "id": 353960,
       "product_code": "8901262100014",
-      "product_name": null,
+      "product_name": "Whole Milk Powder",
       "price": 280.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7119,7 +7119,7 @@
     {
       "id": 353961,
       "product_code": "8906134530241",
-      "product_name": null,
+      "product_name": "Cold Coffee Shake Oat Beverage",
       "price": 45.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7153,7 +7153,7 @@
     {
       "id": 353963,
       "product_code": "8906134530791",
-      "product_name": null,
+      "product_name": "Tender Coconut Water",
       "price": 42.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7170,7 +7170,7 @@
     {
       "id": 353964,
       "product_code": "8906134530234",
-      "product_name": null,
+      "product_name": "Chocolate Shake Oat Beverage",
       "price": 45.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7204,7 +7204,7 @@
     {
       "id": 353966,
       "product_code": "8901071706551",
-      "product_name": null,
+      "product_name": "Natural Soy Beverage",
       "price": 37.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7238,7 +7238,7 @@
     {
       "id": 353968,
       "product_code": "8901071706544",
-      "product_name": null,
+      "product_name": "Vanilla Soy Beverage",
       "price": 37.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7272,7 +7272,7 @@
     {
       "id": 353970,
       "product_code": "8906134530371",
-      "product_name": null,
+      "product_name": "Vanilla Shake Oat Beverage",
       "price": 45.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7289,7 +7289,7 @@
     {
       "id": 353971,
       "product_code": "8906134530951",
-      "product_name": null,
+      "product_name": "Dreamy Chocolate Protein Milkshake",
       "price": 79.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7306,7 +7306,7 @@
     {
       "id": 353972,
       "product_code": "8906134530982",
-      "product_name": null,
+      "product_name": "Velvety Vanilla Protein Milkshake",
       "price": 119.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7374,7 +7374,7 @@
     {
       "id": 353976,
       "product_code": "8908010900339",
-      "product_name": "Crunchy Almond Butter",
+      "product_name": "Almond Butter",
       "price": 368.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7391,7 +7391,7 @@
     {
       "id": 353977,
       "product_code": "8906134530975",
-      "product_name": null,
+      "product_name": "Nutty Banana Protein Milkshake",
       "price": 119.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7493,7 +7493,7 @@
     {
       "id": 353983,
       "product_code": "8901071706537",
-      "product_name": "Sofit Chocolate Soy Beverage",
+      "product_name": "Chocolate Soy Beverage",
       "price": 37.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7527,7 +7527,7 @@
     {
       "id": 353985,
       "product_code": "8906134530968",
-      "product_name": null,
+      "product_name": "Creamy Coffee Plant Protein Milkshake",
       "price": 119.0,
       "currency": "INR",
       "date": "2026-10-17",
@@ -7595,7 +7595,7 @@
     {
       "id": 354005,
       "product_code": "8906167241978",
-      "product_name": null,
+      "product_name": "Premium Kala Chana (Brown Chana)",
       "price": 62.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7612,7 +7612,7 @@
     {
       "id": 354006,
       "product_code": "8906016420240",
-      "product_name": null,
+      "product_name": "Plain Roasted Peanuts",
       "price": 45.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7629,7 +7629,7 @@
     {
       "id": 354007,
       "product_code": "0811307033413",
-      "product_name": null,
+      "product_name": "Roasted Nimbu Pudina Peanuts",
       "price": 54.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7646,7 +7646,7 @@
     {
       "id": 354008,
       "product_code": "0811307033383",
-      "product_name": null,
+      "product_name": "Salted Roasted Premium Bharuchi Peanuts",
       "price": 54.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7663,7 +7663,7 @@
     {
       "id": 354009,
       "product_code": "8906167242043",
-      "product_name": null,
+      "product_name": "Premium Moong Sabut (Green)",
       "price": 73.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7680,7 +7680,7 @@
     {
       "id": 354010,
       "product_code": "8906167241633",
-      "product_name": null,
+      "product_name": "Premium Kabuli Chana",
       "price": 73.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7697,7 +7697,7 @@
     {
       "id": 354011,
       "product_code": "8906167242340",
-      "product_name": null,
+      "product_name": "Premium Kashmiri Red Rajma",
       "price": 71.0,
       "currency": "INR",
       "date": "2026-08-04",
@@ -7714,7 +7714,7 @@
     {
       "id": 354012,
       "product_code": "8901262151832",
-      "product_name": "Amul Kool Classic Latte Flavoured Milk",
+      "product_name": "Kool Classic Latte Flavoured Milk",
       "price": 40.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7731,7 +7731,7 @@
     {
       "id": 354013,
       "product_code": "8901262152075",
-      "product_name": null,
+      "product_name": "Kool Cafe Cinnamon Flavoured Milk",
       "price": 30.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7765,7 +7765,7 @@
     {
       "id": 354015,
       "product_code": "8901262153362",
-      "product_name": null,
+      "product_name": "Kool Rose Flavoured Milk",
       "price": 30.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7799,7 +7799,7 @@
     {
       "id": 354017,
       "product_code": "8901262151313",
-      "product_name": "Amul Kool Koko Chocolate Flavoured Milk",
+      "product_name": "Kool Koko Chocolate Flavoured Milk",
       "price": 35.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7816,7 +7816,7 @@
     {
       "id": 354018,
       "product_code": "8901262153683",
-      "product_name": null,
+      "product_name": "Velvett Chocolate Milkshake",
       "price": 50.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7918,7 +7918,7 @@
     {
       "id": 354024,
       "product_code": "8906169995541",
-      "product_name": null,
+      "product_name": "Rock Salt Potato Chips",
       "price": 47.49,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7952,7 +7952,7 @@
     {
       "id": 354026,
       "product_code": "8909081005435",
-      "product_name": "Sunfeast Dark Fantasy Vanilla Milkshake",
+      "product_name": "Dark Fantasy Vanilla Milkshake",
       "price": 27.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7969,7 +7969,7 @@
     {
       "id": 354027,
       "product_code": "8909081005428",
-      "product_name": "Sunfeast Dark Fantasy Chocolate Milkshake",
+      "product_name": "Dark Fantasy Chocolate Milkshake",
       "price": 27.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -7986,7 +7986,7 @@
     {
       "id": 354028,
       "product_code": "8906169992977",
-      "product_name": null,
+      "product_name": "Indian Masala Potato Chips",
       "price": 50.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8003,7 +8003,7 @@
     {
       "id": 354029,
       "product_code": "8906112996113",
-      "product_name": null,
+      "product_name": "Himalayan Pink Salted Peanuts",
       "price": 59.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8037,7 +8037,7 @@
     {
       "id": 354031,
       "product_code": "8906169990133",
-      "product_name": null,
+      "product_name": "Madras Mixture Namkeen - No Palm Oil",
       "price": 86.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8054,7 +8054,7 @@
     {
       "id": 354032,
       "product_code": "8906169992946",
-      "product_name": "Sweet Karam Coffee Madras Curry Leaves Potato Chips - Homestyle Wafers",
+      "product_name": "Madras Curry Leaves Potato Chips",
       "price": 52.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8071,7 +8071,7 @@
     {
       "id": 354033,
       "product_code": "8906169992953",
-      "product_name": null,
+      "product_name": "Mysore Masala Potato Chips",
       "price": 52.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8122,7 +8122,7 @@
     {
       "id": 354036,
       "product_code": "8902979010283",
-      "product_name": null,
+      "product_name": "Choco Mocha Cold Coffee",
       "price": 45.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8173,7 +8173,7 @@
     {
       "id": 354039,
       "product_code": "8906134530371",
-      "product_name": null,
+      "product_name": "Vanilla Shake Oat Beverage",
       "price": 33.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8326,7 +8326,7 @@
     {
       "id": 354048,
       "product_code": "8906161391020",
-      "product_name": null,
+      "product_name": "Masala Peanuts With Rock Salt",
       "price": 80.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8343,7 +8343,7 @@
     {
       "id": 354049,
       "product_code": "8901262151337",
-      "product_name": "Amul Kool Strawberry Flavoured Milk",
+      "product_name": "Kool Strawberry Flavoured Milk",
       "price": 30.0,
       "currency": "INR",
       "date": "2026-05-02",
@@ -8394,7 +8394,7 @@
     {
       "id": 354052,
       "product_code": "8901262152075",
-      "product_name": null,
+      "product_name": "Kool Cafe Cinnamon Flavoured Milk",
       "price": 30.0,
       "currency": "INR",
       "date": "2026-05-02",
@@ -8428,7 +8428,7 @@
     {
       "id": 354054,
       "product_code": "8901262153362",
-      "product_name": null,
+      "product_name": "Kool Rose Flavoured Milk",
       "price": 30.0,
       "currency": "INR",
       "date": "2026-05-02",
@@ -8445,7 +8445,7 @@
     {
       "id": 354055,
       "product_code": "8901262151832",
-      "product_name": "Amul Kool Classic Latte Flavoured Milk",
+      "product_name": "Kool Classic Latte Flavoured Milk",
       "price": 40.0,
       "currency": "INR",
       "date": "2026-05-02",
@@ -8530,7 +8530,7 @@
     {
       "id": 354060,
       "product_code": "8902979052863",
-      "product_name": null,
+      "product_name": "Rabdi Milkshake",
       "price": 51.0,
       "currency": "INR",
       "date": "2026-05-02",
@@ -8632,7 +8632,7 @@
     {
       "id": 354066,
       "product_code": "8901058027662",
-      "product_name": "Nescafe Classic Pure Instant Coffee",
+      "product_name": "Nescaf\u00e9 Classic",
       "price": 150.0,
       "currency": "INR",
       "date": "2026-05-16",
@@ -8683,7 +8683,7 @@
     {
       "id": 354069,
       "product_code": "8904083312086",
-      "product_name": "Milky Mist Badam Shrikhand",
+      "product_name": "Badam Shrikhand",
       "price": 40.0,
       "currency": "INR",
       "date": "2026-05-16",
@@ -8717,7 +8717,7 @@
     {
       "id": 354071,
       "product_code": "8901262152068",
-      "product_name": "Amul Kool Cafe Hazelnut Flavoured Milk",
+      "product_name": "Kool Cafe Hazelnut Flavoured Milk",
       "price": 30.0,
       "currency": "INR",
       "date": "2026-05-16",
