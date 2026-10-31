@@ -3,9 +3,9 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-26"
+    "date__lte": "2026-10-31"
   },
-  "fetched_at": "2026-10-26T07:57:14.257187+00:00",
+  "fetched_at": "2026-10-31T08:48:39.600474+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
   "total_at_source": 517,
@@ -2257,7 +2257,7 @@
     {
       "id": 120205,
       "product_code": "8901044105343",
-      "product_name": null,
+      "product_name": "Strawberry Pulpy Fruit Chews",
       "price": 10.0,
       "currency": "INR",
       "date": "2025-06-09",
@@ -3532,7 +3532,7 @@
     {
       "id": 137312,
       "product_code": "8906031251263",
-      "product_name": null,
+      "product_name": "Chakote Suji Toast",
       "price": 120.0,
       "currency": "INR",
       "date": "2025-09-10",
