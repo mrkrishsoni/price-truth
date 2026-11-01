@@ -1,6 +1,6 @@
 {
-  "snapshots": 12,
-  "unique_source_observations": 517,
-  "latest_retrieval": "2026-10-31T08:48:39.600474+00:00",
+  "snapshots": 13,
+  "unique_source_observations": 518,
+  "latest_retrieval": "2026-11-01T09:26:32.690995+00:00",
   "scope": "Latest source revision per observation ID; absent rows are not inferred deletions."
 }

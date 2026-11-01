@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-10-31"
+    "date__lte": "2026-11-01"
   },
-  "fetched_at": "2026-10-31T08:48:39.600474+00:00",
+  "fetched_at": "2026-11-01T09:26:32.690995+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 517,
+  "total_at_source": 518,
   "observations": [
     {
       "id": 3210,
@@ -8798,6 +8798,23 @@
       "proof_id": 141216,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/354075"
+    },
+    {
+      "id": 356805,
+      "product_code": "8901063338623",
+      "product_name": "Multi Grain Bread",
+      "price": 65.0,
+      "currency": "INR",
+      "date": "2026-10-31",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7779,
+      "location_name": "Bandra Market",
+      "location_type": "amenity",
+      "proof_id": 142427,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/356805"
     }
   ]
 }
