@@ -1,35 +1,28 @@
 {
-  "fetched_at": "2026-11-01T09:26:32.690995+00:00",
-  "raw_observations": 518,
-  "identified_barcodes": 473,
-  "eligible_shop_observations": 363,
+  "fetched_at": "2026-11-02T09:42:07.518541+00:00",
+  "raw_observations": 520,
+  "identified_barcodes": 475,
+  "eligible_shop_observations": 364,
   "complete_query": true,
   "largest_distinct_date_count": 2,
   "groups_with_at_least_40_dates": 0,
   "top_histories": [
     {
-      "barcode": "8901207049644",
-      "store": 2754,
-      "currency": "INR",
-      "basis": "nan",
-      "dates": 2
-    },
-    {
-      "barcode": "8901071732444",
+      "barcode": "8901262153362",
       "store": 7712,
       "currency": "INR",
       "basis": "nan",
       "dates": 2
     },
     {
-      "barcode": "8901262150378",
-      "store": 7712,
+      "barcode": "6291100212606",
+      "store": 1738,
       "currency": "INR",
       "basis": "nan",
       "dates": 2
     },
     {
-      "barcode": "8901262151429",
+      "barcode": "8901262152075",
       "store": 7712,
       "currency": "INR",
       "basis": "nan",
@@ -43,14 +36,28 @@
       "dates": 2
     },
     {
-      "barcode": "8901262152075",
+      "barcode": "8901262151429",
       "store": 7712,
       "currency": "INR",
       "basis": "nan",
       "dates": 2
     },
     {
-      "barcode": "8901262153362",
+      "barcode": "8901030695452",
+      "store": 2754,
+      "currency": "INR",
+      "basis": "nan",
+      "dates": 2
+    },
+    {
+      "barcode": "8909106040175",
+      "store": 2754,
+      "currency": "INR",
+      "basis": "nan",
+      "dates": 2
+    },
+    {
+      "barcode": "8901262150378",
       "store": 7712,
       "currency": "INR",
       "basis": "nan",
@@ -64,14 +71,7 @@
       "dates": 2
     },
     {
-      "barcode": "6291100212606",
-      "store": 1738,
-      "currency": "INR",
-      "basis": "nan",
-      "dates": 2
-    },
-    {
-      "barcode": "8901030695452",
+      "barcode": "8901030795589",
       "store": 2754,
       "currency": "INR",
       "basis": "nan",

@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-01"
+    "date__lte": "2026-11-02"
   },
-  "fetched_at": "2026-11-01T09:26:32.690995+00:00",
+  "fetched_at": "2026-11-02T09:42:07.518541+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 518,
+  "total_at_source": 520,
   "observations": [
     {
       "id": 3210,
@@ -8815,6 +8815,40 @@
       "proof_id": 142427,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/356805"
+    },
+    {
+      "id": 357761,
+      "product_code": "8901648002338",
+      "product_name": "Choco Brownie",
+      "price": 150.0,
+      "currency": "INR",
+      "date": "2026-10-31",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7782,
+      "location_name": "Jharia Police Station",
+      "location_type": "amenity",
+      "proof_id": 142484,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/357761"
+    },
+    {
+      "id": 357934,
+      "product_code": "8901648920328",
+      "product_name": "Toned Milk",
+      "price": 30.0,
+      "currency": "INR",
+      "date": "2026-11-02",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7801,
+      "location_name": "D Mart",
+      "location_type": "shop",
+      "proof_id": 142966,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/357934"
     }
   ]
 }
