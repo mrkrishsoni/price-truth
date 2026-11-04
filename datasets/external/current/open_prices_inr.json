@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-02"
+    "date__lte": "2026-11-04"
   },
-  "fetched_at": "2026-11-02T09:42:07.518541+00:00",
+  "fetched_at": "2026-11-04T09:32:23.051367+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 520,
+  "total_at_source": 522,
   "observations": [
     {
       "id": 3210,
@@ -8020,7 +8020,7 @@
     {
       "id": 354030,
       "product_code": "8904474700379",
-      "product_name": null,
+      "product_name": "Beco Compostable Garbage Bag (Medium, Green)",
       "price": 96.0,
       "currency": "INR",
       "date": "2026-05-08",
@@ -8849,6 +8849,40 @@
       "proof_id": 142966,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/357934"
+    },
+    {
+      "id": 359189,
+      "product_code": null,
+      "product_name": null,
+      "price": 125.0,
+      "currency": "INR",
+      "date": "2026-11-04",
+      "price_per": "KILOGRAM",
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7828,
+      "location_name": "Roorkee Max Hospital",
+      "location_type": "amenity",
+      "proof_id": 143521,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/359189"
+    },
+    {
+      "id": 359190,
+      "product_code": null,
+      "product_name": null,
+      "price": 50.0,
+      "currency": "INR",
+      "date": "2026-11-04",
+      "price_per": "KILOGRAM",
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7828,
+      "location_name": "Roorkee Max Hospital",
+      "location_type": "amenity",
+      "proof_id": 143521,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/359190"
     }
   ]
 }
