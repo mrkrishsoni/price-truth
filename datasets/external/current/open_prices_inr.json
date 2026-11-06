@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-04"
+    "date__lte": "2026-11-06"
   },
-  "fetched_at": "2026-11-04T09:32:23.051367+00:00",
+  "fetched_at": "2026-11-06T09:34:32.681284+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 522,
+  "total_at_source": 523,
   "observations": [
     {
       "id": 3210,
@@ -2614,7 +2614,7 @@
     {
       "id": 121688,
       "product_code": "8901207027253",
-      "product_name": "Dabur Red",
+      "product_name": "Red Toothpaste",
       "price": 70.0,
       "currency": "INR",
       "date": "2025-06-13",
@@ -8883,6 +8883,23 @@
       "proof_id": 143521,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/359190"
+    },
+    {
+      "id": 360332,
+      "product_code": "8901262152952",
+      "product_name": "Protein Buttermilk",
+      "price": 30.0,
+      "currency": "INR",
+      "date": "2026-11-06",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7846,
+      "location_name": "Amul",
+      "location_type": "amenity",
+      "proof_id": 144150,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/360332"
     }
   ]
 }
