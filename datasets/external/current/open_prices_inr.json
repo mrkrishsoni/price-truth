@@ -3,9 +3,9 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-07"
+    "date__lte": "2026-11-08"
   },
-  "fetched_at": "2026-11-07T08:58:48.071959+00:00",
+  "fetched_at": "2026-11-08T09:15:34.191329+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
   "total_at_source": 523,
@@ -2937,7 +2937,7 @@
     {
       "id": 123368,
       "product_code": "8909106010772",
-      "product_name": "Ponds",
+      "product_name": "Dreamflower Fragrant Talcum Powder",
       "price": 10.0,
       "currency": "INR",
       "date": "2025-07-02",
