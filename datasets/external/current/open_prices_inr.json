@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-08"
+    "date__lte": "2026-11-12"
   },
-  "fetched_at": "2026-11-08T09:15:34.191329+00:00",
+  "fetched_at": "2026-11-12T09:59:41.874296+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 523,
+  "total_at_source": 525,
   "observations": [
     {
       "id": 3210,
@@ -8900,6 +8900,40 @@
       "proof_id": 144150,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/360332"
+    },
+    {
+      "id": 362229,
+      "product_code": "8904537400239",
+      "product_name": "Mini Bakarwadi",
+      "price": 100.0,
+      "currency": "INR",
+      "date": "2026-11-12",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 7801,
+      "location_name": "D Mart",
+      "location_type": "shop",
+      "proof_id": 144819,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/362229"
+    },
+    {
+      "id": 362235,
+      "product_code": "19043067",
+      "product_name": "Patisa",
+      "price": 145.0,
+      "currency": "INR",
+      "date": "2026-11-12",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 5663,
+      "location_name": "Reliance Smart Bazaar",
+      "location_type": "shop",
+      "proof_id": 144820,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/362235"
     }
   ]
 }

@@ -1,42 +1,21 @@
 {
-  "fetched_at": "2026-11-08T09:15:34.191329+00:00",
-  "raw_observations": 523,
-  "identified_barcodes": 476,
-  "eligible_shop_observations": 364,
+  "fetched_at": "2026-11-12T09:59:41.874296+00:00",
+  "raw_observations": 525,
+  "identified_barcodes": 478,
+  "eligible_shop_observations": 366,
   "complete_query": true,
   "largest_distinct_date_count": 2,
   "groups_with_at_least_40_dates": 0,
   "top_histories": [
     {
-      "barcode": "8901207049644",
-      "store": 2754,
+      "barcode": "6291100212606",
+      "store": 1738,
       "currency": "INR",
       "basis": "nan",
       "dates": 2
     },
     {
-      "barcode": "8901262150378",
-      "store": 7712,
-      "currency": "INR",
-      "basis": "nan",
-      "dates": 2
-    },
-    {
-      "barcode": "8901071732444",
-      "store": 7712,
-      "currency": "INR",
-      "basis": "nan",
-      "dates": 2
-    },
-    {
-      "barcode": "8901262151429",
-      "store": 7712,
-      "currency": "INR",
-      "basis": "nan",
-      "dates": 2
-    },
-    {
-      "barcode": "8901262151832",
+      "barcode": "8901262153362",
       "store": 7712,
       "currency": "INR",
       "basis": "nan",
@@ -50,7 +29,35 @@
       "dates": 2
     },
     {
-      "barcode": "8901262153362",
+      "barcode": "8901262151832",
+      "store": 7712,
+      "currency": "INR",
+      "basis": "nan",
+      "dates": 2
+    },
+    {
+      "barcode": "8901262151429",
+      "store": 7712,
+      "currency": "INR",
+      "basis": "nan",
+      "dates": 2
+    },
+    {
+      "barcode": "8901030695452",
+      "store": 2754,
+      "currency": "INR",
+      "basis": "nan",
+      "dates": 2
+    },
+    {
+      "barcode": "8909106040175",
+      "store": 2754,
+      "currency": "INR",
+      "basis": "nan",
+      "dates": 2
+    },
+    {
+      "barcode": "8901262150378",
       "store": 7712,
       "currency": "INR",
       "basis": "nan",
@@ -64,14 +71,7 @@
       "dates": 2
     },
     {
-      "barcode": "6291100212606",
-      "store": 1738,
-      "currency": "INR",
-      "basis": "nan",
-      "dates": 2
-    },
-    {
-      "barcode": "8901030695452",
+      "barcode": "8901030795589",
       "store": 2754,
       "currency": "INR",
       "basis": "nan",
