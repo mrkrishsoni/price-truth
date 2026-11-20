@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-17"
+    "date__lte": "2026-11-20"
   },
-  "fetched_at": "2026-11-17T10:53:48.361202+00:00",
+  "fetched_at": "2026-11-20T10:13:50.266922+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 528,
+  "total_at_source": 529,
   "observations": [
     {
       "id": 3210,
@@ -8985,6 +8985,23 @@
       "proof_id": 145196,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/363189"
+    },
+    {
+      "id": 365193,
+      "product_code": "8901725004927",
+      "product_name": "Nachos Cheese Flavour",
+      "price": 38.0,
+      "currency": "INR",
+      "date": "2026-11-19",
+      "price_per": null,
+      "price_is_discounted": true,
+      "price_without_discount": 50.0,
+      "location_id": 7960,
+      "location_name": "Ekart-flipkart/myntra",
+      "location_type": "shop",
+      "proof_id": 145929,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/365193"
     }
   ]
 }
