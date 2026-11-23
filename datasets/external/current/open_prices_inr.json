@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-20"
+    "date__lte": "2026-11-23"
   },
-  "fetched_at": "2026-11-20T10:13:50.266922+00:00",
+  "fetched_at": "2026-11-23T10:57:24.458096+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 529,
+  "total_at_source": 530,
   "observations": [
     {
       "id": 3210,
@@ -9002,6 +9002,23 @@
       "proof_id": 145929,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/365193"
+    },
+    {
+      "id": 367757,
+      "product_code": "8901972066235",
+      "product_name": "Digestive",
+      "price": 30.0,
+      "currency": "INR",
+      "date": "2026-11-22",
+      "price_per": null,
+      "price_is_discounted": false,
+      "price_without_discount": null,
+      "location_id": 8032,
+      "location_name": "Bannari Amman Institute",
+      "location_type": "amenity",
+      "proof_id": 147210,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/367757"
     }
   ]
 }
