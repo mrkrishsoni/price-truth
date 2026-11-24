@@ -3,12 +3,12 @@
   "query": {
     "currency": "INR",
     "size": 100,
-    "date__lte": "2026-11-23"
+    "date__lte": "2026-11-24"
   },
-  "fetched_at": "2026-11-23T10:57:24.458096+00:00",
+  "fetched_at": "2026-11-24T12:44:00.217758+00:00",
   "license": "ODbL-1.0",
   "complete_query": true,
-  "total_at_source": 530,
+  "total_at_source": 533,
   "observations": [
     {
       "id": 3210,
@@ -9019,6 +9019,57 @@
       "proof_id": 147210,
       "duplicate_of": null,
       "source_url": "https://prices.openfoodfacts.org/prices/367757"
+    },
+    {
+      "id": 367794,
+      "product_code": "3948764972034",
+      "product_name": "Thumps up xforce",
+      "price": 35.0,
+      "currency": "INR",
+      "date": "2026-11-23",
+      "price_per": null,
+      "price_is_discounted": true,
+      "price_without_discount": 40.0,
+      "location_id": 4357,
+      "location_name": "Blinkit",
+      "location_type": "shop",
+      "proof_id": 147232,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/367794"
+    },
+    {
+      "id": 367795,
+      "product_code": "3948764972034",
+      "product_name": "Thumps up xforce",
+      "price": 35.0,
+      "currency": "INR",
+      "date": "2026-11-23",
+      "price_per": null,
+      "price_is_discounted": true,
+      "price_without_discount": 40.0,
+      "location_id": 4357,
+      "location_name": "Blinkit",
+      "location_type": "shop",
+      "proof_id": 147232,
+      "duplicate_of": 367794,
+      "source_url": "https://prices.openfoodfacts.org/prices/367795"
+    },
+    {
+      "id": 367796,
+      "product_code": "8901764972034",
+      "product_name": "Thumps up xforce",
+      "price": 35.0,
+      "currency": "INR",
+      "date": "2026-11-23",
+      "price_per": null,
+      "price_is_discounted": true,
+      "price_without_discount": 40.0,
+      "location_id": 4357,
+      "location_name": "Blinkit",
+      "location_type": "shop",
+      "proof_id": 147232,
+      "duplicate_of": null,
+      "source_url": "https://prices.openfoodfacts.org/prices/367796"
     }
   ]
 }
